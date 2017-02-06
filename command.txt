@@ -1,0 +1,7 @@
+cd /d D:\Projects\dafmi
+
+gulp compile:pug
+
+gulp all:watch
+
+

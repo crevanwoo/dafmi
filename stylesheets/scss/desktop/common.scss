@@ -1,0 +1,263 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: $black;
+    font-family: Regular;
+    overflow-x: hidden;
+    &.hidden {
+        position: fixed;
+        left: 0;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+}
+
+.wrapper {
+    width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.rotated_bg {
+    height: 100%;
+    $deg: 3.5;
+    width: 200%;
+    transform: rotate($deg + deg);
+    overflow: hidden;
+    .reverse_rotated_bg {
+        height: 100%;
+        transform: rotate(-$deg + deg);
+    }
+}
+
+.button {
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a {
+    &:link,
+    &:visited,
+    &:active,
+    &:hover {
+        color: $black
+    }
+}
+
+.main_h {
+    font-family: Bold;
+    font-size: $fs48;
+    text-transform: uppercase;
+}
+
+.mid_h {
+    font-family: Bold;
+    font-size: $fs36;
+    text-transform: uppercase;
+}
+
+.small_h {
+    font-family: Bold;
+    font-size: $fs18;
+    text-transform: uppercase;
+}
+
+.wide_left_line {
+    border-left: 6px solid $red;
+}
+
+button {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    &:focus {
+        outline: none;
+    }
+}
+
+form {
+    margin: auto;
+    font-size: 0;
+    button {
+        display: block;
+        margin: auto;
+        width: 340px;
+        height: 75px;
+        font-family: Bold;
+        font-size: $fs18;
+        text-transform: uppercase;
+        background-color: $red;
+        border-radius: 40px;
+        color: white;
+        transition: 0.3s;
+        &:hover {
+            background-color: $darkred;
+        }
+    }
+}
+
+.input {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 50px;
+    &:nth-of-type(2) {
+        margin: 0 20px;
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        width: 17px;
+        height: 20px;
+        transform: translateY(-50%);
+        background-size: 100% 100%;
+    }
+    &:nth-of-type(1):before {
+        background-image: url(../images/icon_1.svg)
+    }
+    &:nth-of-type(2):before {
+        background-image: url(../images/icon_2.svg)
+    }
+    &:nth-of-type(3):before {
+        background-image: url(../images/icon_3.svg)
+    }
+}
+
+input {
+    width: 340px;
+    height: 60px;
+    padding-left: 55px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    background-color: white;
+    color: $black;
+    font-size: $fs16;
+    &:focus {
+        outline: none;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    &::-webkit-input-placeholder {
+        font-family: Regular;
+        font-size: $fs16;
+        color: $gray
+    }
+    &::-moz-placeholder {
+        font-family: Regular;
+        font-size: $fs16;
+        color: $gray
+    }
+    /* Firefox 19+ */
+    &:-moz-placeholder {
+        font-family: Regular;
+        font-size: $fs16;
+        color: $gray
+    }
+    /* Firefox 18- */
+    &:-ms-input-placeholder {
+        font-family: Regular;
+        font-size: $fs16;
+        color: $gray
+    }
+}
+
+.slick-arrow {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    background-image: url(../images/next-prev.png);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0px;
+    z-index: 1;
+}
+
+.slick-next {
+    right: 0;
+    background-position: 0px -55px;
+}
+
+.slick-prev {
+    left: 0;
+    background-position: 0px 0px;
+}
+
+.slick-dots {
+    font-size: 0;
+    li {
+        display: inline-block;
+        margin-left: 3px;
+        button {
+            padding: 0;
+            width: 10px;
+            height: 10px;
+            border: 1px solid #ccc;
+            font-size: 0;
+            border-radius: 50%;
+        }
+        &.slick-active {
+            button {
+                width: 10px;
+                height: 10px;
+                border: none;
+                background-color: $red
+            }
+        }
+    }
+}
+
+.slick-track,
+.slick-slide {
+    &:focus {
+        outline: none;
+    }
+}
+
+.modal_window {
+    opacity: 0;
+    transition-duration: 0.5s;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    &.visible {
+        opacity: 1;
+    }
+    .close {
+        background-image: url(../images/modal_close.png);
+        width: 66px;
+        height: 66px;
+        position: absolute;
+        top: -6px;
+        right: -10px;
+        cursor: pointer;
+    }
+}
+
+.clearfix {
+    clear: both
+}

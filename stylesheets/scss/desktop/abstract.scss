@@ -1,0 +1,58 @@
+@font-face {
+    font-family: Light;
+    src: url(../fonts/SF-UI-Display-Light.ttf)
+}
+
+@font-face {
+    font-family: Regular;
+    src: url(../fonts/SF-UI-Display-Regular.ttf)
+}
+
+@font-face {
+    font-family: Medium;
+    src: url(../fonts/SF-UI-Display-Medium.ttf)
+}
+
+@font-face {
+    font-family: Bold;
+    src: url(../fonts/SF-UI-Display-Bold.ttf)
+}
+
+$red: #ee3840;
+$black: #333333;
+$gray: #666666;
+$darkred: darkred;
+$fs16:16px;
+$fs18:18px;
+$fs24:24px;
+$fs30:30px;
+$fs36:36px;
+$fs48:48px;
+$triangle_h: 238px;
+@mixin triangle($position, $url) {
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right:0;
+        height: $triangle_h;
+        
+        background-image: $url;
+        background-size: 1900px $triangle_h;
+        background-position: center center;
+        @if $position==bottom {
+            bottom: 0;
+        }
+        @if $position==top {
+            top: 0;
+        }
+    }
+}
+
+@mixin bp() {
+    @media screen and (max-width: 1100px) {
+        @content;
+        
+    }
+    
+}
