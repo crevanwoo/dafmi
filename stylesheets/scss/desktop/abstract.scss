@@ -1,34 +1,53 @@
 @font-face {
     font-family: Light;
-    src: url(../fonts/SF-UI-Display-Light.ttf)
+    src: url(../fonts/GothamProLight.ttf)
 }
 
 @font-face {
     font-family: Regular;
-    src: url(../fonts/SF-UI-Display-Regular.ttf)
+    src: url(../fonts/GothamProRegular.ttf)
 }
 
 @font-face {
     font-family: Medium;
-    src: url(../fonts/SF-UI-Display-Medium.ttf)
+    src: url(../fonts/GothamProMedium.ttf)
 }
 
 @font-face {
     font-family: Bold;
-    src: url(../fonts/SF-UI-Display-Bold.ttf)
+    src: url(../fonts/GothamProBold.ttf)
+}
+@font-face {
+    font-family: Bandera;
+    src: url(../fonts/BanderaPro-Bold.otf)
 }
 
-$red: #ee3840;
+$red: #dc5552;
 $black: #333333;
-$gray: #666666;
+$bg_black: #212125;
+$bg_deep_black:#1a1a1e;
+$gray: #666;
+$l_gray:#a7abb0;
+$border_gray: #d6d6d6;
+$border_l_gray: #efefef;
+$active_gray: #fafafa;
+$bg_l_gray: #fdfdfd;
 $darkred: darkred;
+$fs12:12px;
+$fs13:13px;
+$fs14:14px;
 $fs16:16px;
 $fs18:18px;
+$fs20:20px;
 $fs24:24px;
 $fs30:30px;
 $fs36:36px;
 $fs48:48px;
 $triangle_h: 238px;
+%clear {position: relative;
+    &:after {content: '';
+    display: block;
+    clear:both;}}
 @mixin triangle($position, $url) {
     &:after {
         content: '';

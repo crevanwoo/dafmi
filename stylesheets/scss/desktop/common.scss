@@ -8,6 +8,7 @@ body {
     color: $black;
     font-family: Regular;
     overflow-x: hidden;
+    height: 7000px;
     &.hidden {
         position: fixed;
         left: 0;
@@ -20,8 +21,11 @@ body {
 }
 
 .wrapper {
-    width: 1100px;
+    width: 1220px;
     margin: auto;
+}
+
+.pad {
     padding: 0 20px;
 }
 
@@ -59,6 +63,7 @@ a {
     &:visited,
     &:active,
     &:hover {
+        text-decoration: none;
         color: $black
     }
 }
@@ -119,9 +124,6 @@ form {
     position: relative;
     display: inline-block;
     margin-bottom: 50px;
-    &:nth-of-type(2) {
-        margin: 0 20px;
-    }
     &:before {
         content: '';
         position: absolute;
@@ -144,38 +146,34 @@ form {
 }
 
 input {
-    width: 340px;
-    height: 60px;
-    padding-left: 55px;
-    border: 1px solid #ccc;
-    border-radius: 30px;
+    border: none;
     background-color: white;
     color: $black;
     font-size: $fs16;
     &:focus {
         outline: none;
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: rgba(255, 255, 255, 0.9);
     }
     &::-webkit-input-placeholder {
         font-family: Regular;
-        font-size: $fs16;
+        font-size: $fs13;
         color: $gray
     }
     &::-moz-placeholder {
         font-family: Regular;
-        font-size: $fs16;
+        font-size: $fs13;
         color: $gray
     }
     /* Firefox 19+ */
     &:-moz-placeholder {
         font-family: Regular;
-        font-size: $fs16;
+        font-size: $fs13;
         color: $gray
     }
     /* Firefox 18- */
     &:-ms-input-placeholder {
         font-family: Regular;
-        font-size: $fs16;
+        font-size: $fs13;
         color: $gray
     }
 }

@@ -1,6 +1,27 @@
+// header begins
 header
-    div  "I like bananas"
-    div  "I don't"   
-    div  "I yes"   
-    div "I no"
-    div "So?"
+    div.header_top
+        div.wrapper.pad
+            nav
+                ul.top_nav 
+                    -  
+                        var list = ["О нас", "Новые позиции", "Новости", "Партнеры ", "Печать", "Документы", "Контакты"]
+                    each item in list
+                        li
+                            a(href="")= item
+                     
+            div.profile
+                div.icon
+                span Здраствуйте -
+                div.status Войдите в личный кабинет
+    div.header_bottom
+        div.wrapper.pad
+            div.logo
+            div.input
+                input(placeholder="Поиск детали")
+            div.contacts
+                div.tel +38 (050) 844-77-76
+                div.consult Получить консультацию
+                div.cart
+                    div.items_amount 5
+// header ends

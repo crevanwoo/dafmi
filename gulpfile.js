@@ -7,17 +7,17 @@ var minify = require('gulp-minifier');
 var pug = require('gulp-pug');
 
 gulp.task('all:watch', function () {
-    gulp.watch('stylesheets/scss/**/*.scss', ['concat:scss']);
-    gulp.watch('stylesheets/style.scss', ['sass']);
-    gulp.watch('js/files/*.js', ['concat:js']);
+    gulp.watch('stylesheets/scss/**/*.scss', ['compile:sass']);
+    gulp.watch('stylesheets/css/*.css', ['concat:css']); 
+    gulp.watch('js/files/**/*.js', ['concat:js']);
     gulp.watch('js/script.js', ['compress:js']);
     gulp.watch('views/**/*.pug', ['compile:pug']);
 });
 
-gulp.task('sass', function () {
-    return gulp.src('stylesheets/style.scss')
+gulp.task('compile:sass', function () {
+    return gulp.src('stylesheets/scss/concat/*.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('stylesheets'));
+        .pipe(gulp.dest('stylesheets/css'));
 });
 
 gulp.task('concat:js', function () {
@@ -26,9 +26,9 @@ gulp.task('concat:js', function () {
         .pipe(gulp.dest('js'));
 });
 
-gulp.task('concat:scss', function () {
-    return gulp.src('stylesheets/scss/**/*.scss')
-        .pipe(concat('style.scss'))
+gulp.task('concat:css', function () {
+    return gulp.src('stylesheets/css/*.css')
+        .pipe(concat('style.css'))
         .pipe(gulp.dest('stylesheets'));
 });
 

@@ -1,0 +1,41 @@
+.content_panel {
+    .filters {@extend %clear;
+        padding: 20px;
+        .select {
+            position: relative;
+            float: left;
+            width: 373px;
+            background-color: rgba(0, 0, 0, 0);
+            border-radius: 0;
+            border: 1px solid $border_l_gray;
+            margin-right:20px;
+            height: 40px;
+            color: #ccc;
+            cursor: pointer;
+            .sel_title {font-size: $fs14;
+            padding-left: 12px;
+            height: 100%;
+            line-height: 38px;}
+            
+             &:before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            right: 10px;
+            width: 16px;
+            height: 9px;
+            background-image: url(../images/icon_select_arrow.png);
+                 &:last-of-type {margin-right:0;}
+        }
+        }
+       
+    }
+    .views {
+        padding: 13px 0;
+        background-color: $bg_l_gray;
+        .sort_az {width:35px;
+        height: 35px;
+        border: 1px solid $border_l_gray}
+        
+    }
+}

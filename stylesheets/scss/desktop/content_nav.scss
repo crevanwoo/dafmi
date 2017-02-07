@@ -1,0 +1,91 @@
+.content_nav {   
+   
+    * {
+        cursor: pointer;
+    }
+    .nav_top {
+        @extend %clear;
+        height: 80px;
+        line-height: 80px;
+        .tab_1 {
+            width: 919px;
+            float: left;
+            font-family: Medium;
+            font-size: $fs20;
+            padding-left: 35px;
+        }
+        .tab_2 {
+            width: 299px;
+            float: right;
+            font-size: $fs14;
+            background-color: #f7f7f7;
+            text-align: center;
+        }
+    }
+    .nav_main {
+        @extend %clear;
+        border-top: 1px solid $border_gray;
+        border-bottom: 1px solid $border_gray;
+        .type {
+            position: relative;
+            border-right: 1px solid $border_gray;
+            float: left;
+            height: 90px;
+            &:before {
+                content: '';
+                background-image: url(../images/icons1.png);
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+            &.active {
+                background-color: $active_gray
+            }
+            &:nth-of-type(1) {
+                width: 280px;
+                &:before {
+                    height: 100%;
+                    width: 90px;
+                    background-position: 0 0;
+                }
+            }
+            &:nth-of-type(2) {
+                width: 280px;
+                &:before {
+                    height: 100%;
+                    width: 90px;
+                    background-position: -90px 0;
+                }
+            }
+            &:nth-of-type(3) {
+                width: 280px;
+                &:before {
+                    height: 100%;
+                    width: 120px;
+                    background-position: -180px 0;
+                }
+            }
+            &:nth-of-type(4) {
+                width: 180px;
+                &:before {
+                    height: 100%;
+                    width: 90px;
+                    background-position: 0 -90px;
+                }
+            }
+            &:nth-of-type(5) {
+                width: 198px;
+                &:before {
+                    height: 100%;
+                    width: 90px;
+                    background-position: -90px -90px;
+                }
+            }
+            &:last-of-type {
+                border-right: none;
+            }
+        }
+    }
+}

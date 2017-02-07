@@ -14,4 +14,3 @@ $(window).on("wheel keydown touchstart touchmove", function () {
 
 
 })
-

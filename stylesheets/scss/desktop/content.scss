@@ -1,0 +1,6 @@
+.content {
+    >.wrapper {border: 1px solid $border_l_gray;}
+    padding: 40px 0;
+    @import 'content_nav';
+    @import 'content_panel';
+}

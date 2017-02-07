@@ -1,13 +1,100 @@
 <!DOCTYPE html>
 <html>
-  <head> </head>
+  <head>
+    <title>title</title>
+    <meta charset="utf-8">
+    <!--link(rel="stylesheet", href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css")-->
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" defer></script>
+    <!--script(src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js", defer)-->
+    <script src="js/script.js" defer> </script>
+  </head>
   <body>
+    <!-- header begins-->
     <header>
-      <div> "I like bananas"</div>
-      <div> "I don't"   </div>
-      <div> "I yes"   </div>
-      <div>"I no"</div>
-      <div>"So?"</div>
+      <div class="header_top">
+        <div class="wrapper pad">
+          <nav>
+            <ul class="top_nav"> 
+              <li><a href="">О нас</a></li>
+              <li><a href="">Новые позиции</a></li>
+              <li><a href="">Новости</a></li>
+              <li><a href="">Партнеры </a></li>
+              <li><a href="">Печать</a></li>
+              <li><a href="">Документы</a></li>
+              <li><a href="">Контакты</a></li>
+            </ul>
+          </nav>
+          <div class="profile">
+            <div class="icon"></div><span>Здраствуйте -</span>
+            <div class="status">Войдите в личный кабинет</div>
+          </div>
+        </div>
+      </div>
+      <div class="header_bottom">
+        <div class="wrapper pad">
+          <div class="logo"></div>
+          <div class="input">
+            <input placeholder="Поиск детали">
+          </div>
+          <div class="contacts">
+            <div class="tel">+38 (050) 844-77-76</div>
+            <div class="consult">Получить консультацию</div>
+            <div class="cart">
+              <div class="items_amount">5</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
+    <!-- header ends-->
+    <!-- content begins-->
+    <div class="content"> 
+      <div class="wrapper">
+        <!-- content nav begins-->
+        <div class="content_nav">
+          <div class="nav_top">
+            <div class="tab_1">Поиск автомобиля</div>
+            <div class="tab_2">Включить расширенный поиск</div>
+          </div>
+          <div class="nav_top_expand"></div>
+          <div class="nav_main">
+            <div class="type active"></div>
+            <div class="type"></div>
+            <div class="type"></div>
+            <div class="type"></div>
+            <div class="type"></div>
+          </div>
+          <div class="nav_expand"></div>
+        </div>
+        <!-- content nav ends
+        -->
+        <!-- content panel begins-->
+        <div class="content_panel">
+          <div class="filters">   
+            <div class="select">
+              <div class="sel_title">- Выберите бренд -</div>
+              <div class="option"></div>
+            </div>
+            <div class="select">
+              <div class="sel_title">- Выберите бренд -</div>
+              <div class="option"></div>
+            </div>
+            <div class="select">
+              <div class="sel_title">- Выберите бренд -</div>
+              <div class="option"></div>
+            </div>
+          </div>
+          <div class="views">
+            <div class="wrapper pad"> 
+              <div class="sort_az"></div>
+            </div>
+          </div>
+        </div>
+        <!-- content panel ends
+        -->
+      </div>
+    </div>
+    <!-- content ends-->
   </body>
 </html>
