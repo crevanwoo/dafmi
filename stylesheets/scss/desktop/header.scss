@@ -35,6 +35,7 @@ header {
             }
             span {}
             .status {
+                vertical-align: middle;
                 cursor: pointer;
                 display: inline-block;
                 color: $l_gray;

@@ -19,6 +19,17 @@
             font-size: $fs14;
             background-color: #f7f7f7;
             text-align: center;
+            .text_2 {
+                display: none;
+            }
+            &.active {
+                .text_1 {
+                    display: none;
+                }
+                .text_2 {
+                    display: inline;
+                }
+            }
         }
     }
     .nav_main {

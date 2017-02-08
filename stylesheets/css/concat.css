@@ -290,6 +290,7 @@ header {
         height: 13px;
         background-image: url(../images/icon_user.png); }
       header .header_top .profile .status {
+        vertical-align: middle;
         cursor: pointer;
         display: inline-block;
         color: #a7abb0;
@@ -434,6 +435,12 @@ header {
       font-size: 14px;
       background-color: #f7f7f7;
       text-align: center; }
+      .content .content_nav .nav_top .tab_2 .text_2 {
+        display: none; }
+      .content .content_nav .nav_top .tab_2.active .text_1 {
+        display: none; }
+      .content .content_nav .nav_top .tab_2.active .text_2 {
+        display: inline; }
   .content .content_nav .nav_main {
     border-top: 1px solid #d6d6d6;
     border-bottom: 1px solid #d6d6d6; }
