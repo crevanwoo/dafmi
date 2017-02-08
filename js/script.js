@@ -86,20 +86,23 @@ $('.grid_view .grid').on('click', function () {
 })
 
 
+var content_panel_h = $('.content_products').height();
 
 function toggleGridClasses() {
+    $('.content_products').css('height', content_panel_h * 2 + 'px');
+
     var grid_trans_time = 500;
+
     $('.grid_view .list').toggleClass('active');
     $('.grid_view .grid').toggleClass('active');
     $('.content_products').removeClass('active');
     $('.content_products').toggleClass('grid');
     $('.content_products').toggleClass('list');
-    setTimeout(function() {
+    setTimeout(function () {
         $('.content_products').addClass('active');
-    }, grid_trans_time )
+        $('.content_products').css('height', 'auto');
+    }, grid_trans_time)
 }
-
-
 
 $('.filters select, .footer_top .lang select').each(function () {
     var $this = $(this),
