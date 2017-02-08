@@ -1,8 +1,11 @@
 header {
+    $h_top: 60px;
+    $h_bottom: 90px;
+    height: $h_top + $h_bottom;
     .header_top {
         @extend %clear;
-        height: 60px;
-        line-height: 60px;
+        height: $h_top;
+        line-height: $h_top;
         color: $gray;
         font-size: $fs12;
         nav,
@@ -32,18 +35,21 @@ header {
             }
             span {}
             .status {
+                cursor: pointer;
                 display: inline-block;
                 color: $l_gray;
                 text-decoration: underline;
             }
         }
     }
-    .header_bottom {z-index:10;
+    .header_bottom {
+        position: relative;
+        z-index: 10;
         top: 0;
         $big_pad: 20px;
         @extend %clear;
         background-color: $bg_black;
-        height: 90px;
+        height: $h_bottom;
         transition: 0.2s;
         * {
             transition: 0.2s;
@@ -101,6 +107,7 @@ header {
             height: 0;
         }
         &.min {
+            position: fixed;
             width: 100%;
             $h_min: 60px;
             $pad: 12px;

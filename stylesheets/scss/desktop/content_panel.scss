@@ -1,41 +1,204 @@
 .content_panel {
-    .filters {@extend %clear;
+    .filters {
+        $border: 1px solid $border_l_gray;
+        @extend %clear;
         padding: 20px;
-        .select {
+        /* select {
             position: relative;
             float: left;
             width: 373px;
             background-color: rgba(0, 0, 0, 0);
             border-radius: 0;
             border: 1px solid $border_l_gray;
-            margin-right:20px;
+            margin-right: 20px;
             height: 40px;
             color: #ccc;
             cursor: pointer;
-            .sel_title {font-size: $fs14;
-            padding-left: 12px;
-            height: 100%;
-            line-height: 38px;}
-            
-             &:before {
-            content: '';
+            .sel_title {
+                font-size: $fs14;
+                padding-left: 12px;
+                height: 100%;
+                line-height: 38px;
+            }
+            &:before {
+                content: '';
+                position: absolute;
+                top: 15px;
+                right: 10px;
+                width: 16px;
+                height: 9px;
+                background-image: url(../images/icon_select_arrow.png);
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }
+        }*/
+        .select {
+            float: left;
+            width: 379px;
+            border: $border;
+            margin-right: 20px;
+            height: 40px;
+            cursor: pointer;
+            font-size: $fs14;
+            .select-styled {
+                padding-left: 12px;
+                height: 100%;
+                line-height: 38px;
+                color: #ccc;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 15px;
+                    right: 10px;
+                    width: 16px;
+                    height: 9px;
+                    background-image: url(../images/icon_select_arrow.png);
+                }
+                &.active {
+                    color: #ccc;
+                    &:before {
+                        transform: rotate(180deg)
+                    }
+                }
+                &.changed {
+                    color: $black;
+                    border: 1px solid $border_active_gray;
+                }
+            }
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+        .select-options {
+            display: none;
             position: absolute;
-            top: 15px;
-            right: 10px;
-            width: 16px;
-            height: 9px;
-            background-image: url(../images/icon_select_arrow.png);
-                 &:last-of-type {margin-right:0;}
+            top: 100%;
+            right: 0;
+            left: 0;
+            z-index: 9;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            background-color: white;
+            li {
+                /*
+                margin: 0;
+               */
+                position: relative;
+                left: -1px;
+                width: calc(100% + 2px);
+                padding: 12px 0;
+                 text-indent: 15px;
+                border-right: $border;
+                border-left: $border;
+                border-bottom: $border;
+                color: $black;
+                &:nth-of-type(2) {
+                    border-top: $border;
+                }
+                &:hover {
+                    background-color: $active_gray
+                }
+                &[rel="hide"] {
+                    display: none;
+                }
+            }
         }
-        }
-       
     }
     .views {
+        @extend %clear;
+        $height: 35px;
         padding: 13px 0;
         background-color: $bg_l_gray;
-        .sort_az {width:35px;
-        height: 35px;
-        border: 1px solid $border_l_gray}
-        
+        .sort_az {
+            position: relative;
+            width: $height;
+            height: $height;
+            display: inline-block;
+            .az_trigger {
+                cursor: pointer;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: $height;
+                height: $height;
+                border: 1px solid $border_l_gray;
+                font-family: Bold;
+                font-size: $fs18;
+                color: $font_gray;
+                text-align: center;
+                line-height: 33px;
+                z-index: 1;
+                &.active {
+                    color: white;
+                    background-color: $red;
+                    border-color: $red;
+                }
+            }
+            ul {
+                $width: 665px;
+                position: absolute;
+                left: 100%;
+                height: $height;
+                outline-width: 1px;
+                outline-color: $border_l_gray;
+                outline-style: solid;
+                outline-offset: -1px;
+                font-size: 0;
+                padding: 0 5px;
+                width: 0px;
+                transition: 0.3s;
+                display: none;
+                overflow: hidden;
+                &.active {
+                    width: $width;
+                }
+                li {
+                    position: relative;
+                    text-align: center;
+                    width: 25px;
+                    height: $height;
+                    line-height: $height;
+                    display: inline-block;
+                    font-size: $fs14;
+                    font-family: Regular;
+                    &.active {
+                        font-family: Bold;
+                        border-bottom: 1px solid $red;
+                    }
+                }
+            }
+        }
+        .grid_view {
+            float: right;
+            font-size: 0;
+            .list,
+            .grid {
+                cursor: pointer;
+                border: 1px solid $border_l_gray;
+                display: inline-block;
+                background-image: url('../images/grid_icons.png');
+                width: $height;
+                height: $height;
+                &.active {
+                    background-color: $red;
+                    border-color: $red;
+                }
+            }
+            .list {
+                position: relative;
+                background-position: 0 -35px;
+                &.active {
+                    background-position: -35px -35px;
+                }
+            }
+            .grid {
+                background-position: 0 0;
+                &.active {
+                    background-position: -35px 0;
+                }
+            }
+        }
     }
 }

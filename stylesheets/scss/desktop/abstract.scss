@@ -17,6 +17,7 @@
     font-family: Bold;
     src: url(../fonts/GothamProBold.ttf)
 }
+
 @font-face {
     font-family: Bandera;
     src: url(../fonts/BanderaPro-Bold.otf)
@@ -32,6 +33,9 @@ $border_gray: #d6d6d6;
 $border_l_gray: #efefef;
 $active_gray: #fafafa;
 $bg_l_gray: #fdfdfd;
+$border_active_gray: #b4b4b4;
+$font_gray: #999;
+$border_dark_gray: #4a4a4d;
 $darkred: darkred;
 $fs12:12px;
 $fs13:13px;
@@ -44,18 +48,22 @@ $fs30:30px;
 $fs36:36px;
 $fs48:48px;
 $triangle_h: 238px;
-%clear {position: relative;
-    &:after {content: '';
-    display: block;
-    clear:both;}}
+%clear {
+    position: relative;
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
 @mixin triangle($position, $url) {
     &:after {
         content: '';
         position: absolute;
         left: 0;
-        right:0;
+        right: 0;
         height: $triangle_h;
-        
         background-image: $url;
         background-size: 1900px $triangle_h;
         background-position: center center;
@@ -71,7 +79,5 @@ $triangle_h: 238px;
 @mixin bp() {
     @media screen and (max-width: 1100px) {
         @content;
-        
     }
-    
 }

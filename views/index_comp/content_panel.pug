@@ -1,19 +1,30 @@
 // content panel begins
 div.content_panel
-    div.filters    
-       div.select
-            div.sel_title - Выберите бренд -
-            div.option
-       div.select
-            div.sel_title - Выберите бренд -
-            div.option
-       div.select
-            div.sel_title - Выберите бренд -
-            div.option
-       
+    div.filters          
+            select.select_1
+                option(value='hide') -- Выберите бренд -- 
+                option(value='value1') Value
+                option(value='value1') Value
+                option(value='value1') Value
+            select.select_2
+                option(value='hide') -- Выберите бренд -- 
+                option(value='value1') Value
+            select.select_3
+                option(value='hide') -- Выберите бренд -- 
+                option(value='value1') Value
     div.views
         div.wrapper.pad 
-            div.sort_az
+            div.sort_az 
+                div.az_trigger  A
+                ul 
+                    -  
+                        var az_list = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+                    each az_item in az_list
+                        li.sort_az_letter
+                            a(href="")= az_item 
+            div.grid_view
+                div.list
+                div.grid.active
             
             
    
