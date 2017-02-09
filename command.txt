@@ -1,4 +1,4 @@
-cd /d D:\Projects\dafmi
+cd /d D:\OpenServer\OpenServer\domains\dafmi
 
 gulp compile:pug
 

@@ -1,0 +1,32 @@
+.top_search {
+    $thin_h: 40px;
+    $cell_size: 80px;
+
+    $border: 1px solid $border_gray;
+    .bttn {
+        &.active {
+            background-color: $active_gray
+        }
+    }
+    .all {
+        height: $thin_h;
+        line-height: $thin_h;
+        border-top: $border;
+        border-bottom: $border;
+        font-size: $fs12;
+        text-align: center;
+    }
+    .bttn_panel {
+        @extend %clear;
+    }
+    .bttn_wrapper {
+        float: left;
+        width: 1140px;
+    }
+    .parts {
+        height: $thin_h;
+        line-height: $thin_h;
+        font-size: $fs12;
+          text-align: center;
+    }
+}

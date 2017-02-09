@@ -5,6 +5,7 @@ $('.content_nav .nav_main .type').on('click', function () {
 
 $('.tab_2').on('click', function () {
     $(this).toggleClass('active');   
+    $('.nav_top_expand').load('../expand_search.html')
     
     
     

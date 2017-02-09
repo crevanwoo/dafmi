@@ -18,9 +18,10 @@
   font-family: Bandera;
   src: url(../fonts/BanderaPro-Bold.otf); }
 
-header .header_top, header .header_bottom, .content .content_nav .nav_top, .content .content_nav .nav_main, .content .content_panel .filters, .content .content_panel .views, .content .content_products, footer .footer_top .wrapper, footer .footer_bottom {
+/*Font Sizes*/
+header .header_top, header .header_bottom, .content .content_nav .nav_top, .content .content_nav .nav_main, .content .content_panel .filters, .content .content_panel .views, .content .content_products, footer .footer_top .wrapper, footer .footer_bottom, .top_search .bttn_panel {
   position: relative; }
-  header .header_top:after, header .header_bottom:after, .content .content_nav .nav_top:after, .content .content_nav .nav_main:after, .content .content_panel .filters:after, .content .content_panel .views:after, .content .content_products:after, footer .footer_top .wrapper:after, footer .footer_bottom:after {
+  header .header_top:after, header .header_bottom:after, .content .content_nav .nav_top:after, .content .content_nav .nav_main:after, .content .content_panel .filters:after, .content .content_panel .views:after, .content .content_products:after, footer .footer_top .wrapper:after, footer .footer_bottom:after, .top_search .bttn_panel:after {
     content: '';
     display: block;
     clear: both; }
@@ -31,7 +32,7 @@ body {
   padding: 0; }
 
 body {
-  color: #333333;
+  color: #333;
   font-family: Regular;
   overflow-x: hidden; }
   body.hidden {
@@ -75,7 +76,7 @@ ul {
 
 a:link, a:visited, a:active, a:hover {
   text-decoration: none;
-  color: #333333; }
+  color: #333; }
 
 .main_h {
   font-family: Bold;
@@ -117,8 +118,6 @@ form {
     border-radius: 40px;
     color: white;
     transition: 0.3s; }
-    form button:hover {
-      background-color: darkred; }
 
 .input {
   position: relative;
@@ -143,7 +142,7 @@ form {
 input {
   border: none;
   background-color: white;
-  color: #333333;
+  color: #333;
   font-size: 16px;
   /* Firefox 19+ */
   /* Firefox 18- */ }
@@ -549,7 +548,7 @@ header {
           .content .content_panel .filters .select .select-styled.active:before {
             transform: rotate(180deg); }
         .content .content_panel .filters .select .select-styled.changed {
-          color: #333333;
+          color: #333;
           border: 1px solid #b4b4b4; }
       .content .content_panel .filters .select:last-of-type {
         margin-right: 0; }
@@ -576,7 +575,7 @@ header {
         border-right: 1px solid #efefef;
         border-left: 1px solid #efefef;
         border-bottom: 1px solid #efefef;
-        color: #333333; }
+        color: #333; }
         .content .content_panel .filters .select-options li:nth-of-type(2) {
           border-top: 1px solid #efefef; }
         .content .content_panel .filters .select-options li:hover {
@@ -762,7 +761,7 @@ footer {
           height: 100%;
           line-height: 45px; }
           footer .footer_top .lang .select .select-styled:hover {
-            background-color: #333333; }
+            background-color: #333; }
         footer .footer_top .lang .select .select-options {
           background-color: #212125;
           bottom: 100%;
@@ -779,7 +778,7 @@ footer {
             footer .footer_top .lang .select .select-options li:nth-of-type(2) {
               border-top: 1px solid #4a4a4d; }
             footer .footer_top .lang .select .select-options li:hover {
-              background-color: #333333; }
+              background-color: #333; }
             footer .footer_top .lang .select .select-options li[rel="hide"] {
               display: none; }
   footer .footer_bottom {
@@ -797,3 +796,24 @@ footer {
         vertical-align: top; }
       footer .footer_bottom .development img {
         margin-left: 8px; }
+
+.top_search .bttn.active {
+  background-color: #fafafa; }
+
+.top_search .all {
+  height: 40px;
+  line-height: 40px;
+  border-top: 1px solid #d6d6d6;
+  border-bottom: 1px solid #d6d6d6;
+  font-size: 12px;
+  text-align: center; }
+
+.top_search .bttn_wrapper {
+  float: left;
+  width: 1140px; }
+
+.top_search .parts {
+  height: 40px;
+  line-height: 40px;
+  font-size: 12px;
+  text-align: center; }
