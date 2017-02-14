@@ -1,7 +1,6 @@
-.top_search {
+.expand_search {
     $thin_h: 40px;
     $cell_size: 80px;
-
     $border: 1px solid $border_gray;
     .bttn {
         &.active {
@@ -21,12 +20,58 @@
     }
     .bttn_wrapper {
         float: left;
-        width: 1140px;
+        
     }
-    .parts {
-        height: $thin_h;
+    .line_1 {
+        @extend %clear;       
+        
         line-height: $thin_h;
         font-size: $fs12;
-          text-align: center;
+        text-align: center;
+        .part_1,
+        .part_2,
+        .part_3 {
+            float: left;
+            border-right: $border;
+             &:last-of-type {
+                    border-right: none;
+                }
+            .category {background-color: aqua;
+                border-bottom: $border;
+                height: $thin_h;
+            }
+            .bttn_part_wrapper {
+                @extend %clear;
+            }
+            .bttn.single {
+                background-color: yellow;
+                float: left;
+                width: 81px;
+                height: 80px;
+                border-right: $border;
+                &:last-of-type {
+                    border-right: none;
+                }
+            }
+        }
+    }
+    .line_2 {@extend %clear;
+         .bttn.single {
+             background-color: red;
+                float: left;
+                width: 126px;
+                height: 80px;
+                border-right: $border;
+                &:last-of-type {
+                    border-right: none;
+                }
+            }
+        
+    }
+    .bttn.expand {float:left;
+        background-color: green;
+        width: 82px;
+        height: 200px;
+        border-left: $border;
     }
 }
