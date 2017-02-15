@@ -22,7 +22,7 @@
     font-family: Bandera;
     src: url(../fonts/BanderaPro-Bold.otf)
 }
-
+$trans: 0.3s;
 $red: #dc5552;
 //font
 $black: #333;
@@ -34,11 +34,13 @@ $bg_black: #212125;
 $bg_deep_black:#1a1a1e;
 $bg_l_gray: #fdfdfd;
 $active_gray: #fafafa;
+$disabled_gray: #f8f8f8;
 //border
 $border_gray: #d6d6d6;
 $border_l_gray: #efefef;
 $border_active_gray: #b4b4b4;
 $border_dark_gray: #4a4a4d;
+$selection_border:  1px solid $border_l_gray;
 /*Font Sizes*/
 $fs12:12px;
 $fs13:13px;

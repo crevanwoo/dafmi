@@ -1,12 +1,10 @@
 .content_nav {
-    * {
-        cursor: pointer;
-    }
     .nav_top {
         @extend %clear;
         height: 80px;
         line-height: 80px;
         .tab_1 {
+            cursor: pointer;
             width: 919px;
             float: left;
             font-family: Medium;
@@ -14,6 +12,7 @@
             padding-left: 35px;
         }
         .tab_2 {
+            cursor: pointer;
             width: 299px;
             float: right;
             font-size: $fs14;
@@ -37,6 +36,7 @@
         border-top: 1px solid $border_gray;
         border-bottom: 1px solid $border_gray;
         .type {
+            cursor: pointer;
             position: relative;
             border-right: 1px solid $border_gray;
             float: left;

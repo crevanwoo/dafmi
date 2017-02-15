@@ -1,0 +1,101 @@
+// expand top search begins
+div.expand_search
+    div.top_panel
+            div.bttn.all Выбрать все детали
+            div.bttn_panel
+                div.bttn_wrapper
+                    div.line_1
+                        div.part_1 
+                            div.bttn.category Тормозной диск
+                            div.bttn_part_wrapper
+                                - for (var x = 0; x < 6; x++)
+                                  div.bttn.single                       
+                        div.part_2  
+                             div.bttn.category Тормозной барабан
+                             div.bttn_part_wrapper  
+                                - for (var x = 0; x < 5; x++) 
+                                  div.bttn.single                      
+                        div.part_3 
+                             div.bttn.category Стояночный тормоз
+                             div.bttn_part_wrapper
+                                - for (var x = 0; x < 3; x++)
+                                  div.bttn.single                         
+                    div.line_2    
+                         - for (var x = 0; x < 9; x++) 
+                           div.bttn.single   
+                div.expand  
+            div.param.pad.default_select
+                div.param_wrapper
+                    div.param_title Тип тормозного диска
+                    div.param_input.selection
+                        select 
+                            option(value='hide') -- Выберите бренд -- 
+                            option Value
+                div.param_wrapper
+                    div.param_title Диаметр [мм]
+                    div.param_input.input
+                        input
+                div.param_wrapper
+                    div.param_title Толщина торм. диска
+                    div.param_input.input
+                        input
+                div.param_wrapper
+                    div.param_title Мин. толщина [мм]
+                    div.param_input
+                        input(disabled)
+                div.param_wrapper
+                    div.param_title Высота [мм]
+                    div.param_input.input
+                        input
+                div.param_wrapper
+                    div.param_title Располож./число отв.
+                    div.param_input.selection
+                        select 
+                            option(value='hide') -- Выберите бренд -- 
+                            option Value
+                div.param_wrapper
+                    div.param_title Фаски [мм]
+                    div.param_input
+                        input(disabled)
+                div.param_wrapper
+                    div.param_title Диам.центрирования [мм]
+                    div.param_input
+                        input(disabled)
+                div.param_wrapper
+                    div.param_title Диам. осевой цапфы [мм]
+                    div.param_input.input
+                        input
+                div.param_wrapper
+                    div.param_title Доп. артикул / доп. инф.
+                    div.param_input.selection
+                        select 
+                            option(value='hide') -- Выберите бренд -- 
+                            option Value
+                div.param_wrapper
+                    div.param_title Поверхность
+                    div.param_input.input
+                        input
+                div.param_wrapper
+                    div.param_title Обработка
+                    div.param_input.input
+                        input 
+                div.param_wrapper
+                    div.param_title Толщина [мм]
+                    div.param_input.input
+                        input
+                div.param_wrapper
+                    div.param_title Диам. ступицы колеса [мм]
+                    div.param_input.input
+                        input
+                div.param_wrapper
+                    div.param_title Цвет
+                    div.param_input.selection
+                        select 
+                            option(value='hide') -- Выберите бренд -- 
+                            option Value
+                div.param_wrapper 
+                    div.param_title Вес [кг] 
+                    div.param_input.input
+                        input
+
+// expand top search ends

@@ -23,7 +23,7 @@ gulp.task('compile:sass', function () {
 });
 
 gulp.task('concat:js', function () {
-    return gulp.src('js/files/*.js')
+    return gulp.src('js/files/**/*.js')
         .pipe(concat('script.js'))
         .pipe(gulp.dest('js'))
         .pipe(livereload());

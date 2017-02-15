@@ -1,31 +1,4 @@
-div.expand_search
-    div.top_panel
-        div.bttn.all Выбрать все детали
-        div.bttn_panel
-            div.bttn_wrapper
-                div.line_1
-                    div.part_1 
-                        div.bttn.category Тормозной диск
-                        div.bttn_part_wrapper
-                            - for (var x = 0; x < 6; x++)
-                              div.bttn.single                       
-                    div.part_2  
-                         div.bttn.category Тормозной барабан
-                         div.bttn_part_wrapper  
-                            - for (var x = 0; x < 5; x++) 
-                              div.bttn.single                      
-                    div.part_3 
-                         div.bttn.category Стояночный тормоз
-                         div.bttn_part_wrapper
-                            - for (var x = 0; x < 3; x++)
-                              div.bttn.single                         
-                div.line_2    
-                     - for (var x = 0; x < 9; x++) 
-                       div.bttn.single  
-            div.bttn.expand
-        div.param
-            div.param_wrapper
-                div.param_title
-                div.param_input 
-        
+include expand_search_top
+include expand_search_bottom
+   
     

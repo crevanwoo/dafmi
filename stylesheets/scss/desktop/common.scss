@@ -8,7 +8,6 @@ body {
     color: $black;
     font-family: Regular;
     overflow-x: hidden;
-   
     &.hidden {
         position: fixed;
         left: 0;
@@ -26,7 +25,8 @@ body {
 }
 
 .pad {
-    padding: 0 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .rotated_bg {
@@ -293,6 +293,70 @@ input {
         margin: 0;
         &[rel="hide"] {
             display: none;
+        }
+    }
+}
+
+.default_select {$border: $selection_border;
+    .select {        
+        border: $border;
+        cursor: pointer;
+        font-size: $fs14;
+        .select-styled {
+            padding-left: 12px;
+            height: 100%;
+            color: #ccc;
+            &:before {
+                content: '';
+                position: absolute;
+                right: 10px;
+                width: 16px;
+                height: 9px;
+                background-image: url(../images/icon_select_arrow.png);
+            }
+            &.active {
+                color: #ccc;
+                &:before {
+                    transform: rotate(180deg)
+                }
+            }
+            &.changed {
+                color: $black;
+                border: 1px solid $border_active_gray;
+                
+            }            
+        }
+    }
+    .select-options {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        z-index: 9;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        background-color: white;
+        li {
+            position: relative;
+            left: -1px;
+            width: calc(100% + 2px);
+            padding: 12px 0;
+            text-indent: 15px;
+            border-right: $border;
+            border-left: $border;
+            border-bottom: $border;
+            color: $black;
+            &:nth-of-type(2) {
+                border-top: $border;
+            }
+            &:hover {
+                background-color: $active_gray
+            }
+            &[rel="hide"] {
+                display: none;
+            }
         }
     }
 }
