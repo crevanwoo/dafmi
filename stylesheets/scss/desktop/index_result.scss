@@ -1,15 +1,14 @@
-.result_grid {
-    $cell_h: 490px;
-    padding-top: 40px;
-    padding-bottom: 20px;
+.result_grid {@extend %clear;
+    $cell_h: 240px;   
     .single_result {
         padding-top: 30px;
         text-align: center;
         height: $cell_h;
-        width: 280px;
+        width: 279px;
         border: $selection_border;
         margin-right: 20px;
         margin-bottom: 20px;
+        float: left;
         .small_h {
             font-family: Medium;
             font-size: $fs16;
@@ -37,6 +36,7 @@
             }
         }
         .model_choosing {
+            position: absolute;
             display: none;
             opacity: 0;
             height: $cell_h;

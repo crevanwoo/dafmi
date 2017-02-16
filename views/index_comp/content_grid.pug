@@ -1,12 +1,13 @@
 //content grid begins
 div.content_products.grid.active 
-    div.content_products_wrapper
-         - for (var i = 0; i < 36; i++)
-            div.product
-                div.img 
+    div.content_products_wrapper   
+        div.cars_type_1
+         each item in cars1
+             div.product
+                 div.img 
                     img(src="images/auto2.png")
-                div.title Alfa Romeo      
-        
+                 div.title= item       
+
  
 
 

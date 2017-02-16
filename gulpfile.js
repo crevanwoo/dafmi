@@ -62,7 +62,7 @@ gulp.task('compile:pug', function buildHTML() {
 
             // Your options in here. 
         })).pipe(gulp.dest(''))
-        .pipe(livereload());
+        
 });
 
 

@@ -65,7 +65,7 @@ function addCustomSelect(selector) {
                 $styledSelect.html($(this).html()).removeClass('active');
                 $this.val($(this).attr('rel'));
                 $list.hide();
-                //console.log($this.val());
+               
             });
 
             $(document).on('click', function () {
@@ -77,13 +77,7 @@ function addCustomSelect(selector) {
 }
 
 
-function disableSelects() {
-  $('.content_panel .filters .select:gt(0) .select-styled').addClass('disabled');  
-}
 
-function enableSelects(index){console.log(index);
-  $('.filters .select:eq(' + index + ') .select-styled').removeClass('disabled')    
-}
 
 //change header view
 
@@ -98,6 +92,7 @@ function changeHeaderView() {
 
 
 var content_panel_h = $('.content_products').height();
+$('.content_products').css('min-height', content_panel_h + 'px' )
 
 function toggleGridClasses() {
     $('.content_products').css('height', content_panel_h * 2 + 'px');
@@ -114,6 +109,9 @@ function toggleGridClasses() {
         $('.content_products').css('height', 'auto');
     }, grid_trans_time)
 }
+
+
+
 
 
 function changeAlphabetSort(e) {
@@ -174,4 +172,25 @@ function addImage(selector, index) {
     img.attr('src', value);
 }
 
+function showModelResults() {console.log($('.result_grid .single_result'));
+    $('.result_grid .single_result').each(function () {
+        if ($(this).find('.model_choosing .model').length < 2 ) {
+            $(this).find('.title').text($(this).find('.model_choosing .model').text())
+            
+        }
+        
+    })
+    
+    
+}
+
+
+
+/*function disableSelects() {
+  $('.content_panel .filters .select:gt(0) .select-styled').addClass('disabled');  
+}
+
+function enableSelects(index){
+  $('.filters .select:eq(' + index + ') .select-styled').removeClass('disabled')    
+}*/
 

@@ -338,6 +338,9 @@ input {
         padding: 0;
         list-style: none;
         background-color: white;
+        height: 300px;
+        overflow-y: auto;
+        overflow-x: hidden;
         li {
             position: relative;
             left: -1px;
