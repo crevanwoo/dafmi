@@ -297,8 +297,9 @@ input {
     }
 }
 
-.default_select {$border: $selection_border;
-    .select {        
+.default_select {
+    $border: $selection_border;
+    .select {
         border: $border;
         cursor: pointer;
         font-size: $fs14;
@@ -323,8 +324,7 @@ input {
             &.changed {
                 color: $black;
                 border: 1px solid $border_active_gray;
-                
-            }            
+            }
         }
     }
     .select-options {
@@ -341,6 +341,7 @@ input {
         height: 300px;
         overflow-y: auto;
         overflow-x: hidden;
+        border-top: $border;
         li {
             position: relative;
             left: -1px;
@@ -351,9 +352,6 @@ input {
             border-left: $border;
             border-bottom: $border;
             color: $black;
-            &:nth-of-type(2) {
-                border-top: $border;
-            }
             &:hover {
                 background-color: $active_gray
             }

@@ -14,13 +14,29 @@ function toggleClassOfFewElem(selector) {
     for (var i = 0; i < arguments.length; i++) {
         $(arguments[i]).toggleClass('active');
     }
-
 }
 
-//change select view
+// плавный показ попапа, вызванного через this
+function smoothShow(selector, display) {
+    $(this).find(selector).css('display', display);
+    var obj = this;
+
+    function addAnimation() {
+        $(this).find(selector).addClass('active')
+    }
+    setTimeout(
+        addAnimation.bind(obj, selector), 100
+    )
+}
 
 
+// измененение вида кнопок при нажатии
+function manageMenuButtons(selector) {
+    $(selector).removeClass('active');
+    $(this).addClass('active');
+}
 
+// изменение отображения селекта для простых полей без зависимостей
 function addCustomSelect(selector) {
 
     return function () {
@@ -65,7 +81,7 @@ function addCustomSelect(selector) {
                 $styledSelect.html($(this).html()).removeClass('active');
                 $this.val($(this).attr('rel'));
                 $list.hide();
-               
+
             });
 
             $(document).on('click', function () {
@@ -79,20 +95,18 @@ function addCustomSelect(selector) {
 
 
 
-//change header view
-
+// измненение внешнего вида хэдэра при прокрутке
 function changeHeaderView() {
     if (window.pageYOffset > 50 && !$('.header_bottom').hasClass('min')) {
         $('.header_bottom').delay(300).addClass('min');
     } else if (window.pageYOffset <= 50) {
         $('.header_bottom').delay(300).removeClass('min');
     }
-
 }
 
-
+// изменение показа элементов на главной странице - сетка - список
 var content_panel_h = $('.content_products').height();
-$('.content_products').css('min-height', content_panel_h + 'px' )
+$('.content_products').css('min-height', content_panel_h + 'px')
 
 function toggleGridClasses() {
     $('.content_products').css('height', content_panel_h * 2 + 'px');
@@ -110,15 +124,13 @@ function toggleGridClasses() {
     }, grid_trans_time)
 }
 
-
-
-
-
+// изменение внешнего вида сортировки по алфавиту
 function changeAlphabetSort(e) {
     e.preventDefault();
     $(this).addClass('active');
 }
 
+// показ раширенного поля сортировки по алфавиту
 function showAlphabetSort() {
     $(this).toggleClass('active');
     var ul = $(this).parent().find('ul');
@@ -131,29 +143,20 @@ function showAlphabetSort() {
             ul.css('display', 'none');
         }
     }, 300);
-
 }
 
+// измненение вида заполненного поля
 function changeInputView() {
     if ($(this).hasClass('filled') && $(this).val() === '' || $(this).val() == !/\S/) {
         $(this).removeClass('filled');
-
     } else if (!$(this).hasClass('filled')) {
         $(this).addClass('filled');
     }
 }
 
-function manageMenuButtons(selector) {
-    $(selector).removeClass('active');
-    $(this).addClass('active');
-}
 
 
-
-
-
-
-var addImagesToLang = function () {
+/*var addImagesToLang = function () {
     addImage('.footer_top .lang .select-styled', 0);
     var index = 0;
     $('.footer_top .lang .select-options li').each(
@@ -170,27 +173,34 @@ function addImage(selector, index) {
     var img = $(selector).find('img');
     var value = '' + lang_icons_arr[index];
     img.attr('src', value);
-}
-
-function showModelResults() {console.log($('.result_grid .single_result'));
-    $('.result_grid .single_result').each(function () {
-        if ($(this).find('.model_choosing .model').length < 2 ) {
-            $(this).find('.title').text($(this).find('.model_choosing .model').text())
-            
-        }
-        
-    })
-    
-    
-}
-
-
-
-/*function disableSelects() {
-  $('.content_panel .filters .select:gt(0) .select-styled').addClass('disabled');  
-}
-
-function enableSelects(index){
-  $('.filters .select:eq(' + index + ') .select-styled').removeClass('disabled')    
 }*/
 
+
+// срабатывает когда выбираешь марку машины, отображает выбор модели
+
+function showModelResults() {
+    // если в окошке с типом машины одна модель, не предлагать выбор, выводить её в строчку
+    $('.result_grid .single_result').each(function () {
+            if ($(this).find('.model_choosing .model').length < 2) {
+                $(this).find('.title').text($(this).find('.model_choosing .model').text())
+            }
+        })
+        // подсчитываются элементы для вывода во втором селекте, он активируется
+    setSelection(Select_2, '.result_grid .single_result .model', '.content_products .result_grid .model_choosing .model');
+    Select_2.state(true);
+}
+
+// срабатывает когда выбираешь модель машины, отображает выбор двигателя
+
+
+
+
+function actionForModelChoosing() {
+    function showMotorResults() {
+        setSelection(Select_3, '.result_list .result_list_row [data-value="motor"]', '.result_list .result_list_row [data-value="motor"]');
+        Select_3.state(true);
+    }
+    $('.content_products').removeClass('grid'); //сброс - добавить
+    hideBlock('.content_products_wrapper >div');
+    loadContent('.content_products_wrapper', '../index_result.html .result_list', showMotorResults);
+}

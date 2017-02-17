@@ -1,4 +1,18 @@
 // result 2 begins
 div.result_list
+    div.result_list_headers
+        each item in motor_table
+            div.table_header= item
+    - for (var i = 0; i < 8; i++)
+      div.result_list_row    
+            div.table_value(data-value="motor") 1.4
+            div.table_value(data-value="year") 01/11
+            div.table_value(data-value="motor_kpd") 135/99
+            div.table_value(data-value="fuel_type") Бензин
+            div.table_value(data-value="mix") 1368
+            div.table_value(data-value="motor_type") Бензиновый двигатель
+            div.table_value(data-value="motor_code") 312 А1.000
+            div.table_value(data-value="cycles_amount") 4  
+        
 
 // result 2 ends
