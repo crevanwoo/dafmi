@@ -16,6 +16,13 @@ function toggleClassOfFewElem(selector) {
     }
 }
 
+function setImgAsBg(selector) {
+    var src = $(selector).attr('src');
+    $(selector).parent().css('background-image', 'url('+ src +')');
+    hideBlock(selector);    
+}
+
+
 // плавный показ попапа, вызванного через this
 function smoothShow(selector, display) {
     $(this).find(selector).css('display', display);

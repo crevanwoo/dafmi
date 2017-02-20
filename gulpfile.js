@@ -6,6 +6,7 @@ var concat = require('gulp-concat');
 var minify = require('gulp-minifier');
 var pug = require('gulp-pug');
 var livereload = require('gulp-livereload');
+var imagemin = require('gulp-imagemin');
 
 gulp.task('all:watch', function () {
     livereload.listen();
@@ -13,7 +14,8 @@ gulp.task('all:watch', function () {
     gulp.watch('stylesheets/css/*.css', ['concat:css']);
     gulp.watch('js/files/**/*.js', ['concat:js']);
     gulp.watch('js/script.js', ['compress:js']);
-    gulp.watch('views/**/*.pug', ['compile:pug']);
+    gulp.watch('views/**/*.pug', ['compile:pug']);  
+    gulp.watch('images_big/**/*', ['img:min']);
 });
 
 gulp.task('compile:sass', function () {
@@ -66,7 +68,11 @@ gulp.task('compile:pug', function buildHTML() {
 });
 
 
-
+gulp.task('img:min', function () {
+   return gulp.src('images_big/**/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('images'))
+});
 
 
 /*const pug = require('gulp-pug2');

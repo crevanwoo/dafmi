@@ -1,7 +1,8 @@
 /* --- ---- --- --- --- --- Decorative > --- ---- --- --- --- --- */
 addCustomSelect('.footer_top .lang select')();
 // addImagesToLang();
-
+addCustomSelect('.result_full .result_full_panel .sort_by select')(); // after result has loaded
+setImgAsBg('.result_full .single_result .img img') // after result has loaded
 
 
 //change header view
