@@ -16,6 +16,14 @@ $('.footer_top .lang option').each(
     });*/
 
 
+function findParent(selector, parent_class) {
+    while (!selector.hasClass(parent_class)) {
+        selector = selector.parent()
+    }
+    return selector
+}
+
+
 function addCarsTypeToList() {
     var i = 1;
     $('.content_nav .nav_main .type').each(function () {
@@ -23,6 +31,64 @@ function addCarsTypeToList() {
         i++
     })
 }
+
+function numerateResultsOnPage() { //вычислять при загрузке страницы result или переключении на следующую
+    var i = 0;
+    $('.result_full .single_result').each(function () {
+        $(this).attr('data-index', i++);
+    })
+}
+
+
+
+
+function numerateTabs() { //вычислять при загрузке страницы result или переключении на следующую
+
+    $('.single_result').each(function () {
+        var i = 0;
+        $(this).find('.tab_panel .tab').each(function () {
+            $(this).attr('data-tab-num', i++);
+        })
+
+    })
+}
+
+
+
+function resultHasLoaded() {
+    addCustomSelect('.result_full .result_full_panel .sort_by select')(); // after result has loaded
+setImgAsBg('.result_full .single_result .img img') // after result has loaded
+numerateResultsOnPage();
+    numerateTabs();
+    calcSizesOfTabs();
+    
+}
+
+var result_expanded_height;
+
+function calcSizesOfTabs() {
+    //вычислять при загрузке страницы result или переключении на следующую
+    $('.result_full .single_result .single_result_extend').addClass('expand');
+    result_expanded_height = {};
+
+    // должно происходит после нумерации результатов на странице
+
+    $('.result_full .single_result .single_result_extend').each(function () {
+        var result_num = $(this).parent().attr('data-index');
+        result_expanded_height[result_num] = {};
+        var i = 0;
+        $(this).find('.tab_container >*').each(function () {
+            result_expanded_height[result_num][i++] = $(this).innerHeight();
+
+        })
+        $(this).removeClass('expand');
+    })
+}
+
+
+
+var tab_control_marker = true;
+
 
 
 function setSelection(obj, list_value, dom_obj_for_list) {

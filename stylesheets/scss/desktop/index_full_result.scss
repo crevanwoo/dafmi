@@ -1,5 +1,5 @@
 .result_full {
-    width: 1220px;
+    width: 1218px;
     margin: auto;
     .result_full_panel {
         @extend %clear;
@@ -47,6 +47,7 @@
             }
         }
         .compare {
+            margin-left: 15px;
             height: $height;
             min-width: 70px;
             padding-left: 50px;
@@ -101,10 +102,60 @@
     }
     .results_wrapper {
         .single_result {
+            border-top: 1px solid $border_l_gray;
             padding-top: 20px;
             //padding-left: 20px; 
-        }        
+        }
     }
-    @import "index_full_result_short.scss"; 
-    @import "index_full_result_extend.scss"; 
+    @import "index_full_result_short.scss";
+    @import "index_full_result_extend.scss";
+    .pagination {
+        $height: 60px;
+        border-top: 1px solid $border_l_gray;
+        background-color: $bg_l_gray;
+        height: $height;
+        font-size: $fs13;
+        @extend %clear;
+        .left {
+            float: left;
+            height: $height;
+            line-height: $height;
+            .to_show {
+                @extend %clear;
+                .title {
+                    float: left;
+                }
+                div {
+                    margin-left: 10px;
+                    float: left;
+                    cursor: pointer;
+                }
+                .active {
+                    color: $red;
+                    text-decoration: underline;
+                }
+            }
+        }
+        .right {
+            @extend %clear;
+            float: right;
+            div {
+                float: left;
+                margin-top: 10px;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                border: 1px solid $border_l_gray;
+                cursor: pointer;
+                margin-left: 10px;
+                text-align: center;
+                &.active {
+                    border: none;
+                    background-color: $red;
+                    color: white;
+                    font-family: Medium
+                }
+            }
+        }
+    }
 }

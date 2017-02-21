@@ -1,9 +1,31 @@
 .single_result_extend {
-    padding-top: 20px;
+    height: 0;
+    transition: 0.5s;
+    overflow: hidden;
+    &.expand {
+        height: auto;
+        .tab_1 {
+            display: block !important;
+            visibility: hidden;
+        }
+        .tab_2 {
+            display: block !important;
+            visibility: hidden;
+        }
+        .tab_3 {
+            display: block !important;
+            visibility: hidden;
+        }
+        .tab_4 {
+            display: block !important;
+            visibility: hidden;
+        }
+    }
     .tab_panel {
+        padding-top: 20px;
         padding-left: 20px;
         padding-right: 20px;
-        margin-bottom: 15px;
+        padding-bottom: 15px;
         display: flex;
         display: -webkit-flex;
         justify-content: space-between;

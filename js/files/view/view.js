@@ -18,8 +18,8 @@ function toggleClassOfFewElem(selector) {
 
 function setImgAsBg(selector) {
     var src = $(selector).attr('src');
-    $(selector).parent().css('background-image', 'url('+ src +')');
-    hideBlock(selector);    
+    $(selector).parent().css('background-image', 'url(' + src + ')');
+    hideBlock(selector);
 }
 
 
@@ -210,4 +210,37 @@ function actionForModelChoosing() {
     $('.content_products').removeClass('grid'); //сброс - добавить
     hideBlock('.content_products_wrapper >div');
     loadContent('.content_products_wrapper', '../index_result.html .result_list', showMotorResults);
+}
+
+
+
+function showTabContent() {
+     tab_control_marker = false;
+    var tab_num = +$(this).attr('class').slice(-1) - 1;    
+    $(this).addClass('show'); 
+    var obj = $(this);
+    var single_result = obj.parent().parent().parent().attr('data-index');
+    var tab_panel_height = +obj.parent().parent().parent().find('.tab_panel').innerHeight();
+    setTimeout(function () {
+        obj.parent().parent().animate({
+            height: +result_expanded_height[single_result][tab_num] + tab_panel_height
+        });      
+        obj.animate({
+            opacity: 1
+        })
+      tab_control_marker = true;
+    }, 100)
+
+
+}
+
+
+function hideTabContent() {
+    var obj = $(this).parent().parent().find('.show');
+    obj.removeClass('show');
+    setTimeout(function () {
+        obj.animate({
+            opacity: 0
+        })
+    }, 100)
 }

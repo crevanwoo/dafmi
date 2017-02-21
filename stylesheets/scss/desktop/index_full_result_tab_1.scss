@@ -1,5 +1,9 @@
      .tab_1 {
          display: none;
+         &.show {
+             display: block;
+         }
+         opacity:0;
          @extend %clear;
          border-bottom: 1px solid $border_l_gray;
          .param {

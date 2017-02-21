@@ -1,4 +1,9 @@
 .tab_2 {
+    display: none;
+    &.show {
+        display: block;
+    }
+    opacity:0;
     .nav {
         @extend %clear;
         height: 75px;
@@ -54,11 +59,12 @@
     }
     .tab_2_content {
         @extend %clear;
-        border-bottom: 1px solid $border_l_gray;
+       
         padding-left: 20px;
         padding-right: 20px;
         padding-bottom: 10px;
         .single_maker {
+            overflow: hidden;
             margin-bottom: 15px;
             .main_title {
                 width: 180px;
@@ -71,7 +77,6 @@
                 font-size: $fs13;
                 border: 1px solid $border_l_gray;
                 text-transform: uppercase;
-                bottom: -1px;
                 &:before {
                     content: '';
                     position: absolute;
@@ -91,6 +96,8 @@
                 }
             }
             .single_model {
+                overflow: hidden;
+                height: 0;
                 .single_model_title {
                     height: 50px;
                     line-height: 50px;
@@ -153,10 +160,9 @@
                         }
                     }
                     .info {
-                        float: right;
                         background-color: $button_gray;
                         position: absolute;
-                        bottom: 0;
+                        top: 20px;
                         right: 0;
                         width: 580px;
                         padding: 15px;

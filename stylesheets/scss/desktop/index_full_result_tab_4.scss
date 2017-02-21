@@ -1,0 +1,7 @@
+.tab_4 {
+    display: none;
+    &.show {
+        display: block;
+    }
+    opacity:0;
+}
