@@ -1,4 +1,28 @@
-include expand_search_top
-include expand_search_bottom
+// include expand_search_top old
+   include expand_search_bottom
+div.expand_search
+    div.nav_types
+        div.type.active(data-expand-tab="0")
+        div.type(data-expand-tab="1")
+        div.type(data-expand-tab="2")
+        div.type(data-expand-tab="3")
+        div.type(data-expand-tab="4")
+    div.expand_search_content
+        each item in expand_search_images
+            div.expand_tab
+                div.image_block
+                    img(src=item)
+                div.param.pad
+                    -for (var i = 0; i < 3; i++)
+                         div.param_wrapper
+                                    div.param_title <span>A</span>, мм:
+                                    div.param_selection
+                                        select 
+                                            option(value='hide') -- Выберите бренд -- 
+                                            option Value
+
+        
+    div.bttn_result 
+        div.bttn 6164 ПРОДУКТОВ НАЙДЕНО  
    
     

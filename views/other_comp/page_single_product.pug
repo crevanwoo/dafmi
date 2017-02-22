@@ -1,0 +1,59 @@
+//page single product begins
+
+div.content.single_result_page 
+    div.wrapper       
+        div.top_info.pad
+            div.img
+                img(src="images/picture_motor.jpg")
+            div.main_info
+                h3.mid_h Комплект тормозных колодок
+                div.vendor Артикул: 
+                    span 91078400 
+                div.main_info_rect
+                    div.price 16 000грн
+                    div.cart В корзину   
+                div.main_info_additional Сторона установки: передний мост; ограничение производителя: Bendix 
+        div.param_info.single_result_page__info_block
+            div.title.active Показатели
+            div.single_result_page__content
+                -for (var i = 0; i < 9; i++)
+                    div.param Тормозная система 
+                        div.value Lucas
+
+        div.models_info.single_result_page__info_block
+            div.title.active Легковой автомобиль
+            div.nav
+                div.info_1
+                    p.maker Изготовитель
+                    p.model Модель
+                div.info_2 Год выпуска
+                div.info_3 кВт
+                div.info_4 Информация 
+            div.single_result_page__content
+                -for (var j = 0; j < 5; j++)
+                    div.single_maker 
+                        div.main_title lancia                          
+                        div.single_model 
+                            div.single_model_title 500 / 595 (312_), 08/08 -
+                            div.model_content
+                                div.info
+                                    -for (var l = 0; l < 2; l++)
+                                        div.title Сторона установки
+                                            div.value задний мост
+                                -for (var m = 0; m < 4; m++)
+                                    div.single_item
+                                        div.param_model 1.4
+                                        div.param_year 08/88
+                                        div.param_cap 99 
+        div.links_info.active.single_result_page__info_block
+            div.title.active Ссылки на ОЕ
+            div.single_result_page__content
+                -for (var i = 0; i < 9; i++)
+                    div.param Fiat
+                        div.value 523745 
+                 
+          
+            
+                    
+    
+//page single product ends

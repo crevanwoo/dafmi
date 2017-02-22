@@ -12,6 +12,7 @@
     margin-bottom: 20px;
     background-size: cover;
     background-position: center center;
+    cursor: pointer;
 }
 
 .single_result_right {
@@ -30,11 +31,13 @@
         line-height: 150%;
         .vendor {
             font-size: $fs16;
+            cursor: pointer;
         }
         .mid_h {
             font-size: $fs14;
             text-transform: none;
             margin-bottom: 10px;
+            cursor: pointer;
         }
     }
     .right {
@@ -51,6 +54,7 @@
             line-height: 50px;
         }
         .cart {
+            cursor: pointer;
             width: 50px;
             margin-left: 13px;
             position: relative;
@@ -70,6 +74,7 @@
             }
         }
         .compare {
+            cursor: pointer;
             position: relative;
             border: 1px solid $border_l_gray;
             width: 50px;
@@ -112,6 +117,7 @@
 }
 
 .show_more {
+    cursor: pointer;
     width: 300px;
     background-color: $button_gray;
     height: 55px;

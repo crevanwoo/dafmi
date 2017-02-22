@@ -18,8 +18,12 @@ $('.footer_top .lang option').each(
 
 function findParent(selector, parent_class) {
     while (!selector.hasClass(parent_class)) {
-        selector = selector.parent()
+        selector = selector.parent();
+        if (selector.prop("tagName").toLowerCase() == 'body') {
+            return //selector
+        }
     }
+
     return selector
 }
 
@@ -56,12 +60,12 @@ function numerateTabs() { //вычислять при загрузке стра�
 
 
 function resultHasLoaded() {
-    addCustomSelect('.result_full .result_full_panel .sort_by select')(); // after result has loaded
-setImgAsBg('.result_full .single_result .img img') // after result has loaded
-numerateResultsOnPage();
+    addCustomSelect('.result_full .result_full_panel .sort_by select'); // after result has loaded
+    setImgAsBg('.result_full .single_result .img img') // after result has loaded
+    numerateResultsOnPage();
     numerateTabs();
     calcSizesOfTabs();
-    
+
 }
 
 var result_expanded_height;

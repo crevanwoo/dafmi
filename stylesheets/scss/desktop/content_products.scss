@@ -1,6 +1,8 @@
 .content_products {
+    background-color: $bg_white;
     @extend %clear;
-    .product {transition: 0.5s;
+    .product {
+        transition: 0.5s;
         .img {
             opacity: 0
         }
@@ -10,10 +12,12 @@
     }
     &.active {
         .product {
-            .img {transition: 0.5s;
+            .img {
+                transition: 0.5s;
                 opacity: 1
             }
-            .title {transition: 0.5s;
+            .title {
+                transition: 0.5s;
                 opacity: 1
             }
         }

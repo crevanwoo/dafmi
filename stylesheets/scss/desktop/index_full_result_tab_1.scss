@@ -6,28 +6,5 @@
          opacity:0;
          @extend %clear;
          border-bottom: 1px solid $border_l_gray;
-         .param {
-             height: 60px;
-             line-height: 60px;
-             float: left;
-             border-bottom: 1px solid $border_l_gray;
-             width: 50%;
-             font-size: $fs13;
-             position: relative;
-             bottom: -1px;
-             &:nth-of-type(odd) {
-                 padding-left: 20px;
-                 padding-right: 10px;
-             }
-             &:nth-of-type(even) {
-                 padding-left: 10px;
-                 padding-right: 20px;
-             }
-             .value {
-                 float: right;
-                 width: 280px;
-                 font-size: $fs14;
-                 font-family: Medium;
-             }
-         }
+         @extend %param_content;
      }

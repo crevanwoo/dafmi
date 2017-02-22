@@ -59,7 +59,6 @@
     }
     .tab_2_content {
         @extend %clear;
-       
         padding-left: 20px;
         padding-right: 20px;
         padding-bottom: 10px;
@@ -67,6 +66,7 @@
             overflow: hidden;
             margin-bottom: 15px;
             .main_title {
+                cursor: pointer;
                 width: 180px;
                 max-width: 50%;
                 height: 40px;
@@ -99,6 +99,7 @@
                 overflow: hidden;
                 height: 0;
                 .single_model_title {
+                    cursor: pointer;
                     height: 50px;
                     line-height: 50px;
                     background-color: $button_gray;
