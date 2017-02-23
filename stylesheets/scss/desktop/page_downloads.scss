@@ -1,0 +1,52 @@
+.content.page_downloads {
+    padding: 40px 0;
+    .wrapper {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .big_h {
+        font-family: Medium;
+        font-size: $fs24;
+        margin-bottom: 10px;
+    }
+    .title {
+        font-size: $fs14;
+        margin-bottom: 25px;
+    }
+    .files_wrapper {
+        @extend %clear;
+        .single_file {
+            float: left;
+            position: relative;
+            padding: 20px;
+            border: $selection_border;
+            width: 379px;
+            height: 75px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: $trans;
+            &:hover {
+                background-color: $button_gray;
+            }
+            &:nth-of-type(3n) {
+                margin-right: 0;
+            }
+            .text {
+                margin-left: 35px;
+                font-size: $fs13
+            }
+            &:before {
+                content: '';
+                position: absolute;
+                width: 26px;
+                height: 33px;
+                background-image: url(../images/icon_pdf.png);
+                background-size: contain;
+                top: 50%;
+                margin-top: -16px;
+                left: 15px;
+            }
+        }
+    }
+}

@@ -7,11 +7,13 @@ var minify = require('gulp-minifier');
 var pug = require('gulp-pug');
 var livereload = require('gulp-livereload');
 var imagemin = require('gulp-imagemin');
+var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('all:watch', function () {
     livereload.listen();
     gulp.watch('stylesheets/scss/**/*.scss', ['compile:sass']);
-    gulp.watch('stylesheets/css/*.css', ['concat:css']);
+    gulp.watch('stylesheets/css/*.css', ['autoprefix']);
+    gulp.watch('stylesheets/css/prefixed/*.css', ['concat:css']);
     gulp.watch('js/files/**/*.js', ['concat:js']);
     gulp.watch('js/script.js', ['compress:js']);
     gulp.watch('views/**/*.pug', ['compile:pug']);  
@@ -32,7 +34,7 @@ gulp.task('concat:js', function () {
 });
 
 gulp.task('concat:css', function () {
-    return gulp.src('stylesheets/css/*.css')
+    return gulp.src('stylesheets/css/prefixed/*.css')
         .pipe(concat('style.css'))
         .pipe(gulp.dest('stylesheets'))
         .pipe(livereload());
@@ -74,6 +76,11 @@ gulp.task('img:min', function () {
         .pipe(gulp.dest('images'))
 });
 
+gulp.task('autoprefix', function () {
+    gulp.src('stylesheets/css/*.css')
+        .pipe(autoprefixer({}))
+        .pipe(gulp.dest('stylesheets/css/prefixed/'))
+});
 
 /*const pug = require('gulp-pug2');
  

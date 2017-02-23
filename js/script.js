@@ -60,6 +60,35 @@ $(window).on("wheel keydown touchstart touchmove", function () {
     changeHeaderView()
 })
 
+var small_cart = new Navigation('.header_bottom.min .cart');
+small_cart.changing_properties = {
+    'display': 'block'
+};
+small_cart.transition_time = 500;
+small_cart.addListeners('click', '.popup_small_cart');
+
+/*$('body').on('click', '.header_bottom.min .cart', function () {
+    console.log('click');
+    var popup = $(this).find('.popup_small_cart');
+    if (!popup.hasClass('active')) {
+        popup.css('display', 'block');
+        setTimeout(function () {
+            popup.addClass('active');
+
+        }, 100)
+
+    } else {
+
+        popup.removeClass('active');
+        setTimeout(function () {
+            popup.css('display', 'none');
+
+        }, 500)
+    }
+
+
+
+})*/
 
 //change products revealing type
 
@@ -266,255 +295,6 @@ $('body').on('click', '.single_result_page .models_info .single_model_title', fu
 /* --- < Single product page --- */
 
 /* --- ---- --- --- --- --- < Events  --- ---- --- --- --- --- */
-
-function loadContent(to, from, callback) {
-    if (callback) {
-        $(to).load(from, callback)
-    } else {
-        $(to).load(from)
-    }
-}
-
-
-//for footer lang select
-/*var lang_icons_arr = [];
-
-$('.footer_top .lang option').each(
-    function () {
-        lang_icons_arr.push($(this).attr('data-image'));
-    });*/
-
-
-function findParent(selector, parent_class) {
-    while (!selector.hasClass(parent_class)) {
-        selector = selector.parent();
-        if (selector.prop("tagName").toLowerCase() == 'body') {
-            return //selector
-        }
-    }
-
-    return selector
-}
-
-
-function addCarsTypeToList() {
-    var i = 1;
-    $('.content_nav .nav_main .type').each(function () {
-        $('.content_nav .nav_main .type:eq(' + (i - 1) + ')').attr('data-car-type', i);
-        i++
-    })
-}
-
-function numerateResultsOnPage() { //вычислять при загрузке страницы result или переключении на следующую
-    var i = 0;
-    $('.result_full .single_result').each(function () {
-        $(this).attr('data-index', i++);
-    })
-}
-
-
-
-
-function numerateTabs() { //вычислять при загрузке страницы result или переключении на следующую
-
-    $('.single_result').each(function () {
-        var i = 0;
-        $(this).find('.tab_panel .tab').each(function () {
-            $(this).attr('data-tab-num', i++);
-        })
-
-    })
-}
-
-
-
-function resultHasLoaded() {
-    addCustomSelect('.result_full .result_full_panel .sort_by select'); // after result has loaded
-    setImgAsBg('.result_full .single_result .img img') // after result has loaded
-    numerateResultsOnPage();
-    numerateTabs();
-    calcSizesOfTabs();
-
-}
-
-var result_expanded_height;
-
-function calcSizesOfTabs() {
-    //вычислять при загрузке страницы result или переключении на следующую
-    $('.result_full .single_result .single_result_extend').addClass('expand');
-    result_expanded_height = {};
-
-    // должно происходит после нумерации результатов на странице
-
-    $('.result_full .single_result .single_result_extend').each(function () {
-        var result_num = $(this).parent().attr('data-index');
-        result_expanded_height[result_num] = {};
-        var i = 0;
-        $(this).find('.tab_container >*').each(function () {
-            result_expanded_height[result_num][i++] = $(this).innerHeight();
-
-        })
-        $(this).removeClass('expand');
-    })
-}
-
-
-
-var tab_control_marker = true;
-
-
-
-function setSelection(obj, list_value, dom_obj_for_list) {
-    obj.addDataIndexForDOMElemens(dom_obj_for_list);
-    obj.reset();
-    obj.addValuesToList(list_value);
-    obj.createOptionList();
-    if (obj == Select_1) {
-        $('.content_products').addClass('grid');
-        Select_2.state(false);
-        Select_2.reset();
-        Select_3.state(false);
-        Select_3.reset();
-    } else if (obj == Select_2) {
-        $('.content_products').addClass('grid');
-        Select_3.state(false);
-        Select_3.reset();
-    }
-}
-
-//'.content_products .product .title'
-
-function Selection() {
-    this.addDataIndexForDOMElemens = function (selector) {
-        var i = 0;
-        $(selector).each(function () {
-            $(this).attr('data-index', i);
-            i++
-        })
-
-    }
-    this.state = function (state) {
-        if (!state) {
-            this.styledSelect.addClass('disabled')
-        } else {
-            this.styledSelect.removeClass('disabled')
-        }
-    };
-    this.addValuesToList = function (option_selector) {
-        this.imported_list = [];
-        var obj = this;
-        $(option_selector).each(
-            function () {
-                obj.imported_list.push($(this).text());
-            }
-        )
-
-
-    }
-    this.imported_list = [];
-    this.reset = function () {
-        this.styledSelect.html(this.selector.children('option').eq(0).html());
-        this.list.empty();
-        this.styledSelect.removeClass('changed');
-    };
-    this.createOptionList = function () {
-        if (this.imported_list != '') {
-            imported_list = this.imported_list;
-        } else {
-            imported_list = this.selector.children('option')
-        }
-
-        for (var i = 0; i < imported_list.length; i++) {
-            $('<li />', {
-                text: imported_list[i],
-                rel: imported_list[i]
-            }).appendTo(this.list);
-        }
-
-        this.listItems = this.list.children('li');
-
-        var obj = this;
-
-        this.listItems.on('click', function (e) {
-            obj.fieldValue = $(this).html();
-            obj.fieldRel = $(this).attr('rel');
-            obj.listClicked(obj.fieldValue, obj.fieldRel, obj.selector);
-            obj.list.hide();
-
-        });
-
-    };
-
-
-    this.listClicked = function (fieldValue, fieldRel, $this) {
-
-        this.styledSelect.addClass('changed');
-        this.styledSelect.html(fieldValue).removeClass('active');
-        $this.val(fieldRel);
-
-
-
-
-    }
-
-
-
-    this.createSelection = function (selector) {
-
-
-        this.selector = $(selector);
-
-        var imported_list;
-
-        if (this.imported_list != '') {
-            imported_list = this.imported_list;
-        } else {
-            imported_list = this.selector.children('option')
-        }
-
-
-        var numberOfOptions = imported_list.length; //$(selector).children('option').length;
-
-        this.selector.addClass('select-hidden');
-        this.selector.wrap('<div class="select"></div>');
-        this.selector.after('<div class="select-styled"></div>');
-
-        this.styledSelect = this.selector.next('div.select-styled');
-
-
-        this.list = $('<ul class="select-options" />');
-        this.list.insertAfter(this.styledSelect);
-
-
-        this.reset();
-
-
-        this.createOptionList();
-
-
-        this.state(false);
-
-
-        this.styledSelect.on('click', function (e) {
-            e.stopPropagation();
-            if (!$(this).hasClass('disabled')) {
-                $('div.select-styled.active').not(this).each(function () {
-                    $(this).removeClass('active').next('ul.select-options').hide();
-                });
-                $(this).toggleClass('active').next('ul.select-options').toggle();
-            }
-        });
-
-        var obj = this;
-
-        $(document).on('click', function () {
-            obj.styledSelect.removeClass('active');
-            obj.list.hide();
-        })
-    }
-
-
-}
 
 function hideBlock(selector) {
     for (var i = 0; i < arguments.length; i++) {
@@ -862,3 +642,439 @@ function returnTabMenuToDefault() {
 
 
 /* --- < Results --- */
+
+/*function Navigation(selector) {
+    
+    this.transition_time = 0;
+    
+    this.changing_properties = {};
+    
+    this.addListeners = function (events) {
+        for (var i = 0; i < elems_array.length; i++) {
+            for (var j = 0; j < arguments.length; j++) {
+                elems_array[i].addEventListener(arguments[j], makeAction())
+            }
+        }
+    };
+
+    var Current = this; //current oject
+    
+    var clicked_style;
+    
+    var elems_array = document.querySelectorAll(selector);
+    
+    function activateElement() {
+        var obj = this; // clicked object
+        clicked_style = obj.style;
+        obj.style = JSON.stringify(Current.changing_properties) + clicked_style;
+        obj.style.transition = transition_time + 'ms';
+        setTimeout(function () {
+            obj.classList.add('active')
+        }, 100);
+    };
+
+    function deactivateElement() {
+        var obj = this;
+        obj.classList.remove('active');
+        setTimeout(function () {
+            obj.style = clicked_style;
+        }, transition_time)
+    };
+
+    function makeAction() {
+        if (this.classList.contains('active')) {
+            return deactivateElement
+
+        } else {
+            return activateElement
+        }
+    };
+
+    
+
+
+
+}
+
+Obj.changing_properties = {
+
+}
+
+var small_cart = new Navigation(.header_bottom.min .cart); //single selector*/
+
+
+
+
+
+function Navigation(selector) {
+
+    this.transition_time = 0;
+
+    this.changing_properties = {};
+    /* события вводить без запятых, через пробелы*/
+    this.addListeners = function (events, inner_selector) {
+        $('body').on(events, selector, function (e) {
+            makeAction.call(e.target, inner_selector)
+        })
+    };
+
+
+    var Current = this; //current oject
+
+    var clicked_style;
+
+    var style_array;
+
+
+    function activateElement(inner_selector) {
+        var obj = $(this).find(inner_selector); // clicked object
+        clicked_style = obj.attr('style');
+        try {
+            style_array = clicked_style.split(';');
+        } catch (err) {
+            console.log(err);
+            style_array = null;
+        }
+        $.each(Current.changing_properties, function (key, value) {
+            obj.css(key, value)
+        });
+
+        bustDefaultStyleArray(obj);
+
+        obj.css('transition', Current.transition_time + 'ms');
+        setTimeout(function () {
+            obj.addClass('active');
+        }, 100);
+    };
+
+    function deactivateElement(inner_selector) {
+        var obj = $(this).find(inner_selector);
+        obj.removeClass('active');
+        setTimeout(function () {
+            bustDefaultStyleArray(obj);
+        }, Current.transition_time)
+    };
+
+    function bustDefaultStyleArray(obj) {
+        try {
+            for (var k = 0; k < style_array.length; k++) {
+                var current_property = style_array[k].split(':');
+                obj.css(current_property[0], [1]);
+            }
+        } catch (err) {
+            console.log(err);
+            return
+        }
+
+    }
+
+    function makeAction(inner_selector) {
+        if ($(this).find(inner_selector).hasClass('active')) {
+            return deactivateElement.call(this, inner_selector)
+
+        } else {
+            return activateElement.call(this, inner_selector)
+        }
+    };
+}
+
+
+function PlusMinusControls(selector) {
+
+    this.addListeners = function (events) {
+        $('body').on(events, selector, function (e) {
+            makeAction.call(e.target)
+        })
+    };
+
+    this.controlDecrease = 'minus';
+
+    this.controlIncrease = 'plus';
+
+    this.amount = ".num";
+
+    this.wrapper = "amount";
+
+    var Current = this;
+
+    function changeAmount(boolean) {
+        var parent = findParent($(this), Current.wrapper);
+        var current_amount = +$(parent).find(Current.amount).text();
+
+        if (boolean) {
+            setAmount(++current_amount, parent)
+        } else {
+            setAmount(--current_amount, parent)
+        }
+    };
+
+    function setAmount(num, parent) {
+        if (num < 1) {num = 1};
+        parent.find(Current.amount).text(num);
+    };
+
+    function makeAction() {
+        if ($(this).hasClass(Current.controlDecrease)) {
+            changeAmount.call(this, false)
+
+        } else if ($(this).hasClass(Current.controlIncrease)) {
+            changeAmount.call(this, true)
+        }
+    };
+
+}
+
+
+var page_cart_amount = new PlusMinusControls('.page_cart .single_product .amount');
+
+page_cart_amount.addListeners('click');
+page_cart_amount.amount = '.num span';
+
+function loadContent(to, from, callback) {
+    if (callback) {
+        $(to).load(from, callback)
+    } else {
+        $(to).load(from)
+    }
+}
+
+
+//for footer lang select
+/*var lang_icons_arr = [];
+
+$('.footer_top .lang option').each(
+    function () {
+        lang_icons_arr.push($(this).attr('data-image'));
+    });*/
+
+
+function findParent(selector, parent_class) {
+    while (!selector.hasClass(parent_class)) {
+        selector = selector.parent();
+        if (selector.prop("tagName").toLowerCase() == 'body') {
+            return //selector
+        }
+    }
+
+    return selector
+}
+
+
+function addCarsTypeToList() {
+    var i = 1;
+    $('.content_nav .nav_main .type').each(function () {
+        $('.content_nav .nav_main .type:eq(' + (i - 1) + ')').attr('data-car-type', i);
+        i++
+    })
+}
+
+function numerateResultsOnPage() { //вычислять при загрузке страницы result или переключении на следующую
+    var i = 0;
+    $('.result_full .single_result').each(function () {
+        $(this).attr('data-index', i++);
+    })
+}
+
+
+
+
+function numerateTabs() { //вычислять при загрузке страницы result или переключении на следующую
+
+    $('.single_result').each(function () {
+        var i = 0;
+        $(this).find('.tab_panel .tab').each(function () {
+            $(this).attr('data-tab-num', i++);
+        })
+
+    })
+}
+
+
+
+function resultHasLoaded() {
+    addCustomSelect('.result_full .result_full_panel .sort_by select'); // after result has loaded
+    setImgAsBg('.result_full .single_result .img img') // after result has loaded
+    numerateResultsOnPage();
+    numerateTabs();
+    calcSizesOfTabs();
+
+}
+
+var result_expanded_height;
+
+function calcSizesOfTabs() {
+    //вычислять при загрузке страницы result или переключении на следующую
+    $('.result_full .single_result .single_result_extend').addClass('expand');
+    result_expanded_height = {};
+
+    // должно происходит после нумерации результатов на странице
+
+    $('.result_full .single_result .single_result_extend').each(function () {
+        var result_num = $(this).parent().attr('data-index');
+        result_expanded_height[result_num] = {};
+        var i = 0;
+        $(this).find('.tab_container >*').each(function () {
+            result_expanded_height[result_num][i++] = $(this).innerHeight();
+
+        })
+        $(this).removeClass('expand');
+    })
+}
+
+
+
+var tab_control_marker = true;
+
+
+
+function setSelection(obj, list_value, dom_obj_for_list) {
+    obj.addDataIndexForDOMElemens(dom_obj_for_list);
+    obj.reset();
+    obj.addValuesToList(list_value);
+    obj.createOptionList();
+    if (obj == Select_1) {
+        $('.content_products').addClass('grid');
+        Select_2.state(false);
+        Select_2.reset();
+        Select_3.state(false);
+        Select_3.reset();
+    } else if (obj == Select_2) {
+        $('.content_products').addClass('grid');
+        Select_3.state(false);
+        Select_3.reset();
+    }
+}
+
+//'.content_products .product .title'
+
+function Selection() {
+    this.addDataIndexForDOMElemens = function (selector) {
+        var i = 0;
+        $(selector).each(function () {
+            $(this).attr('data-index', i);
+            i++
+        })
+
+    }
+    this.state = function (state) {
+        if (!state) {
+            this.styledSelect.addClass('disabled')
+        } else {
+            this.styledSelect.removeClass('disabled')
+        }
+    };
+    this.addValuesToList = function (option_selector) {
+        this.imported_list = [];
+        var obj = this;
+        $(option_selector).each(
+            function () {
+                obj.imported_list.push($(this).text());
+            }
+        )
+
+
+    }
+    this.imported_list = [];
+    this.reset = function () {
+        this.styledSelect.html(this.selector.children('option').eq(0).html());
+        this.list.empty();
+        this.styledSelect.removeClass('changed');
+    };
+    this.createOptionList = function () {
+        if (this.imported_list != '') {
+            imported_list = this.imported_list;
+        } else {
+            imported_list = this.selector.children('option')
+        }
+
+        for (var i = 0; i < imported_list.length; i++) {
+            $('<li />', {
+                text: imported_list[i],
+                rel: imported_list[i]
+            }).appendTo(this.list);
+        }
+
+        this.listItems = this.list.children('li');
+
+        var obj = this;
+
+        this.listItems.on('click', function (e) {
+            obj.fieldValue = $(this).html();
+            obj.fieldRel = $(this).attr('rel');
+            obj.listClicked(obj.fieldValue, obj.fieldRel, obj.selector);
+            obj.list.hide();
+
+        });
+
+    };
+
+
+    this.listClicked = function (fieldValue, fieldRel, $this) {
+
+        this.styledSelect.addClass('changed');
+        this.styledSelect.html(fieldValue).removeClass('active');
+        $this.val(fieldRel);
+
+
+
+
+    }
+
+
+
+    this.createSelection = function (selector) {
+
+
+        this.selector = $(selector);
+
+        var imported_list;
+
+        if (this.imported_list != '') {
+            imported_list = this.imported_list;
+        } else {
+            imported_list = this.selector.children('option')
+        }
+
+
+        var numberOfOptions = imported_list.length; //$(selector).children('option').length;
+
+        this.selector.addClass('select-hidden');
+        this.selector.wrap('<div class="select"></div>');
+        this.selector.after('<div class="select-styled"></div>');
+
+        this.styledSelect = this.selector.next('div.select-styled');
+
+
+        this.list = $('<ul class="select-options" />');
+        this.list.insertAfter(this.styledSelect);
+
+
+        this.reset();
+
+
+        this.createOptionList();
+
+
+        this.state(false);
+
+
+        this.styledSelect.on('click', function (e) {
+            e.stopPropagation();
+            if (!$(this).hasClass('disabled')) {
+                $('div.select-styled.active').not(this).each(function () {
+                    $(this).removeClass('active').next('ul.select-options').hide();
+                });
+                $(this).toggleClass('active').next('ul.select-options').toggle();
+            }
+        });
+
+        var obj = this;
+
+        $(document).on('click', function () {
+            obj.styledSelect.removeClass('active');
+            obj.list.hide();
+        })
+    }
+
+
+}

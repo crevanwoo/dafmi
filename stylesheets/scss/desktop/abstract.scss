@@ -29,6 +29,7 @@ $black: #333;
 $gray: #666;
 $l_gray:#a7abb0;
 $font_gray: #999;
+$font_white: #fff;
 //bg
 $bg_black: #212125;
 $bg_deep_black:#1a1a1e;
@@ -37,6 +38,7 @@ $active_gray: #fafafa;
 $disabled_gray: #f8f8f8;
 $button_gray: #f4f4f4;
 $bg_white: #fff;
+
 //border
 $border_gray: #d6d6d6;
 $border_l_gray: #efefef;
@@ -49,6 +51,7 @@ $selection_border:  1px solid $border_l_gray;
 $fs12:12px;
 $fs13:13px;
 $fs14:14px;
+$fs15:15px;
 $fs16:16px;
 $fs18:18px;
 $fs20:20px;
@@ -57,6 +60,15 @@ $fs30:30px;
 $fs36:36px;
 $fs48:48px;
 $triangle_h: 238px;
+/*Elem sizes */
+$header_top_height: 60px;
+$header_bottom_height: 90px;
+$header_height : $header_top_height+$header_bottom_height;
+$footer_top_height: 85px;
+$footer_bottom_height: 60px;
+$footer_height: $footer_top_height+$footer_bottom_height;
+
+
 %clear {
     position: relative;
     &:after {

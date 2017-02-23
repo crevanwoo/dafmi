@@ -1,0 +1,33 @@
+//cart content begins
+
+div.content.page_cart
+    div.wrapper 
+        h3.big_h.pad Корзина
+        div.products
+                -for(var i =0; i<4; i++)
+                    div.single_product
+                        div.remove
+                            div.remove_from_cart
+                        div.img
+                            img(src='images/auto_sample.jpg')
+                        div.text 
+                            div.vendor 2090506
+                            div.title Комплект тормозных колодок, дисковый тормоз
+                        div.price 2500 грн/шт
+                        div.amount
+                            div.minus -
+                            div.num <span>10</span> шт.
+                            div.plus +
+                        div.summ 100000 грн
+        div.bottom_panel.pad
+            div.total Итого: 
+                span 24 206 грн
+            div.buttons
+                div.continue Продолжить покупки
+                div.order Оформить заказ
+                    
+                        
+        
+
+
+//cart content ends

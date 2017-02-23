@@ -1,0 +1,157 @@
+.content.page_cart {
+    padding-top: 40px;
+    padding-bottom: 30px;
+    .wrapper {
+        padding-bottom: 25px;
+    }
+    .big_h {
+        font-family: Medium;
+        font-size: $fs24;
+        height: 80px;
+        line-height: 80px;
+    }
+    .single_product {
+        $height: 110px;
+        @extend %clear;
+        border-top: $selection_border;
+        height: $height;
+        &:last-of-type {
+            border-bottom: $selection_border;
+        }
+        >* {
+            float: left;
+        }
+        .remove {
+            width: 60px;
+            position: relative;
+            height: 100%;
+            .remove_from_cart {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -10px;
+                margin-left: -10px;
+                width: 21px;
+                height: 21px;
+                background-image: url(../images/icon_close_cart.png);
+            }
+        }
+        .img {
+            $this_height: 80px;
+            cursor: pointer;
+            margin-top: ($height - $this_height)/2;
+            width: $this_height;
+            height: $this_height;
+            overflow: hidden;
+            position: relative;
+            background-size: contain;
+            img {
+                display: none;
+                width: 100%;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%)
+            }
+        }
+        .text {
+            width: 530px;
+            overflow: hidden;
+            padding-top: 30px;
+            margin-left: 25px;
+            .vendor {
+                cursor: pointer;
+                font-size: $fs15;
+                margin-bottom: 15px;
+            }
+            .title {
+                cursor: pointer;
+                font-size: $fs16;
+                font-family: Medium
+            }
+        }
+        .price {
+            width: 198px;
+            padding-left: 20px;
+            height: 100%;
+            line-height: $height - 2px;
+            font-size: $fs14
+        }
+        .amount {
+            $this_height: 40px;
+            width: 120px;
+            height: $this_height;
+            border: $selection_border;
+            text-align: center;
+            position: relative;
+            margin-top: ($height - $this_height)/2;
+            line-height: $this_height - 2px;
+            .minus,
+            .plus {
+                position: absolute;
+                font-size: $fs15;
+                width: 20px;
+                top: 0;
+                height: 100%;
+                cursor: pointer;
+            }
+            .num {
+                font-size: $fs13
+            }
+            .minus {
+                text-align: right;
+                left: 0;
+            }
+            .plus {
+                text-align: left;
+                right: 0;
+            }
+        }
+        .summ {
+            width: 190px;
+            padding-right: 20px;
+            text-align: right;
+            line-height: $height - 2px;
+            font-size: $fs18;
+            font-family: Medium
+        }
+    }
+    .bottom_panel {
+        .total {
+            $this_height: 75px;
+            //font-family: Medium;
+            //font-size: $fs24;
+            font-family: Bold;
+            font-size: 22px;
+            height: $this_height;
+            line-height: $this_height;
+            text-align: right;
+        }
+        .buttons {
+            @extend %clear;
+            .continue,
+            .order {
+                $this_height: 45px;
+                cursor: pointer;
+                height: $this_height;
+                padding: 0 35px;
+                font-size: $fs13;
+                font-family: Medium;
+                text-transform: uppercase;
+                border: 1px solid $red;
+                line-height: $this_height - 2px;
+                transition: $trans;
+                &:hover {
+                    color: $font_white;
+                    background-color: $red;
+                }
+            }
+            .continue {
+                float: left;
+            }
+            .order {
+                float: right;
+            }
+        }
+    }
+}

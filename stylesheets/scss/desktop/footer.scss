@@ -5,7 +5,7 @@ footer {
         $big_pad: 20px;
         z-index: 10;
         top: 0;
-        height: 85px;
+        height: $footer_top_height;
         .wrapper {
             @extend %clear;
             border-bottom: 1px solid $border-color
@@ -70,15 +70,15 @@ footer {
     }
     .footer_bottom {
         @extend %clear;
-        height: 60px;
-        line-height: 60px;
+        height: $footer_bottom_height;
+        line-height: $footer_bottom_height;
         font-size: $fs12;
         color: $font_gray;
         .copyright {
             float: left;
         }
         .development {
-            height: 60px;
+            height: $footer_bottom_height;
             float: right;
             div {
                 display: inline-block;

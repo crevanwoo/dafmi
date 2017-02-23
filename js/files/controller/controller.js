@@ -60,6 +60,35 @@ $(window).on("wheel keydown touchstart touchmove", function () {
     changeHeaderView()
 })
 
+var small_cart = new Navigation('.header_bottom.min .cart');
+small_cart.changing_properties = {
+    'display': 'block'
+};
+small_cart.transition_time = 500;
+small_cart.addListeners('click', '.popup_small_cart');
+
+/*$('body').on('click', '.header_bottom.min .cart', function () {
+    console.log('click');
+    var popup = $(this).find('.popup_small_cart');
+    if (!popup.hasClass('active')) {
+        popup.css('display', 'block');
+        setTimeout(function () {
+            popup.addClass('active');
+
+        }, 100)
+
+    } else {
+
+        popup.removeClass('active');
+        setTimeout(function () {
+            popup.css('display', 'none');
+
+        }, 500)
+    }
+
+
+
+})*/
 
 //change products revealing type
 
