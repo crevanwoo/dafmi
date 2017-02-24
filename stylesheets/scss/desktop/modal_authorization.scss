@@ -1,0 +1,102 @@
+footer .modal_window {
+    @extend %shim;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    opacity: 0;
+    display: none;
+    &.active {
+        opacity: 1
+    }
+    .modal_content {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 520px;
+        padding: 25px 20px;
+        background-color: $bg_white;
+        top: 50vh;
+        transform: translateY(-50%);
+        .mid_h {
+            text-transform: none;
+            font-family: Medium;
+            font-size: $fs24;
+        }
+        .text {
+            line-height: 150%;
+            font-size: $fs14;
+        }
+        .label {
+            font-size: $fs14;
+            margin-bottom: 15px;
+        }
+        .input {
+            border: 1px solid $border_active_gray;
+            display: block;
+            margin-bottom: 20px;
+            height: 45px;
+            input {
+                padding-left: 20px;
+                width: 100%;
+                height: 100%;
+                font-size: $fs14;
+                &:focus {
+                    background-color: rgba(0, 0, 0, 0.01);
+                }
+            }
+        }
+        button {
+            font-family: Medium;
+            font-size: $fs16;
+            text-transform: none;
+            color: $font_white;
+            background-color: $red;
+            width: 100%;
+            display: block;
+            height: 55px;
+        }
+    }
+    .close {
+        position: absolute;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        right: 20px;
+        top: 20px;
+        background-image: url(../images/icon_close_popup.png);
+        background-size: contain;
+    }
+}
+
+.modal_authorization {
+    z-index: 1000 !important;
+    opacity: 1 !important;
+    display: block !important;
+    .mid_h {
+        margin-bottom: 35px;
+        text-align: left;
+    }
+    .bottom {
+        text-align: center;
+    }
+    .submit {
+        margin-bottom: 15px;
+    }
+    .restore_pass,
+    .register {
+        cursor: pointer;
+        display: inline-block;
+        font-size: $fs14;
+        border-bottom: 1px dashed $black;
+    }
+    .restore_pass {
+        margin-bottom: 20px;
+    }
+    .register {
+        margin-bottom: 10px;
+    }
+}
