@@ -493,9 +493,19 @@ function PlusMinusControls(selector) {
 
     this.controlIncrease = 'plus';
 
-    this.amount = ".num";
+    this.amount = ".num span";
 
     this.wrapper = "amount";
+
+    this.productParent = 'single_product';
+
+    this.productPrice = '.price span';
+
+    this.productSumm = '.summ span';
+
+    this.totalSumm = '.page_cart .total span';
+    
+    this.globalWrapper = '.page_cart';
 
     var Current = this;
 
@@ -508,10 +518,16 @@ function PlusMinusControls(selector) {
         } else {
             setAmount(--current_amount, parent)
         }
+        var ProductParent = findParent($(this), Current.productParent);
+        
+        checkSumm.call(ProductParent);
+        Current.checkTotalSumm.call($(Current.globalWrapper + ' .' + Current.productParent));
     };
 
     function setAmount(num, parent) {
-        if (num < 1) {num = 1};
+        if (num < 1) {
+            num = 1
+        };
         parent.find(Current.amount).text(num);
     };
 
@@ -524,10 +540,32 @@ function PlusMinusControls(selector) {
         }
     };
 
+
+    function checkSumm() { //this = single_product_self
+        var price = +$(this).find(Current.productPrice).text();
+        var amount = +$(this).find('.' + Current.wrapper + ' ' + Current.amount).text();
+        $(this).find(Current.productSumm).html(Math.round(price * amount));
+    }
+
+    this.checkTotalSumm = function () { //this = single_product_self
+        
+        var summ = 0;
+        $(this).each(function () {
+            summ += +$(this).find(Current.productSumm).text();
+        })
+
+        $(Current.totalSumm).html(summ);
+    }
 }
 
 
-var page_cart_amount = new PlusMinusControls('.page_cart .single_product .amount');
 
-page_cart_amount.addListeners('click');
-page_cart_amount.amount = '.num span';
+
+
+
+
+function checkCartIsEmpty() {
+    if ($('.page_cart .products .single_product').length < 1) {
+        $('.page_cart .order').addClass('unavaliable');
+    }
+}

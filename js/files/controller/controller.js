@@ -8,6 +8,7 @@ addCustomSelect('.footer_top .lang select');
 addCarsTypeToList();
 
 
+
 //create select 
 
 var Select_1 = new Selection();
@@ -255,10 +256,12 @@ $('body').on('click', '.filters .select:eq(2) .select-options li, .result_list .
 
 /* --- Results > --- */
 
-$('body').on('click', '.result_full .single_result .img, .result_full .single_result .top_row .vendor, .result_full .single_result .top_row .mid_h', function () {
+/*$('body').on('click', '.result_full .single_result .img, .result_full .single_result .top_row .vendor, .result_full .single_result .top_row .mid_h', function () {
     var link = findParent($(this), 'single_result').attr('data-product-link');
     window.open(link)
-})
+})*/
+
+setLinkFromDataAttr('.result_full .single_result .img, .result_full .single_result .top_row .vendor, .result_full .single_result .top_row .mid_h', 'single_result');
 
 $('body').on('click', '.result_full .single_result .show_more', function () {
     toggleExpandResultsView.call(this);
@@ -295,3 +298,44 @@ $('body').on('click', '.single_result_page .models_info .single_model_title', fu
 /* --- < Single product page --- */
 
 /* --- ---- --- --- --- --- < Events  --- ---- --- --- --- --- */
+
+
+
+/* --- Cart page > --- */
+var cart_content;
+
+checkCartIsEmpty();
+
+setImageAsBg('.page_cart .single_product .img img', 'img');
+setLinkFromDataAttr('.page_cart .single_product .img, .page_cart .single_product .vendor, .page_cart .single_product .title', 'single_product');
+
+
+$('.page_cart_modal_confirm .confirm').on('click', function () {
+    cart_content = new CollectRequestData('.page_cart .products');
+    cart_content.value = '.vendor';
+    cart_content.amount = '.amount .num span';
+    cart_content.item = ".single_product";
+    sendData();
+})
+
+$('.page_cart .remove_from_cart').on('click', function () {
+    var product = findParent($(this), 'single_product');
+    product.remove();
+    page_cart_amount.checkTotalSumm.call($('.page_cart .single_product'));
+    checkCartIsEmpty();
+})
+
+
+
+
+var page_cart_amount = new PlusMinusControls('.page_cart .single_product .amount');
+
+page_cart_amount.addListeners('click');
+page_cart_amount.amount = '.num span';
+
+
+var cart_confirm = new ModalWindow('.page_cart_modal_confirm');
+cart_confirm.windowOpen('.page_cart .bottom_panel .order:not(.unavaliable)');
+cart_confirm.windowClose('.page_cart_modal_confirm .close, .page_cart_modal_confirm .back, .page_cart_modal_confirm .confirm');
+
+/* --- < Cart page --- */

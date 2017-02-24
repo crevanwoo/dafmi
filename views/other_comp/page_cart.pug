@@ -5,26 +5,49 @@ div.content.page_cart
         h3.big_h.pad Корзина
         div.products
                 -for(var i =0; i<4; i++)
-                    div.single_product
+                    div.single_product(data-product-link="page_single_product.html")
                         div.remove
                             div.remove_from_cart
                         div.img
                             img(src='images/auto_sample.jpg')
                         div.text 
-                            div.vendor 2090506
+                            div.vendor= i + '2090506'
                             div.title Комплект тормозных колодок, дисковый тормоз
-                        div.price 2500 грн/шт
+                        div.price <span>2500</span> грн/шт
                         div.amount
                             div.minus -
-                            div.num <span>10</span> шт.
+                            div.num <span>1</span> шт.
                             div.plus +
-                        div.summ 100000 грн
+                        div.summ <span>2500</span> грн
         div.bottom_panel.pad
-            div.total Итого: 
-                span 24 206 грн
+            div.total Итого: <span>10000</span> грн
             div.buttons
-                div.continue Продолжить покупки
+                a(href='index.html').continue Продолжить покупки
                 div.order Оформить заказ
+div.page_cart_modal_confirm.page_cart_modal
+    div.modal_content
+        div.close 
+        h4.mid_h Подтверждение заказа
+        p.text Подтвердите ваш заказ, после этого изменение заказа будут невозможны
+        div.buttons
+            div.back Вернуться в корзину
+            div.confirm Подтвердить
+div.page_cart_modal_success.page_cart_modal
+    div.modal_content
+        div.close 
+        h4.mid_h Готово
+        p.text Наш менеджер с вами свяжется в ближайшее время
+        div.buttons
+            a(href='index.html').back Вернуться на главную
+div.page_cart_modal_error.page_cart_modal
+    div.modal_content
+        div.close 
+        h4.mid_h Ошибка!
+        p.text Попробуйте еще раз чуть позже.
+        div.buttons
+            div.back Вернуться в корзину
+            
+    
                     
                         
         

@@ -246,3 +246,169 @@ function Selection() {
 
 
 }
+
+
+function CollectRequestData(container_selector) {
+
+    this.item = 'single_item_selector';
+
+    this.value = 'value_selector';
+
+    this.amount = 'amount_selector';
+
+
+    this.adapt_data = function () {
+        collectData();
+        return JSON.stringify(Data);
+    }
+
+    var Current = this;
+
+    var Data = {};
+
+    function collectData() {
+        $(container_selector).find(Current.item).each(function () {
+            var value = $(this).find(Current.value).text();
+            var amount = $(this).find(Current.amount).text()
+            Data[value] = amount;
+        })
+    }
+
+}
+
+
+
+
+
+function sendData() {
+    jQuery.ajax({
+        url: 'ajax.php',
+        type: "POST", //метод отправки
+        //dataType: "json", //формат данных
+        data: cart_content.adapt_data(), // Сеарилизуем объект
+        success: function (response) { //Данные отправлены успешно
+            /*result = jQuery.parseJSON(response);
+            document.getElementById(result_form).innerHTML = "Имя: "+result.name+"<br>Телефон: "+result.phonenumber;*/
+            $('.page_cart .products').empty();
+
+            $('.page_cart .total span').html('0');
+            var cart_success = new ModalWindow('.page_cart_modal_success');
+            cart_success.activateElement();
+            cart_success.windowClose('.page_cart_modal_success .close');
+            checkCartIsEmpty();
+            console.log('success');
+        },
+        error: function (response) { // Данные не отправлены
+            /*document.getElementById(result_form).innerHTML = "Ошибка. Данные не отправленны.";*/
+            var cart_error = new ModalWindow('.page_cart_modal_error');
+            cart_error.activateElement();
+            cart_error.windowClose('.page_cart_modal_error .close, .page_cart_modal_error .back');
+            console.log('error');
+        }
+    });
+
+}
+
+
+
+function ModalWindow(modal_selector) {
+
+    var m_window = $(modal_selector);
+
+    this.transition_time = 300;
+
+    this.preventScroll = true;
+
+    this.windowOpen = function (trigger) {
+        $('body').on('click', trigger, function (e) {
+            Current.activateElement();
+        })
+    };
+
+    this.windowClose = function (trigger) {
+        $('body').on('click', trigger, function (e) {
+            deactivateElement();
+        })
+    };
+
+    this.activateElement = function () {
+        controlScroll();
+        clicked_style = m_window.attr('style');
+        try {
+            style_array = clicked_style.split(';');
+        } catch (err) {
+            console.log(err);
+            style_array = null;
+        }
+
+        m_window.css('display', 'block');
+
+
+        bustDefaultStyleArray(window);
+
+        m_window.css('transition', Current.transition_time + 'ms');
+        setTimeout(function () {
+            m_window.addClass('active');
+        }, 100);
+    };
+
+    var Current = this; //current oject
+
+    var clicked_style;
+
+    var style_array;
+
+    function deactivateElement() {
+        releaseScroll();
+        m_window.removeClass('active');
+        setTimeout(function () {
+            bustDefaultStyleArray(m_window);
+        }, Current.transition_time)
+    };
+
+    function bustDefaultStyleArray(selector) {
+        try {
+            selector.attr('style', '');
+            for (var k = 0; k < style_array.length; k++) {
+                var current_property = style_array[k].split(':');
+                selector.css(current_property[0], [1]);
+            }
+        } catch (err) {
+            console.log(err);
+            return
+        }
+    }
+
+    function controlScroll() { //open window
+        if (Current.preventScroll) {
+            $('body').on('wheel keydown touchstart touchmove', preventScrolling)
+        }
+    }
+
+    function preventScrolling(e) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+    }
+
+    function releaseScroll() { //close window
+        $('body').off('wheel keydown touchstart touchmove', preventScrolling)
+    }
+}
+
+
+
+function setImageAsBg(selector_image, bg_class) {
+    $(selector_image).each(function () {
+        var bg = findParent($(this), bg_class);
+        bg.css('background-image', 'url(' + $(this).attr('src') + ')')
+    })
+}
+
+
+function setLinkFromDataAttr(to__selectors, from__parent_class, from__attr_name) {
+    var attr_name = from__attr_name || 'data-product-link';
+    $('body').on('click', to__selectors, function () {
+        var link = findParent($(this), from__parent_class).attr(attr_name);
+        window.open(link)
+    })
+}

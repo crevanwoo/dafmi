@@ -1,5 +1,6 @@
 .popup_small_cart {
-    $height: 220px;
+    //$height: 220px;
+    $height: 170px;
     right: -20px;
     bottom: -$height - 10px;
     position: absolute;
@@ -36,6 +37,7 @@
         line-height: 150%;
     }
     .order {
+        display: block;
         cursor: pointer;
         height: 50px;
         border: 1px solid $red;
