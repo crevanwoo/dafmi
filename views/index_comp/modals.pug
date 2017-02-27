@@ -5,10 +5,11 @@ div.modal_window.modal_authorization
     div.modal_content
         div.close
         h3.mid_h Авторизация
-        each item in modal_auto
+        -var i = 0
+        each item in modal_auto            
             p.label= item
             div.input
-                input
+                input(data-key= keys_authorization[i++])
         div.bottom
             div.restore_pass Я забыл свой пароль
             button.submit Авторизация
@@ -20,67 +21,125 @@ div.modal_window.modal_authorization
 //modal_registration_1 begins
 div.modal_window.modal_registration_1
     div.modal_content
-        h3.mid_h Авторизация
+        div.close
+        h3.mid_h Регистрация
+        p.title Шаг 1 из 4. Выбор профиля
+        div.choose_profile
+            div.border  или
+            div.customer
+                div.img
+                    img(src='images/icon_choose_profile_1.png')
+                p.profile_title Покупатель
+                p.profile_text Может то то и то то, а не может то и то            
+            div.partner
+                div.img
+                    img(src='images/icon_choose_profile_2.png')
+                p.profile_title Партнер
+                p.profile_text Может то то и то то, а не может то и то
        
 //modal_registration_1 ends
 
 //modal_registration_2_1 begins
 div.modal_window.modal_registration_2_1
-    div.modal_content
-        h3.mid_h Авторизация
-        each item in modal_reg_2_1
-            p.label= item
-            div.input
-                input
+    div.modal_content.default_select    
+        div.close
+        h3.mid_h Регистрация
+        p.title Шаг 2 из 4. Ваш автомобиль
+        -var i =0
+        each item in modal_reg_2_1            
+            p(data-key= keys_registration_customer[i+1]).label= item
+            select(class= 'modal_reg_1_sel_' + i++)
+                option(value='hide') -- Выберите бренд -- 
+                option(value='value1') Value1
+                option(value='value1') Value2
+                option(value='value1') Value3
+        div.next Далее
 //modal_registration_2_1 ends
 
 //modal_registration_2_2 begins
 div.modal_window.modal_registration_2_2
     div.modal_content
-        h3.mid_h Авторизация
+        div.close
+        h3.mid_h Регистрация
+        p.title Шаг 2 из 4. Даные о компании
         each item in modal_reg_2_2
+            -var i = 0
             p.label= item
             div.input
-                input
+                input(data-key= keys_registration_company[i++])
+        div.next Далее
 //modal_registration_2_2 ends
 
 //modal_registration_3 begins
 div.modal_window.modal_registration_3
     div.modal_content
-        h3.mid_h Авторизация
+        div.close
+        h3.mid_h Регистрация
+        p.title Шаг 3 из 4. Личные данные
         each item in modal_reg_3
             p.label= item
             div.input
-                input
+                input(data-key= keys_registration_person[i++])
+        div.next Далее 
 //modal_registration_3 ends
 
 //modal_registration_4 begins
 div.modal_window.modal_registration_4
     div.modal_content
-        h3.mid_h Авторизация
-        p.label
+        div.close
+        h3.mid_h Регистрация
+        p.title Шаг 4 из 4. Пароль
+        p.label Придумайте пароль
         div.input
-            input
+            input(data-key='pass1')
+        p.label Повторите пароль
+        div.input.fail
+            input(data-key='pass2')
+        button.finish Завершить регистрацию
 //modal_registration_4 ends
 
 //modal_registration_success begins
 div.modal_window.modal_registration_success
     div.modal_content
+        div.close
+        div.inner
+            h3.mid_h Спасибо за регистрацию
+            a.profile Перейти в личный кабинет
 //modal_registration_success ends
 
 //modal_restore_pass begins
 div.modal_window.modal_restore_pass
     div.modal_content
+        div.close
+        h3.mid_h Восстановить пароль
+        p.label Введите ваш логин или email
+        div.input
+            input(data-key="email")
+        button.submit Восстановить пароль
 //modal_restore_pass ends
 
 //modal_restore_pass_success begins
 div.modal_window.modal_restore_pass_success
     div.modal_content
+        div.close
+        h3.mid_h Проверьте вашу почту
+        p.text На ваш email пришло письмо с данными <br> для восстановления пароля
 //modal_restore_pass_success ends
 
 //modal_consult begins
 div.modal_window.modal_consult
     div.modal_content
+        div.close        
+        h3.mid_h Получить консультацию
+        p.label Ваше имя
+        div.input
+            input(data-key="name")
+        p.label Номер телефона
+        div.input
+            input(data-key="tel")
+        p.label Текст обращения
+        textarea(data-key="comment")
+        button.submit Отправить заявку
 //modal_consult ends
 
 //modals ends

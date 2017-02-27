@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <!--link(rel="stylesheet", href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css")-->
     <link rel="stylesheet" href="stylesheets/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" defer></script>
+    <script src="/js/min/jquery-3.1.1.min.js" defer></script>
+    <!--script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js", defer)-->
     <!--script(src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js", defer)-->
     <script src="js/script.js" defer> </script>
   </head>
@@ -373,11 +374,11 @@
           <h3 class="mid_h">Авторизация</h3>
           <p class="label">Email:</p>
           <div class="input">
-            <input>
+            <input data-key="email">
           </div>
           <p class="label">Пароль:</p>
           <div class="input">
-            <input>
+            <input data-key="pass">
           </div>
           <div class="bottom">
             <div class="restore_pass">Я забыл свой пароль</div>
@@ -390,56 +391,88 @@
       <!--modal_registration_1 begins-->
       <div class="modal_window modal_registration_1">
         <div class="modal_content">
-          <h3 class="mid_h">Авторизация</h3>
+          <div class="close"></div>
+          <h3 class="mid_h">Регистрация</h3>
+          <p class="title">Шаг 1 из 4. Выбор профиля</p>
+          <div class="choose_profile">
+            <div class="border"> или</div>
+            <div class="customer">
+              <div class="img"><img src="images/icon_choose_profile_1.png"></div>
+              <p class="profile_title">Покупатель</p>
+              <p class="profile_text">Может то то и то то, а не может то и то            </p>
+            </div>
+            <div class="partner">
+              <div class="img"><img src="images/icon_choose_profile_2.png"></div>
+              <p class="profile_title">Партнер</p>
+              <p class="profile_text">Может то то и то то, а не может то и то</p>
+            </div>
+          </div>
         </div>
       </div>
       <!--modal_registration_1 ends-->
       <!--modal_registration_2_1 begins-->
       <div class="modal_window modal_registration_2_1">
-        <div class="modal_content">
-          <h3 class="mid_h">Авторизация</h3>
-          <p class="label">Название компани:</p>
-          <div class="input">
-            <input>
-          </div>
-          <p class="label">ЕДРПОУ:</p>
-          <div class="input">
-            <input>
-          </div>
-          <p class="label">Город:</p>
-          <div class="input">
-            <input>
-          </div>
-          <p class="label">Адрес:</p>
-          <div class="input">
-            <input>
-          </div>
+        <div class="modal_content default_select">   
+          <div class="close"></div>
+          <h3 class="mid_h">Регистрация</h3>
+          <p class="title">Шаг 2 из 4. Ваш автомобиль</p>
+          <p class="label" data-key="model">Бренд:</p>
+          <select class="modal_reg_1_sel_0">
+            <option value="hide">-- Выберите бренд -- </option>
+            <option value="value1">Value1</option>
+            <option value="value1">Value2</option>
+            <option value="value1">Value3</option>
+          </select>
+          <p class="label" data-key="year">Модель:</p>
+          <select class="modal_reg_1_sel_1">
+            <option value="hide">-- Выберите бренд -- </option>
+            <option value="value1">Value1</option>
+            <option value="value1">Value2</option>
+            <option value="value1">Value3</option>
+          </select>
+          <p class="label">Год выпуска:</p>
+          <select class="modal_reg_1_sel_2">
+            <option value="hide">-- Выберите бренд -- </option>
+            <option value="value1">Value1</option>
+            <option value="value1">Value2</option>
+            <option value="value1">Value3</option>
+          </select>
+          <div class="next">Далее</div>
         </div>
       </div>
       <!--modal_registration_2_1 ends-->
       <!--modal_registration_2_2 begins-->
       <div class="modal_window modal_registration_2_2">
         <div class="modal_content">
-          <h3 class="mid_h">Авторизация</h3>
-          <p class="label">Бренд:</p>
+          <div class="close"></div>
+          <h3 class="mid_h">Регистрация</h3>
+          <p class="title">Шаг 2 из 4. Даные о компании</p>
+          <p class="label">Название компании:</p>
           <div class="input">
-            <input>
+            <input data-key="name">
           </div>
-          <p class="label">Модель:</p>
+          <p class="label">ЕДРПОУ:</p>
           <div class="input">
-            <input>
+            <input data-key="name">
           </div>
-          <p class="label">Год выпуска:</p>
+          <p class="label">Город:</p>
           <div class="input">
-            <input>
+            <input data-key="name">
           </div>
+          <p class="label">Адрес:</p>
+          <div class="input">
+            <input data-key="name">
+          </div>
+          <div class="next">Далее</div>
         </div>
       </div>
       <!--modal_registration_2_2 ends-->
       <!--modal_registration_3 begins-->
       <div class="modal_window modal_registration_3">
         <div class="modal_content">
-          <h3 class="mid_h">Авторизация</h3>
+          <div class="close"></div>
+          <h3 class="mid_h">Регистрация</h3>
+          <p class="title">Шаг 3 из 4. Личные данные</p>
           <p class="label">Ваше имя:</p>
           <div class="input">
             <input>
@@ -452,38 +485,77 @@
           <div class="input">
             <input>
           </div>
+          <div class="next">Далее </div>
         </div>
       </div>
       <!--modal_registration_3 ends-->
       <!--modal_registration_4 begins-->
       <div class="modal_window modal_registration_4">
         <div class="modal_content">
-          <h3 class="mid_h">Авторизация</h3>
-          <p class="label"></p>
+          <div class="close"></div>
+          <h3 class="mid_h">Регистрация</h3>
+          <p class="title">Шаг 4 из 4. Пароль</p>
+          <p class="label">Придумайте пароль</p>
           <div class="input">
-            <input>
+            <input data-key="pass1">
           </div>
+          <p class="label">Повторите пароль</p>
+          <div class="input fail">
+            <input data-key="pass2">
+          </div>
+          <button class="finish">Завершить регистрацию</button>
         </div>
       </div>
       <!--modal_registration_4 ends-->
       <!--modal_registration_success begins-->
       <div class="modal_window modal_registration_success">
-        <div class="modal_content"></div>
+        <div class="modal_content">
+          <div class="close"></div>
+          <div class="inner">
+            <h3 class="mid_h">Спасибо за регистрацию</h3><a class="profile">Перейти в личный кабинет</a>
+          </div>
+        </div>
       </div>
       <!--modal_registration_success ends-->
       <!--modal_restore_pass begins-->
       <div class="modal_window modal_restore_pass">
-        <div class="modal_content"></div>
+        <div class="modal_content">
+          <div class="close"></div>
+          <h3 class="mid_h">Восстановить пароль</h3>
+          <p class="label">Введите ваш логин или email</p>
+          <div class="input">
+            <input data-key="email">
+          </div>
+          <button class="submit">Восстановить пароль</button>
+        </div>
       </div>
       <!--modal_restore_pass ends-->
       <!--modal_restore_pass_success begins-->
       <div class="modal_window modal_restore_pass_success">
-        <div class="modal_content"></div>
+        <div class="modal_content">
+          <div class="close"></div>
+          <h3 class="mid_h">Проверьте вашу почту</h3>
+          <p class="text">На ваш email пришло письмо с данными <br> для восстановления пароля</p>
+        </div>
       </div>
       <!--modal_restore_pass_success ends-->
       <!--modal_consult begins-->
       <div class="modal_window modal_consult">
-        <div class="modal_content"></div>
+        <div class="modal_content">
+          <div class="close">       </div>
+          <h3 class="mid_h">Получить консультацию</h3>
+          <p class="label">Ваше имя</p>
+          <div class="input">
+            <input data-key="name">
+          </div>
+          <p class="label">Номер телефона</p>
+          <div class="input">
+            <input data-key="tel">
+          </div>
+          <p class="label">Текст обращения</p>
+          <textarea data-key="comment"></textarea>
+          <button class="submit">Отправить заявку</button>
+        </div>
       </div>
       <!--modal_consult ends-->
       <!--modals ends-->

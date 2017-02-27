@@ -167,6 +167,7 @@ input {
     background-color: white;
     color: $black;
     font-size: $fs16;
+    font-family: Regular;
     &:focus {
         outline: none;
         background-color: rgba(255, 255, 255, 0.9);

@@ -1,0 +1,41 @@
+.modal_registration_4 {
+   
+    .mid_h {
+        margin-bottom: 15px;
+    }
+    .title {
+        font-size: $fs14;
+        margin-bottom: 30px;
+        color: $font_gray;
+    }
+    .input {
+        padding-right: 40px;
+    }
+    .success,
+    .fail {
+        position: relative;
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 15px;
+        }
+    }
+    .success {
+        &:after {
+            width: 13px;
+            height: 10px;
+            background-image: url(../images/icon_pass_true.png);
+            margin-top: -5px;
+        }
+    }
+    .fail {
+        &:after {
+            width: 13px;
+            height: 13px;
+            background-image: url(../images/icon_pass_false.png);
+            margin-top: -7px;
+        }
+    }
+}

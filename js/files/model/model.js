@@ -115,137 +115,7 @@ function setSelection(obj, list_value, dom_obj_for_list) {
 
 //'.content_products .product .title'
 
-function Selection() {
-    this.addDataIndexForDOMElemens = function (selector) {
-        var i = 0;
-        $(selector).each(function () {
-            $(this).attr('data-index', i);
-            i++
-        })
 
-    }
-    this.state = function (state) {
-        if (!state) {
-            this.styledSelect.addClass('disabled')
-        } else {
-            this.styledSelect.removeClass('disabled')
-        }
-    };
-    this.addValuesToList = function (option_selector) {
-        this.imported_list = [];
-        var obj = this;
-        $(option_selector).each(
-            function () {
-                obj.imported_list.push($(this).text());
-            }
-        )
-
-
-    }
-    this.imported_list = [];
-    this.reset = function () {
-        this.styledSelect.html(this.selector.children('option').eq(0).html());
-        this.list.empty();
-        this.styledSelect.removeClass('changed');
-    };
-    this.createOptionList = function () {
-        if (this.imported_list != '') {
-            imported_list = this.imported_list;
-        } else {
-            imported_list = this.selector.children('option')
-        }
-
-        for (var i = 0; i < imported_list.length; i++) {
-            $('<li />', {
-                text: imported_list[i],
-                rel: imported_list[i]
-            }).appendTo(this.list);
-        }
-
-        this.listItems = this.list.children('li');
-
-        var obj = this;
-
-        this.listItems.on('click', function (e) {
-            obj.fieldValue = $(this).html();
-            obj.fieldRel = $(this).attr('rel');
-            obj.listClicked(obj.fieldValue, obj.fieldRel, obj.selector);
-            obj.list.hide();
-
-        });
-
-    };
-
-
-    this.listClicked = function (fieldValue, fieldRel, $this) {
-
-        this.styledSelect.addClass('changed');
-        this.styledSelect.html(fieldValue).removeClass('active');
-        $this.val(fieldRel);
-
-
-
-
-    }
-
-
-
-    this.createSelection = function (selector) {
-
-
-        this.selector = $(selector);
-
-        var imported_list;
-
-        if (this.imported_list != '') {
-            imported_list = this.imported_list;
-        } else {
-            imported_list = this.selector.children('option')
-        }
-
-
-        var numberOfOptions = imported_list.length; //$(selector).children('option').length;
-
-        this.selector.addClass('select-hidden');
-        this.selector.wrap('<div class="select"></div>');
-        this.selector.after('<div class="select-styled"></div>');
-
-        this.styledSelect = this.selector.next('div.select-styled');
-
-
-        this.list = $('<ul class="select-options" />');
-        this.list.insertAfter(this.styledSelect);
-
-
-        this.reset();
-
-
-        this.createOptionList();
-
-
-        this.state(false);
-
-
-        this.styledSelect.on('click', function (e) {
-            e.stopPropagation();
-            if (!$(this).hasClass('disabled')) {
-                $('div.select-styled.active').not(this).each(function () {
-                    $(this).removeClass('active').next('ul.select-options').hide();
-                });
-                $(this).toggleClass('active').next('ul.select-options').toggle();
-            }
-        });
-
-        var obj = this;
-
-        $(document).on('click', function () {
-            obj.styledSelect.removeClass('active');
-            obj.list.hide();
-        })
-    }
-
-
-}
 
 
 function CollectRequestData(container_selector) {
@@ -278,25 +148,50 @@ function CollectRequestData(container_selector) {
 
 
 
+var cart_error;
 
-
-function sendData() {
+function sendData(data, f_onsuccess) {
     jQuery.ajax({
         url: 'ajax.php',
         type: "POST", //метод отправки
         //dataType: "json", //формат данных
-        data: cart_content.adapt_data(), // Сеарилизуем объект
+        data: data, // Сеарилизуем объект
         success: function (response) { //Данные отправлены успешно
             /*result = jQuery.parseJSON(response);
             document.getElementById(result_form).innerHTML = "Имя: "+result.name+"<br>Телефон: "+result.phonenumber;*/
-            $('.page_cart .products').empty();
-
-            $('.page_cart .total span').html('0');
-            var cart_success = new ModalWindow('.page_cart_modal_success');
-            cart_success.activateElement();
-            cart_success.windowClose('.page_cart_modal_success .close');
-            checkCartIsEmpty();
+            f_onsuccess();
+            console.log(data);
             console.log('success');
+        },
+        error: function (response) { // Данные не отправлены
+            /*document.getElementById(result_form).innerHTML = "Ошибка. Данные не отправленны.";*/
+            if (!cart_error) {
+                cart_error = new ModalWindow('.page_cart_modal_error');       
+            }
+            cart_error.activateElement();
+            cart_error.windowClose('.page_cart_modal_error .close, .page_cart_modal_error .back');
+            console.log('error');
+        }
+    });
+}
+
+
+
+
+function sendModalSelect(value, select_obj) {
+    jQuery.ajax({
+        url: 'ajax.php',
+        type: "POST", //метод отправки
+        //dataType: "json", //формат данных
+        data: value, // Сеарилизуем объект
+        success: function (response) { //Данные отправлены успешно
+            /*result = jQuery.parseJSON(response);
+            document.getElementById(result_form).innerHTML = "Имя: "+result.name+"<br>Телефон: "+result.phonenumber;*/
+            response = ['1', '2', '3'];
+            select_obj.fillImportedList(response);
+            select_obj.createOptionList();
+
+
         },
         error: function (response) { // Данные не отправлены
             /*document.getElementById(result_form).innerHTML = "Ошибка. Данные не отправленны.";*/
@@ -307,94 +202,7 @@ function sendData() {
         }
     });
 
-}
-
-
-
-function ModalWindow(modal_selector) {
-
-    var m_window = $(modal_selector);
-
-    this.transition_time = 300;
-
-    this.preventScroll = true;
-
-    this.windowOpen = function (trigger) {
-        $('body').on('click', trigger, function (e) {
-            Current.activateElement();
-        })
-    };
-
-    this.windowClose = function (trigger) {
-        $('body').on('click', trigger, function (e) {
-            deactivateElement();
-        })
-    };
-
-    this.activateElement = function () {
-        controlScroll();
-        clicked_style = m_window.attr('style');
-        try {
-            style_array = clicked_style.split(';');
-        } catch (err) {
-            console.log(err);
-            style_array = null;
-        }
-
-        m_window.css('display', 'block');
-
-
-        bustDefaultStyleArray(window);
-
-        m_window.css('transition', Current.transition_time + 'ms');
-        setTimeout(function () {
-            m_window.addClass('active');
-        }, 100);
-    };
-
-    var Current = this; //current oject
-
-    var clicked_style;
-
-    var style_array;
-
-    function deactivateElement() {
-        releaseScroll();
-        m_window.removeClass('active');
-        setTimeout(function () {
-            bustDefaultStyleArray(m_window);
-        }, Current.transition_time)
-    };
-
-    function bustDefaultStyleArray(selector) {
-        try {
-            selector.attr('style', '');
-            for (var k = 0; k < style_array.length; k++) {
-                var current_property = style_array[k].split(':');
-                selector.css(current_property[0], [1]);
-            }
-        } catch (err) {
-            console.log(err);
-            return
-        }
-    }
-
-    function controlScroll() { //open window
-        if (Current.preventScroll) {
-            $('body').on('wheel keydown touchstart touchmove', preventScrolling)
-        }
-    }
-
-    function preventScrolling(e) {
-        e.preventDefault();
-        e.stopImmediatePropagation();
-    }
-
-    function releaseScroll() { //close window
-        $('body').off('wheel keydown touchstart touchmove', preventScrolling)
-    }
-}
-
+};
 
 
 function setImageAsBg(selector_image, bg_class) {
@@ -402,7 +210,7 @@ function setImageAsBg(selector_image, bg_class) {
         var bg = findParent($(this), bg_class);
         bg.css('background-image', 'url(' + $(this).attr('src') + ')')
     })
-}
+};
 
 
 function setLinkFromDataAttr(to__selectors, from__parent_class, from__attr_name) {
@@ -411,4 +219,44 @@ function setLinkFromDataAttr(to__selectors, from__parent_class, from__attr_name)
         var link = findParent($(this), from__parent_class).attr(attr_name);
         window.open(link)
     })
+};
+
+
+function CollectFormData(selector) { // this is modal window
+    
+    
+    this.adapt_data = function () {
+        collectData();
+        return JSON.stringify(Data);
+    }
+
+    var Current = this;
+
+    var Data = {};    
+
+    function collectData() {     
+   
+        
+    $(selector).find('input').each(function() {
+        var key = $(this).attr('data-key');
+        var value = $(this).val();
+        Data[key] = value;
+        
+    });
+    $(selector).find('textarea').each(function() {
+        var key = $(this).attr('data-key');
+        var value = $(this).val();
+        Data[key] = value;
+        
+    });
+    $(selector).find('.select').each(function() { 
+        var key = $(this).prev().attr('data-key');
+        var value = $(this).find('.select-styled.changed').text();
+        Data[key] = value;
+    }); 
+    }   
 }
+
+var Register_Data = {};
+
+//Register_Data['modal_window_name', 'thisData']

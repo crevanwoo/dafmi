@@ -28,6 +28,19 @@ Select_2.createSelection('.select_2');
 
 Select_3.createSelection('.select_3');
 
+
+
+var modal_reg_1_sel_1 = new Selection();
+modal_reg_1_sel_1.addValuesToList('.content_products .product .title');
+modal_reg_1_sel_1.createSelection('.modal_reg_1_sel_0');
+modal_reg_1_sel_1.state(true);
+
+var modal_reg_1_sel_2 = new Selection();
+modal_reg_1_sel_2.createSelection('.modal_reg_1_sel_1');
+
+var modal_reg_1_sel_3 = new Selection();
+modal_reg_1_sel_3.createSelection('.modal_reg_1_sel_2');
+
 /* --- ---- --- --- --- --- < On Page Load --- ---- --- --- --- --- */
 
 
@@ -315,7 +328,7 @@ $('.page_cart_modal_confirm .confirm').on('click', function () {
     cart_content.value = '.vendor';
     cart_content.amount = '.amount .num span';
     cart_content.item = ".single_product";
-    sendData();
+    sendData(cart_content.adapt_data(), respondCartSuccess);
 })
 
 $('.page_cart .remove_from_cart').on('click', function () {
@@ -339,3 +352,108 @@ cart_confirm.windowOpen('.page_cart .bottom_panel .order:not(.unavaliable)');
 cart_confirm.windowClose('.page_cart_modal_confirm .close, .page_cart_modal_confirm .back, .page_cart_modal_confirm .confirm');
 
 /* --- < Cart page --- */
+
+/* --- Modal register > --- */
+
+$('body').on('click', '.modal_registration_2_1 .select:eq(0) .select-options li', function () {
+    modal_reg_1_sel_2.reset();
+    sendModalSelect($(this).text(), modal_reg_1_sel_2);
+    modal_reg_1_sel_2.state(true);
+    modal_reg_1_sel_3.reset();
+    modal_reg_1_sel_3.state(false);
+});
+
+$('body').on('click', '.modal_registration_2_1 .select:eq(1) .select-options li', function () {
+    modal_reg_1_sel_3.reset();
+    sendModalSelect($(this).text(), modal_reg_1_sel_3);
+    modal_reg_1_sel_3.state(true);
+});
+
+
+
+var modal_consult = new ModalWindow('.modal_consult');
+modal_consult.windowOpen('.header_bottom .consult');
+modal_consult.windowClose('.modal_consult .close');
+
+
+$('body').on('click', '.modal_consult .submit', function () {
+    sendData(modal_consult.adapt_data(), modal_consult.deactivateElement);
+})
+
+
+var modal_authorization = new ModalWindow('.modal_authorization');
+modal_authorization.windowOpen('.header_top .status');
+modal_authorization.windowClose('.modal_authorization .close');
+
+
+$('body').on('click', '.modal_authorization .submit', function () {
+    sendData(modal_authorization.adapt_data(), modal_authorization.deactivateElement);
+})
+
+var modal_restore_pass;
+
+$('body').on('click', '.modal_authorization .restore_pass', function () {
+    modal_authorization.deactivateElement();
+    if (!modal_restore_pass) {
+        modal_restore_pass = new ModalWindow('.modal_restore_pass');
+        modal_restore_pass.windowClose('.modal_restore_pass .close');
+    }
+    modal_restore_pass.activateElement();
+})
+
+$('body').on('click', '.modal_restore_pass .submit', function () {
+    sendData(modal_restore_pass.adapt_data(), modal_restore_pass.deactivateElement);
+})
+
+var modal_register_1;
+
+$('body').on('click', '.modal_authorization .register', function () {
+    modal_authorization.deactivateElement();
+    if (!modal_register_1) {
+        modal_register_1 = new ModalWindow('.modal_registration_1');
+        modal_register_1.windowClose('.modal_registration_1 .close');
+    }
+    modal_register_1.activateElement();
+});
+
+var modal_register_2_1, modal_register_2_2;
+
+$('body').on('click', '.modal_registration_1 .customer', function () {
+    modal_register_1.deactivateElement();
+    if (!modal_register_2_1) {
+        modal_register_2_1 = new ModalWindow('.modal_registration_2_1');
+        modal_register_2_1.windowClose('.modal_registration_2_1 .close');
+    }
+    modal_register_2_1.activateElement();
+});
+
+
+$('body').on('click', '.modal_registration_1 .partner', function () {
+    modal_register_1.deactivateElement();
+    if (!modal_register_2_2) {
+        modal_register_2_2 = new ModalWindow('.modal_registration_2_2');
+        modal_register_2_2.windowClose('.modal_registration_2_2 .close');
+    }
+    modal_register_2_2.activateElement();
+});
+
+
+$('body').on('click', '.modal_registration_2_1 .close, .modal_registration_2_2 .close', function() {
+    for (key in Register_Data) {
+        console.log('key' + ':' + Register_Data[key] )
+        
+    }
+    //очистить данные
+    
+ 
+
+//Register_Data['modal_window_name', 'thisData']
+})
+
+
+
+
+
+
+
+/* --- < Modal register --- */

@@ -1,0 +1,79 @@
+.modal_registration_1 {    
+    .mid_h {
+        margin-bottom: 15px;
+    }
+    .title {
+        font-size: $fs14;
+        margin-bottom: 30px;
+        color: $font_gray;
+    }
+    .choose_profile {
+        @extend %clear;
+        height: 145px;
+        position: relative;
+    }
+    .border {
+        position: absolute;
+        font-size: $fs12;
+        color: $font_l_gray;
+        height: 120px;
+        line-height: 120px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        margin: auto;
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            width: 1px;
+            background-color: $font_l_gray;
+            height: 30px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        &:before {
+            top: 0;
+        }
+        &:after {
+            bottom: 0;
+        }
+    }
+    .customer,
+    .partner {
+        position: relative;
+        width: 200px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .customer {
+        margin-left: 10px;
+        float: left;
+    }
+    .partner {
+        float: right;
+        margin-right: 10px;
+    }
+    .img {
+        height: 55px;
+        position: relative;
+        margin-bottom: 15px;
+        img {
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    }
+    .profile_title {
+        font-size: $fs16;
+        font-family: Medium;
+        margin-bottom: 15px;
+    }
+    .profile_text {
+        font-size: $fs12;
+        padding: 0 30px;
+    }
+}

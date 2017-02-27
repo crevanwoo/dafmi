@@ -1,0 +1,21 @@
+.modal_registration_success {
+  
+    .modal_content {
+        height: 240px;
+        text-align: center;
+        display: table;
+    }
+    .inner {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .mid_h {
+        margin-bottom: 25px;
+    }
+    .profile {
+        cursor: pointer;
+        display: inline-block;
+        font-size: $fs14;
+        border-bottom: 1px dashed $black;
+    }
+}
