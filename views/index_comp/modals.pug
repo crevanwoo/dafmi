@@ -5,15 +5,16 @@ div.modal_window.modal_authorization
     div.modal_content
         div.close
         h3.mid_h Авторизация
-        -var i = 0
-        each item in modal_auto            
-            p.label= item
-            div.input
-                input(data-key= keys_authorization[i++])
-        div.bottom
-            div.restore_pass Я забыл свой пароль
-            button.submit Авторизация
-            div.register Зарегестрировать новый аккаунт
+        form(name="authorization")
+            -var i = 0
+            each item in modal_auto            
+                p.label= item
+                div.input
+                    input(name= names_authorization[i], data-key= keys_authorization[i++])
+            div.bottom
+                div.restore_pass Я забыл свой пароль
+                button.submit Авторизация
+                div.register Зарегестрировать новый аккаунт
         
         
 //modal_authorization ends
@@ -40,62 +41,67 @@ div.modal_window.modal_registration_1
 //modal_registration_1 ends
 
 //modal_registration_2_1 begins
-div.modal_window.modal_registration_2_1
+div(data-modal-name="register_customer").modal_window.modal_registration_2_1
     div.modal_content.default_select    
         div.close
         h3.mid_h Регистрация
         p.title Шаг 2 из 4. Ваш автомобиль
-        -var i =0
-        each item in modal_reg_2_1            
-            p(data-key= keys_registration_customer[i+1]).label= item
-            select(class= 'modal_reg_1_sel_' + i++)
-                option(value='hide') -- Выберите бренд -- 
-                option(value='value1') Value1
-                option(value='value1') Value2
-                option(value='value1') Value3
-        div.next Далее
+        form(name="register_customer")
+            -var i =0
+            each item in modal_reg_2_1            
+                p(data-key= keys_registration_customer[i]).label= item
+                select(class= 'modal_reg_1_sel_' + i++)
+                    option(value='hide') -- Выберите бренд -- 
+                    option(value='value1') Value1
+                    option(value='value1') Value2
+                    option(value='value1') Value3
+            div.next Далее
 //modal_registration_2_1 ends
 
 //modal_registration_2_2 begins
-div.modal_window.modal_registration_2_2
+div(data-modal-name="register_company").modal_window.modal_registration_2_2
     div.modal_content
         div.close
         h3.mid_h Регистрация
         p.title Шаг 2 из 4. Даные о компании
-        each item in modal_reg_2_2
+        form(name="register_company")
             -var i = 0
-            p.label= item
-            div.input
-                input(data-key= keys_registration_company[i++])
-        div.next Далее
+            each item in modal_reg_2_2 
+                p.label= item
+                div.input
+                    input(name= names_registration_company[i + 1], data-key= keys_registration_company[i++])
+            div.next Далее
 //modal_registration_2_2 ends
 
 //modal_registration_3 begins
-div.modal_window.modal_registration_3
+div(data-modal-name="register_personal").modal_window.modal_registration_3
     div.modal_content
         div.close
         h3.mid_h Регистрация
         p.title Шаг 3 из 4. Личные данные
-        each item in modal_reg_3
-            p.label= item
-            div.input
-                input(data-key= keys_registration_person[i++])
-        div.next Далее 
+        form(name="register_personal")
+            -var i = 0
+            each item in modal_reg_3
+                p.label= item
+                div.input
+                    input(name= names_registration_person[i + 1], data-key= keys_registration_person[i++])
+            div.next Далее 
 //modal_registration_3 ends
 
 //modal_registration_4 begins
-div.modal_window.modal_registration_4
+div(data-modal-name="register_pass").modal_window.modal_registration_4
     div.modal_content
         div.close
         h3.mid_h Регистрация
         p.title Шаг 4 из 4. Пароль
-        p.label Придумайте пароль
-        div.input
-            input(data-key='pass1')
-        p.label Повторите пароль
-        div.input.fail
-            input(data-key='pass2')
-        button.finish Завершить регистрацию
+        form(name="register_pass")
+            p.label Придумайте пароль
+            div.input
+                input(name="pass", data-key='pass1')
+            p.label Повторите пароль
+            div.input
+                input(name="pass_confirm", data-key='pass2')
+            button.finish Завершить регистрацию
 //modal_registration_4 ends
 
 //modal_registration_success begins
@@ -113,9 +119,10 @@ div.modal_window.modal_restore_pass
         div.close
         h3.mid_h Восстановить пароль
         p.label Введите ваш логин или email
-        div.input
-            input(data-key="email")
-        button.submit Восстановить пароль
+        form(name="restore_pass")
+            div.input
+                input(name="email", data-key="email")
+            button.submit Восстановить пароль
 //modal_restore_pass ends
 
 //modal_restore_pass_success begins
@@ -131,15 +138,16 @@ div.modal_window.modal_consult
     div.modal_content
         div.close        
         h3.mid_h Получить консультацию
-        p.label Ваше имя
-        div.input
-            input(data-key="name")
-        p.label Номер телефона
-        div.input
-            input(data-key="tel")
-        p.label Текст обращения
-        textarea(data-key="comment")
-        button.submit Отправить заявку
+        form(name="consult")
+            p.label Ваше имя
+            div.input
+                input(name="name", data-key="name")
+            p.label Номер телефона
+            div.input
+                input(name="tel", data-key="tel")
+            p.label Текст обращения
+            textarea(name="comment", data-key="comment")
+            button.submit Отправить заявку
 //modal_consult ends
 
 //modals ends

@@ -127,22 +127,26 @@ button {
   button:focus {
     outline: none; }
 
-form {
-  margin: auto;
-  font-size: 0; }
-  form button {
-    display: block;
+/*form {
     margin: auto;
-    width: 340px;
-    height: 75px;
-    font-family: Bold;
-    font-size: 18px;
-    text-transform: uppercase;
-    background-color: #dc5552;
-    border-radius: 40px;
-    color: white;
-    transition: 0.3s; }
-
+    font-size: 0;
+    button {
+        display: block;
+        margin: auto;
+        width: 340px;
+        height: 75px;
+        font-family: Bold;
+        font-size: $fs18;
+        text-transform: uppercase;
+        background-color: $red;
+        border-radius: 40px;
+        color: white;
+        transition: 0.3s;
+        &:hover {
+            //background-color: $darkred;
+        }
+    }
+}*/
 .input {
   position: relative;
   display: inline-block; }

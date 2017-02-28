@@ -387,7 +387,9 @@ modal_authorization.windowClose('.modal_authorization .close');
 
 
 $('body').on('click', '.modal_authorization .submit', function () {
-    sendData(modal_authorization.adapt_data(), modal_authorization.deactivateElement);
+    var data = modal_authorization.adapt_data();
+    validateForm("[name=" + findParent($(this), 'modal_window').find('form').attr('name') + "]", sendData.bind(null, data, modal_authorization.deactivateElement));
+    
 })
 
 var modal_restore_pass;
@@ -402,7 +404,14 @@ $('body').on('click', '.modal_authorization .restore_pass', function () {
 })
 
 $('body').on('click', '.modal_restore_pass .submit', function () {
-    sendData(modal_restore_pass.adapt_data(), modal_restore_pass.deactivateElement);
+    modal_restore_pass.deactivateElement();
+
+
+    var modal_restore_pass_success = new ModalWindow('.modal_restore_pass_success');
+    modal_restore_pass_success.windowClose('.modal_restore_pass_success .close');
+
+
+    sendData(modal_restore_pass.adapt_data(), modal_restore_pass_success.activateElement);
 })
 
 var modal_register_1;
@@ -438,17 +447,67 @@ $('body').on('click', '.modal_registration_1 .partner', function () {
 });
 
 
-$('body').on('click', '.modal_registration_2_1 .close, .modal_registration_2_2 .close', function() {
+$('body').on('click', '.modal_registration_2_1 .close, .modal_registration_2_2 .close, .modal_registration_3 .close, .modal_registration_4 .close', function () {
+    Register_Data = {};
+    console.log('deleted');
     for (key in Register_Data) {
-        console.log('key' + ':' + Register_Data[key] )
-        
+        console.log('key' + ':' + Register_Data[key])
     }
     //очистить данные
-    
- 
-
-//Register_Data['modal_window_name', 'thisData']
+    //Register_Data['modal_window_name', 'thisData']
 })
+
+var modal_register_3;
+$('body').on('click', '.modal_registration_2_1 .next, .modal_registration_2_2 .next', function () {
+    collectFormDataToStack.call(this);
+
+    if ($('.modal_registration_2_1').hasClass('active')) {
+        modal_register_2_1.deactivateElement();
+    } else {
+        modal_register_2_2.deactivateElement();
+    }
+
+
+    if (!modal_register_3) {
+        modal_register_3 = new ModalWindow('.modal_registration_3');
+        modal_register_3.windowClose('.modal_registration_3 .close');
+    }
+    modal_register_3.activateElement();
+});
+
+
+var modal_register_4;
+$('body').on('click', '.modal_registration_3 .next', function () {
+    collectFormDataToStack.call(this);
+    modal_register_3.deactivateElement();
+
+
+
+    if (!modal_register_4) {
+        modal_register_4 = new ModalWindow('.modal_registration_4');
+        modal_register_4.windowClose('.modal_registration_4 .close');
+    }
+    modal_register_4.activateElement();
+});
+
+
+$('body').on('click', '.modal_registration_4 .finish', function () {
+    collectFormDataToStack.call(this);
+    modal_register_4.deactivateElement();
+
+    var modal_register_success = new ModalWindow('.modal_registration_success');
+    modal_register_success.windowClose('.modal_registration_success .close');
+
+    function onsuccess() {
+        modal_register_success.activateElement();
+        Register_Data = {};
+    }
+
+    sendData(JSON.stringify(Register_Data), onsuccess);
+
+});
+
+
 
 
 

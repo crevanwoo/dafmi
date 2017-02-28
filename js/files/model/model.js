@@ -239,13 +239,13 @@ function CollectFormData(selector) { // this is modal window
         
     $(selector).find('input').each(function() {
         var key = $(this).attr('data-key');
-        var value = $(this).val();
+        var value = encodeURI($(this).val());
         Data[key] = value;
         
     });
     $(selector).find('textarea').each(function() {
         var key = $(this).attr('data-key');
-        var value = $(this).val();
+        var value = encodeURI($(this).val());
         Data[key] = value;
         
     });
@@ -258,5 +258,21 @@ function CollectFormData(selector) { // this is modal window
 }
 
 var Register_Data = {};
+
+
+
+function collectFormDataToStack() {
+
+    var data_piece = new CollectFormData('[data-modal-name="' + findParent($(this), 'modal_window').attr('data-modal-name') + '"]');
+
+    Register_Data[findParent($(this), 'modal_window').attr('data-modal-name')] = data_piece.adapt_data();
+
+    for (key in Register_Data) {
+        console.log(key + ':' + Register_Data[key])
+
+    }
+
+
+}
 
 //Register_Data['modal_window_name', 'thisData']
