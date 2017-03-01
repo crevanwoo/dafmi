@@ -45,8 +45,7 @@ div(data-modal-name="register_customer").modal_window.modal_registration_2_1
     div.modal_content.default_select    
         div.close
         h3.mid_h Регистрация
-        p.title Шаг 2 из 4. Ваш автомобиль
-        form(name="register_customer")
+        p.title Шаг 2 из 4. Ваш автомобиль        
             -var i =0
             each item in modal_reg_2_1            
                 p(data-key= keys_registration_customer[i]).label= item
@@ -69,8 +68,8 @@ div(data-modal-name="register_company").modal_window.modal_registration_2_2
             each item in modal_reg_2_2 
                 p.label= item
                 div.input
-                    input(name= names_registration_company[i + 1], data-key= keys_registration_company[i++])
-            div.next Далее
+                    input(name= names_registration_company[i], data-key= keys_registration_company[i++])
+            button.next Далее
 //modal_registration_2_2 ends
 
 //modal_registration_3 begins
@@ -84,8 +83,8 @@ div(data-modal-name="register_personal").modal_window.modal_registration_3
             each item in modal_reg_3
                 p.label= item
                 div.input
-                    input(name= names_registration_person[i + 1], data-key= keys_registration_person[i++])
-            div.next Далее 
+                    input(name= names_registration_person[i], data-key= keys_registration_person[i++])
+            button.next Далее 
 //modal_registration_3 ends
 
 //modal_registration_4 begins
@@ -97,10 +96,11 @@ div(data-modal-name="register_pass").modal_window.modal_registration_4
         form(name="register_pass")
             p.label Придумайте пароль
             div.input
-                input(name="pass", data-key='pass1')
+                input(name="pass_reg", data-key='pass1')
             p.label Повторите пароль
             div.input
                 input(name="pass_confirm", data-key='pass2')
+                div.assist
             button.finish Завершить регистрацию
 //modal_registration_4 ends
 

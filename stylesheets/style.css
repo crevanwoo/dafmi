@@ -2490,6 +2490,13 @@ footer .modal_window {
     top: 20px;
     background-image: url(../images/icon_close_popup.png);
     background-size: contain; }
+  footer .modal_window li {
+    padding: 0;
+    list-style-type: none;
+    height: 0; }
+    footer .modal_window li span.invalid {
+      color: #dc5552;
+      font-size: 12px; }
 
 .modal_authorization .mid_h {
   margin-bottom: 35px; }
@@ -2617,26 +2624,26 @@ footer .modal_window {
   color: #999; }
 
 .modal_registration_4 .input {
+  position: relative;
   padding-right: 40px; }
 
-.modal_registration_4 .success,
-.modal_registration_4 .fail {
+.modal_registration_4 input.success,
+.modal_registration_4 input.invalid {
   position: relative; }
-  .modal_registration_4 .success:after,
-  .modal_registration_4 .fail:after {
-    content: '';
+  .modal_registration_4 input.success ~ .assist,
+  .modal_registration_4 input.invalid ~ .assist {
     display: block;
     position: absolute;
     top: 50%;
     right: 15px; }
 
-.modal_registration_4 .success:after {
+.modal_registration_4 .success ~ .assist {
   width: 13px;
   height: 10px;
   background-image: url(../images/icon_pass_true.png);
   margin-top: -5px; }
 
-.modal_registration_4 .fail:after {
+.modal_registration_4 .invalid ~ .assist {
   width: 13px;
   height: 13px;
   background-image: url(../images/icon_pass_false.png);
@@ -2681,7 +2688,6 @@ footer .modal_window {
   width: 100%;
   display: block;
   height: 80px;
-  margin-bottom: 20px;
   resize: none;
   background-color: white;
   color: #333;
@@ -2691,3 +2697,6 @@ footer .modal_window {
   .modal_consult textarea:focus {
     outline: none;
     background-color: rgba(255, 255, 255, 0.9); }
+
+.modal_consult .submit {
+  margin-top: 20px; }

@@ -1,22 +1,24 @@
 .modal_consult {
-    .mid_h {
-        margin-bottom: 35px;
-    }
-    textarea {
-        border: 1px solid $border_active_gray;
-        width: 100%;
-        display: block;
-        height: 80px;
-        margin-bottom: 20px;
-        resize: none;
-        background-color: white;
-        color: $black;
-        font-size: $fs14;
-        padding: 10px 20px;
-        font-family: Regular;
-        &:focus {
-            outline: none;
-            background-color: rgba(255, 255, 255, 0.9);
-        }
-    }
+	.mid_h {
+		margin-bottom: 35px;
+	}
+	textarea {
+		border: 1px solid $border_active_gray;
+		width: 100%;
+		display: block;
+		height: 80px;
+		resize: none;
+		background-color: white;
+		color: $black;
+		font-size: $fs14;
+		padding: 10px 20px;
+		font-family: Regular;
+		&:focus {
+			outline: none;
+			background-color: rgba(255, 255, 255, 0.9);
+		}
+	}
+	.submit {
+		margin-top: 20px;
+	}
 }

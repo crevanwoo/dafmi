@@ -363,3 +363,16 @@ function checkCartIsEmpty() {
         $('.page_cart .order').addClass('unavaliable');
     }
 }
+
+
+
+
+function setErrorMessage(marker) {
+		
+		if (!marker && $('.modal_registration_2_1 .invalid').length < 1) {
+			$('<li><span class="invalid">Вы должны заполнить все поля</span></li>').insertBefore($('.modal_registration_2_1 .next'));
+		} else if (marker) {
+			$('.modal_registration_2_1 .invalid').parent().remove();
+		}
+		
+	}

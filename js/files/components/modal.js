@@ -1,7 +1,8 @@
 function ModalWindow(modal_selector) {
 
     CollectFormData.call(this, modal_selector);
-
+	
+	
     var m_window = $(modal_selector);
 
     this.transition_time = 300;

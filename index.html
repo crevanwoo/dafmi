@@ -268,8 +268,7 @@
         <div class="modal_content default_select">   
           <div class="close"></div>
           <h3 class="mid_h">Регистрация</h3>
-          <p class="title">Шаг 2 из 4. Ваш автомобиль</p>
-          <form name="register_customer">
+          <p class="title">Шаг 2 из 4. Ваш автомобиль        
             <p class="label" data-key="brand">Бренд:</p>
             <select class="modal_reg_1_sel_0">
               <option value="hide">-- Выберите бренд -- </option>
@@ -292,7 +291,7 @@
               <option value="value1">Value3</option>
             </select>
             <div class="next">Далее</div>
-          </form>
+          </p>
         </div>
       </div>
       <!--modal_registration_2_1 ends-->
@@ -305,21 +304,21 @@
           <form name="register_company">
             <p class="label">Название компании:</p>
             <div class="input">
-              <input name="code" data-key="name">
+              <input name="name" data-key="name">
             </div>
             <p class="label">ЕДРПОУ:</p>
             <div class="input">
-              <input name="city" data-key="edrpou">
+              <input name="code" data-key="edrpou">
             </div>
             <p class="label">Город:</p>
             <div class="input">
-              <input name="adress" data-key="city">
+              <input name="city" data-key="city">
             </div>
             <p class="label">Адрес:</p>
             <div class="input">
-              <input data-key="adress">
+              <input name="adress" data-key="adress">
             </div>
-            <div class="next">Далее</div>
+            <button class="next">Далее</button>
           </form>
         </div>
       </div>
@@ -333,17 +332,17 @@
           <form name="register_personal">
             <p class="label">Ваше имя:</p>
             <div class="input">
-              <input name="email" data-key="name">
+              <input name="name" data-key="name">
             </div>
             <p class="label">Ваш email:</p>
             <div class="input">
-              <input name="tel" data-key="email">
+              <input name="email" data-key="email">
             </div>
             <p class="label">Ваш телефон:</p>
             <div class="input">
-              <input data-key="tel">
+              <input name="tel" data-key="tel">
             </div>
-            <div class="next">Далее </div>
+            <button class="next">Далее </button>
           </form>
         </div>
       </div>
@@ -357,11 +356,12 @@
           <form name="register_pass">
             <p class="label">Придумайте пароль</p>
             <div class="input">
-              <input name="pass" data-key="pass1">
+              <input name="pass_reg" data-key="pass1">
             </div>
             <p class="label">Повторите пароль</p>
             <div class="input">
               <input name="pass_confirm" data-key="pass2">
+              <div class="assist"></div>
             </div>
             <button class="finish">Завершить регистрацию</button>
           </form>

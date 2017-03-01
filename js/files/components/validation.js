@@ -1,61 +1,100 @@
-function validateForm(selector, f_name) {
-    $(selector).validate({
-         submitHandler: f_name,
-        rules: {
-            name: {
-                required: true,
-            },
-            pass: {
-                required: true,
-            },
-            email: {
-                required: true,
-                email: true
-            },
-            code: {
-                required: true,
-                minlength: 8,
-                maxlength: 8
-            },
-            city: {
-                required: true,
-            },
-            adress: {
-                required: true,
-            },
-            tel: {
-                required: true,
-                numbers: true
-            },
-            comment: {
-                required: true,
-                maxlength: 800
-            }
-        },
-        messages: {
-            pass: "Необходимо ввести пароль",
-            email: {
-                required: "Необходимо ввести адрес почты",
-                email: "Необходимо ввести адрес в правильном формате"
-            },
-            code: "Необходимо ввести действительный код",
-            city: "Необходимо ввести город",
-            adress: "Необходимо ввести действительный адрес",
-            tel: {
-                required: "Необходимо ввести телефон",
-                numbers: "Необходимо ввести только цифры",
-            },
-            comment: {
-                required: "Напишите суть своего обращения",
-                maxlength: "Сообщение слишком длинное. Максимум 800 символов",
-            },
+function validateForm(selector, f_name, f_invalid) {
 
-            name: "Необходимо ввести имя",
+	$(selector).validate({
+		invalidHandler: function () {
+			if (f_invalid) {console.log('error');
+				f_invalid()
+			}
+		},
+		submitHandler: function () {
+			if (f_name) {console.log('success');
+				f_name()
+			}
+		},
+		rules: {
+			name: {
+				required: true,
+			},
+			pass: {
+				required: true,
+			},
+			email: {
+				required: true,
+				email: true
+			},
+			code: {
+				required: true,
+				number: true,
+				minlength: 8,
+				maxlength: 8
+			},
+			city: {
+				required: true,
+			},
+			adress: {
+				required: true,
+			},
+			tel: {
+				required: true,
+				number: true
+			},
+			comment: {
+				required: true,
+				maxlength: 800
+			},
+			pass_reg: {
+				required: true
+			},
+			pass_confirm: {
+				equalTo: "[name='pass_reg']"
+			}
+		},
+		messages: {
+			pass: {
+				required: "Необходимо ввести пароль"
+			},
+			email: {
+				required: "Необходимо ввести адрес почты",
+				email: "Необходимо ввести адрес в правильном формате"
+			},
+			code: {
+				required: "Необходимо ввести действительный код",
+				minlength: "Необходимо ввести действительный код",
+				maxlength: "Необходимо ввести действительный код",
+				number: "Необходимо ввести действительный код"
+			},
+			city: { 
+				required: "Необходимо ввести город"
+			},
+			adress: {
+				required: "Необходимо ввести действительный адрес"
+			},
+			tel: {
+				required: "Необходимо ввести телефон",
+				number: "Необходимо ввести только цифры",
+			},
+			comment: {
+				required: "Напишите суть своего обращения",
+				maxlength: "Сообщение слишком длинное. Максимум 800 символов",
+			},
 
-        },
-        errorClass: "invalid",
-        errorLabelContainer: ".error_message",
-        wrapper: "li",
+			name: {
+				required: "Необходимо ввести имя"
+			},
+			pass_reg: {
+				required: "Необходимо ввести пароль"
+			},
+			pass_confirm: {
+				equalTo: "Ошибка ввода"
+			}
 
-    })
+		},
+		errorClass: "invalid",
+		validClass: "success",
+		errorLabelContainer: ".error_message",
+		wrapper: "li",
+		errorElement: "span",
+
+	})
 }
+
