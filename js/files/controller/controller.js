@@ -1,3 +1,4 @@
+$(document).ready( function() {
 /* --- ---- --- --- --- --- On Page Load > --- ---- --- --- --- --- */
 
 addCustomSelect('.footer_top .lang select');
@@ -583,3 +584,16 @@ $('body').on('click', '.modal_registration_4 .finish', function () {
 
 
 /* --- < Modal register --- */
+setImgAsBg('.single_article .img img')
+
+news.length = 700;
+
+news.addExpandTextToArray();
+
+$('body').on('click touchstart', '.single_article .show_more', function () {
+	news.expandText(this);
+})
+
+
+
+})

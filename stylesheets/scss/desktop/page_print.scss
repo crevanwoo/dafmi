@@ -1,0 +1,41 @@
+.content.page_print {
+	>.wrapper {
+		@extend %clear;
+		border: none;
+		background-color: transparent;
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+	.left {
+		float: left;
+		width: 765px;
+		padding-left: 15px;
+	}
+	.right {
+		float: left;
+		margin-left: 35px;
+	}
+	.big_h {
+		margin-top: 60px;
+		margin-bottom: 25px;
+	}
+	.text {
+		font-size: $fs14;
+		line-height: 180%;
+		margin-bottom: 25px;
+	}
+	.buttons {
+		@extend %clear;
+		.button {
+			float: left;
+			transition: $trans;
+			@include btn($font-size: $fs14, $font-color: $black, $bg-color: transparent, $width: 200px, $height: 45px, $border-radius: 0px, $border-color: $border_l_gray, $border-width: 1px);
+			&:hover {
+				@include btn($font-size: $fs14, $font-color: $font_white, $bg-color: $red, $width: 200px, $height: 45px, $border-radius: 0px, $border-color: $red, $border-width: 1px);
+			}
+		}
+		.register {
+			margin-left: 15px;
+		}
+	}
+}

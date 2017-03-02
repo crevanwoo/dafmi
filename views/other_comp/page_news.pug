@@ -1,0 +1,23 @@
+// news begins
+div.content.page_news
+	div.wrapper
+		h3.big_h Каталог статей
+		div.news_wrapper
+			-for (var i =0; i< 10; i++)
+				div.single_article
+					h4.title На DAfmi отметили 26-й день рождения предприятия
+					p.date #{(i+10)-(i*2)} февраля
+					div.text
+						div.img
+							img(src="images/single_news.jpg")
+						p.article_text!= page_news_text + page_news_text_extend	
+		div.buttons_panel
+			div.buttons
+				div.back.button Назад
+				-for (var i =0; i< 5; i++)
+					if i == 2					
+						div.page_num.button.active= (i+1)
+					else
+						div.page_num.button= (i+1)
+				div.next.button Далее
+// news ends

@@ -1,27 +1,28 @@
 @font-face {
-    font-family: Light;
-    src: url(../fonts/GothamProLight.ttf)
+	font-family: Light;
+	src: url(../fonts/GothamProLight.ttf)
 }
 
 @font-face {
-    font-family: Regular;
-    src: url(../fonts/GothamProRegular.ttf)
+	font-family: Regular;
+	src: url(../fonts/GothamProRegular.ttf)
 }
 
 @font-face {
-    font-family: Medium;
-    src: url(../fonts/GothamProMedium.ttf)
+	font-family: Medium;
+	src: url(../fonts/GothamProMedium.ttf)
 }
 
 @font-face {
-    font-family: Bold;
-    src: url(../fonts/GothamProBold.ttf)
+	font-family: Bold;
+	src: url(../fonts/GothamProBold.ttf)
 }
 
 @font-face {
-    font-family: Bandera;
-    src: url(../fonts/BanderaPro-Bold.otf)
+	font-family: Bandera;
+	src: url(../fonts/BanderaPro-Bold.otf)
 }
+
 $trans: 0.3s;
 $red: #dc5552;
 //font
@@ -31,6 +32,7 @@ $l_gray:#a7abb0;
 $font_gray: #999;
 $font_white: #fff;
 $font_l_gray: #cdcdcd;
+$font_blue: #284ca8;
 //bg
 $bg_black: #212125;
 $bg_deep_black:#1a1a1e;
@@ -39,7 +41,6 @@ $active_gray: #fafafa;
 $disabled_gray: #f8f8f8;
 $button_gray: #f4f4f4;
 $bg_white: #fff;
-
 //border
 $border_gray: #d6d6d6;
 $border_l_gray: #efefef;
@@ -47,8 +48,10 @@ $border_active_gray: #b4b4b4;
 $border_dark_gray: #4a4a4d;
 $border_gray_table_title: #e5e5e5;
 $border_gray_table_row: #ededed;
-$selection_border:  1px solid $border_l_gray;
+$selection_border : 1px solid $border_l_gray;
+
 /*Font Sizes*/
+
 $fs12:12px;
 $fs13:13px;
 $fs14:14px;
@@ -61,57 +64,69 @@ $fs30:30px;
 $fs36:36px;
 $fs48:48px;
 $triangle_h: 238px;
+
 /*Elem sizes */
+
 $header_top_height: 60px;
 $header_bottom_height: 90px;
-$header_height : $header_top_height+$header_bottom_height;
+$header_height: $header_top_height+$header_bottom_height;
 $footer_top_height: 85px;
 $footer_bottom_height: 60px;
 $footer_height: $footer_top_height+$footer_bottom_height;
-
-
 %clear {
-    position: relative;
-    &:after {
-        content: '';
-        display: block;
-        clear: both;
-    }
+	position: relative;
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
 }
 
 %shim {
-    &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.55);
-    }
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, 0.55);
+	}
 }
 
 @mixin triangle($position, $url) {
-    &:after {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        height: $triangle_h;
-        background-image: $url;
-        background-size: 1900px $triangle_h;
-        background-position: center center;
-        @if $position==bottom {
-            bottom: 0;
-        }
-        @if $position==top {
-            top: 0;
-        }
-    }
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		height: $triangle_h;
+		background-image: $url;
+		background-size: 1900px $triangle_h;
+		background-position: center center;
+		@if $position==bottom {
+			bottom: 0;
+		}
+		@if $position==top {
+			top: 0;
+		}
+	}
 }
 
 @mixin bp() {
-    @media screen and (max-width: 1100px) {
-        @content;
-    }
+	@media screen and (max-width: 1100px) {
+		@content;
+	}
+}
+
+@mixin btn($font-size, $font-color, $bg-color, $width, $height, $border-radius, $border-color, $border-width) {
+	font-size: $font-size;
+	color: $font-color;
+	background-color: $bg-color;
+	width: $width;
+	height: $height;
+	border: $border-width solid $border-color;
+	border-radius: $border-radius;
+	line-height: $height - ( $border-width * 2);
+	text-align: center;
 }
