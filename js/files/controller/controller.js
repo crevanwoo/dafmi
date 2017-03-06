@@ -1,4 +1,4 @@
-$(document).ready( function() {
+
 /* --- ---- --- --- --- --- On Page Load > --- ---- --- --- --- --- */
 
 addCustomSelect('.footer_top .lang select');
@@ -6,7 +6,7 @@ addCustomSelect('.footer_top .lang select');
 
 // add items on first index page's tab to list
 
-addCarsTypeToList();
+addCarsTypeToList();  
 
 
 
@@ -584,7 +584,8 @@ $('body').on('click', '.modal_registration_4 .finish', function () {
 
 
 /* --- < Modal register --- */
-setImgAsBg('.single_article .img img')
+$(document).ready( function() { 
+	setImgAsBg('.single_article .img img')
 
 news.length = 700;
 

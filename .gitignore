@@ -50,3 +50,5 @@ Temporary Items
 # Untracked files:
 node_modules/*
 *.psd
+js/files/z_components/jquery.dotdotdot.min.js
+js/files/z_components/readmore.min.js
