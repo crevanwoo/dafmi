@@ -1,0 +1,90 @@
+.map.page_partners {
+    .mid_h {
+        text-transform: none;
+        line-height: 110px;
+        height: 110px;
+        font-size: $fs24;
+        font-family: Medium;
+        text-align: center;
+    }
+}
+
+.content.geography {
+    color: #333333;
+    margin-top: 605px;
+    .wrapper {
+        @extend %clear;
+        padding-bottom: 20px;
+    }
+    .big_h {
+        border-bottom: 1px solid $border_l_gray;
+        font-family: Medium;
+        font-size: $fs24;
+        line-height: 80px;
+        text-align: center;
+        text-transform: none;
+    }
+    .mid_h {
+        font-family: Medium;
+        font-size: $fs16;
+        text-transform: capitalize;
+        line-height: 24px;
+    }
+    .geography_element {
+        float: left;
+        width: 578px;
+        height: 125px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 15px;
+        margin-top: 20px;
+        margin-left: 20px;
+        border: 1px solid $border_l_gray;
+        font-size: 13px;
+        position: relative;
+        cursor: pointer;
+        .element_contact {
+            margin-left: 80px;
+            padding-left: 20px;
+        }
+        .img {
+            position: absolute;
+            top: 50%;
+            margin-top: -40px;
+            width: 80px;
+            height: 80px;
+            border: 1px solid $border_l_gray;
+        }
+        .text {
+            padding-top: 5px;
+            line-height: 160%;
+            margin-bottom: 7px;
+            height: 40px;
+            overflow: hidden;
+            a {
+                padding-right: 5px;
+                letter-spacing: 0.5px;
+            }
+        }
+        .visit {
+            img {
+                vertical-align: middle;
+            }
+            a {
+                margin-left: 20px;
+                border-bottom: 1px solid $border_active_gray;
+                line-height: 130%;
+                position: relative;
+                &:before {
+                    content: '';
+                    width: 12px;
+                    height: 12px;
+                    top: 2px;
+                    left: -20px;
+                    position: absolute;
+                    background-image: url(../images/link.png);
+                }
+            }
+        }
+    }
+}
