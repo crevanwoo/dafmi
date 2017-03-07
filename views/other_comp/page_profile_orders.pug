@@ -1,0 +1,28 @@
+// profile orders begins
+div.content.profile
+    div.wrapper
+        h1.big_h.pad Личный кабинет
+        div.profile_content
+            +profile_menu(2)
+            div.profile_tab_content.orders
+                div.order_list
+                    h3.mid_h Мои заказы
+                    div.order_header
+                        div.header_left
+                            div.header_value(data-value="number") Номер заказа
+                            div.header_value(data-value="date") Дата заказа
+                        div.header_right
+                            div.header_value(data-value="cost") Сумма
+                            div.header_value(data-value="status") Статус
+                    -var status = ['arrived', 'delivering', 'processing', 'waiting', 'denied'];
+                    -var status_info = ['Доставка', 'Идет доставка', 'Обработка заказа', 'Ожидание оплаты', 'Отказано'];
+                    -for (var i = 0; i < 10; i++)
+                        div.order_element(data-single-order-link="page_profile_single_order.html")
+                            div.order_left
+                                div.table_value(data-value="number") 222877766
+                                div.table_value(data-value="date") 09.02.17
+                            div.order_right
+                                div.table_value(data-value="summary") 12 000 грн
+                                div(data-value="count" class="status " + status[i])= status_info[i]
+                                
+// profile orders ends

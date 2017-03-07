@@ -1,0 +1,10 @@
+mixin profile_menu(active_num)
+    ul.profile_menu
+            -for (var i = 0; i< 5; i++)
+                if (i == active_num)
+                    li.active 
+                        a(href= profile_menu_link[i])= profile_menu_title[i]
+                else 
+                    li
+                        a(href= profile_menu_link[i])= profile_menu_title[i]
+

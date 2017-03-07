@@ -1,0 +1,42 @@
+// profile main begins
+div.content.profile
+    div.wrapper
+        h1.big_h.pad Личный кабинет
+        div.profile_content
+            +profile_menu(0)
+            div.profile_tab_content.edit 
+                h3.mid_h Редактирование данных
+                form
+                    div.field
+                        h4.small_h Безопасность
+                        -for (var i =0; i<3; i++)
+                            div.block1
+                                label(for="pass_" + (i+1)) Старый пароль
+                                input(type="text" id="pass_" + (i+1))
+                    div.field 
+                        h4.small_h Личные данные
+                        -var data = ['Фамилия', 'Имя', 'Отчество'];
+                        -var ids = ['surname', 'name', 'second_name'];
+                        -for (var i =0; i<3; i++)
+                            div.block1
+                                label(for= ids[i])= data[i]
+                                input(type="text" id= ids[i])
+                    div.field 
+                        h4.small_h Настройка компании
+                        -var data = ['Название компании', 'ЕДРПОУ', 'Город', 'Адрес'];
+                        -var ids = ['company_name', 'edrpou', 'city', 'address'];
+                        -var blocks_classes = ['block2', 'block1', 'block1', 'block2'];
+                        -for (var i =0; i<4; i++)
+                            div(class= blocks_classes[i])
+                                label(for= ids[i])= data[i]
+                                input(type="text" id= ids[i])
+                    div.field 
+                        h4.small_h Контактные данные
+                        -var data = ['Телефон', 'Skype', 'Email'];
+                        -var ids = ['phone', 'skype', 'edit_email']; 
+                        -for (var i =0; i<3; i++)
+                            div.block1
+                                label(for= ids[i])= data[i]
+                                input(type="text" id= ids[i])
+                    input(type="text" class="button" value="Сохранить изменения") 
+// profile main ends

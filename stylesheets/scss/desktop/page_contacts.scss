@@ -81,7 +81,7 @@
                 height: 36px;
                 margin-bottom: 6px;
                 border: $selection_border;
-                padding-left: 10px;
+                padding-left: $input_padding;
             }
             textarea {
                 width: 100%;
