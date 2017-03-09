@@ -4,7 +4,16 @@ div.content.profile
         h1.big_h.pad Личный кабинет
         div.profile_content
             +profile_menu(4)
-            div.profile_tab_content 
+            div.profile_tab_content.catalog
+                div.top_title.pad
+                    h3.big_h Мои каталоги
+                    div.button Создать новый
+                div.catalogue_items
+                    -for(var i =0; i< 5; i++)
+                        div.catalog_element.pad
+                            div.single_catalog_name Каталог от <span class="catalog_date">20.01.2017</span>
+                            a.download
+                
            
         
 

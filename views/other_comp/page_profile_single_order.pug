@@ -1,11 +1,24 @@
-// profile main begins
+// profile single order begins
 div.content.profile
     div.wrapper
         h1.big_h.pad Личный кабинет
         div.profile_content
             +profile_menu(2)
-            div.profile_tab_content 
-           
-        
+            div.profile_tab_content.order
+                div.top_title
+                    h3.big_h Заказ <span class="num_symbol">&#x2116;</span><span class="order_id">22877766</span>
+                    div.button.arrived Доставлено
+                        // classes : arrived delivering processing waiting denied 
+                div.order_list
+                    -for(var i =0; i< 10; i++)
+                        div.order_element
+                            div.table_value(data-value="number") <span class="vendor">2090506</span>
+                            div.table_value(data-value="name") Комплект тормозных колодок, дисковый тормоз
+                            div.table_value(data-value="cost") <span class="price">2500</span> грн/шт
+                            div.table_value(data-value="count") <span class="amount">5</span> шт.
+                            div.table_value(data-value="total") <span class="summ_single">100000</span> грн
+                div.total Итого: <span class="summ_total">400000</span> грн
+                            
+                            
 
-// profile main ends
+// profile single order ends

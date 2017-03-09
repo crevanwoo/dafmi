@@ -1,11 +1,34 @@
-// profile main begins
+// profile history begins
 div.content.profile
     div.wrapper
         h1.big_h.pad Личный кабинет
         div.profile_content
             +profile_menu(3)
-            div.profile_tab_content 
+            div.profile_tab_content.history
+                div.top_title.pad
+                    h3.big_h Недавно просмотренные
+                div.history_wrapper
+                    -for (var i = 0; i< 6; i++)
+                        div.single_product(data-product="link")
+                            div.single_product_wrapper
+                                div.img
+                                    img(src="images/auto_sample.jpg")
+                                div.info
+                                    div.top
+                                        p.vendor 2090506
+                                        a.go_to_page(href="page_single_product.html" target="_blank")
+                                    p.name Комплект тормозных колодок, дисковый тормоз
+                                    ul.additional_info
+                                        -for (var j = 0; j< 6; j++)
+                                            li.param= profile_history_param[j] 
+                                                span= profile_history_value[j] + ';'
+                                div.bottom
+                                    div.price <span>16 000</span> грн
+                                    div.cart
+                            
+                    
+                   
            
         
 
-// profile main ends
+// profile history ends

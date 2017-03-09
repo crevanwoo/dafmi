@@ -1,11 +1,24 @@
-// profile main begins
+// profile garage begins
 div.content.profile
     div.wrapper
         h1.big_h.pad Личный кабинет
         div.profile_content
             +profile_menu(1)
-            div.profile_tab_content 
-           
-        
-
-// profile main ends
+            div.profile_tab_content.garage
+                div.top_title.pad
+                    div.big_h Мой гараж
+                div.select_auto.pad
+                    select
+                        option Auto 1
+                        option Auto 2
+                    div.button.add_auto Добавить авто
+                    div.button.edit_auto
+                    div.images
+                        img(src="images/garage_side.png")
+                        img(src="images/garage_front.png")
+                div.search_info В каталоге есть <span class="amount">349</span> запчастей, которые подходят для выбранной модификации <span class="auto_model">Audi A1</span>.
+                div.search_params
+                    -for(var i =0; i< 5; i++)
+                        div.search_param!= page_garage_search_item[i]
+                div.search_result                    
+// profile garage ends

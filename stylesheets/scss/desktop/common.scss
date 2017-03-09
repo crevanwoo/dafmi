@@ -489,3 +489,154 @@ textarea {
         }
     }
 }
+
+%single_product_cell_view {
+    .single_product {
+        width: 246px;
+        height: 460px;
+        position: relative;
+        float: left;
+        margin-right: 10px;
+        margin-left: 10px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        .single_product_wrapper {
+            border: $selection_border;
+            height: 460px;
+            overflow: hidden;
+            padding-bottom: 70px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+        .img {
+            width: 244px;
+            height: 245px;
+            border-bottom: $selection_border;
+            background-color: $active_gray;
+            background-size: contain;
+            background-position: center center;
+            img {
+                display: none;
+            }
+        }
+        .info {
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: $bg_white;
+            .top {
+                @extend %clear;
+            }
+            .go_to_page {
+                display: block;
+                width: 50px;
+                height: 50px;
+              
+                cursor: pointer;
+                float: right;
+                position: relative;
+                border: $selection_border;
+                transition: $trans;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    top: 50%;
+                    margin-top: -12.5px;
+                    width: 25px;
+                    height: 25px;
+                    background-image: url(../images/icon_go_to_sprite.png);
+                    background-position: -25px 0;
+                }
+                &:hover {
+                      background-color: $red;
+                    border: 1px solid $red;
+                    &:before {
+                        background-position: 0 0;
+                    }
+                }
+            }
+            .vendor {
+                float: left;
+                height: 50px;
+                line-height: 50px;
+                font-size: $fs15;
+                font-family: Medium;
+            }
+            .name {
+                font-size: $fs14;
+                font-family: Medium;
+                padding: 5px 0;
+                line-height: 130%;
+            }
+            .additional_info {
+                font-size: $fs13;
+                li {
+                    line-height: 130%;
+                    padding: 5px 0;
+                }
+            }
+        }
+        .bottom {
+            @extend %clear;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: $bg_white;
+            box-shadow: 0 -5px 20px 20px $bg_white;
+            .price {
+                float: left;
+                width: 160px;
+                height: 50px;
+                line-height: 50px;
+                background-color: $button_gray;
+                font-family: Medium;
+                font-size: $fs13;
+                text-align: center;
+            }
+            .cart {
+                width: 50px;
+                height: 50px;
+                background-color: $red;
+                cursor: pointer;
+                float: right;
+                position: relative;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    top: 50%;
+                    margin-top: -15px;
+                    width: 30px;
+                    height: 30px;
+                    background-image: url(../images/icons_cart_scale.png);
+                    background-position: -30px 0;
+                }
+            }
+        }
+    }
+    .single_product.active {
+        z-index: 5;
+        .single_product_wrapper {
+            height: auto;
+            border: 1px solid $red;
+            .bottom {
+                box-shadow: none;
+            }
+        }
+    }
+    
+    
+}

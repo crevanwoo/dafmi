@@ -376,3 +376,41 @@ function setErrorMessage(marker) {
 		}
 		
 	}
+
+
+function manageProductCell(selector, cell_class_name) {
+    
+    var target = $(event.target);
+   
+    if (!$(target).hasClass('cart') && !findParent($(this), cell_class_name).hasClass('active')) {
+        
+        $(selector + '.active').removeClass('active');
+        
+        findParent($(this), cell_class_name).addClass('active');   
+        
+    }
+      else if (!$(target).hasClass('cart') && findParent($(this), cell_class_name).hasClass('active')) {
+        
+        $(selector + '.active').removeClass('active');        
+       
+    }
+    
+    else if ($(target).hasClass('cart') && !findParent($(this), cell_class_name).hasClass('active')) {
+        
+        $(selector + '.active').removeClass('active');
+        
+        findParent($(this), cell_class_name).addClass('active');
+         /*add fucntion add product to cart*/
+      
+    }
+    
+  
+     else if ($(target).hasClass('cart') && findParent($(this), cell_class_name).hasClass('active')) {
+        
+             /*add fucntion add product to cart*/
+      
+    }
+    
+    
+    
+}

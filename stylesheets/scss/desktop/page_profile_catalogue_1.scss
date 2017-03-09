@@ -1,0 +1,55 @@
+.catalog {
+    font-family: Medium;
+    padding-bottom: 40px;
+    .top_title {
+        @extend %clear;
+        height: 75px;
+        border-bottom: $selection_border;
+        .big_h {
+            float: left;
+            font-size: $fs20;
+            height: 75px;
+            line-height: 75px;
+        }
+        .button {
+            float: right;
+            position: relative;
+            margin-top: 15px;
+            width: 154px;
+            height: 45px;
+            padding: 15px;
+            border: 1px solid $red;
+            font-size: $fs13;
+            text-align: center;
+            transition: $trans;
+            &:hover {background-color: $red;
+            color:$font-white;}
+        }
+    }
+    .catalog_element {
+        height: 74px;
+        border-bottom: $selection_border;
+        .single_catalog_name {
+            display: inline;
+       
+            font-size: $fs13;
+            line-height: 74px;
+        }
+        .download {
+            display: block;
+            float: right;
+            width: 25px;
+            height: 25px;
+            background: url(../images/download.png) no-repeat;
+            background-position: 0 0;
+            position: relative;
+            top: 50%;
+            margin-top: -13px;
+            cursor: pointer;
+            &:hover,
+            &:active {
+                background-position: -25px 0;
+            }
+        }
+    }
+}
