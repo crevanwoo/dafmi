@@ -1,9 +1,12 @@
 .feedback {
     font-family: Regular;
+    padding-top: 30px;
     padding-bottom: 0;
     .wrapper {
         padding-top: 30px;
         padding-bottom: 75px;
+        background-color: $bg_white;
+        border: 1px solid $border_l_gray;
     }
     .contacts_content_wrapper {
         @extend %clear;
@@ -107,7 +110,10 @@
 }
 
 .map.page_contacts {
+    height: 680px;
+    position: relative;
     .wrapper {
+        position: relative;
         border-top: none;
         background-color: $bg_white;
     }
@@ -116,6 +122,12 @@
         text-align: center;
         line-height: 75px;
         border-bottom: 1px solid $border_l_gray;
-        ;
+    }
+    .google_map {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
 }

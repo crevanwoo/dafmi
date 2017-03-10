@@ -2928,10 +2928,13 @@ footer .modal_window {
 
 .feedback {
   font-family: Regular;
+  padding-top: 30px;
   padding-bottom: 0; }
   .feedback .wrapper {
     padding-top: 30px;
-    padding-bottom: 75px; }
+    padding-bottom: 75px;
+    background-color: #fff;
+    border: 1px solid #efefef; }
   .feedback .questions {
     font-size: 14px; }
   .feedback .big_h {
@@ -3005,15 +3008,24 @@ footer .modal_window {
       line-height: 43px;
       font-size: 15px; }
 
-.map.page_contacts .wrapper {
-  border-top: none;
-  background-color: #fff; }
-
-.map.page_contacts .mid_h {
-  font-size: 18px;
-  text-align: center;
-  line-height: 75px;
-  border-bottom: 1px solid #efefef; }
+.map.page_contacts {
+  height: 680px;
+  position: relative; }
+  .map.page_contacts .wrapper {
+    position: relative;
+    border-top: none;
+    background-color: #fff; }
+  .map.page_contacts .mid_h {
+    font-size: 18px;
+    text-align: center;
+    line-height: 75px;
+    border-bottom: 1px solid #efefef; }
+  .map.page_contacts .google_map {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0; }
 
 .map.page_partners .mid_h {
   text-transform: none;
