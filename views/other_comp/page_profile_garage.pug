@@ -20,5 +20,72 @@ div.content.profile
                 div.search_params
                     -for(var i =0; i< 5; i++)
                         div.search_param!= page_garage_search_item[i]
-                div.search_result                    
+                div.search_result
+                div.modal_window.modal_profile
+                    div.modal_content
+                        div.close
+                        div.top_nav
+                            h3.mid_h Добавление авто
+                            ul.modal_steps
+                                -var steps = ['Год выпуска', 'Выберите марку', 'Выберите модель', 'Ваше авто'] 
+                                each item in steps 
+                                    li.active= item
+                        div.modal_tab.years
+                            -for( var i = 2010; i > 1970; i-= 10)
+                                div.years_row 
+                                    div.decade= i + "-е"                                    
+                                    ul.single_year 
+                                        -for( var j = 10; j > 0; j--)
+                                            li= i+j
+                        div.modal_tab.mark
+                             ul.sort_az 
+                                -  
+                                    var az_list = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+                                each az_item in az_list
+                                    li.sort_az_letter
+                                        a(href="")= az_item 
+                             div.list
+                                 each item in cars1
+                                     div.product
+                                         div.img 
+                                            img(src="images/auto2.png")
+                                         div.title= item   
+                        div.modal_tab.model
+                            -for (var i = 0; i < 5; i++)
+                                div.single_result
+                                    h3.small_h ALFA ROMEO 145
+                                    p.title Выберите модель
+                                    div.img
+                                        img(src="images/auto1.png")
+                                    div.model_choosing 
+                                        div.models_wrapper
+                                            div.model 
+                                                span  123-345-18
+                                            div.model
+                                                span  123-345-25
+                                            div.model 
+                                                span  123-345-40
+                            div.single_result
+                                    h3.small_h ALFA ROMEO 145
+                                    p.title Выберите модель
+                                    div.img
+                                        img(src="images/auto1.png")
+                                    div.model_choosing 
+                                        div.models_wrapper
+                                            div.model 
+                                                span 123-345-18
+               
+                        div.modal_tab.confirm_choosing
+                            h4.small_h Подтвердите выбор:
+                            div.confirm_auto
+                                div.img
+                                    img
+                                div.info
+                                    p.title ALFA ROMEO 145
+                                    p.model 146 (930) 1994-2001
+                                div.button.confirm Добавить в мой гараж
+                                
+                            
+
+                                
 // profile garage ends

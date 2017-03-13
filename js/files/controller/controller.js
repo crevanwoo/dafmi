@@ -646,3 +646,8 @@ $('body').on('click', '.profile_tab_content.garage .search_param', function () {
     $('.profile_tab_content.garage .search_result').empty();
     loadContent('.profile_tab_content.garage .search_result', '../page_profile_history.html .history_wrapper >*', setImgAsBg.bind(null, '.profile_tab_content.garage .search_result .img img'));
 });
+
+
+var modal_profile = new ModalWindow('.modal_profile');
+modal_profile.windowOpen('.profile_tab_content.garage .add_auto, .profile_tab_content.garage .edit_auto');
+modal_profile.windowClose('.modal_profile .close');

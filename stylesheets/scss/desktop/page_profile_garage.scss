@@ -109,32 +109,33 @@
             position: absolute;
             height: 35px;
             width: 16px;
-            top:50%;
+            top: 50%;
             margin-top: -18px;
-            left:20px;
+            left: 20px;
             background-image: url(../images/icon_info.png)
-            
         }
-        
-        
     }
-    .search_params {@extend %clear;
+    .search_params {
+        @extend %clear;
         padding: 20px 10px;
-        .search_param {float: left;
+        .search_param {
+            float: left;
             height: 40px;
-           display: inline-block;
+            display: inline-block;
             padding: 0 20px;
-            margin:10px;
+            margin: 10px;
             border: 1px solid $border_dark_gray;
             cursor: pointer;
             text-align: center;
             line-height: 38px;
-            &:hover {background-color: $active_gray}
-            
+            &:hover {
+                background-color: $active_gray
+            }
         }
     }
-    .search_result {padding: 20px 10px;
-     
+    .search_result {
+        padding: 20px 10px;
         @extend %clear;
-    @extend %single_product_cell_view;}
+        @extend %single_product_cell_view;
+    }
 }

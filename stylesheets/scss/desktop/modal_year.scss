@@ -1,0 +1,28 @@
+.modal_tab.years {
+    display: none;
+    .years_row {
+        @extend %clear;
+        height: 70px;
+        line-height: 70px;
+        .decade {
+            font-family: Medium;
+            font-size: $fs16;
+            width: 110px;
+            float: left
+        }
+        .single_year {
+            @extend %clear;
+            height: 100%;
+            float: left;
+            li {
+                float: left;
+                width: 60px;
+                text-align: center;
+                height: 70px;
+                line-height: 70px;
+                cursor: pointer;
+                font-size: $fs14;
+            }
+        }
+    }
+}

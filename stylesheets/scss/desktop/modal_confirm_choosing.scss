@@ -1,0 +1,49 @@
+.modal_tab.confirm_choosing {
+    .small_h {
+        font-family: Medium;
+        font-size: $fs18;
+        height: 65px;
+        line-height: 65px;
+        text-transform: none;
+    }
+    .confirm_auto {
+        @extend %clear;
+        height: 100px;
+        border: $selection_border;
+        padding: 27.5px 20px;
+        .img {
+            float: left;
+            height: 100%;
+            width: 125px;
+            background-size: contain;
+        }
+        .info {
+            float: left;
+            margin-left: 20px;
+        }
+        .title {
+            font-family: Medium;
+            font-size: $fs16;
+            margin-bottom: 7px;
+        }
+        .model {
+            font-size: $fs14;
+        }
+        .button.confirm {
+            float: right;
+            height: 45px;
+            width: 220px;
+            line-height: 45px;
+            font-size: $fs13;
+            text-align: center;
+            text-transform: uppercase;
+            font-family: Medium;
+            border: 1px solid $red;
+            transition: $trans;
+            &:hover {
+                background-color: $red;
+                color: $font-white;
+            }
+        }
+    }
+}

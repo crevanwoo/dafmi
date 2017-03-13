@@ -1,0 +1,122 @@
+.print_catalog { display: none;
+    .top_title {
+        @extend %clear;
+        border-bottom: none;
+    }
+    .big_h {
+        font-family: Medium;
+        font-size: $fs20;
+        line-height: 75px;
+        float: none;
+    }
+    .mid_h {
+        padding-bottom: 25px;
+        font-family: Medium;
+        font-size: $fs16;
+        text-transform: inherit;
+    }
+    .title {
+        display: block;
+        padding: 0 20px;
+        background-color: $active_gray;
+        line-height: 64px;
+        text-transform: uppercase;
+        font-size: $fs13;
+        cursor: pointer;
+    }
+    form {
+        padding: 25px;
+        font-family: Regular;
+        .checkbox_wrapper {
+            position: relative;
+            width: 400px;
+            height: 50px;
+            line-height: 50px;
+            input[type="checkbox"] {
+                display: none;
+            }
+            input[type="checkbox"]+label {
+                cursor: pointer;
+                padding-left: 0;
+            }
+            input[type="checkbox"]+label::before {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                content: "";
+                display: inline-block;
+                height: 18px;
+                width: 18px;
+                margin: 0 5px 0 0;
+                margin-top: -9px;
+                border: 1px solid $border_gray;
+            }
+            input[type="checkbox"]:checked+label::after {
+                position: absolute;
+                top: 50%;
+                right: 4px;
+                content: "";
+                display: inline-block;
+                height: 5px;
+                width: 12px;
+                margin: 0 5px 0 0;
+                margin-top: -3px;
+                border-bottom: 1px solid #ef444c;
+                border-left: 1px solid #ef444c;
+                transform: rotate(-45deg);
+            }
+        }
+        .email {
+            position: relative;
+            width: 770px;
+            margin-bottom: 40px;
+            line-height: 64px;
+            input {
+                position: absolute;
+                top: 9px;
+                right: 0;
+                width: 395px;
+                height: 44px;
+                padding: 14px;
+                border: 1px solid $border-gray;
+                &::placeholder {
+                    color: $font-l-gray;
+                }
+            }
+        }
+        .button {
+            width: 300px;
+            min-height: 53px;
+            margin-left: 234px;
+            margin-bottom: 40px;
+            border: 1px solid #dc5552;
+            font-family: medium;
+            font-size: $fs13;
+            transition: $trans;
+            &:hover {
+                background-color: $red;
+                color: $font-white;
+            }
+        }
+    }
+}
+
+
+.print_catalog_confirm {
+    padding: 0 110px;
+    text-align: center;
+    .print_confirm {
+        font-family: Medium;
+        text-transform: none;
+        font-size: 20px;
+        margin-top: 120px;
+        margin-bottom: 20px;
+        
+        
+    }
+    .message {font-size: $fs13;
+    font-family: Regular;
+    line-height: 150%;}
+    
+    
+}

@@ -1,11 +1,32 @@
-// profile main begins
+// profile catalogue_3 begins
 div.content.profile
     div.wrapper
         h1.big_h.pad Личный кабинет
         div.profile_content
             +profile_menu(4)
-            div.profile_tab_content 
-           
-        
+            div.profile_tab_content.catalog.print_catalog
+                div.top_title.pad
+                    h3.big_h Печать по требованию
+                a(href="page_new_positions.html" target="_blank").title Новые позиции в ассортименте (за неделю): "<span>52/2016</span>, <span>51/2016</span>, <span>50/2016</span>, <span>49/2016</span>,..."
+                form
+                    h4.mid_h Параметры печати                    
+                    div.checkbox_wrapper
+                        input(type="checkbox" id="checkbox-1")
+                        label(for="checkbox-1") С обложкой и содержанием
+                    div.checkbox_wrapper
+                        input(type="checkbox" id="checkbox-2")
+                        label(for="checkbox-2") Включая содержание производителей
+                    div.checkbox_wrapper
+                        input(type="checkbox" id="checkbox-3")
+                        label(for="checkbox-3") Включая перечень КВА
+                    div.email
+                        label(for="email") Ваш адрес электронной почты
+                        input(type="text" placeholder="frart.ua@gmail.com" id="email")
+                    input(type="submit" class="button" value="Начать составление каталога")
+            div.profile_tab_content.catalog.print_catalog_confirm
+                h3.print_confirm Ваш каталог готов
+                p.message Ваша заявка принята и будет скоро обработана. В зависимости от размера вашего документа это может потребовать времени. Вы получите электронное письмо, когда заявка будет выполнена. Задание печати обрабатывается раньше, чем <span>20.01.2017 10:41:14</span>.
 
-// profile main ends
+                
+
+// profile catalogue_3 ends

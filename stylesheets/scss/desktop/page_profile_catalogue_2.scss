@@ -1,0 +1,70 @@
+    .profile_tab_content.catalog.choose_items {
+        .title {
+            font-family: Medium;
+            font-size: $fs13;
+        }
+        .prod_search {
+            @extend %clear;
+            padding: 30px 20px;
+            .title {
+                float: left;
+                line-height: 40px;
+            }
+            input {
+                float: right;
+                width: 615px;
+                padding-left: 20px;
+                border: $border;
+                height: 40px;
+            }
+        }
+        .new_positions {
+            padding: 20px;
+        }
+        ul {
+            margin-top: 20px;
+            height: 140px;
+            border: $border;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 10px;
+            li {
+                height: 20px;
+                line-height: 20px;
+                font-size: $fs13;
+                font-family: Regular;
+            }
+        }
+        .panel {
+            .nav {
+                @extend %nav_auto;
+                margin-bottom: 20px;
+            }
+            .tabs {
+                @extend %nav_auto_details;
+            }
+            .axis {
+                @extend %nav_auto_axis;
+                height: 50px;
+                margin-bottom: 40px;
+            }
+        }
+        .bttn_result {
+            text-align: center;
+            font-size: 0px;
+            height: 50px;
+            .bttn {
+                font-size: $fs13;
+                font-family: Medium;
+                min-width: 260px;
+                padding: 0 20px;
+                display: inline-block;
+                cursor: pointer;
+                text-align: center;
+                line-height: 50px;
+                background-color: $red;
+                color: white;
+                text-transform: uppercase;
+            }
+        }
+    }

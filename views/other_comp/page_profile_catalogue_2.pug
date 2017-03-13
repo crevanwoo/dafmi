@@ -4,8 +4,37 @@ div.content.profile
         h1.big_h.pad Личный кабинет
         div.profile_content
             +profile_menu(4)
-            div.profile_tab_content 
-           
-        
+            div.profile_tab_content.catalog.choose_items
+                div.top_title.pad
+                    h3.big_h Создать каталог
+                div.choosing_params
+                    div.prod_search
+                        p.title Найти
+                        input
+                    div.new_positions
+                        p.title Новые позиции
+                        ul
+                            -for(var i = 0; i< 10; i++)
+                                li 52/2016
+                        
+                    div.panel
+                        div.nav
+                            div.type.active
+                            div.type
+                            div.type  
+                        div.details
+                            div.tabs
+                                div.detail_1.active Дисковый тормоз
+                                div.detail_2.active Барабанный тормоз
+                            div.axis  
+                                div.both.active 
+                                    img(src="images/icon6.png")
+                                div.forward
+                                    img(src="images/icon7.png")
+                                div.backward
+                                    img(src="images/icon8.png")
+                    div.bttn_result
+                        div.bttn Искать
+                        
 
 // profile main ends
