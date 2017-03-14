@@ -7,6 +7,21 @@ addCustomSelect('.footer_top .lang select');
 
 addCarsTypeToList();
 
+$(document).ready(function () {
+
+    $('.nano').mCustomScrollbar({
+        setHeight: $(window).height(),
+        setWidth: '100%',
+        callbacks: {
+            onScroll: function () {
+                  console.log("Content scrolled...");
+                changeHeaderView($('#mCSB_1_container').css('top'))
+            }
+        }
+
+
+    });
+})
 
 
 //create select 
@@ -70,9 +85,9 @@ $('body').on('click', '.expand_search .expand', function () {
 
 //change header view
 
-$(window).on("wheel keydown touchstart touchmove", function () {
-    changeHeaderView()
-})
+/*$(window).on("wheel keydown touchstart touchmove", function () {
+    changeHeaderView(window.pageYOffset)
+})*/
 
 var small_cart = new Navigation('.header_bottom.min .cart');
 small_cart.changing_properties = {
@@ -180,12 +195,13 @@ $('body').on('click', '.expand_search_content .submit', function () {
     function f_onsuccess() {
         // wrappeer = ".expand_search .search_result"
         $('.expand_search .search_result').empty();
+
         function f_onsuccess() {
             var expand_search_results = new Results(".expand_search .search_result");
             expand_search_results.resultHasLoaded();
-            
+
         };
-        loadContent('.expand_search .search_result', '../index_result_full.html .result_full >*', f_onsuccess );
+        loadContent('.expand_search .search_result', '../index_result_full.html .result_full >*', f_onsuccess);
 
 
     };

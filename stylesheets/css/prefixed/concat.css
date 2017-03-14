@@ -608,6 +608,9 @@ textarea {
     .profile_tab_content.history .single_product.active .single_product_wrapper .bottom, .profile_tab_content.garage .search_result .single_product.active .single_product_wrapper .bottom {
       box-shadow: none; }
 
+.mCSB_inside > .mCSB_container {
+  margin-right: 0px !important; }
+
 header {
   height: 150px; }
   header .header_top {
