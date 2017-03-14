@@ -1,5 +1,6 @@
 .tab_2 {
     display: none;
+    transition: 0.5s;
     &.show {
         display: block;
     }

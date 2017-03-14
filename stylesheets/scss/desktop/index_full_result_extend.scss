@@ -4,18 +4,9 @@
     overflow: hidden;
     &.expand {
         height: auto;
-        .tab_1 {
-            display: block !important;
-            visibility: hidden;
-        }
-        .tab_2 {
-            display: block !important;
-            visibility: hidden;
-        }
-        .tab_3 {
-            display: block !important;
-            visibility: hidden;
-        }
+        .tab_1,
+        .tab_2,
+        .tab_3,
         .tab_4 {
             display: block !important;
             visibility: hidden;

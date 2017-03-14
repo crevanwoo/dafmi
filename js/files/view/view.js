@@ -219,84 +219,6 @@ function actionForModelChoosing() {
 
 /* --- Results > --- */
 
-function showTabContent() {
-    tab_control_marker = false;
-    var tab_num = +$(this).attr('class').slice(-1) - 1;
-    $(this).addClass('show');
-    var obj = $(this);
-    var single_result = obj.parent().parent().parent().attr('data-index');
-    var tab_panel_height = +obj.parent().parent().parent().find('.tab_panel').innerHeight();
-    setTimeout(function () {
-        obj.parent().parent().animate({
-            height: +result_expanded_height[single_result][tab_num] + tab_panel_height
-        });
-        obj.animate({
-            opacity: 1
-        })
-        tab_control_marker = true;
-    }, 100)
-}
-
-
-function hideTabContent() {
-    var obj = $(this).parent().parent().find('.show');
-    obj.removeClass('show');
-    setTimeout(function () {
-        obj.animate({
-            opacity: 0
-        })
-    }, 100)
-}
-
-
-
-function toggleExpandResultsView() {
-
-    var single_result = findParent($(this), 'single_result');
-    if ($(this).hasClass('active')) {
-        var obj = $(this);
-        //single_result.find('.single_result_extend').removeClass('expand');
-        single_result.find('.single_result_extend').animate({
-            height: 0,
-        }, function () {
-            obj.removeClass('active');
-        });
-        single_result.find('.tab_panel .show').animate({
-                opacity: 0
-            },
-            function () {
-                single_result.find('.tab_panel .show').removeClass('show');
-            })
-
-    } else {
-        $(this).addClass('active');
-        //single_result.find('.single_result_extend').addClass('expand');
-        var tab_panel_height = +single_result.find('.tab_panel').innerHeight();
-        single_result.find('.single_result_extend').animate({
-            height: +result_expanded_height[single_result.attr('data-index')][0] + tab_panel_height
-        });
-        single_result.find('.single_result_extend .tab_panel .tab:eq(0)').addClass('active');
-        showTabContent.call(single_result.find('.tab_1'));
-    }
-}
-
-
-function switchResultTabs() {
-
-    if (!$(this).hasClass('active') && tab_control_marker) {
-        $(this).parent().find('.active').removeClass('active');
-        $(this).addClass('active');
-        var tab_content_name = '.tab_' + (+$(this).attr('data-tab-num') + 1);
-
-        var tab_content = findParent($(this), 'single_result_extend').find(tab_content_name); // $(this).parent().parent().find(tab_content_name);//single_result_extend
-
-        hideTabContent.call(this);
-        showTabContent.call(tab_content);
-
-        returnTabMenuToDefault();
-    }
-}
-
 function showResultTab2Level1() {
 
     var extend = findParent($(this), 'single_result_extend');
@@ -332,16 +254,6 @@ function showResultTab2Level2() {
 
     }
 }
-
-
-function returnTabMenuToDefault() {
-    $('.result_full .single_result .tab_2').find('.main_title').removeClass('active');
-    $('.result_full .single_result .tab_2').find('.single_model_title').removeClass('active');
-    $('.result_full .single_result .tab_2').find('.single_model').css('height', '0');
-    $('.result_full .single_result .tab_2').parent().find('.model_content').css('height', '0');
-
-}
-
 
 /* --- < Results --- */
 
@@ -412,5 +324,23 @@ function manageProductCell(selector, cell_class_name) {
     }
     
     
+    
+}
+
+
+function createExpandSearchSelects() {
+    
+ 
+
+
+
+ex_search_sel_1.imported_list = Select_1.imported_list;
+ex_search_sel_1.createSelection('.ex_search_select_1');
+ex_search_sel_1.state(true);
+
+
+ex_search_sel_2.createSelection('.ex_search_select_2');
+
+ex_search_sel_3.createSelection('.ex_search_select_3');
     
 }

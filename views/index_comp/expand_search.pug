@@ -2,27 +2,48 @@
    include expand_search_bottom
 div.expand_search
     div.nav_types
-        div.type.active(data-expand-tab="0")
-        div.type(data-expand-tab="1")
-        div.type(data-expand-tab="2")
+        div.type.active
+        div.type
+        div.type
         // div.type(data-expand-tab="3")
         // div.type(data-expand-tab="4")
+    div.filters.default_select         
+        select.ex_search_select_1
+            option(value='hide') -- Выберите бренд -- 
+            option(value='value1') Value
+            option(value='value1') Value
+            option(value='value1') Value
+        select.ex_search_select_2
+            option(value='hide') -- Выберите бренд -- 
+            option(value='value1') Value
+        select.ex_search_select_3
+            option(value='hide') -- Выберите бренд -- 
+            option(value='value1') Value
+    div.details 
+        div.tabs
+            div.detail_1.active(data-expand-tab="0") Дисковый тормоз
+            div.detail_2(data-expand-tab="1") Барабанный тормоз
+        div.axis  
+            div.both.active 
+                img(src="images/icon6.png")
+            div.forward
+                img(src="images/icon7.png")
+            div.backward
+                img(src="images/icon8.png")
     div.expand_search_content
+        -var j = 0
         each item in expand_search_images
             div.expand_tab
                 div.image_block
                     img(src=item)
-                div.param.pad
-                    -for (var i = 0; i < 3; i++)
-                         div.param_wrapper
-                                    div.param_title <span>A</span>, мм:
-                                    div.param_selection
-                                        select 
-                                            option(value='hide') -- Выберите бренд -- 
-                                            option Value
-
-        
-    div.bttn_result 
-        div.bttn 6164 ПРОДУКТОВ НАЙДЕНО  
-   
-    
+                div.search_param.pad
+                     form(name="expand_search_form")
+                        div.fields
+                            -for (var i = 0; i < 2; i++)
+                                 div.param_wrapper
+                                        div.param_title <span>A</span>, мм:
+                                        div.input
+                                            input(type='text' name="num_"+j)
+                                        - j++
+                        button.submit(type="submit") Искать
+    div.search_result

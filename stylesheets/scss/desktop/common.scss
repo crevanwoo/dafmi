@@ -121,6 +121,9 @@ button {
     &:focus {
         outline: none;
     }
+    &:active {
+        opacity: 0.5
+    }
 }
 
 
@@ -517,8 +520,6 @@ textarea {
     }
 }
 
-
-
 %param_content {
     .param {
         height: 60px;
@@ -545,6 +546,7 @@ textarea {
         }
     }
 }
+
 %single_product_cell_view {
     .single_product {
         width: 246px;
@@ -681,7 +683,6 @@ textarea {
             }
         }
     }
-    
     .single_product.active {
         z-index: 5;
         .single_product_wrapper {
