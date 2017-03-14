@@ -1,0 +1,68 @@
+.page_compare {
+    .big_h {
+        font-size: $fs20;
+        height: 75px;
+        line-height: 75px;
+    }
+    .compare_wrapper {
+        @extend %clear;
+        overflow: hidden;
+        height: 666px;
+        margin-bottom: 100px;
+        >div {
+            float: left
+        }
+    }
+    .col_info {
+        width: 278px;
+        font-family: Medium;
+        font-size: $fs14;
+    }
+    .col_product {
+        width: 300px;
+        font-family: Regular;
+        font-size: $fs14;
+        transition: $trans;
+        overflow: hidden;
+        li {
+            padding-left: 20px;
+        }
+        .name {
+            @extend %clear;
+            .close {
+                height: 100%;
+                width: 12px;
+                margin-right: 10px;
+                float: left;
+                background-image: url(../images/icon_close_cart.png);
+                background-position: center center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                cursor: pointer;
+            }
+            span {
+                display: inline-block;
+                height: 100%;
+            }
+        }
+        .img{background-origin: content-box;
+            background-size: contain;
+            background-position: center center;
+            img {
+                display: none;
+            }
+        }
+    }
+    .col_product,
+    .col_info {
+        li {
+            line-height: 40px;
+            height: 40px;
+            border-bottom: $border;
+        }
+        .img {
+            height: 300px;
+            overflow: hidden;
+        }
+    }
+}

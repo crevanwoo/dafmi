@@ -651,3 +651,17 @@ $('body').on('click', '.profile_tab_content.garage .search_param', function () {
 var modal_profile = new ModalWindow('.modal_profile');
 modal_profile.windowOpen('.profile_tab_content.garage .add_auto, .profile_tab_content.garage .edit_auto');
 modal_profile.windowClose('.modal_profile .close');
+
+/* Page compare */
+
+setImgAsBg('.page_compare .col_product .img img');
+
+$('.col_product .close').on('click', function() {
+    findParent($(this), 'col_product').css('width', '0');
+    var Current = $(this);
+    setTimeout(function(){
+        findParent(Current, 'col_product').remove();
+    },300)
+    
+    
+})

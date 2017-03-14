@@ -1,0 +1,25 @@
+// compare begins
+div.content.page_compare
+    div.wrapper.pad
+            h3.big_h СРАВНЕНИЕ ПРОДУКТОВ
+            div.compare_wrapper
+                div.col_info
+                    ul
+                        -for(var j =0; j<10; j++)
+                            li(class= compare_product_info_class[j])= compare_product_info_text[j]
+                        
+                -for(var i =0; i<4; i++)
+                    div.col_product
+                        ul
+                            -for(var k =0; k<10; k++)
+                                if (k==0)
+                                    li(class= compare_product_class[k]) 
+                                        div.close
+                                        span= compare_product_text[k]
+                                else if (k==2)
+                                    li(class= compare_product_class[k]) 
+                                        img(src="images/picture_compare.jpg")
+                                else
+                                    li(class= compare_product_class[k])= compare_product_text[k]
+                                    
+// compare ends
