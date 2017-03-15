@@ -2,6 +2,7 @@ header {
     $h_top: $header_top_height;
     $h_bottom: $header_bottom_height;
     height: $header_height;
+      @import "popup_small_cart.scss";
     .header_top {
         @extend %clear;
         height: $h_top;
@@ -53,7 +54,7 @@ header {
         height: $h_bottom;
         transition: 0.2s;
         * {
-            transition: 0.2s;
+            //transition: 0.2s;
         }
         .logo {
             float: left;
@@ -61,6 +62,7 @@ header {
             height: 35px;
             margin-top: $big_pad + 5px;
             background-image: url(../images/logo.png);
+            transition: 0.2s;
         }
         .input {
             position: relative;
@@ -69,6 +71,7 @@ header {
             margin-left: 60px;
             width: 480px;
             height: 40px;
+            transition: 0.2s;
             &:after {
                 content: '';
                 position: absolute;
@@ -77,11 +80,13 @@ header {
                 right: 13px;
                 top: 13px;
                 background-image: url(../images/icon_search.png);
+                transition: 0.2s;
             }
             input {
                 height: 100%;
                 width: 100%;
                 padding-left: 12px;
+                transition: 0.2s;
             }
         }
         .contacts {
@@ -89,23 +94,27 @@ header {
             float: right;
             text-align: right;
             margin-top: $big_pad;
+            transition: 0.2s;
         }
         .tel {
             opacity: 1;
             font-family: Medium;
             font-size: $fs18;
             margin-bottom: 8px;
+            transition: 0.2s;
         }
         .consult {
             display: inline-block;
             border-bottom: 1px dashed $l_gray;
             font-size: $fs14;
             cursor: pointer;
+            transition: 0.2s;
         }
         .cart {
             opacity: 0;
             width: 0;
             height: 0;
+            transition: 0.2s;
         }
         &.min {
             position: fixed;
@@ -114,20 +123,24 @@ header {
             $pad: 12px;
             $h-pad: $h_min - $pad*2;
             height: $h_min;
+            transition: 0.2s;
             .logo {
                 margin-top: $pad + 5px;
                 width: 28px;
                 height: 28px;
                 background-image: url(../images/logo_min.png);
+                transition: 0.2s;
             }
             .input {
                 margin-top: $pad + 1px;
                 width: 335px;
                 height: 35px;
                 margin-left: 18px;
+                transition: 0.2s;
                 &:after {
                     right: 10px;
                     top: 10px;
+                    transition: 0.2s;
                 }
             }
             .contacts {
@@ -137,6 +150,7 @@ header {
                 float: right;
                 text-align: right;
                 margin-top: 0px;
+                transition: 0.2s;
             }
             .tel {
                 float: left;
@@ -144,6 +158,7 @@ header {
                 font-family: Medium;
                 font-size: $fs18;
                 margin-bottom: 8px;
+                transition: 0.2s;
             }
             .consult {
                 float: left;
@@ -153,6 +168,7 @@ header {
                 cursor: pointer;
                 padding: 0 35px;
                 background-color: $bg_deep_black;
+                transition: 0.2s;
             }
             .cart {
                 float: left;
@@ -162,6 +178,7 @@ header {
                 height: 100%;
                 cursor: pointer;
                 margin-left: 20px;
+                transition: 0.2s;
                 &:after {
                     content: '';
                     position: absolute;
@@ -170,11 +187,12 @@ header {
                     top: 15px;
                     right: 10px;
                     background-image: url(../images/icon_cart.png);
+                    transition: 0.2s;
                 }
                 .items_amount {
                     font-family: Medium;
                     font-size: $fs13;
-                    width: 20px; 
+                    width: 20px;
                     height: 20px;
                     border-radius: 50%;
                     background-color: $red;
@@ -184,18 +202,20 @@ header {
                     right: 0px;
                     top: 12px;
                     z-index: 1;
+                    transition: 0.2s;
                 }
-                @import "popup_small_cart.scss";  
+              
             }
-            .garage {float:left;
+            .garage {
+                float: left;
                 margin-left: 20px;
                 width: 60px;
-            height:60px;display: block;
+                height: 60px;
+                display: block;
                 background-image: url(../images/icon_garage.png);
-                cursor:pointer;
+                cursor: pointer;
                 background-position: center center;
-                
-                
+                transition: 0.2s;
             }
         }
     }

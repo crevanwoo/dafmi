@@ -105,11 +105,11 @@ function addCustomSelect(selector) {
 // измненение внешнего вида хэдэра при прокрутке
 function changeHeaderView(param) {
     param = (parseInt(param) > 0) ? parseInt(param) : -parseInt(param);
-    console.log(param);
+    //console.log(param);
       
-    if ( param > 50 && !$('.header_bottom').hasClass('min')) {
+    if ( param > 150 && !$('.header_bottom').hasClass('min')) {
         $('.header_bottom').delay(300).addClass('min');
-    } else if ( param <= 50) {
+    } else if ( param <= 150) {
         $('.header_bottom').delay(300).removeClass('min');
     }
     

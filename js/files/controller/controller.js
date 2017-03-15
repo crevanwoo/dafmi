@@ -12,10 +12,14 @@ $(document).ready(function () {
     $('.nano').mCustomScrollbar({
         setHeight: $(window).height(),
         setWidth: '100%',
+
+        autoDraggerLength: false,
+        theme: "scroll-logo",
         callbacks: {
-            onScroll: function () {
-                  console.log("Content scrolled...");
-                changeHeaderView($('#mCSB_1_container').css('top'))
+            whileScrolling: function () {
+                // console.log("Content scrolled...");
+                // changeHeaderView($('#mCSB_1_container').css('top'))
+                changeHeaderView(this.mcs.top)
             }
         }
 
@@ -739,3 +743,74 @@ $('.col_product .close').on('click', function () {
         findParent(Current, 'col_product').remove();
     }, 300)
 })
+
+
+/*   Page new positions >   */
+
+
+var new_positions_select_1 = new Selection();
+new_positions_select_1.createSelection('.new_positions_select_1');
+new_positions_select_1.state(true);
+
+var new_positions_select_2 = new Selection();
+new_positions_select_2.createSelection('.new_positions_select_2');
+new_positions_select_2.state(true);
+
+
+$('body').on('click', '.new_positions .submit', function () {
+    console.log('123');
+    $('.new_positions .search_result').empty();
+
+    function f_onsuccess() {
+
+        var new_positions_results = new Results(".new_positions .search_result");
+        new_positions_results.resultHasLoaded();
+
+    };
+    loadContent('.new_positions .search_result', '../index_result_full.html .result_full >*', f_onsuccess);
+});
+
+
+
+
+//switch tabs in new positions search
+
+$('body').on('click', '.new_positions .nav_types .type', function () {
+    if (!$(this).hasClass('active')) {
+        $('.new_positions .nav_types .type.active').removeClass('active');
+        $(this).addClass('active');
+
+    }
+});
+
+$('body').on('click', '.new_positions .details .tabs >div', function () {
+    if (!$(this).hasClass('active')) {
+        $(this).addClass('active');
+    } else {
+        $(this).removeClass('active');
+    }
+});
+
+$('body').on('click', '.new_positions .details .axis >div', function () {
+    if (!$(this).hasClass('active')) {
+        $('.new_positions .details .axis .active').removeClass('active');
+        $(this).addClass('active');
+
+    }
+});
+
+$('body').on('click', '.new_positions .single_result .tab_2 .main_title', function () {
+    showResultTab2Level1.call(this);
+})
+
+
+$('body').on('click', '.new_positions .single_result .tab_2 .single_model_title', function () {
+    showResultTab2Level2.call(this);
+})
+
+
+
+
+
+
+/*   < Page new positions   */

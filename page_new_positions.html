@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>title</title>
+    <meta charset="utf-8">
+    <!--link(rel="stylesheet", href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css")-->
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="/js/min/jquery-3.1.1.min.js" defer></script>
+    <!--script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js", defer)-->
+    <!--script(src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js", defer)-->
+    <script src="js/script.js" defer> </script>
+  </head>
+  <body>
+    <div class="nano">
+      <!-- header begins-->
+      <header>
+        <div class="header_top">
+          <div class="wrapper pad">
+            <nav>
+              <ul class="top_nav">
+                <li><a href="">О нас</a></li>
+                <li><a href="">Новые позиции</a></li>
+                <li><a href="page_news.html">Новости</a></li>
+                <li><a href="">Партнеры </a></li>
+                <li><a href="page_print.html">Печать</a></li>
+                <li><a href="">Документы</a></li>
+                <li><a href="">Контакты</a></li>
+              </ul>
+            </nav>
+            <div class="profile">
+              <div class="icon"></div><span>Здраствуйте -</span>
+              <div class="status">Войдите в личный кабинет</div>
+            </div>
+          </div>
+        </div>
+        <div class="header_bottom">
+          <div class="wrapper pad"><a class="logo" href="index.html"></a>
+            <div class="input">
+              <input placeholder="Поиск детали">
+            </div>
+            <div class="contacts">
+              <div class="tel">+38 (050) 844-77-76</div>
+              <div class="consult">Получить консультацию</div>
+              <div class="cart">
+                <div class="items_amount">4
+                  <!--popup begins-->
+                  <div class="popup_small_cart">
+                    <div class="info">
+                      <p class="str_amount">В корзине <span>4 товара</span> </p>
+                      <p class="str_summ">на сумму <span>10 000 грн</span></p>
+                    </div><a class="order" href="page_cart.html">Перейти в корзину</a>
+                    <!--div.cart_link
+                    a(href="page_cart.html") Перейти в корзину
+                    
+                    
+                    
+                    -->
+                  </div>
+                  <!--popup ends-->
+                </div>
+              </div><a class="garage" href="page_profile_garage.html"></a>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- header ends-->
+      <div class="content new_positions">
+        <div class="wrapper">
+          <h3 class="big_h pad">Новые позиции в ассортименте        </h3>
+          <div class="new_positions_wrapper">
+            <div class="filters default_select pad">
+              <div class="selection_wrapper">
+                <p>Дата от:</p>
+                <select class="new_positions_select_1">
+                  <option value="hide">Value2</option>
+                  <option value="value1">Value</option>
+                  <option value="value1">Value</option>
+                  <option value="value1">Value</option>
+                </select>
+              </div>
+              <div class="selection_wrapper">
+                <p>Дата до:</p>
+                <select class="new_positions_select_2">
+                  <option value="hide">Value1</option>
+                  <option value="value1">Value</option>
+                </select>
+              </div>
+            </div>
+            <div class="nav_types">
+              <div class="type active"></div>
+              <div class="type"></div>
+              <div class="type"></div>
+              <!-- div.type(data-expand-tab="3")-->
+              <!-- div.type(data-expand-tab="4")         -->
+            </div>
+            <div class="details"> 
+              <div class="tabs">
+                <div class="detail_1 active">Дисковый тормоз</div>
+                <div class="detail_2 active">Барабанный тормоз</div>
+              </div>
+              <div class="axis"> 
+                <div class="both active"> <img src="images/icon6.png"></div>
+                <div class="forward"><img src="images/icon7.png"></div>
+                <div class="backward"><img src="images/icon8.png"></div>
+              </div>
+            </div>
+            <button class="submit" type="submit">Искать</button>
+            <div class="search_result"></div>
+          </div>
+        </div>
+      </div>
+      <!-- footer begins-->
+      <footer> 
+        <div class="footer_top">
+          <div class="wrapper pad">
+            <div class="logo"></div>
+            <div class="lang">
+              <select>
+                <option value="russian" data-image="images/lang_rus.png">Russian </option>
+                <option value="russian" data-image="images/lang_rus.png">Russian</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="footer_bottom">
+          <div class="wrapper pad">
+            <div class="copyright">Все права защищены и охраняются законом. 1991 - 2017 ООО "ДАФМИ".</div>
+            <div class="development"> 
+              <div>Разработка сайта:</div><img src="images/crepla_logo.png">
+            </div>
+          </div>
+        </div>
+        <!--modals begins-->
+        <!--modal_authorization begins-->
+        <div class="modal_window modal_authorization">
+          <div class="modal_content">
+            <div class="close"></div>
+            <h3 class="mid_h">Авторизация</h3>
+            <form name="authorization">
+              <p class="label">Email:</p>
+              <div class="input">
+                <input name="email" data-key="email">
+              </div>
+              <p class="label">Пароль:</p>
+              <div class="input">
+                <input name="pass" data-key="pass">
+              </div>
+              <div class="bottom">
+                <div class="restore_pass">Я забыл свой пароль</div>
+                <button class="submit">Авторизация</button>
+                <div class="register">Зарегестрировать новый аккаунт</div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!--modal_authorization ends-->
+        <!--modal_registration_1 begins-->
+        <div class="modal_window modal_registration_1">
+          <div class="modal_content">
+            <div class="close"></div>
+            <h3 class="mid_h">Регистрация</h3>
+            <p class="title">Шаг 1 из 4. Выбор профиля</p>
+            <div class="choose_profile">
+              <div class="border"> или</div>
+              <div class="customer">
+                <div class="img"><img src="images/icon_choose_profile_1.png"></div>
+                <p class="profile_title">Покупатель</p>
+                <p class="profile_text">Может то то и то то, а не может то и то            </p>
+              </div>
+              <div class="partner">
+                <div class="img"><img src="images/icon_choose_profile_2.png"></div>
+                <p class="profile_title">Партнер</p>
+                <p class="profile_text">Может то то и то то, а не может то и то</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--modal_registration_1 ends-->
+        <!--modal_registration_2_1 begins-->
+        <div class="modal_window modal_registration_2_1" data-modal-name="register_customer">
+          <div class="modal_content default_select">   
+            <div class="close"></div>
+            <h3 class="mid_h">Регистрация</h3>
+            <p class="title">Шаг 2 из 4. Ваш автомобиль        
+              <p class="label" data-key="brand">Бренд:</p>
+              <select class="modal_reg_1_sel_0">
+                <option value="hide">-- Выберите бренд -- </option>
+                <option value="value1">Value1</option>
+                <option value="value1">Value2</option>
+                <option value="value1">Value3</option>
+              </select>
+              <p class="label" data-key="model">Модель:</p>
+              <select class="modal_reg_1_sel_1">
+                <option value="hide">-- Выберите бренд -- </option>
+                <option value="value1">Value1</option>
+                <option value="value1">Value2</option>
+                <option value="value1">Value3</option>
+              </select>
+              <p class="label" data-key="year">Год выпуска:</p>
+              <select class="modal_reg_1_sel_2">
+                <option value="hide">-- Выберите бренд -- </option>
+                <option value="value1">Value1</option>
+                <option value="value1">Value2</option>
+                <option value="value1">Value3</option>
+              </select>
+              <div class="next">Далее</div>
+            </p>
+          </div>
+        </div>
+        <!--modal_registration_2_1 ends-->
+        <!--modal_registration_2_2 begins-->
+        <div class="modal_window modal_registration_2_2" data-modal-name="register_company">
+          <div class="modal_content">
+            <div class="close"></div>
+            <h3 class="mid_h">Регистрация</h3>
+            <p class="title">Шаг 2 из 4. Даные о компании</p>
+            <form name="register_company">
+              <p class="label">Название компании:</p>
+              <div class="input">
+                <input name="name" data-key="name">
+              </div>
+              <p class="label">ЕДРПОУ:</p>
+              <div class="input">
+                <input name="code" data-key="edrpou">
+              </div>
+              <p class="label">Город:</p>
+              <div class="input">
+                <input name="city" data-key="city">
+              </div>
+              <p class="label">Адрес:</p>
+              <div class="input">
+                <input name="adress" data-key="adress">
+              </div>
+              <button class="next">Далее</button>
+            </form>
+          </div>
+        </div>
+        <!--modal_registration_2_2 ends-->
+        <!--modal_registration_3 begins-->
+        <div class="modal_window modal_registration_3" data-modal-name="register_personal">
+          <div class="modal_content">
+            <div class="close"></div>
+            <h3 class="mid_h">Регистрация</h3>
+            <p class="title">Шаг 3 из 4. Личные данные</p>
+            <form name="register_personal">
+              <p class="label">Ваше имя:</p>
+              <div class="input">
+                <input name="name" data-key="name">
+              </div>
+              <p class="label">Ваш email:</p>
+              <div class="input">
+                <input name="email" data-key="email">
+              </div>
+              <p class="label">Ваш телефон:</p>
+              <div class="input">
+                <input name="tel" data-key="tel">
+              </div>
+              <button class="next">Далее </button>
+            </form>
+          </div>
+        </div>
+        <!--modal_registration_3 ends-->
+        <!--modal_registration_4 begins-->
+        <div class="modal_window modal_registration_4" data-modal-name="register_pass">
+          <div class="modal_content">
+            <div class="close"></div>
+            <h3 class="mid_h">Регистрация</h3>
+            <p class="title">Шаг 4 из 4. Пароль</p>
+            <form name="register_pass">
+              <p class="label">Придумайте пароль</p>
+              <div class="input">
+                <input name="pass_reg" data-key="pass1">
+              </div>
+              <p class="label">Повторите пароль</p>
+              <div class="input">
+                <input name="pass_confirm" data-key="pass2">
+                <div class="assist"></div>
+              </div>
+              <button class="finish">Завершить регистрацию</button>
+            </form>
+          </div>
+        </div>
+        <!--modal_registration_4 ends-->
+        <!--modal_registration_success begins-->
+        <div class="modal_window modal_registration_success">
+          <div class="modal_content">
+            <div class="close"></div>
+            <div class="inner">
+              <h3 class="mid_h">Спасибо за регистрацию</h3><a class="profile">Перейти в личный кабинет</a>
+            </div>
+          </div>
+        </div>
+        <!--modal_registration_success ends-->
+        <!--modal_restore_pass begins-->
+        <div class="modal_window modal_restore_pass">
+          <div class="modal_content">
+            <div class="close"></div>
+            <h3 class="mid_h">Восстановить пароль</h3>
+            <p class="label">Введите ваш логин или email</p>
+            <form name="restore_pass">
+              <div class="input">
+                <input name="email" data-key="email">
+              </div>
+              <button class="submit">Восстановить пароль</button>
+            </form>
+          </div>
+        </div>
+        <!--modal_restore_pass ends-->
+        <!--modal_restore_pass_success begins-->
+        <div class="modal_window modal_restore_pass_success">
+          <div class="modal_content">
+            <div class="close"></div>
+            <h3 class="mid_h">Проверьте вашу почту</h3>
+            <p class="text">На ваш email пришло письмо с данными <br> для восстановления пароля</p>
+          </div>
+        </div>
+        <!--modal_restore_pass_success ends-->
+        <!--modal_consult begins-->
+        <div class="modal_window modal_consult">
+          <div class="modal_content">
+            <div class="close">       </div>
+            <h3 class="mid_h">Получить консультацию</h3>
+            <form name="consult">
+              <p class="label">Ваше имя</p>
+              <div class="input">
+                <input name="name" data-key="name">
+              </div>
+              <p class="label">Номер телефона</p>
+              <div class="input">
+                <input name="tel" data-key="tel">
+              </div>
+              <p class="label">Текст обращения</p>
+              <textarea name="comment" data-key="comment"></textarea>
+              <button class="submit">Отправить заявку</button>
+            </form>
+          </div>
+        </div>
+        <!--modal_consult ends-->
+        <!--modals ends-->
+      </footer>
+      <!-- footer ends-->
+    </div>
+  </body>
+</html>

@@ -695,6 +695,57 @@ textarea {
     }
 }
 
+.mCS-scroll-logo.mCSB_scrollTools {
+    width: 42px;
+    z-index:11;
+    .mCSB_container {
+        margin-right: 0px;
+    }
+    .mCSB_draggerContainer {
+        top: 70px;
+        bottom: 20px;
+    }
+    .mCSB_draggerRail {
+        width: 4px;
+        background-color: $border_gray;
+    }
+    .mCSB_dragger {
+        width: 28px;
+        height: 28px;
+        left: 7px;
+        background-image: url(../images/logo_min.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        background-color: transparent !important;
+        &:hover {
+            background-color: transparent !important;
+        }
+        &.mCSB_dragger_onDrag {
+            background-color: transparent !important;
+        }
+        .mCSB_dragger_bar {
+            background-color: transparent !important;
+        }
+    }
+}
 
-.mCSB_inside>.mCSB_container {margin-right: 0px !important;}
-.mCSB_dragger {}
+.mCSB_inside>.mCSB_container {
+    margin-right: 0px !important;
+}
+
+.mCSB_dragger {
+    /*&:before {
+        content: '';
+        width: 28px;
+        height: 28px;
+        background-image: url(../images/logo_min.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: 50%;
+        margin-top: -14px;
+        right: 0;
+        z-index: 1;
+    }*/
+}

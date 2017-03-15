@@ -1,0 +1,127 @@
+.new_positions {
+    $border: 1px solid $border_gray;
+    .big_h {
+        font-size: $fs20;
+        height: 80px;
+        line-height: 80px;
+    }
+    .nav_types {
+        @extend %nav_auto;
+    }
+    .image_block {
+        padding-top: 50px;
+        margin-bottom: 80px;
+        text-align: center;
+    }
+    .filters.default_select {
+        @extend %clear;
+        padding-top: 30px;
+        padding-bottom: 10px;
+        .selection_wrapper {
+            float: left;
+            @extend %clear;
+            margin-bottom: 20px;
+            width: 50%; //379px;
+            height: 40px;
+            padding-left: 20px;
+            &:first-of-type {
+                padding-left: 0px;
+            }
+            @extend %clear;
+            p {
+                float: left;
+                font-size: $fs13;
+            }
+            font-size: $fs14;
+            line-height: 40px;
+            display: inline-block;
+        }
+    }
+    .fields {
+        @extend %clear;
+    }
+    .submit {
+        display: block;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 380px;
+        height: 65px;
+        background-color: $red;
+        font-family: Medium;
+        font-size: $fs13;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 65px;
+        color: white;
+        cursor: pointer;
+    }
+    input+li {
+        padding: 0;
+        list-style-type: none;
+        height: 0;
+        span.invalid {
+            color: $red;
+            font-size: $fs12;
+        }
+    }
+    .tabs {
+        margin-top: 20px;
+        @extend %nav_auto_details;
+    }
+    .axis {
+        @extend %nav_auto_axis;
+        height: 50px;
+        margin-bottom: 40px;
+    }
+    .default_select {
+        @extend %clear;
+        // height: 70px;
+        padding: 20px;
+        .select {
+            float: right;
+            width: 379px;
+            margin-right: 20px;
+            height: 40px;
+            font-size: $fs14;
+            .select-styled {
+                line-height: 38px;
+                &:before {
+                    top: 15px;
+                }
+            }
+            &:last-of-type {
+                margin-right: 0;
+            }
+            .select-options {
+                height: 140px;
+                overflow-x: hidden;
+                overflow-y: auto;
+                border-left: $selection_border;
+                border-right: $selection_border;
+                border-bottom: $selection_border;
+                margin-left: -1px;
+                margin-right: -1px;
+            }
+            li {
+                height: 30px;
+                line-height: 30px;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+            .disabled {
+                cursor: default;
+                background-color: $active_gray;
+            }
+        }
+    }
+    .search_result {
+        @extend .result_full;
+        .select-options {
+            li {
+                heigth: 40px;
+            }
+        }
+    }
+}
