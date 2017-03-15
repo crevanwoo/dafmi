@@ -8,9 +8,14 @@ div.modal_window.modal_authorization
         form(name="authorization")
             -var i = 0
             each item in modal_auto            
-                p.label= item
-                div.input
-                    input(name= names_authorization[i], data-key= keys_authorization[i++])
+                p.label= item                
+                if(i==1)
+                    div.input
+                        input(name= names_authorization[i], data-key= keys_authorization[i++], type="password")
+                else
+                    div.input
+                        input(name= names_authorization[i], data-key= keys_authorization[i++])             
+                
             div.bottom
                 div.restore_pass Я забыл свой пароль
                 button.submit Авторизация
@@ -96,10 +101,10 @@ div(data-modal-name="register_pass").modal_window.modal_registration_4
         form(name="register_pass")
             p.label Придумайте пароль
             div.input
-                input(name="pass_reg", data-key='pass1')
+                input(name="pass_reg", data-key='pass1', type="password")
             p.label Повторите пароль
             div.input
-                input(name="pass_confirm", data-key='pass2')
+                input(name="pass_confirm", data-key='pass2', type="password")
                 div.assist
             button.finish Завершить регистрацию
 //modal_registration_4 ends
