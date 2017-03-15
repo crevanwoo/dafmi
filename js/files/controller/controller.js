@@ -19,7 +19,9 @@ $(document).ready(function () {
             whileScrolling: function () {
                 // console.log("Content scrolled...");
                 // changeHeaderView($('#mCSB_1_container').css('top'))
-                changeHeaderView(this.mcs.top)
+                changeHeaderView(this.mcs.top);
+                $('.popup_small_cart').removeClass('active');
+                $('.popup_small_cart').css('display', 'none');
             }
         }
 
@@ -93,7 +95,7 @@ $('body').on('click', '.expand_search .expand', function () {
     changeHeaderView(window.pageYOffset)
 })*/
 
-var small_cart = new Navigation('.header_bottom.min .cart');
+var small_cart = new Navigation('.header_bottom .cart');
 small_cart.changing_properties = {
     'display': 'block'
 };
