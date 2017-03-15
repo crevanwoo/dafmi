@@ -39,16 +39,16 @@ var Select_3 = new Selection();
 
 Select_1.addDataIndexForDOMElemens('.content_products .product');
 Select_1.addValuesToList('.content_products .product .title');
-Select_1.createSelection('.select_1');
+Select_1.createSelection('.main_list .select_1');
 Select_1.state(true);
 
 
-Select_2.createSelection('.select_2');
+Select_2.createSelection('.main_list .select_2');
 
-Select_3.createSelection('.select_3');
+Select_3.createSelection('.main_list .select_3');
 
 
-
+// registration
 var modal_reg_1_sel_1 = new Selection();
 modal_reg_1_sel_1.addValuesToList('.content_products .product .title');
 modal_reg_1_sel_1.createSelection('.modal_reg_1_sel_0');
@@ -186,6 +186,7 @@ $('.content_nav .nav_main .type').on('click', function () {
 /* --- < Main panel's tabs --- */
 
 /* --- Expand search > --- */
+
 var ex_search_sel_1 = new Selection();
 
 var ex_search_sel_2 = new Selection();
@@ -305,7 +306,7 @@ $('body').on('click', '.expand_search .single_result .tab_2 .single_model_title'
 
 /* --- Select step 1 > --- */
 
-$('body').on('click', '.filters .select:eq(0) .select-options li, .content_products .product', function () {
+$('body').on('click', '.main_list .filters .select:eq(0) .select-options li, .content_products .product', function () {
     hideBlock('.content_products_wrapper >div', '.content_panel .views');
     loadContent('.content_products_wrapper', '../index_result.html .result_grid', showModelResults);
 });
@@ -328,7 +329,7 @@ $('body').on('click', '.result_grid .model_choosing .model', function () {
 })
 
 // single result grid choosing model
-$('body').on('click', '.filters .select:eq(1) .select-options li, .result_grid .single_result', function () {
+$('body').on('click', '.main_list .filters .select:eq(1) .select-options li, .result_grid .single_result', function () {
     if ($(this).find('.model').length > 1) {
         smoothShow.call(this, '.model_choosing', 'table');
         return
@@ -343,7 +344,7 @@ $('body').on('click', '.filters .select:eq(1) .select-options li, .result_grid .
 
 /* --- Select step 3 > --- */
 
-$('body').on('click', '.filters .select:eq(2) .select-options li, .result_list .result_list_row', function () {
+$('body').on('click', '.main_list .filters .select:eq(2) .select-options li, .result_list .result_list_row', function () {
     $('.content_products').removeClass('grid');
     hideBlock('.content_products_wrapper >div', '.content_panel .views');
     loadContent('.content_products_wrapper', '../index_result_full.html .result_full',
@@ -672,7 +673,11 @@ $(document).ready(function () {
 
     $('body').on('click touchstart', '.single_article .show_more', function () {
         news.expandText(this);
+    });
+    $('body').on('click touchstart', '.single_article .show_less', function () {
+        news.hideText(this);
     })
+
 
 
 
@@ -691,6 +696,90 @@ $('body').on('click', '.profile_tab_content.history .single_product', function (
 })
 
 /*profile garage */
+
+// popup begins
+
+var modal_profile = new ModalWindow('.modal_profile');
+modal_profile.windowOpen('.profile_tab_content.garage .add_auto, .profile_tab_content.garage .edit_auto');
+modal_profile.windowClose('.modal_profile .close, .modal_profile .button.confirm'); //send data if confirm / + remove products if was edit
+
+var GarageModal = {};
+$('body').on('click', '.profile_tab_content.garage .add_auto, .profile_tab_content.garage .edit_auto', function () {
+
+    GarageModal = {
+        0: true,
+        1: false,
+        2: false,
+        3: false,
+    }
+    manageGarageModal(0);
+})
+
+
+function manageGarageModal(tab_key) {
+    var trigger = '.profile_tab_content.garage .modal_window.modal_profile .modal_steps li';
+    var tab = '.profile_tab_content.garage .modal_window.modal_profile .modal_tab';
+    var actual_key = tab_key;
+    var last_key = 3;
+    for (var i = ++actual_key; i <= last_key; i++) {
+        GarageModal[i] = false;
+        $(trigger + '[data-profile-modal-tab=' + i + ']').removeClass('active');
+    }
+
+    for (key in GarageModal) {
+        if (GarageModal[key]) {
+            $(trigger + '[data-profile-modal-tab=' + key + ']').addClass('active');
+            $(tab).css('display', 'none');
+            $(tab + '[data-profile-modal-tab=' + key + ']').css('display', 'block');
+        }
+    }
+}
+
+
+
+$('body').on('click', '.profile_tab_content.garage .modal_window.modal_profile [data-main]', function () {
+    var tab_key = parseInt(findParent($(this), 'modal_tab').attr('data-profile-modal-tab')) + 1;
+    GarageModal[tab_key] = true;
+    manageGarageModal(tab_key);
+
+    //send data here
+
+});
+
+$('body').on('click', '.profile_tab_content.garage .modal_window.modal_profile .modal_steps li', function () {
+    if ($(this).hasClass('active')) {
+        var tab_key = $(this).attr('data-profile-modal-tab');
+        manageGarageModal(tab_key);
+    }
+});
+
+
+
+
+
+
+$('body').on('click', '.profile_tab_content.garage .modal_window.modal_profile .modal_steps li:eq(2), [data-main]', function () {
+    //set after loading
+    $('.profile_tab_content.garage .modal_window.modal_profile .modal_tab.model .single_result').each(function () {
+        if ($(this).find('.model_choosing .model').length < 2) {
+            $(this).find('.title').text($(this).find('.model_choosing .model').text()).attr('data-main', $(this).find('.model_choosing .model').attr('data-main'));
+        }
+    })
+});
+
+
+
+$('body').on('click', '.profile_tab_content.garage .modal_window.modal_profile .modal_tab.model .single_result', function () {
+    if ($(this).find('.model').length > 1) {
+        smoothShow.call(this, '.model_choosing', 'table');
+        return
+    }
+});
+
+
+setImgAsBg('.modal_tab.confirm_choosing .img img');
+
+// popup ends
 
 
 var select_garage = new Selection();
@@ -718,6 +807,7 @@ $('body').on('click', '.profile_tab_content.garage .select_auto .select li', fun
 });
 
 
+
 $('body').on('click', '.profile_tab_content.garage .search_result .single_product', function (event) {
     manageProductCell.call(this, '.profile_tab_content.garage .search_result .single_product', 'single_product')
 });
@@ -728,9 +818,7 @@ $('body').on('click', '.profile_tab_content.garage .search_param', function () {
 });
 
 
-var modal_profile = new ModalWindow('.modal_profile');
-modal_profile.windowOpen('.profile_tab_content.garage .add_auto, .profile_tab_content.garage .edit_auto');
-modal_profile.windowClose('.modal_profile .close');
+
 
 /* Page compare */
 
@@ -814,3 +902,59 @@ $('body').on('click', '.new_positions .single_result .tab_2 .single_model_title'
 
 
 /*   < Page new positions   */
+
+/*Bttns Compare and Cart*/
+
+$('body').on('click', '.single_result .compare', function () {
+    var total = findParent($(this), 'results_wrapper').prev().find('.compare span');
+
+    if ($(this).hasClass('active')) {
+        $(this).removeClass('active');
+        var text = +total.text();
+        if (text > 0) {
+            total.html('' + --text);
+        };
+    } else {
+        $(this).addClass('active');
+        var text = +total.text();
+        total.html('' + ++text)
+    }
+})
+
+
+$('body').on('click', '.result_full_panel .compare', function () {
+
+    window.open('../page_compare.html');
+
+})
+
+
+$('body').on('click', '.single_result .cart, .single_product .cart', function () {
+    $(this).addClass('active');
+
+    $('.header_bottom .cart .items_amount').text(+$('.header_bottom .cart .items_amount').text() + 1)
+
+    var popup_amount = parseInt($('.popup_small_cart .str_amount span').text());
+    var word;
+    if (popup_amount === 1) {
+        word = " товар"
+    } else if (popup_amount > 1 && popup_amount < 5) {
+        word = " товара"
+    } else {
+        word = " товаров"
+    }
+    $('.popup_small_cart .str_amount span').text(++popup_amount + word);
+
+    function getNum(string) {
+        string = string.split(' ');
+        console.log(string);
+        string = string.join('');
+        return +string
+
+    }
+    var str_summ = getNum($('.popup_small_cart .str_summ span').text());
+    console.log(str_summ);
+    str_summ += getNum($(this).prev().find('span').text());
+    $('.popup_small_cart .str_summ span').text(str_summ);
+
+});

@@ -1,5 +1,15 @@
 var map_contacts;
 var map_marker = "../images/icon_map_marker.png";
+var map_selector;
+
+if($('.map').hasClass('page_contacts')) {
+    
+    map_selector = '.map.page_contacts .google_map';
+}
+else if ($('.map').hasClass('page_partners')) {
+    map_selector = '.map.page_partners .google_map';
+    
+}
 
 function initMap() {
     var mapOptions = {
@@ -14,7 +24,7 @@ function initMap() {
 
 
 
-    map_contacts = new google.maps.Map(document.querySelector('.map.page_contacts .google_map'), mapOptions);
+    map_contacts = new google.maps.Map(document.querySelector(map_selector), mapOptions);
 
     var marker = new google.maps.Marker({
         position: {
@@ -28,6 +38,8 @@ function initMap() {
     
    // $('header').on('click', map_contacts.getCenter);
 }
+
+
 
 
 var styleArray = [

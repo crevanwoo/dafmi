@@ -667,6 +667,7 @@ textarea {
                 cursor: pointer;
                 float: right;
                 position: relative;
+                &.active {box-shadow: inset 0px 0px 15px 3px rgba(0,0,0,0.5)}
                 &:before {
                     content: '';
                     position: absolute;
@@ -748,4 +749,32 @@ textarea {
         right: 0;
         z-index: 1;
     }*/
+}
+
+.return_back {
+    display: block;  
+    font-size: $fs14;
+    position: absolute;
+    text-decoration: underline;
+    color: $gray;
+    height: 75px;
+    line-height: 75px;
+    top: -75px;
+    left: 0;
+    padding-left: 25px;
+    cursor: pointer;
+    &:before {content: '';
+        position: absolute;
+        width: 8px;
+        height: 15px;
+        background-image: url(../images/icon_arrow_left.png);
+        transform: rotate(180deg);
+        left:0;
+        top:50%;
+        margin-top: -8px;
+        
+        
+    }
+    
+    
 }

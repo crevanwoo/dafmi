@@ -1,4 +1,24 @@
 .map.page_partners {
+    height: 790px;
+    position: relative;
+    .wrapper {
+        position: relative;
+        border-top: none;
+        background-color: transparent;
+    }
+    .mid_h {
+        font-size: $fs24;
+        text-align: center;
+        line-height: 100px;
+        height: 100px;
+    }
+    .google_map {       
+        width: 100%;
+        position: absolute;
+        top: 110px;
+        left: 0;
+        bottom: -80px;
+    }
     .mid_h {
         text-transform: none;
         line-height: 110px;
@@ -10,8 +30,10 @@
 }
 
 .content.geography {
+    z-index: 1;
     color: #333333;
-    margin-top: 605px;
+    margin-top: -1px;
+    padding-top: 0;
     .wrapper {
         @extend %clear;
         padding-bottom: 20px;

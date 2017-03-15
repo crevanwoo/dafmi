@@ -27,30 +27,31 @@ div.content.profile
                         div.top_nav
                             h3.mid_h Добавление авто
                             ul.modal_steps
+                                -var k = 0
                                 -var steps = ['Год выпуска', 'Выберите марку', 'Выберите модель', 'Ваше авто'] 
                                 each item in steps 
-                                    li.active= item
-                        div.modal_tab.years
+                                    li(data-profile-modal-tab= k++)= item
+                        div.modal_tab.years(data-profile-modal-tab="0")
                             -for( var i = 2010; i > 1970; i-= 10)
                                 div.years_row 
                                     div.decade= i + "-е"                                    
                                     ul.single_year 
                                         -for( var j = 10; j > 0; j--)
-                                            li= i+j
-                        div.modal_tab.mark
+                                            li(data-main= i+j)= i+j
+                        div.modal_tab.mark(data-profile-modal-tab="1")
                              ul.sort_az 
                                 -  
                                     var az_list = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
                                 each az_item in az_list
-                                    li.sort_az_letter
+                                    li(data-sort= az_item).sort_az_letter
                                         a(href="")= az_item 
                              div.list
                                  each item in cars1
-                                     div.product
+                                     div.product(data-main="setBackend") 
                                          div.img 
                                             img(src="images/auto2.png")
                                          div.title= item   
-                        div.modal_tab.model
+                        div.modal_tab.model(data-profile-modal-tab="2")
                             -for (var i = 0; i < 5; i++)
                                 div.single_result
                                     h3.small_h ALFA ROMEO 145
@@ -59,11 +60,11 @@ div.content.profile
                                         img(src="images/auto1.png")
                                     div.model_choosing 
                                         div.models_wrapper
-                                            div.model 
+                                            div.model(data-main="setBackend") 
                                                 span  123-345-18
-                                            div.model
+                                            div.model(data-main="setBackend") 
                                                 span  123-345-25
-                                            div.model 
+                                            div.model(data-main="setBackend")  
                                                 span  123-345-40
                             div.single_result
                                     h3.small_h ALFA ROMEO 145
@@ -72,14 +73,14 @@ div.content.profile
                                         img(src="images/auto1.png")
                                     div.model_choosing 
                                         div.models_wrapper
-                                            div.model 
+                                            div.model(data-main="setBackend")  
                                                 span 123-345-18
                
-                        div.modal_tab.confirm_choosing
+                        div.modal_tab.confirm_choosing(data-profile-modal-tab="3")
                             h4.small_h Подтвердите выбор:
                             div.confirm_auto
                                 div.img
-                                    img
+                                    img(src="../images/auto1.png")
                                 div.info
                                     p.title ALFA ROMEO 145
                                     p.model 146 (930) 1994-2001

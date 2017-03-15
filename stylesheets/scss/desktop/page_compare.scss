@@ -1,4 +1,8 @@
 .page_compare {
+    padding-top: 75px;
+    >.wrapper {
+        position: relative;
+    }
     .big_h {
         font-size: $fs20;
         height: 75px;
@@ -45,7 +49,8 @@
                 height: 100%;
             }
         }
-        .img{background-origin: content-box;
+        .img {
+            background-origin: content-box;
             background-size: contain;
             background-position: center center;
             img {
