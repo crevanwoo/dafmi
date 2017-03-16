@@ -1,0 +1,89 @@
+.popup_small_garage {
+    //$height: 220px;
+    $height: 220px;
+    right: -20px;
+    bottom: -$height - 10px;
+    position: absolute;
+    width: 280px;
+    height: $height;
+    background-color: $bg_white;
+    padding: 20px 0;
+    font-size: $fs14;
+    color: $black;
+    line-height: normal;
+    box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.5);
+    transition-property: opacity;
+    transition-duration: 0.5s;
+    //display: none;
+    //opacity: 0;
+    cursor: default;
+    text-align: left;
+    &.active {
+        opacity: 1;
+    }
+    &:before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        background-color: $bg_white;
+        position: absolute;
+        transform: rotate(45deg);
+        top: -6px;
+        right: 55px;
+    }
+    .big_h {
+        font-size: $fs20;
+        text-transform: none;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .select_auto {
+        @extend %clear;
+        @extend .default_select;
+        height: 100px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        select {}
+        .select {
+            width: 100%;
+            height: 40px;
+            margin-top: 5px;
+            line-height: 38px;
+            font-size: $fs20;
+            .select-styled {
+                color: $black;
+                &.active {
+                    color: $black;
+                }
+                &:before {
+                    top: 50%;
+                    margin-top: -5px;
+                }
+            }
+            .select-options {
+                border-bottom: $selection_border;
+                border-left: $selection_border;
+                border-right: $selection_border;
+                max-height: 300px;
+                height: auto;
+                margin-left: -1px;
+                margin-right: -1px;
+                li {
+                    height: 40px;
+                    line-height: normal;
+                }
+            }
+        }
+    }
+    .img {
+        width: 100%;
+        height: 50px;
+        background-size: contain;
+        background-position: center center;
+        img {
+            display: none;
+        }
+    }
+}

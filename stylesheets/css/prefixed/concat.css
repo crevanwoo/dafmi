@@ -20,9 +20,9 @@
 
 /*Font Sizes*/
 /*Elem sizes */
-.content .content_nav .nav_main, .expand_search .nav_types, .profile_tab_content.catalog.choose_items .panel .nav, .new_positions .nav_types, .expand_search .tabs, .profile_tab_content.catalog.choose_items .panel .tabs, .new_positions .tabs, .expand_search .axis, .profile_tab_content.catalog.choose_items .panel .axis, .new_positions .axis, .profile_tab_content.history .single_product .info .top, .profile_tab_content.garage .search_result .single_product .info .top, .profile_tab_content.history .single_product .bottom, .profile_tab_content.garage .search_result .single_product .bottom, header .header_top, header .header_bottom, header .header_bottom .wrapper, .content .content_nav .nav_top, .content .content_panel .filters, .content .content_panel .views, .content .content_products, footer .footer_top .wrapper, footer .footer_bottom, .expand_search .search_param, .expand_search .search_param .param_wrapper, .expand_search .search_param .param_wrapper .param_title, .expand_search .fields, .expand_search .default_select, .expand_search .profile_tab_content.garage .select_auto, .profile_tab_content.garage .expand_search .select_auto, .result_grid, .result_full .result_full_panel, .expand_search .search_result .result_full_panel, .new_positions .search_result .result_full_panel, .result_full .short, .expand_search .search_result .short, .new_positions .search_result .short, .result_full .top_row, .expand_search .search_result .top_row, .new_positions .search_result .top_row, .result_full .bottom_row, .expand_search .search_result .bottom_row, .new_positions .search_result .bottom_row, .result_full .single_result_extend .tab_container .tab_1, .expand_search .search_result .single_result_extend .tab_container .tab_1, .new_positions .search_result .single_result_extend .tab_container .tab_1, .result_full .single_result_extend .tab_container .tab_2 .nav, .expand_search .search_result .single_result_extend .tab_container .tab_2 .nav, .new_positions .search_result .single_result_extend .tab_container .tab_2 .nav, .result_full .single_result_extend .tab_container .tab_2 .tab_2_content, .expand_search .search_result .single_result_extend .tab_container .tab_2 .tab_2_content, .new_positions .search_result .single_result_extend .tab_container .tab_2 .tab_2_content, .result_full .single_result_extend .tab_container .tab_2 .tab_2_content .single_maker .single_model .model_content .single_item, .expand_search .search_result .single_result_extend .tab_container .tab_2 .tab_2_content .single_maker .single_model .model_content .single_item, .new_positions .search_result .single_result_extend .tab_container .tab_2 .tab_2_content .single_maker .single_model .model_content .single_item, .result_full .single_result_extend .tab_container .tab_3, .expand_search .search_result .single_result_extend .tab_container .tab_3, .new_positions .search_result .single_result_extend .tab_container .tab_3, .result_full .pagination, .expand_search .search_result .pagination, .new_positions .search_result .pagination, .result_full .pagination .left .to_show, .expand_search .search_result .pagination .left .to_show, .new_positions .search_result .pagination .left .to_show, .result_full .pagination .right, .expand_search .search_result .pagination .right, .new_positions .search_result .pagination .right, .single_result_page .top_info, .single_result_page .top_info .main_info_rect, .single_result_page .param_info .single_result_page__content, .single_result_page .models_info .nav, .single_result_page .models_info .single_result_page__content, .single_result_page .models_info .single_result_page__content .single_maker .single_model .model_content .single_item, .single_result_page .links_info .single_result_page__content, .content.page_downloads .files_wrapper, .content.page_cart .single_product, .content.page_cart .bottom_panel .buttons, .page_cart_modal_confirm .modal_content .buttons, footer .modal_window .modal_content, .modal_registration_1 .choose_profile, .content.page_print > .wrapper, .content.page_print .buttons, .content.page_news .single_article, .feedback .contacts_content_wrapper, .content.geography .wrapper, .content.profile .profile_content, .profile_tab_content.orders .order_header, .profile_tab_content.orders .order_element, .profile_tab_content.order .top_title, .profile_tab_content.history .history_wrapper, .profile_tab_content.garage .select_auto, .profile_tab_content.garage .search_params, .profile_tab_content.garage .search_result, .profile_tab_content.garage .modal_window .modal_content, .modal_tab.years .years_row, .modal_tab.years .years_row .single_year, .modal_tab.mark .list, .modal_tab.model, .modal_tab.confirm_choosing .confirm_auto, .catalog .top_title, .profile_tab_content.catalog.choose_items .prod_search, .print_catalog .top_title, .page_compare .compare_wrapper, .page_compare .col_product .name, .new_positions .filters.default_select, .new_positions .profile_tab_content.garage .filters.select_auto, .profile_tab_content.garage .new_positions .filters.select_auto, .new_positions .filters.default_select .selection_wrapper, .new_positions .profile_tab_content.garage .filters.select_auto .selection_wrapper, .profile_tab_content.garage .new_positions .filters.select_auto .selection_wrapper, .new_positions .fields, .new_positions .default_select, .new_positions .profile_tab_content.garage .select_auto, .profile_tab_content.garage .new_positions .select_auto {
+.content .content_nav .nav_main, .expand_search .nav_types, .profile_tab_content.catalog.choose_items .panel .nav, .new_positions .nav_types, .expand_search .tabs, .profile_tab_content.catalog.choose_items .panel .tabs, .new_positions .tabs, .expand_search .axis, .profile_tab_content.catalog.choose_items .panel .axis, .new_positions .axis, .profile_tab_content.history .single_product .info .top, .profile_tab_content.garage .search_result .single_product .info .top, .profile_tab_content.history .single_product .bottom, .profile_tab_content.garage .search_result .single_product .bottom, header .popup_small_garage .select_auto, header .header_top, header .header_bottom, header .header_bottom .wrapper, .content .content_nav .nav_top, .content .content_panel .filters, .content .content_panel .views, .content .content_products, footer .footer_top .wrapper, footer .footer_bottom, .expand_search .search_param, .expand_search .search_param .param_wrapper, .expand_search .search_param .param_wrapper .param_title, .expand_search .fields, .expand_search .default_select, .expand_search header .popup_small_garage .select_auto, header .popup_small_garage .expand_search .select_auto, .expand_search .profile_tab_content.garage .select_auto, .profile_tab_content.garage .expand_search .select_auto, .result_grid, .result_full .result_full_panel, .expand_search .search_result .result_full_panel, .new_positions .search_result .result_full_panel, .result_full .short, .expand_search .search_result .short, .new_positions .search_result .short, .result_full .top_row, .expand_search .search_result .top_row, .new_positions .search_result .top_row, .result_full .bottom_row, .expand_search .search_result .bottom_row, .new_positions .search_result .bottom_row, .result_full .single_result_extend .tab_container .tab_1, .expand_search .search_result .single_result_extend .tab_container .tab_1, .new_positions .search_result .single_result_extend .tab_container .tab_1, .result_full .single_result_extend .tab_container .tab_2 .nav, .expand_search .search_result .single_result_extend .tab_container .tab_2 .nav, .new_positions .search_result .single_result_extend .tab_container .tab_2 .nav, .result_full .single_result_extend .tab_container .tab_2 .tab_2_content, .expand_search .search_result .single_result_extend .tab_container .tab_2 .tab_2_content, .new_positions .search_result .single_result_extend .tab_container .tab_2 .tab_2_content, .result_full .single_result_extend .tab_container .tab_2 .tab_2_content .single_maker .single_model .model_content .single_item, .expand_search .search_result .single_result_extend .tab_container .tab_2 .tab_2_content .single_maker .single_model .model_content .single_item, .new_positions .search_result .single_result_extend .tab_container .tab_2 .tab_2_content .single_maker .single_model .model_content .single_item, .result_full .single_result_extend .tab_container .tab_3, .expand_search .search_result .single_result_extend .tab_container .tab_3, .new_positions .search_result .single_result_extend .tab_container .tab_3, .result_full .pagination, .expand_search .search_result .pagination, .new_positions .search_result .pagination, .result_full .pagination .left .to_show, .expand_search .search_result .pagination .left .to_show, .new_positions .search_result .pagination .left .to_show, .result_full .pagination .right, .expand_search .search_result .pagination .right, .new_positions .search_result .pagination .right, .single_result_page .top_info, .single_result_page .top_info .main_info_rect, .single_result_page .param_info .single_result_page__content, .single_result_page .models_info .nav, .single_result_page .models_info .single_result_page__content, .single_result_page .models_info .single_result_page__content .single_maker .single_model .model_content .single_item, .single_result_page .links_info .single_result_page__content, .content.page_downloads .files_wrapper, .content.page_cart .single_product, .content.page_cart .bottom_panel .buttons, .page_cart_modal_confirm .modal_content .buttons, footer .modal_window .modal_content, .modal_registration_1 .choose_profile, .content.page_print > .wrapper, .content.page_print .buttons, .content.page_news .single_article, .feedback .contacts_content_wrapper, .content.geography .wrapper, .content.profile .profile_content, .profile_tab_content.orders .order_header, .profile_tab_content.orders .order_element, .profile_tab_content.order .top_title, .profile_tab_content.history .history_wrapper, .profile_tab_content.garage .select_auto, .profile_tab_content.garage .search_params, .profile_tab_content.garage .search_result, .profile_tab_content.garage .modal_window .modal_content, .modal_tab.years .years_row, .modal_tab.years .years_row .single_year, .modal_tab.mark .list, .modal_tab.model, .modal_tab.confirm_choosing .confirm_auto, .catalog .top_title, .profile_tab_content.catalog.choose_items .prod_search, .print_catalog .top_title, .page_compare .compare_wrapper, .page_compare .col_product .name, .new_positions .filters.default_select, .new_positions header .popup_small_garage .filters.select_auto, header .popup_small_garage .new_positions .filters.select_auto, .new_positions .profile_tab_content.garage .filters.select_auto, .profile_tab_content.garage .new_positions .filters.select_auto, .new_positions .filters.default_select .selection_wrapper, .new_positions header .popup_small_garage .filters.select_auto .selection_wrapper, header .popup_small_garage .new_positions .filters.select_auto .selection_wrapper, .new_positions .profile_tab_content.garage .filters.select_auto .selection_wrapper, .profile_tab_content.garage .new_positions .filters.select_auto .selection_wrapper, .new_positions .fields, .new_positions .default_select, .new_positions header .popup_small_garage .select_auto, header .popup_small_garage .new_positions .select_auto, .new_positions .profile_tab_content.garage .select_auto, .profile_tab_content.garage .new_positions .select_auto {
   position: relative; }
-  .content .content_nav .nav_main:after, .expand_search .nav_types:after, .profile_tab_content.catalog.choose_items .panel .nav:after, .new_positions .nav_types:after, .expand_search .tabs:after, .profile_tab_content.catalog.choose_items .panel .tabs:after, .new_positions .tabs:after, .expand_search .axis:after, .profile_tab_content.catalog.choose_items .panel .axis:after, .new_positions .axis:after, .profile_tab_content.history .single_product .info .top:after, .profile_tab_content.garage .search_result .single_product .info .top:after, .profile_tab_content.history .single_product .bottom:after, .profile_tab_content.garage .search_result .single_product .bottom:after, header .header_top:after, header .header_bottom:after, header .header_bottom .wrapper:after, .content .content_nav .nav_top:after, .content .content_panel .filters:after, .content .content_panel .views:after, .content .content_products:after, footer .footer_top .wrapper:after, footer .footer_bottom:after, .expand_search .search_param:after, .expand_search .search_param .param_wrapper:after, .expand_search .search_param .param_wrapper .param_title:after, .expand_search .fields:after, .expand_search .default_select:after, .expand_search .profile_tab_content.garage .select_auto:after, .profile_tab_content.garage .expand_search .select_auto:after, .result_grid:after, .result_full .result_full_panel:after, .expand_search .search_result .result_full_panel:after, .new_positions .search_result .result_full_panel:after, .result_full .short:after, .expand_search .search_result .short:after, .new_positions .search_result .short:after, .result_full .top_row:after, .expand_search .search_result .top_row:after, .new_positions .search_result .top_row:after, .result_full .bottom_row:after, .expand_search .search_result .bottom_row:after, .new_positions .search_result .bottom_row:after, .result_full .single_result_extend .tab_container .tab_1:after, .expand_search .search_result .single_result_extend .tab_container .tab_1:after, .new_positions .search_result .single_result_extend .tab_container .tab_1:after, .result_full .single_result_extend .tab_container .tab_2 .nav:after, .expand_search .search_result .single_result_extend .tab_container .tab_2 .nav:after, .new_positions .search_result .single_result_extend .tab_container .tab_2 .nav:after, .result_full .single_result_extend .tab_container .tab_2 .tab_2_content:after, .expand_search .search_result .single_result_extend .tab_container .tab_2 .tab_2_content:after, .new_positions .search_result .single_result_extend .tab_container .tab_2 .tab_2_content:after, .result_full .single_result_extend .tab_container .tab_2 .tab_2_content .single_maker .single_model .model_content .single_item:after, .expand_search .search_result .single_result_extend .tab_container .tab_2 .tab_2_content .single_maker .single_model .model_content .single_item:after, .new_positions .search_result .single_result_extend .tab_container .tab_2 .tab_2_content .single_maker .single_model .model_content .single_item:after, .result_full .single_result_extend .tab_container .tab_3:after, .expand_search .search_result .single_result_extend .tab_container .tab_3:after, .new_positions .search_result .single_result_extend .tab_container .tab_3:after, .result_full .pagination:after, .expand_search .search_result .pagination:after, .new_positions .search_result .pagination:after, .result_full .pagination .left .to_show:after, .expand_search .search_result .pagination .left .to_show:after, .new_positions .search_result .pagination .left .to_show:after, .result_full .pagination .right:after, .expand_search .search_result .pagination .right:after, .new_positions .search_result .pagination .right:after, .single_result_page .top_info:after, .single_result_page .top_info .main_info_rect:after, .single_result_page .param_info .single_result_page__content:after, .single_result_page .models_info .nav:after, .single_result_page .models_info .single_result_page__content:after, .single_result_page .models_info .single_result_page__content .single_maker .single_model .model_content .single_item:after, .single_result_page .links_info .single_result_page__content:after, .content.page_downloads .files_wrapper:after, .content.page_cart .single_product:after, .content.page_cart .bottom_panel .buttons:after, .page_cart_modal_confirm .modal_content .buttons:after, footer .modal_window .modal_content:after, .modal_registration_1 .choose_profile:after, .content.page_print > .wrapper:after, .content.page_print .buttons:after, .content.page_news .single_article:after, .feedback .contacts_content_wrapper:after, .content.geography .wrapper:after, .content.profile .profile_content:after, .profile_tab_content.orders .order_header:after, .profile_tab_content.orders .order_element:after, .profile_tab_content.order .top_title:after, .profile_tab_content.history .history_wrapper:after, .profile_tab_content.garage .select_auto:after, .profile_tab_content.garage .search_params:after, .profile_tab_content.garage .search_result:after, .profile_tab_content.garage .modal_window .modal_content:after, .modal_tab.years .years_row:after, .modal_tab.years .years_row .single_year:after, .modal_tab.mark .list:after, .modal_tab.model:after, .modal_tab.confirm_choosing .confirm_auto:after, .catalog .top_title:after, .profile_tab_content.catalog.choose_items .prod_search:after, .print_catalog .top_title:after, .page_compare .compare_wrapper:after, .page_compare .col_product .name:after, .new_positions .filters.default_select:after, .new_positions .profile_tab_content.garage .filters.select_auto:after, .profile_tab_content.garage .new_positions .filters.select_auto:after, .new_positions .filters.default_select .selection_wrapper:after, .new_positions .profile_tab_content.garage .filters.select_auto .selection_wrapper:after, .profile_tab_content.garage .new_positions .filters.select_auto .selection_wrapper:after, .new_positions .fields:after, .new_positions .default_select:after, .new_positions .profile_tab_content.garage .select_auto:after, .profile_tab_content.garage .new_positions .select_auto:after {
+  .content .content_nav .nav_main:after, .expand_search .nav_types:after, .profile_tab_content.catalog.choose_items .panel .nav:after, .new_positions .nav_types:after, .expand_search .tabs:after, .profile_tab_content.catalog.choose_items .panel .tabs:after, .new_positions .tabs:after, .expand_search .axis:after, .profile_tab_content.catalog.choose_items .panel .axis:after, .new_positions .axis:after, .profile_tab_content.history .single_product .info .top:after, .profile_tab_content.garage .search_result .single_product .info .top:after, .profile_tab_content.history .single_product .bottom:after, .profile_tab_content.garage .search_result .single_product .bottom:after, header .popup_small_garage .select_auto:after, header .header_top:after, header .header_bottom:after, header .header_bottom .wrapper:after, .content .content_nav .nav_top:after, .content .content_panel .filters:after, .content .content_panel .views:after, .content .content_products:after, footer .footer_top .wrapper:after, footer .footer_bottom:after, .expand_search .search_param:after, .expand_search .search_param .param_wrapper:after, .expand_search .search_param .param_wrapper .param_title:after, .expand_search .fields:after, .expand_search .default_select:after, .expand_search header .popup_small_garage .select_auto:after, header .popup_small_garage .expand_search .select_auto:after, .expand_search .profile_tab_content.garage .select_auto:after, .profile_tab_content.garage .expand_search .select_auto:after, .result_grid:after, .result_full .result_full_panel:after, .expand_search .search_result .result_full_panel:after, .new_positions .search_result .result_full_panel:after, .result_full .short:after, .expand_search .search_result .short:after, .new_positions .search_result .short:after, .result_full .top_row:after, .expand_search .search_result .top_row:after, .new_positions .search_result .top_row:after, .result_full .bottom_row:after, .expand_search .search_result .bottom_row:after, .new_positions .search_result .bottom_row:after, .result_full .single_result_extend .tab_container .tab_1:after, .expand_search .search_result .single_result_extend .tab_container .tab_1:after, .new_positions .search_result .single_result_extend .tab_container .tab_1:after, .result_full .single_result_extend .tab_container .tab_2 .nav:after, .expand_search .search_result .single_result_extend .tab_container .tab_2 .nav:after, .new_positions .search_result .single_result_extend .tab_container .tab_2 .nav:after, .result_full .single_result_extend .tab_container .tab_2 .tab_2_content:after, .expand_search .search_result .single_result_extend .tab_container .tab_2 .tab_2_content:after, .new_positions .search_result .single_result_extend .tab_container .tab_2 .tab_2_content:after, .result_full .single_result_extend .tab_container .tab_2 .tab_2_content .single_maker .single_model .model_content .single_item:after, .expand_search .search_result .single_result_extend .tab_container .tab_2 .tab_2_content .single_maker .single_model .model_content .single_item:after, .new_positions .search_result .single_result_extend .tab_container .tab_2 .tab_2_content .single_maker .single_model .model_content .single_item:after, .result_full .single_result_extend .tab_container .tab_3:after, .expand_search .search_result .single_result_extend .tab_container .tab_3:after, .new_positions .search_result .single_result_extend .tab_container .tab_3:after, .result_full .pagination:after, .expand_search .search_result .pagination:after, .new_positions .search_result .pagination:after, .result_full .pagination .left .to_show:after, .expand_search .search_result .pagination .left .to_show:after, .new_positions .search_result .pagination .left .to_show:after, .result_full .pagination .right:after, .expand_search .search_result .pagination .right:after, .new_positions .search_result .pagination .right:after, .single_result_page .top_info:after, .single_result_page .top_info .main_info_rect:after, .single_result_page .param_info .single_result_page__content:after, .single_result_page .models_info .nav:after, .single_result_page .models_info .single_result_page__content:after, .single_result_page .models_info .single_result_page__content .single_maker .single_model .model_content .single_item:after, .single_result_page .links_info .single_result_page__content:after, .content.page_downloads .files_wrapper:after, .content.page_cart .single_product:after, .content.page_cart .bottom_panel .buttons:after, .page_cart_modal_confirm .modal_content .buttons:after, footer .modal_window .modal_content:after, .modal_registration_1 .choose_profile:after, .content.page_print > .wrapper:after, .content.page_print .buttons:after, .content.page_news .single_article:after, .feedback .contacts_content_wrapper:after, .content.geography .wrapper:after, .content.profile .profile_content:after, .profile_tab_content.orders .order_header:after, .profile_tab_content.orders .order_element:after, .profile_tab_content.order .top_title:after, .profile_tab_content.history .history_wrapper:after, .profile_tab_content.garage .select_auto:after, .profile_tab_content.garage .search_params:after, .profile_tab_content.garage .search_result:after, .profile_tab_content.garage .modal_window .modal_content:after, .modal_tab.years .years_row:after, .modal_tab.years .years_row .single_year:after, .modal_tab.mark .list:after, .modal_tab.model:after, .modal_tab.confirm_choosing .confirm_auto:after, .catalog .top_title:after, .profile_tab_content.catalog.choose_items .prod_search:after, .print_catalog .top_title:after, .page_compare .compare_wrapper:after, .page_compare .col_product .name:after, .new_positions .filters.default_select:after, .new_positions header .popup_small_garage .filters.select_auto:after, header .popup_small_garage .new_positions .filters.select_auto:after, .new_positions .profile_tab_content.garage .filters.select_auto:after, .profile_tab_content.garage .new_positions .filters.select_auto:after, .new_positions .filters.default_select .selection_wrapper:after, .new_positions header .popup_small_garage .filters.select_auto .selection_wrapper:after, header .popup_small_garage .new_positions .filters.select_auto .selection_wrapper:after, .new_positions .profile_tab_content.garage .filters.select_auto .selection_wrapper:after, .profile_tab_content.garage .new_positions .filters.select_auto .selection_wrapper:after, .new_positions .fields:after, .new_positions .default_select:after, .new_positions header .popup_small_garage .select_auto:after, header .popup_small_garage .new_positions .select_auto:after, .new_positions .profile_tab_content.garage .select_auto:after, .profile_tab_content.garage .new_positions .select_auto:after {
     content: '';
     display: block;
     clear: both; }
@@ -316,31 +316,31 @@ textarea {
     .select-options li[rel="hide"] {
       display: none; }
 
-.default_select .select, .profile_tab_content.garage .select_auto .select {
+.default_select .select, header .popup_small_garage .select_auto .select, .profile_tab_content.garage .select_auto .select {
   border: 1px solid #efefef;
   cursor: pointer;
   font-size: 14px; }
-  .default_select .select .select-styled, .profile_tab_content.garage .select_auto .select .select-styled {
+  .default_select .select .select-styled, header .popup_small_garage .select_auto .select .select-styled, .profile_tab_content.garage .select_auto .select .select-styled {
     padding-left: 12px;
     height: 100%;
     color: #ccc; }
-    .default_select .select .select-styled:before, .profile_tab_content.garage .select_auto .select .select-styled:before {
+    .default_select .select .select-styled:before, header .popup_small_garage .select_auto .select .select-styled:before, .profile_tab_content.garage .select_auto .select .select-styled:before {
       content: '';
       position: absolute;
       right: 10px;
       width: 16px;
       height: 9px;
       background-image: url(../images/icon_select_arrow.png); }
-    .default_select .select .select-styled.active, .profile_tab_content.garage .select_auto .select .select-styled.active {
+    .default_select .select .select-styled.active, header .popup_small_garage .select_auto .select .select-styled.active, .profile_tab_content.garage .select_auto .select .select-styled.active {
       color: #ccc; }
-      .default_select .select .select-styled.active:before, .profile_tab_content.garage .select_auto .select .select-styled.active:before {
+      .default_select .select .select-styled.active:before, header .popup_small_garage .select_auto .select .select-styled.active:before, .profile_tab_content.garage .select_auto .select .select-styled.active:before {
         -webkit-transform: rotate(180deg);
                 transform: rotate(180deg); }
-    .default_select .select .select-styled.changed, .profile_tab_content.garage .select_auto .select .select-styled.changed {
+    .default_select .select .select-styled.changed, header .popup_small_garage .select_auto .select .select-styled.changed, .profile_tab_content.garage .select_auto .select .select-styled.changed {
       color: #333;
       border: 1px solid #b4b4b4; }
 
-.default_select .select-options, .profile_tab_content.garage .select_auto .select-options {
+.default_select .select-options, header .popup_small_garage .select_auto .select-options, .profile_tab_content.garage .select_auto .select-options {
   display: none;
   position: absolute;
   top: 100%;
@@ -355,7 +355,7 @@ textarea {
   overflow-y: auto;
   overflow-x: hidden;
   border-top: 1px solid #efefef; }
-  .default_select .select-options li, .profile_tab_content.garage .select_auto .select-options li {
+  .default_select .select-options li, header .popup_small_garage .select_auto .select-options li, .profile_tab_content.garage .select_auto .select-options li {
     position: relative;
     left: -1px;
     width: calc(100% + 2px);
@@ -365,9 +365,9 @@ textarea {
     border-left: 1px solid #efefef;
     border-bottom: 1px solid #efefef;
     color: #333; }
-    .default_select .select-options li:hover, .profile_tab_content.garage .select_auto .select-options li:hover {
+    .default_select .select-options li:hover, header .popup_small_garage .select_auto .select-options li:hover, .profile_tab_content.garage .select_auto .select-options li:hover {
       background-color: #fafafa; }
-    .default_select .select-options li[rel="hide"], .profile_tab_content.garage .select_auto .select-options li[rel="hide"] {
+    .default_select .select-options li[rel="hide"], header .popup_small_garage .select_auto .select-options li[rel="hide"], .profile_tab_content.garage .select_auto .select-options li[rel="hide"] {
       display: none; }
 
 .content .content_nav .nav_main, .expand_search .nav_types, .profile_tab_content.catalog.choose_items .panel .nav, .new_positions .nav_types {
@@ -751,6 +751,78 @@ header {
           background-image: url(../images/icon_cart_popup.png);
           top: -3px;
           left: -30px; }
+  header .popup_small_garage {
+    right: -20px;
+    bottom: -230px;
+    position: absolute;
+    width: 280px;
+    height: 220px;
+    background-color: #fff;
+    padding: 20px 0;
+    font-size: 14px;
+    color: #333;
+    line-height: normal;
+    box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.5);
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+    -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+    cursor: default;
+    text-align: left; }
+    header .popup_small_garage.active {
+      opacity: 1; }
+    header .popup_small_garage:before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background-color: #fff;
+      position: absolute;
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      top: -6px;
+      right: 55px; }
+    header .popup_small_garage .big_h {
+      font-size: 20px;
+      text-transform: none;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      margin-bottom: 20px; }
+    header .popup_small_garage .select_auto {
+      height: 100px;
+      padding-top: 25px;
+      padding-bottom: 25px; }
+      header .popup_small_garage .select_auto .select {
+        width: 100%;
+        height: 40px;
+        margin-top: 5px;
+        line-height: 38px;
+        font-size: 20px; }
+        header .popup_small_garage .select_auto .select .select-styled {
+          color: #333; }
+          header .popup_small_garage .select_auto .select .select-styled.active {
+            color: #333; }
+          header .popup_small_garage .select_auto .select .select-styled:before {
+            top: 50%;
+            margin-top: -5px; }
+        header .popup_small_garage .select_auto .select .select-options {
+          border-bottom: 1px solid #efefef;
+          border-left: 1px solid #efefef;
+          border-right: 1px solid #efefef;
+          max-height: 300px;
+          height: auto;
+          margin-left: -1px;
+          margin-right: -1px; }
+          header .popup_small_garage .select_auto .select .select-options li {
+            height: 40px;
+            line-height: normal; }
+    header .popup_small_garage .img {
+      width: 100%;
+      height: 50px;
+      background-size: contain;
+      background-position: center center; }
+      header .popup_small_garage .img img {
+        display: none; }
   header .header_top {
     height: 60px;
     line-height: 60px;
@@ -979,6 +1051,7 @@ header {
           -webkit-transition: 0.2s;
           transition: 0.2s; }
       header .header_bottom.min .garage {
+        position: relative;
         float: left;
         margin-left: 20px;
         width: 60px;
@@ -1578,21 +1651,21 @@ footer {
   height: 50px;
   margin-bottom: 40px; }
 
-.expand_search .default_select, .expand_search .profile_tab_content.garage .select_auto, .profile_tab_content.garage .expand_search .select_auto {
+.expand_search .default_select, .expand_search header .popup_small_garage .select_auto, header .popup_small_garage .expand_search .select_auto, .expand_search .profile_tab_content.garage .select_auto, .profile_tab_content.garage .expand_search .select_auto {
   padding: 20px; }
-  .expand_search .default_select .select, .expand_search .profile_tab_content.garage .select_auto .select, .profile_tab_content.garage .expand_search .select_auto .select {
+  .expand_search .default_select .select, .expand_search header .popup_small_garage .select_auto .select, header .popup_small_garage .expand_search .select_auto .select, .expand_search .profile_tab_content.garage .select_auto .select, .profile_tab_content.garage .expand_search .select_auto .select {
     float: left;
     width: 379px;
     margin-right: 20px;
     height: 40px;
     font-size: 14px; }
-    .expand_search .default_select .select .select-styled, .expand_search .profile_tab_content.garage .select_auto .select .select-styled, .profile_tab_content.garage .expand_search .select_auto .select .select-styled {
+    .expand_search .default_select .select .select-styled, .expand_search header .popup_small_garage .select_auto .select .select-styled, header .popup_small_garage .expand_search .select_auto .select .select-styled, .expand_search .profile_tab_content.garage .select_auto .select .select-styled, .profile_tab_content.garage .expand_search .select_auto .select .select-styled {
       line-height: 38px; }
-      .expand_search .default_select .select .select-styled:before, .expand_search .profile_tab_content.garage .select_auto .select .select-styled:before, .profile_tab_content.garage .expand_search .select_auto .select .select-styled:before {
+      .expand_search .default_select .select .select-styled:before, .expand_search header .popup_small_garage .select_auto .select .select-styled:before, header .popup_small_garage .expand_search .select_auto .select .select-styled:before, .expand_search .profile_tab_content.garage .select_auto .select .select-styled:before, .profile_tab_content.garage .expand_search .select_auto .select .select-styled:before {
         top: 15px; }
-    .expand_search .default_select .select:last-of-type, .expand_search .profile_tab_content.garage .select_auto .select:last-of-type, .profile_tab_content.garage .expand_search .select_auto .select:last-of-type {
+    .expand_search .default_select .select:last-of-type, .expand_search header .popup_small_garage .select_auto .select:last-of-type, header .popup_small_garage .expand_search .select_auto .select:last-of-type, .expand_search .profile_tab_content.garage .select_auto .select:last-of-type, .profile_tab_content.garage .expand_search .select_auto .select:last-of-type {
       margin-right: 0; }
-    .expand_search .default_select .select .select-options, .expand_search .profile_tab_content.garage .select_auto .select .select-options, .profile_tab_content.garage .expand_search .select_auto .select .select-options {
+    .expand_search .default_select .select .select-options, .expand_search header .popup_small_garage .select_auto .select .select-options, header .popup_small_garage .expand_search .select_auto .select .select-options, .expand_search .profile_tab_content.garage .select_auto .select .select-options, .profile_tab_content.garage .expand_search .select_auto .select .select-options {
       height: 140px;
       overflow-x: hidden;
       overflow-y: auto;
@@ -1601,12 +1674,12 @@ footer {
       border-bottom: 1px solid #efefef;
       margin-left: -1px;
       margin-right: -1px; }
-    .expand_search .default_select .select li, .expand_search .profile_tab_content.garage .select_auto .select li, .profile_tab_content.garage .expand_search .select_auto .select li {
+    .expand_search .default_select .select li, .expand_search header .popup_small_garage .select_auto .select li, header .popup_small_garage .expand_search .select_auto .select li, .expand_search .profile_tab_content.garage .select_auto .select li, .profile_tab_content.garage .expand_search .select_auto .select li {
       height: 30px;
       line-height: 30px;
       padding-top: 0;
       padding-bottom: 0; }
-    .expand_search .default_select .select .disabled, .expand_search .profile_tab_content.garage .select_auto .select .disabled, .profile_tab_content.garage .expand_search .select_auto .select .disabled {
+    .expand_search .default_select .select .disabled, .expand_search header .popup_small_garage .select_auto .select .disabled, header .popup_small_garage .expand_search .select_auto .select .disabled, .expand_search .profile_tab_content.garage .select_auto .select .disabled, .profile_tab_content.garage .expand_search .select_auto .select .disabled {
       cursor: default;
       background-color: #fafafa; }
 
@@ -3839,6 +3912,8 @@ footer .modal_window {
         .profile_tab_content.garage .modal_window .modal_content .modal_steps li.active {
           font-family: Medium;
           border-bottom: 4px solid #dc5552; }
+        .profile_tab_content.garage .modal_window .modal_content .modal_steps li:last-of-type:after {
+          display: none; }
     .profile_tab_content.garage .modal_window .modal_content .modal_tab {
       padding-top: 20px;
       padding-bottom: 30px;
@@ -4005,6 +4080,58 @@ footer .modal_window {
         opacity: 1; }
     .modal_tab.model .single_result:nth-of-type(3n) {
       margin-right: 0; }
+
+.modal_tab.motors .motors_wrapper {
+  display: table;
+  border-collapse: collapse;
+  width: 100%;
+  height: auto; }
+
+.modal_tab.motors .result_list_headers {
+  height: 50px;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5; }
+
+.modal_tab.motors .result_list_row {
+  height: 70px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  border-bottom: 1px solid #ededed;
+  cursor: pointer; }
+  .modal_tab.motors .result_list_row:hover {
+    background-color: #fafafa; }
+
+.modal_tab.motors .result_list_headers,
+.modal_tab.motors .result_list_row {
+  display: table-row; }
+  .modal_tab.motors .result_list_headers > div:nth-of-type(1),
+  .modal_tab.motors .result_list_row > div:nth-of-type(1) {
+    width: 120px; }
+  .modal_tab.motors .result_list_headers > div:nth-of-type(2),
+  .modal_tab.motors .result_list_row > div:nth-of-type(2) {
+    width: 120px; }
+  .modal_tab.motors .result_list_headers > div:nth-of-type(3),
+  .modal_tab.motors .result_list_row > div:nth-of-type(3) {
+    width: 180px; }
+  .modal_tab.motors .result_list_headers > div:nth-of-type(4),
+  .modal_tab.motors .result_list_row > div:nth-of-type(4) {
+    width: 120px; }
+  .modal_tab.motors .result_list_headers > div:nth-of-type(5),
+  .modal_tab.motors .result_list_row > div:nth-of-type(5) {
+    width: 140px; }
+  .modal_tab.motors .result_list_headers > div:nth-of-type(6),
+  .modal_tab.motors .result_list_row > div:nth-of-type(6) {
+    width: 160px; }
+  .modal_tab.motors .result_list_headers > div:nth-of-type(7),
+  .modal_tab.motors .result_list_row > div:nth-of-type(7) {
+    width: 160px; }
+
+.modal_tab.motors .table_header,
+.modal_tab.motors .table_value {
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+  font-size: 12px; }
 
 .modal_tab.confirm_choosing {
   display: none; }
@@ -4326,10 +4453,10 @@ footer .modal_window {
   margin-bottom: 80px;
   text-align: center; }
 
-.new_positions .filters.default_select, .new_positions .profile_tab_content.garage .filters.select_auto, .profile_tab_content.garage .new_positions .filters.select_auto {
+.new_positions .filters.default_select, .new_positions header .popup_small_garage .filters.select_auto, header .popup_small_garage .new_positions .filters.select_auto, .new_positions .profile_tab_content.garage .filters.select_auto, .profile_tab_content.garage .new_positions .filters.select_auto {
   padding-top: 30px;
   padding-bottom: 10px; }
-  .new_positions .filters.default_select .selection_wrapper, .new_positions .profile_tab_content.garage .filters.select_auto .selection_wrapper, .profile_tab_content.garage .new_positions .filters.select_auto .selection_wrapper {
+  .new_positions .filters.default_select .selection_wrapper, .new_positions header .popup_small_garage .filters.select_auto .selection_wrapper, header .popup_small_garage .new_positions .filters.select_auto .selection_wrapper, .new_positions .profile_tab_content.garage .filters.select_auto .selection_wrapper, .profile_tab_content.garage .new_positions .filters.select_auto .selection_wrapper {
     float: left;
     margin-bottom: 20px;
     width: 50%;
@@ -4338,9 +4465,9 @@ footer .modal_window {
     font-size: 14px;
     line-height: 40px;
     display: inline-block; }
-    .new_positions .filters.default_select .selection_wrapper:first-of-type, .new_positions .profile_tab_content.garage .filters.select_auto .selection_wrapper:first-of-type, .profile_tab_content.garage .new_positions .filters.select_auto .selection_wrapper:first-of-type {
+    .new_positions .filters.default_select .selection_wrapper:first-of-type, .new_positions header .popup_small_garage .filters.select_auto .selection_wrapper:first-of-type, header .popup_small_garage .new_positions .filters.select_auto .selection_wrapper:first-of-type, .new_positions .profile_tab_content.garage .filters.select_auto .selection_wrapper:first-of-type, .profile_tab_content.garage .new_positions .filters.select_auto .selection_wrapper:first-of-type {
       padding-left: 0px; }
-    .new_positions .filters.default_select .selection_wrapper p, .new_positions .profile_tab_content.garage .filters.select_auto .selection_wrapper p, .profile_tab_content.garage .new_positions .filters.select_auto .selection_wrapper p {
+    .new_positions .filters.default_select .selection_wrapper p, .new_positions header .popup_small_garage .filters.select_auto .selection_wrapper p, header .popup_small_garage .new_positions .filters.select_auto .selection_wrapper p, .new_positions .profile_tab_content.garage .filters.select_auto .selection_wrapper p, .profile_tab_content.garage .new_positions .filters.select_auto .selection_wrapper p {
       float: left;
       font-size: 13px; }
 
@@ -4376,21 +4503,21 @@ footer .modal_window {
   height: 50px;
   margin-bottom: 40px; }
 
-.new_positions .default_select, .new_positions .profile_tab_content.garage .select_auto, .profile_tab_content.garage .new_positions .select_auto {
+.new_positions .default_select, .new_positions header .popup_small_garage .select_auto, header .popup_small_garage .new_positions .select_auto, .new_positions .profile_tab_content.garage .select_auto, .profile_tab_content.garage .new_positions .select_auto {
   padding: 20px; }
-  .new_positions .default_select .select, .new_positions .profile_tab_content.garage .select_auto .select, .profile_tab_content.garage .new_positions .select_auto .select {
+  .new_positions .default_select .select, .new_positions header .popup_small_garage .select_auto .select, header .popup_small_garage .new_positions .select_auto .select, .new_positions .profile_tab_content.garage .select_auto .select, .profile_tab_content.garage .new_positions .select_auto .select {
     float: right;
     width: 379px;
     margin-right: 20px;
     height: 40px;
     font-size: 14px; }
-    .new_positions .default_select .select .select-styled, .new_positions .profile_tab_content.garage .select_auto .select .select-styled, .profile_tab_content.garage .new_positions .select_auto .select .select-styled {
+    .new_positions .default_select .select .select-styled, .new_positions header .popup_small_garage .select_auto .select .select-styled, header .popup_small_garage .new_positions .select_auto .select .select-styled, .new_positions .profile_tab_content.garage .select_auto .select .select-styled, .profile_tab_content.garage .new_positions .select_auto .select .select-styled {
       line-height: 38px; }
-      .new_positions .default_select .select .select-styled:before, .new_positions .profile_tab_content.garage .select_auto .select .select-styled:before, .profile_tab_content.garage .new_positions .select_auto .select .select-styled:before {
+      .new_positions .default_select .select .select-styled:before, .new_positions header .popup_small_garage .select_auto .select .select-styled:before, header .popup_small_garage .new_positions .select_auto .select .select-styled:before, .new_positions .profile_tab_content.garage .select_auto .select .select-styled:before, .profile_tab_content.garage .new_positions .select_auto .select .select-styled:before {
         top: 15px; }
-    .new_positions .default_select .select:last-of-type, .new_positions .profile_tab_content.garage .select_auto .select:last-of-type, .profile_tab_content.garage .new_positions .select_auto .select:last-of-type {
+    .new_positions .default_select .select:last-of-type, .new_positions header .popup_small_garage .select_auto .select:last-of-type, header .popup_small_garage .new_positions .select_auto .select:last-of-type, .new_positions .profile_tab_content.garage .select_auto .select:last-of-type, .profile_tab_content.garage .new_positions .select_auto .select:last-of-type {
       margin-right: 0; }
-    .new_positions .default_select .select .select-options, .new_positions .profile_tab_content.garage .select_auto .select .select-options, .profile_tab_content.garage .new_positions .select_auto .select .select-options {
+    .new_positions .default_select .select .select-options, .new_positions header .popup_small_garage .select_auto .select .select-options, header .popup_small_garage .new_positions .select_auto .select .select-options, .new_positions .profile_tab_content.garage .select_auto .select .select-options, .profile_tab_content.garage .new_positions .select_auto .select .select-options {
       height: 140px;
       overflow-x: hidden;
       overflow-y: auto;
@@ -4399,12 +4526,12 @@ footer .modal_window {
       border-bottom: 1px solid #efefef;
       margin-left: -1px;
       margin-right: -1px; }
-    .new_positions .default_select .select li, .new_positions .profile_tab_content.garage .select_auto .select li, .profile_tab_content.garage .new_positions .select_auto .select li {
+    .new_positions .default_select .select li, .new_positions header .popup_small_garage .select_auto .select li, header .popup_small_garage .new_positions .select_auto .select li, .new_positions .profile_tab_content.garage .select_auto .select li, .profile_tab_content.garage .new_positions .select_auto .select li {
       height: 30px;
       line-height: 30px;
       padding-top: 0;
       padding-bottom: 0; }
-    .new_positions .default_select .select .disabled, .new_positions .profile_tab_content.garage .select_auto .select .disabled, .profile_tab_content.garage .new_positions .select_auto .select .disabled {
+    .new_positions .default_select .select .disabled, .new_positions header .popup_small_garage .select_auto .select .disabled, header .popup_small_garage .new_positions .select_auto .select .disabled, .new_positions .profile_tab_content.garage .select_auto .select .disabled, .profile_tab_content.garage .new_positions .select_auto .select .disabled {
       cursor: default;
       background-color: #fafafa; }
 

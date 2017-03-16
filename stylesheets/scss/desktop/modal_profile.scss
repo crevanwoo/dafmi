@@ -60,6 +60,9 @@
                     font-family: Medium;
                     border-bottom: 4px solid $red;
                 }
+                &:last-of-type {
+                    &:after {display: none;}
+                }
             }
         }
         .modal_tab {padding-top: 20px;
@@ -102,4 +105,5 @@
 @import "modal_year.scss";
 @import "modal_mark.scss";
 @import "modal_model.scss";
+@import "modal_motors.scss";
 @import "modal_confirm_choosing.scss";

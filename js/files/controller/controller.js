@@ -88,7 +88,7 @@ $('body').on('click', '.expand_search .expand', function () {
 
 /* --- ---- --- --- --- --- Events > --- ---- --- --- --- --- */
 
-
+/* --- Header > --- */
 //change header view
 
 /*$(window).on("wheel keydown touchstart touchmove", function () {
@@ -102,28 +102,52 @@ small_cart.changing_properties = {
 small_cart.transition_time = 500;
 small_cart.addListeners('click', '.popup_small_cart');
 
-/*$('body').on('click', '.header_bottom.min .cart', function () {
-    console.log('click');
-    var popup = $(this).find('.popup_small_cart');
-    if (!popup.hasClass('active')) {
-        popup.css('display', 'block');
-        setTimeout(function () {
-            popup.addClass('active');
+// popup garage
 
-        }, 100)
+var small_garage = new Selection();
 
-    } else {
+small_garage.createSelection('.popup_small_garage .select_auto select');
+small_garage.state(true);
 
-        popup.removeClass('active');
-        setTimeout(function () {
-            popup.css('display', 'none');
+setImgAsBg('.popup_small_garage .img img')
 
-        }, 500)
-    }
+$('body').on('click', '.popup_small_garage .select_auto .select-options li', function () {
+    // in call set backend attr that correspond auto (from respond);
+
+    function f_onsuccess(response) { //response = main_tab_index, list_of_models, list_of_motors, , current_auto, current_model, current_motor - that as object
+        console.log(response);
+        manageMenuButtons.call('.content_nav .nav_main .type[data-car-type=' + response.main_tab_index + ']', '.content_nav .nav_main .type');
+        hideBlock('.content_products_wrapper >div', '.content_panel .views');        
+        $('.content_products').removeClass('grid');
+        
+   
+        Select_1.listClicked(Select_1.imported_list[response.current_auto], Select_1.imported_list[response.current_auto], $('.select_1'));
+        Select_2.imported_list = response.list_of_models;
+        Select_2.listClicked(Select_2.imported_list[response.current_model], Select_2.imported_list[response.current_model], $('.select_2'));
+        Select_2.imported_list = response.list_of_motors;
+        Select_2.state(true);
+        Select_3.listClicked(Select_3.imported_list[response.current_motor], Select_3.imported_list[response.current_motor], $('.select_3'));
+        Select_3.state(true);
+        
+        loadContent('.content_products_wrapper', '../index_result_full.html .result_full',
+        index_results.resultHasLoaded); 
+        
+    };
+    
+    
+    sendData( /* auto id */ 'some_data', f_onsuccess.bind(null, {
+        main_tab_index: 1,
+        list_of_models: [1,2,3,4,5,6,7],
+        list_of_motors: [0,9,8,7,6,5],
+        current_auto: 4,
+        current_model: 2,
+        current_moror: 2, 
+    }))
 
 
 
-})*/
+
+})
 
 //change products revealing type
 
@@ -147,7 +171,7 @@ $('.sort_az .az_trigger').on('click', function () {
     showAlphabetSort.call(this);
 });
 
-
+/* --- < Header --- */
 /* --- Main panel's tabs > --- */
 
 // manage panel buttons
@@ -713,6 +737,7 @@ $('body').on('click', '.profile_tab_content.garage .add_auto, .profile_tab_conte
         1: false,
         2: false,
         3: false,
+        4: false,
     }
     manageGarageModal(0);
 })
@@ -722,7 +747,7 @@ function manageGarageModal(tab_key) {
     var trigger = '.profile_tab_content.garage .modal_window.modal_profile .modal_steps li';
     var tab = '.profile_tab_content.garage .modal_window.modal_profile .modal_tab';
     var actual_key = tab_key;
-    var last_key = 3;
+    var last_key = 4;
     for (var i = ++actual_key; i <= last_key; i++) {
         GarageModal[i] = false;
         $(trigger + '[data-profile-modal-tab=' + i + ']').removeClass('active');

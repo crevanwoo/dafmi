@@ -107,14 +107,22 @@ function sendData(data, f_onsuccess) {
         success: function (response) { //Данные отправлены успешно
             /*result = jQuery.parseJSON(response);
             document.getElementById(result_form).innerHTML = "Имя: "+result.name+"<br>Телефон: "+result.phonenumber;*/
-            f_onsuccess();
+            if (response && response != "Hi") {
+                console.log('response is');
+                f_onsuccess(response);
+
+            } else {
+                console.log('response not');
+                f_onsuccess();
+
+            }
             console.log(data);
             console.log('success');
         },
         error: function (response) { // Данные не отправлены
             /*document.getElementById(result_form).innerHTML = "Ошибка. Данные не отправленны.";*/
             if (!cart_error) {
-                cart_error = new ModalWindow('.page_cart_modal_error');       
+                cart_error = new ModalWindow('.page_cart_modal_error');
             }
             cart_error.activateElement();
             cart_error.windowClose('.page_cart_modal_error .close, .page_cart_modal_error .back');
@@ -162,7 +170,7 @@ function setImageAsBg(selector_image, bg_class) {
 
 
 function setLinkFromDataAttr(to__selectors, from__parent_class, from__attr_name) {
-  
+
     var attr_name = from__attr_name || 'data-product-link';
     $('body').on('click', to__selectors, function () {
         var link = findParent($(this), from__parent_class).attr(attr_name);
@@ -172,8 +180,8 @@ function setLinkFromDataAttr(to__selectors, from__parent_class, from__attr_name)
 
 
 function CollectFormData(selector) { // this is modal window
-    
-    
+
+
     this.adapt_data = function () {
         collectData();
         return JSON.stringify(Data);
@@ -181,29 +189,29 @@ function CollectFormData(selector) { // this is modal window
 
     var Current = this;
 
-    var Data = {};    
+    var Data = {};
 
-    function collectData() {     
-   
-        
-    $(selector).find('input').each(function() {
-        var key = $(this).attr('data-key');
-        var value = encodeURI($(this).val());
-        Data[key] = value;
-        
-    });
-    $(selector).find('textarea').each(function() {
-        var key = $(this).attr('data-key');
-        var value = encodeURI($(this).val());
-        Data[key] = value;
-        
-    });
-    $(selector).find('.select').each(function() { 
-        var key = $(this).prev().attr('data-key');
-        var value = $(this).find('.select-styled.changed').text();
-        Data[key] = value;
-    }); 
-    }   
+    function collectData() {
+
+
+        $(selector).find('input').each(function () {
+            var key = $(this).attr('data-key');
+            var value = encodeURI($(this).val());
+            Data[key] = value;
+
+        });
+        $(selector).find('textarea').each(function () {
+            var key = $(this).attr('data-key');
+            var value = encodeURI($(this).val());
+            Data[key] = value;
+
+        });
+        $(selector).find('.select').each(function () {
+            var key = $(this).prev().attr('data-key');
+            var value = $(this).find('.select-styled.changed').text();
+            Data[key] = value;
+        });
+    }
 }
 
 var Register_Data = {};
