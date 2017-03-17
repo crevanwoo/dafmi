@@ -1,7 +1,7 @@
 /* --- ---- --- --- --- --- On Page Load > --- ---- --- --- --- --- */
 
 addCustomSelect('.footer_top .lang select');
-// addImagesToLang();
+
 
 // add items on first index page's tab to list
 
@@ -17,15 +17,13 @@ $(document).ready(function () {
         theme: "scroll-logo",
         callbacks: {
             whileScrolling: function () {
-                // console.log("Content scrolled...");
-                // changeHeaderView($('#mCSB_1_container').css('top'))
                 changeHeaderView(this.mcs.top);
                 $('.popup_small_cart').removeClass('active');
                 $('.popup_small_cart').css('display', 'none');
+                $('.popup_small_garage').removeClass('active');
+                $('.popup_small_garage').css('display', 'none');
             }
         }
-
-
     });
 })
 
@@ -65,25 +63,6 @@ modal_reg_1_sel_3.createSelection('.modal_reg_1_sel_2');
 /* --- ---- --- --- --- --- < On Page Load --- ---- --- --- --- --- */
 
 
-/*
-// change view on inner expand search input
-
-$('body').on('input', 'input', function () {
-    changeInputView.call(this);
-});
-
-$('body').on('click', '.expand_search .bottom_panel .bttn_panel .bttn', function () {
-    manageMenuButtons.call(this, '.expand_search .bottom_panel .bttn_panel .bttn')
-});
-
-$('body').on('click', '.expand_search .top_panel .bttn', function () {
-    manageMenuButtons.call(this, '.expand_search .top_panel .bttn')
-});
-
-$('body').on('click', '.expand_search .expand', function () {
-    toggleClassOfFewElem('.expand_search .top_panel .expand', '.expand_search .top_panel .line_2')
-});
-*/
 
 
 /* --- ---- --- --- --- --- Events > --- ---- --- --- --- --- */
@@ -102,51 +81,43 @@ small_cart.changing_properties = {
 small_cart.transition_time = 500;
 small_cart.addListeners('click', '.popup_small_cart');
 
+$('.header_bottom .cart').on('click', function () {
+    $('.popup_small_garage').removeClass('active');
+    $('.popup_small_garage').css('display', 'none');
+})
+
 // popup garage
 
-var small_garage = new Selection();
+var small_garage = new Navigation('.header_bottom .garage');
+small_garage.changing_properties = {
+    'display': 'block'
+};
+small_garage.transition_time = 500;
+small_garage.addListeners('click', '.popup_small_garage');
 
-small_garage.createSelection('.popup_small_garage .select_auto select');
-small_garage.state(true);
 
-setImgAsBg('.popup_small_garage .img img')
+var small_garage_sel = new Selection();
+
+small_garage_sel.createSelection('.popup_small_garage .select_auto select');
+small_garage_sel.state(true);
+
+setImgAsBg('.popup_small_garage .img img');
 
 $('body').on('click', '.popup_small_garage .select_auto .select-options li', function () {
-    // in call set backend attr that correspond auto (from respond);
-
-    function f_onsuccess(response) { //response = main_tab_index, list_of_models, list_of_motors, , current_auto, current_model, current_motor - that as object
-        console.log(response);
-        manageMenuButtons.call('.content_nav .nav_main .type[data-car-type=' + response.main_tab_index + ']', '.content_nav .nav_main .type');
-        hideBlock('.content_products_wrapper >div', '.content_panel .views');        
-        $('.content_products').removeClass('grid');
-        
-   
-        Select_1.listClicked(Select_1.imported_list[response.current_auto], Select_1.imported_list[response.current_auto], $('.select_1'));
-        Select_2.imported_list = response.list_of_models;
-        Select_2.listClicked(Select_2.imported_list[response.current_model], Select_2.imported_list[response.current_model], $('.select_2'));
-        Select_2.imported_list = response.list_of_motors;
-        Select_2.state(true);
-        Select_3.listClicked(Select_3.imported_list[response.current_motor], Select_3.imported_list[response.current_motor], $('.select_3'));
-        Select_3.state(true);
-        
-        loadContent('.content_products_wrapper', '../index_result_full.html .result_full',
-        index_results.resultHasLoaded); 
-        
-    };
-    
-    
-    sendData( /* auto id */ 'some_data', f_onsuccess.bind(null, {
-        main_tab_index: 1,
-        list_of_models: [1,2,3,4,5,6,7],
-        list_of_motors: [0,9,8,7,6,5],
+    sendData( /* auto id */ 'some_data', setMainSelection.bind(null, {
+        main_tab_index: 2,
+        list_of_models: [1, 2, 3, 4, 5, 6, 7],
+        list_of_motors: [0, 9, 8, 7, 6, 5],
         current_auto: 4,
         current_model: 2,
-        current_moror: 2, 
+        current_motor: 2,
     }))
+})
 
 
-
-
+$('.header_bottom .garage').on('click', function () {
+    $('.popup_small_cart').removeClass('active');
+    $('.popup_small_cart').css('display', 'none');
 })
 
 //change products revealing type
@@ -266,10 +237,7 @@ $('.tab_2').on('click', function () {
 
 
     if ($('.expand_search').length < 1) {
-        // loadContent('.nav_top_expand', '../index_variants.html .expand_search:eq(0)', addCustomSelect.bind(null, '.expand_search .top_panel .param select'));
-
-        //loadContent('.nav_expand', '../index_variants.html .expand_search:eq(1)', addCustomSelect.bind(null, '.expand_search .bottom_panel .param select'));
-        loadContent('.nav_expand', '../index_variants.html .expand_search', createExpandSearchSelects /*, addCustomSelect.bind(null, '.expand_search .param select')*/ );
+        loadContent('.nav_expand', '../index_variants.html .expand_search', createExpandSearchSelects);
     }
 
 
@@ -717,7 +685,7 @@ setImgAsBg('.profile_tab_content.history .single_product .img img');
 
 $('body').on('click', '.profile_tab_content.history .single_product', function (event) {
 
-    manageProductCell.call(this, '.profile_tab_content.history .single_product', 'single_product')
+    manageProductCell.call(this, event, '.profile_tab_content.history .single_product', 'single_product')
 
 })
 
@@ -836,7 +804,7 @@ $('body').on('click', '.profile_tab_content.garage .select_auto .select li', fun
 
 
 $('body').on('click', '.profile_tab_content.garage .search_result .single_product', function (event) {
-    manageProductCell.call(this, '.profile_tab_content.garage .search_result .single_product', 'single_product')
+    manageProductCell.call(this, event, '.profile_tab_content.garage .search_result .single_product', 'single_product')
 });
 
 $('body').on('click', '.profile_tab_content.garage .search_param', function () {

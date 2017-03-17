@@ -39,6 +39,7 @@ function smoothShow(selector, display) {
 
 // измененение вида кнопок при нажатии
 function manageMenuButtons(selector) {
+    
     $(selector).removeClass('active');
     $(this).addClass('active');
 }
@@ -294,7 +295,7 @@ function setErrorMessage(marker) {
 	}
 
 
-function manageProductCell(selector, cell_class_name) {
+function manageProductCell(event, selector, cell_class_name) {
     
     var target = $(event.target);
    

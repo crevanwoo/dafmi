@@ -6,16 +6,6 @@ function loadContent(to, from, callback) {
     }
 }
 
-
-//for footer lang select
-/*var lang_icons_arr = [];
-
-$('.footer_top .lang option').each(
-    function () {
-        lang_icons_arr.push($(this).attr('data-image'));
-    });*/
-
-
 function findParent(selector, parent_class) {
     while (!selector.hasClass(parent_class)) {
         selector = selector.parent();
@@ -37,12 +27,6 @@ function addCarsTypeToList() {
 }
 
 
-
-
-
-
-
-
 function setSelection(obj, list_value, dom_obj_for_list) {
     obj.addDataIndexForDOMElemens(dom_obj_for_list);
     obj.reset();
@@ -60,10 +44,6 @@ function setSelection(obj, list_value, dom_obj_for_list) {
         Select_3.reset();
     }
 }
-
-//'.content_products .product .title'
-
-
 
 
 function CollectRequestData(container_selector) {
@@ -101,12 +81,10 @@ var cart_error;
 function sendData(data, f_onsuccess) {
     jQuery.ajax({
         url: 'ajax.php',
-        type: "POST", //метод отправки
-        //dataType: "json", //формат данных
-        data: data, // Сеарилизуем объект
-        success: function (response) { //Данные отправлены успешно
-            /*result = jQuery.parseJSON(response);
-            document.getElementById(result_form).innerHTML = "Имя: "+result.name+"<br>Телефон: "+result.phonenumber;*/
+        type: "POST",
+        data: data,
+        success: function (response) {
+
             if (response && response != "Hi") {
                 console.log('response is');
                 f_onsuccess(response);
@@ -119,8 +97,8 @@ function sendData(data, f_onsuccess) {
             console.log(data);
             console.log('success');
         },
-        error: function (response) { // Данные не отправлены
-            /*document.getElementById(result_form).innerHTML = "Ошибка. Данные не отправленны.";*/
+        error: function (response) {
+
             if (!cart_error) {
                 cart_error = new ModalWindow('.page_cart_modal_error');
             }
@@ -137,20 +115,18 @@ function sendData(data, f_onsuccess) {
 function sendModalSelect(value, select_obj) {
     jQuery.ajax({
         url: 'ajax.php',
-        type: "POST", //метод отправки
-        //dataType: "json", //формат данных
-        data: value, // Сеарилизуем объект
-        success: function (response) { //Данные отправлены успешно
-            /*result = jQuery.parseJSON(response);
-            document.getElementById(result_form).innerHTML = "Имя: "+result.name+"<br>Телефон: "+result.phonenumber;*/
+        type: "POST",
+
+        data: value,
+        success: function (response) {
+
             response = ['1', '2', '3'];
             select_obj.fillImportedList(response);
             select_obj.createOptionList();
 
 
         },
-        error: function (response) { // Данные не отправлены
-            /*document.getElementById(result_form).innerHTML = "Ошибка. Данные не отправленны.";*/
+        error: function (response) {
             var cart_error = new ModalWindow('.page_cart_modal_error');
             cart_error.activateElement();
             cart_error.windowClose('.page_cart_modal_error .close, .page_cart_modal_error .back');
@@ -226,10 +202,42 @@ function collectFormDataToStack() {
 
     for (key in Register_Data) {
         console.log(key + ':' + Register_Data[key])
-
     }
-
-
 }
 
-//Register_Data['modal_window_name', 'thisData']
+/* Выдает результат поиска - или результат при вернуться назад, или фильтрует по гаражу. Данные берутся из ответа сервера
+{
+main_tab_index: int, car_with_icons, 
+list_of_models: array, models_filtered_by_mark,
+list_of_motors: array, morors_filterd_by_model,
+current_auto: int, index_auto in marks_array(on page),
+current_model: int, index_model in model_array,
+current_motor: int, index_motor in motor_array, 
+}
+
+
+*/
+
+function setMainSelection(response) {
+
+    manageMenuButtons.call($('.content_nav .nav_main .type[data-car-type=' + response.main_tab_index + ']'), '.content_nav .nav_main .type');
+    hideBlock('.content_products_wrapper >div', '.content_panel .views');
+    $('.content_products').removeClass('grid');
+
+
+    Select_1.listClicked(Select_1.imported_list[response.current_auto], Select_1.imported_list[response.current_auto], $('.select_1'));
+
+    Select_2.imported_list = response.list_of_models;
+    Select_2.listClicked(Select_2.imported_list[response.current_model], Select_2.imported_list[response.current_model], $('.select_2'));
+    Select_2.createOptionList();
+    Select_2.state(true);
+
+    Select_3.imported_list = response.list_of_motors;
+    Select_3.listClicked(Select_3.imported_list[response.current_motor], Select_3.imported_list[response.current_motor], $('.select_3'));
+    Select_3.createOptionList();
+    Select_3.state(true);
+
+    loadContent('.content_products_wrapper', '../index_result_full.html .result_full',
+        index_results.resultHasLoaded);
+
+}

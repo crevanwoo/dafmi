@@ -1,5 +1,4 @@
 .popup_small_garage {
-    //$height: 220px;
     $height: 220px;
     right: -20px;
     bottom: -$height - 10px;
@@ -14,8 +13,8 @@
     box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.5);
     transition-property: opacity;
     transition-duration: 0.5s;
-    //display: none;
-    //opacity: 0;
+    display: none;
+    opacity: 0;
     cursor: default;
     text-align: left;
     &.active {
@@ -32,6 +31,7 @@
         right: 55px;
     }
     .big_h {
+        display: block;
         font-size: $fs20;
         text-transform: none;
         height: 30px;

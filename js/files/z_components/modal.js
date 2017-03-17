@@ -17,7 +17,7 @@ function ModalWindow(modal_selector) {
 
     this.windowClose = function (trigger) {
         $('body').on('click', trigger, function (e) {
-            Current.deactivateElement();
+            Current.deactivateElement(); 
         })
     };
 
