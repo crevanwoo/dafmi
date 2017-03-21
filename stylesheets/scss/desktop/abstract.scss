@@ -116,8 +116,8 @@ $input_padding: 20px;
 	}
 }
 
-@mixin bp() {
-	@media screen and (max-width: 1100px) {
+@mixin bp(size) {	
+	@media screen and (max-width: 1300px) {
 		@content;
 	}
 }

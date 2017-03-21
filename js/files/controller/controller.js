@@ -461,7 +461,7 @@ $('body').on('click', '.modal_consult .submit', function () {
 
 
 var modal_authorization = new ModalWindow('.modal_authorization');
-modal_authorization.windowOpen('.header_top .status');
+modal_authorization.windowOpen('.header_top .status, .page_print .author.button');
 modal_authorization.windowClose('.modal_authorization .close');
 
 
@@ -505,7 +505,7 @@ $('body').on('click', '.modal_restore_pass .submit', function () {
 
 var modal_register_1;
 
-$('body').on('click', '.modal_authorization .register', function () {
+$('body').on('click', '.modal_authorization .register, .page_print .register.button', function () {
     modal_authorization.deactivateElement();
     if (!modal_register_1) {
         modal_register_1 = new ModalWindow('.modal_registration_1');

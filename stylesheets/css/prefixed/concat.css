@@ -4540,3 +4540,18 @@ footer .modal_window {
 
 .new_positions .search_result .select-options li {
   heigth: 40px; }
+
+footer .modal_preview .modal_content {
+  padding: 50px 20px;
+  max-width: 90%;
+  max-height: 90%;
+  min-width: 520px;
+  width: auto; }
+
+footer .modal_preview .img {
+  text-align: center; }
+
+footer .modal_preview img {
+  height: auto;
+  max-height: 100%;
+  max-width: 100%; }

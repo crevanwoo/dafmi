@@ -39,9 +39,10 @@ div.expand_search
                 div.search_param.pad
                      form(name="expand_search_form")
                         div.fields
-                            -for (var i = 0; i < 2; i++)
+                           -var field_name_exp_search=['A','B'];
+                           -for (var i = 0; i < 2; i++)
                                  div.param_wrapper
-                                        div.param_title <span>A</span>, мм:
+                                        div.param_title <span>#{field_name_exp_search[i]}</span> (&#177; 1 мм) :
                                         div.input
                                             input(type='text' name="num_"+j)
                                         - j++
