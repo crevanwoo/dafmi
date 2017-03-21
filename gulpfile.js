@@ -8,12 +8,16 @@ var pug = require('gulp-pug');
 var livereload = require('gulp-livereload');
 var imagemin = require('gulp-imagemin');
 var autoprefixer = require('gulp-autoprefixer');
+var replace = require('gulp-replace');
+ 
+
 
 gulp.task('all:watch', function () {
     livereload.listen();
     gulp.watch('stylesheets/scss/**/*.scss', ['compile:sass']);
     gulp.watch('stylesheets/css/*.css', ['autoprefix']);
     gulp.watch('stylesheets/css/prefixed/*.css', ['concat:css']);
+	gulp.watch('stylesheets/css/prefixed/*.css', ['replace:px']);
     gulp.watch('js/files/**/*.js', ['concat:js']);
     gulp.watch('js/script.js', ['compress:js']);
     gulp.watch('views/**/*.pug', ['compile:pug']);  
@@ -82,26 +86,11 @@ gulp.task('autoprefix', function () {
         .pipe(gulp.dest('stylesheets/css/prefixed/'))
 });
 
-/*const pug = require('gulp-pug2');
- 
-gulp.task('views:render', function() {
-    return gulp.src('views/*.pug')
-        .pipe(pug({ yourTemplate: 'Locals' }))
-        .pipe(gulp.dest('build/views'))
-        // => build/views/example.html 
+gulp.task('replace:px', function(){
+  gulp.src(['stylesheets/css/prefixed/*.css'])
+    .pipe(replace('px', 'rem'))
+    .pipe(gulp.dest('stylesheets'));
 });
- 
-gulp.task('views:compile', function() {
-    return gulp.src('views/*.pug')
-        .pipe(pug.compile())
-        .pipe(gulp.dest('build/views'))
-        // => build/views/example.js 
-        /*
-        Use:
-        const renderer = require('./build/views/example.js')
-        const html = renderer({ yourTemplate: 'Locals' })
-        */
-/*});*/
 
 
 gulp.task('default', []);

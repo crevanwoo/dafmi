@@ -41,12 +41,16 @@ body {
   margin: 0;
   padding: 0; }
 
+html {
+  font-size: 0.076vw; }
+
 body {
   min-height: calc(100vh - 150px - 145px);
   background-color: #fafafa;
   color: #333;
   font-family: Regular;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  font-size: 16px; }
   body.hidden {
     position: fixed;
     left: 0; }
