@@ -105,18 +105,20 @@
                 width: 20px;
                 height: 20px;
                 background-repeat: no-repeat;
-                background-image: url(../images/icons_expand_result.png)
+                background-size: contain;
+                //background-image: url(../images/icons_expand_result.png)
             }
         }
     }
     .param_info {
         .title {
             &:after {
-                background-position: -20px 0px;
+                background-image: url(../images/icon_expand_res_4.png);
+                //background-position: -20px 0px;
             }
             &.active {
                 &:after {
-                    background-position: -20px -20px;
+                    //background-position: -20px -20px;
                 }
             }
         }
@@ -130,11 +132,12 @@
     .models_info {
         .title {
             &:after {
-                background-position: -40px 0px;
+                background-image: url(../images/icon_expand_res_6.png);
+                //background-position: -40px 0px;
             }
             &.active {
                 &:after {
-                    background-position: -40px -20px;
+                    //background-position: -40px -20px;
                 }
             }
         }
@@ -158,6 +161,7 @@
                         position: absolute;
                         transform: rotate(-90deg);
                         background-image: url(../images/icon_select_small.png);
+                        background-size: contain;
                         width: 10px;
                         height: 5px;
                         left: 5px;
@@ -171,6 +175,7 @@
                         content: '';
                         position: absolute;
                         background-image: url(../images/icon_select_small.png);
+                        background-size: contain;
                         width: 10px;
                         height: 5px;
                         left: 20px;
@@ -216,6 +221,7 @@
                         position: absolute;
                         transform: rotate(-90deg);
                         background-image: url(../images/icon_select_small.png);
+                        background-size: contain;
                         width: 10px;
                         height: 5px;
                         left: 15px;
@@ -244,6 +250,7 @@
                             position: absolute;
                             transform: rotate(-90deg);
                             background-image: url(../images/icon_select_small.png);
+                            background-size: contain;
                             width: 10px;
                             height: 5px;
                             left: 15px;
@@ -322,11 +329,12 @@
         margin-bottom: 30px;
         .title {
             &:after {
-                background-position: 0px 0px;
+                //background-position: 0px 0px;
+                background-image: url(../images/icon_expand_res_2.png);
             }
             &.active {
                 &:after {
-                    background-position: 0px -20px;
+                    //background-position: 0px -20px;
                 }
             }
         }

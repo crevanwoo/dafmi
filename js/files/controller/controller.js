@@ -689,14 +689,14 @@ $('body').on('click', '.profile_tab_content.history .single_product', function (
 
 })
 
-$('body').on('click', '.catalog.print_catalog .button', function() {
-    
+$('body').on('click', '.catalog.print_catalog .button', function () {
+
     //sendData();
-    $('.catalog.print_catalog').css('display','none');
+    $('.catalog.print_catalog').css('display', 'none');
     $('.catalog.print_catalog_confirm').css('display', 'block');
 
-    
-    
+
+
 })
 
 
@@ -823,6 +823,20 @@ $('body').on('click', '.profile_tab_content.garage .search_param', function () {
     loadContent('.profile_tab_content.garage .search_result', '../page_profile_history.html .history_wrapper >*', setImgAsBg.bind(null, '.profile_tab_content.garage .search_result .img img'));
 });
 
+// profile catalogue_2
+$('body').on('click', '.profile_tab_content.catalog.choose_items .nav .type', function () {
+    $(this).parent().find('.type').removeClass('active');
+    $(this).addClass('active');
+});
+
+$('body').on('click', '.profile_tab_content.catalog.choose_items .details .tabs >div', function () {
+    $(this).toggleClass('active');
+});
+
+$('body').on('click', '.profile_tab_content.catalog.choose_items .details .axis >div', function () {
+    $(this).parent().find('>div').removeClass('active');
+    $(this).addClass('active');
+});
 
 
 
@@ -935,7 +949,7 @@ $('body').on('click', '.result_full_panel .compare', function () {
 })
 
 
-$('body').on('click', '.single_result .cart, .single_product .cart', function () {
+$('body').on('click', '.single_result .cart, .single_product .cart, .single_result_page .cart', function () {
     $(this).addClass('active');
 
     $('.header_bottom .cart .items_amount').text(+$('.header_bottom .cart .items_amount').text() + 1)

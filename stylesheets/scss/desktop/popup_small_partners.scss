@@ -1,0 +1,49 @@
+.popup_small_partners {
+    //$height: 220px;
+    $height: 170px;
+    right: 100%;
+    margin-right: 13px;
+    top:0;
+    position: absolute;
+    width: 280px;
+    height: $height;
+    background-color: $bg_white;
+    padding: 20px 0;
+    font-size: $fs14;
+    color: $black;
+    line-height: normal;
+    box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.5);
+    transition-property: opacity;
+    transition-duration: 0.5s;
+    z-index: 1;
+    //display: none;
+   // opacity: 0;
+    cursor: default;
+    &.active {
+        opacity: 1;
+    }
+    &:before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        background-color: $bg_white;
+        position: absolute;
+        transform: rotate(45deg);
+        top: 10px;
+        right: -6px;
+    }
+    .small_h {
+        text-align: left;
+        margin-bottom: 25px;
+        padding: 0 20px;
+        line-height: 150%;
+    }
+    ul {
+        height: 77px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        li {height: 100px;
+            cursor: pointer
+        }
+    }
+}
