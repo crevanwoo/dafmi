@@ -161,11 +161,16 @@ function Results(results_wrapper) {
 
 
 	var modal_preview = new ModalWindow('.modal_preview');
-	modal_preview.windowOpen(Current.single_result_selector + ' .img');
+	modal_preview.windowOpen(Current.single_result_selector + ' .img,' + Current.single_result_selector + ' .tab_4 img');
 	modal_preview.windowClose('.modal_preview .close'); 
 
 	$('body').on('click', Current.single_result_selector + ' .img', function () {
 		var src = $(this).find('img').attr('src');
+		$('.modal_preview img').attr('src', src);
+	});
+    
+    $('body').on('click', Current.single_result_selector + ' .tab_4 img', function () {
+		var src = $(this).attr('src');
 		$('.modal_preview img').attr('src', src);
 	});
 

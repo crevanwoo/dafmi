@@ -25,6 +25,8 @@
                     position: absolute;
                     transform: rotate(-90deg);
                     background-image: url(../images/icon_select_small.png);
+                    background-repeat: no-repeat;
+                    background-size: contain;
                     width: 10px;
                     height: 5px;
                     left: 5px;
@@ -38,6 +40,8 @@
                     content: '';
                     position: absolute;
                     background-image: url(../images/icon_select_small.png);
+                    background-repeat: no-repeat;
+                    background-size: contain;
                     width: 10px;
                     height: 5px;
                     left: 20px;
@@ -83,6 +87,8 @@
                     position: absolute;
                     transform: rotate(-90deg);
                     background-image: url(../images/icon_select_small.png);
+                    background-repeat: no-repeat;
+                    background-size: contain;
                     width: 10px;
                     height: 5px;
                     left: 15px;
@@ -111,6 +117,8 @@
                         position: absolute;
                         transform: rotate(-90deg);
                         background-image: url(../images/icon_select_small.png);
+                        background-repeat: no-repeat;
+                        background-size: contain;
                         width: 10px;
                         height: 5px;
                         left: 15px;

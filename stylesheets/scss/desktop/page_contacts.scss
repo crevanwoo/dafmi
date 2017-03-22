@@ -36,25 +36,34 @@
             font-size: $fs16;
             margin-left: 5px;
             .feedback_image {
-                background: url('../images/feedback-sprite.png') no-repeat;
+                background-size: auto 100%;
+                background-position: 0 center;
+                
+               
+                //background: url('../images/feedback-sprite.png') no-repeat;
             }
             .feedback_image_address {
                 line-height: 130%;
+                 background-image: url(../images/icon_contacts_1.png)
             }
             .feedback_image_phone {
-                background-position: 0px -53px;
+                 background-image: url(../images/icon_contacts_2.png);
+               // background-position: 0px -53px;
             }
             .feedback_image_skype {
-                background-position: 0px -110px;
+                 background-image: url(../images/icon_contacts_3.png);
+                //background-position: 0px -110px;
             }
             .feedback_image_time {
-                background-position: 0px -168px;
+                 background-image: url(../images/icon_contacts_4.png);
+                //background-position: 0px -168px;
                 span {
                     font-size: $fs14;
                 }
             }
             .feedback_image_email {
-                background-position: 0px -222px;
+                 background-image: url(../images/icon_contacts_5.png);
+               // background-position: 0px -222px;
             }
             li {
                 padding-left: 50px;

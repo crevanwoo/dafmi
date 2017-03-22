@@ -42,6 +42,7 @@ function Navigation(selector) {
     function deactivateElement(inner_selector) {
         var obj = $(this).find(inner_selector);
         obj.removeClass('active');
+        obj.attr('style', '');
         setTimeout(function () {
             bustDefaultStyleArray(obj);
         }, Current.transition_time)

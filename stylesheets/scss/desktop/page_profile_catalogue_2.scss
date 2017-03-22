@@ -63,8 +63,14 @@
                 text-align: center;
                 line-height: 50px;
                 background-color: $red;
+                border: 1px solid $red;
                 color: white;
                 text-transform: uppercase;
+                &.print {
+                    border: $border;
+                    background-color: $bg-white;
+                    color: $black;
+                }
             }
         }
     }

@@ -356,6 +356,7 @@ textarea {
 				width: 16px;
 				height: 9px;
 				background-image: url(../images/icon_select_arrow.png);
+                background-size: contain;
 			}
 			&.active {
 				color: #ccc;
@@ -416,13 +417,15 @@ textarea {
 		height: 90px;
 		width: 33.3%;
 		&:before {
-			content: '';
-			background-image: url(../images/icons1.png);
+			content: '';			
 			position: absolute;
 			top: 0;
 			left: 0;
 			right: 0;
 			margin: auto;
+            background-position: center center;
+            background-size: contain;
+            background-repeat: no-repeat;
 		}
 		&.active {
 			background-color: $active_gray
@@ -432,7 +435,7 @@ textarea {
 			&:before {
 				height: 100%;
 				width: 90px;
-				background-position: 0 0;
+				background-image: url(../images/icon1.png);
 			}
 		}
 		&:nth-of-type(2) {
@@ -440,7 +443,7 @@ textarea {
 			&:before {
 				height: 100%;
 				width: 90px;
-				background-position: -90px 0;
+				background-image: url(../images/icon2.png);
 			}
 		}
 		&:nth-of-type(3) {
@@ -448,7 +451,7 @@ textarea {
 			&:before {
 				height: 100%;
 				width: 120px;
-				background-position: -180px 0;
+				background-image: url(../images/icon3.png);
 			}
 		}
 		/* &:nth-of-type(4) {
@@ -608,17 +611,21 @@ textarea {
 					right: 0;
 					margin: auto;
 					top: 50%;
-					margin-top: -12.5px;
-					width: 25px;
-					height: 25px;
-					background-image: url(../images/icon_go_to_sprite.png);
-					background-position: -25px 0;
+					margin-top: -11.5px;
+					width: 23px;
+					height: 23px;
+                    background-image: url(../images/icon_link_2.png);
+                    background-size: contain;
+                    background-position: center center;
+					//background-image: url(../images/icon_go_to_sprite.png);
+					//background-position: -25px 0;
 				}
 				&:hover {
 					background-color: $red;
 					border: 1px solid $red;
 					&:before {
-						background-position: 0 0;
+                        background-image: url(../images/icon_link_1.png);
+						//background-position: 0 0;
 					}
 				}
 			}
@@ -685,8 +692,10 @@ textarea {
 					margin-top: -15px;
 					width: 30px;
 					height: 30px;
-					background-image: url(../images/icons_cart_scale.png);
-					background-position: -30px 0;
+					background-image: url(../images/icon_result_3.png);
+                         background-size: contain;
+                    background-position: center center;
+					//background-position: -30px 0;
 				}
 			}
 		}

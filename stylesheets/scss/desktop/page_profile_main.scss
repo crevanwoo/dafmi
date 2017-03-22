@@ -55,15 +55,19 @@
                     margin-top: -13px;
                     left: 35px;
                     transform: translateX(-50%);
+                    background-size: contain;
+                    background-repeat: no-repeat;
                 }
                 @for $j from 1 through 5 {
                     &:nth-of-type(#{$j}) {
                         &:before {
-                            background-position: ($j - 1) * -25px 0;
+                            background-image: url(../images/profile_icon_#{$j}.png)
+                            //background-position: ($j - 1) * -25px 0;
                         }
                         &.active {
                             &:before {
-                                background-position: ($j - 1) * -25px -25px;
+                                background-image: url(../images/profile_icon_active_#{$j}.png)
+                                //background-position: ($j - 1) * -25px -25px;
                             }
                         }
                     }

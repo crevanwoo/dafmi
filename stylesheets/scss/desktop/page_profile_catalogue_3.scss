@@ -1,4 +1,4 @@
-.print_catalog { display: none;
+.print_catalog { display: block;
     .top_title {
         @extend %clear;
         border-bottom: none;
@@ -103,6 +103,7 @@
 
 
 .print_catalog_confirm {
+    display: none;
     padding: 0 110px;
     text-align: center;
     .print_confirm {

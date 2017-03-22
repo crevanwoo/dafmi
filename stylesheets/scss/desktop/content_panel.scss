@@ -97,7 +97,9 @@
                 cursor: pointer;
                 border: 1px solid $border_l_gray;
                 display: inline-block;
-                background-image: url('../images/grid_icons.png');
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: contain;
                 width: $height;
                 height: $height;
                 &.active {
@@ -107,15 +109,15 @@
             }
             .list {
                 position: relative;
-                background-position: 0 -35px;
+                background-image: url('../images/icon_view_3.png');
                 &.active {
-                    background-position: -35px -35px;
+                    background-image: url('../images/icon_view_4.png');
                 }
             }
             .grid {
-                background-position: 0 0;
+                background-image: url('../images/icon_view_1.png');
                 &.active {
-                    background-position: -35px 0;
+                    background-image: url('../images/icon_view_2.png');
                 }
             }
         }

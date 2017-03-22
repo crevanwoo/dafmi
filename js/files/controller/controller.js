@@ -689,6 +689,17 @@ $('body').on('click', '.profile_tab_content.history .single_product', function (
 
 })
 
+$('body').on('click', '.catalog.print_catalog .button', function() {
+    
+    //sendData();
+    $('.catalog.print_catalog').css('display','none');
+    $('.catalog.print_catalog_confirm').css('display', 'block');
+
+    
+    
+})
+
+
 /*profile garage */
 
 // popup begins

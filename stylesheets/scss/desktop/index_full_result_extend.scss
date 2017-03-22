@@ -54,45 +54,54 @@
                 width: 20px;
                 height: 20px;
                 background-repeat: no-repeat;
-                background-image: url(../images/icons_expand_result.png)
+               // background-image: url(../images/icons_expand_result.png)
+                background-size: contain;
             }
             &:nth-of-type(1) {
                 &:after {
-                    background-position: -20px 0px;
+                    //background-position: -20px 0px;
+                    background-image: url(../images/icon_expand_res_1.png)
                 }
                 &.active {
                     &:after {
-                        background-position: -20px -20px;
+                        //background-position: -20px -20px;
+                        background-image: url(../images/icon_expand_res_2.png)
                     }
                 }
             }
             &:nth-of-type(2) {
                 &:after {
-                    background-position: -40px 0px;
+                    //background-position: -40px 0px;
+                    background-image: url(../images/icon_expand_res_3.png)
                 }
                 &.active {
                     &:after {
-                        background-position: -40px -20px;
+                       // background-position: -40px -20px;
+                        background-image: url(../images/icon_expand_res_4.png)
                     }
                 }
             }
             &:nth-of-type(3) {
                 &:after {
-                    background-position: 0px 0px;
+                   // background-position: 0px 0px;
+                    background-image: url(../images/icon_expand_res_5.png)
                 }
                 &.active {
                     &:after {
-                        background-position: 0px -20px;
+                       // background-position: 0px -20px;
+                        background-image: url(../images/icon_expand_res_6.png)
                     }
                 }
             }
             &:nth-of-type(4) {
                 &:after {
-                    background-position: -60px 0px;
+                   // background-position: -60px 0px;
+                    background-image: url(../images/icon_expand_res_7.png)
                 }
                 &.active {
                     &:after {
-                        background-position: -60px -20px;
+                      //  background-position: -60px -20px;
+                        background-image: url(../images/icon_expand_res_8.png)
                     }
                 }
             }

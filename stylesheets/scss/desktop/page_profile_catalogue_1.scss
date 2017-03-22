@@ -22,8 +22,10 @@
             font-size: $fs13;
             text-align: center;
             transition: $trans;
-            &:hover {background-color: $red;
-            color:$font-white;}
+            &:hover {
+                background-color: $red;
+                color: $font-white;
+            }
         }
     }
     .catalog_element {
@@ -31,24 +33,27 @@
         border-bottom: $selection_border;
         .single_catalog_name {
             display: inline;
-       
             font-size: $fs13;
             line-height: 74px;
         }
         .download {
             display: block;
             float: right;
-            width: 25px;
-            height: 25px;
-            background: url(../images/download.png) no-repeat;
-            background-position: 0 0;
+            width: 24px;
+            height: 21px;
+            //background: url(../images/download.png) no-repeat;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url(../images/icon_download_1.png);
+            //background-position: 0 0;
             position: relative;
             top: 50%;
-            margin-top: -13px;
+            margin-top: -10.5px;
             cursor: pointer;
             &:hover,
             &:active {
-                background-position: -25px 0;
+                background-image: url(../images/icon_download_2.png);
+                //background-position: -25px 0;
             }
         }
     }

@@ -14,6 +14,11 @@
 	.right {
 		float: left;
 		margin-left: 35px;
+        @include bp(rel) {
+            display: none;
+            
+        }
+        
 	}
 	.big_h {
 		margin-top: 60px;

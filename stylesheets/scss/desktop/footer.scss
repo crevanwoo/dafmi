@@ -16,6 +16,7 @@ footer {
             height: 35px;
             margin: $big_pad + 5px 0;
             background-image: url(../images/logo.png);
+            background-size: contain;
         }
         .lang {
             .icon {
@@ -84,7 +85,8 @@ footer {
                 display: inline-block;
                 vertical-align: top
             }
-            img {
+            img {height: 100%;
+                width: auto;
                 margin-left: 8px;
             }
         }

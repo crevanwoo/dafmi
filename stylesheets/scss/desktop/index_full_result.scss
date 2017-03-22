@@ -39,6 +39,7 @@
                 height: 9px;
                 background-image: url(../images/icon_select_small.png);
                 background-repeat: no-repeat;
+                background-size: contain;
             }
             &.active {
                 &:before {
@@ -65,11 +66,13 @@
                 transform: translateY(-50%);
                 width: 30px;
                 height: 30px;
-                background-image: url('../images/icons_cart_scale.png');
-                background-position: 0 -30px;
+                background-image: url('../images/icon_result_2.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+           
             }
         }
-        .grid_view {
+        /*.grid_view {
             font-size: 0;
             margin-left: 15px;
             .list,
@@ -98,7 +101,7 @@
                     background-position: -35px 0;
                 }
             }
-        }
+        }*/
     }
     .results_wrapper {
         .single_result {
