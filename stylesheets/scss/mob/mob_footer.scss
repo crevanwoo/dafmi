@@ -1,0 +1,95 @@
+footer {
+    height: $h_footer;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $bg_black;
+    .footer_top {
+        $border-color: $border_dark_gray;
+        $big_pad: 20px;
+        z-index: 10;
+        top: 0;
+        height: $footer_top_height;
+        .wrapper {
+            @extend %clear;
+            border-bottom: 1px solid $border-color
+        }
+        .logo {
+            display: none;
+        }
+        .lang {
+            .icon {
+                position: absolute;
+                width: 25px;
+                height: 25px;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 10px;
+            }
+            color: white;
+            float: right;
+            margin-top: $big_pad;
+            .select {
+                width: 180px;
+                height: 47px;
+                .select-styled {
+                    padding-left: 50px;
+                    border: 1px solid $border-color;
+                    height: 100%;
+                    line-height: 45px;
+                    &:hover {
+                        background-color: $black;
+                    }
+                }
+                .select-options {
+                    background-color: $bg_black;
+                    bottom: 100%;
+                    top: initial;
+                    li {
+                        position: relative;
+                        padding-left: 50px;
+                        height: 45px;
+                        line-height: 45px;
+                        border-right: 1px solid $border-color;
+                        border-left: 1px solid $border-color;
+                        border-bottom: 1px solid $border-color;
+                        color: white;
+                        &:nth-of-type(2) {
+                            border-top: 1px solid $border-color;
+                        }
+                        &:hover {
+                            background-color: $black;
+                        }
+                        &[rel="hide"] {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .footer_bottom {
+        @extend %clear;
+        height: $footer_bottom_height;
+        line-height: $footer_bottom_height;
+        font-size: $fs12;
+        color: $font_gray;
+        .copyright {
+            display: none;
+        }
+        .development {
+            height: $footer_bottom_height;
+            float: right;
+            div {
+                display: inline-block;
+                vertical-align: top
+            }
+            img {
+                height: 100%;
+                width: auto;
+                margin-left: 8px;
+            }
+        }
+    }
+}

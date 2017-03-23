@@ -16,8 +16,9 @@ gulp.task('all:watch', function () {
     livereload.listen();
     gulp.watch('stylesheets/scss/**/*.scss', ['compile:sass']);
     gulp.watch('stylesheets/css/*.css', ['autoprefix']);
-    gulp.watch('stylesheets/css/prefixed/*.css', ['concat:css']);
-	gulp.watch('stylesheets/css/prefixed/*.css', ['replace:px']);
+    gulp.watch('stylesheets/css/prefixed/concat.css', ['concat:css']);
+    gulp.watch('stylesheets/css/prefixed/concat_mob.css', ['concat:css:mob']);
+	gulp.watch('stylesheets/css/prefixed/concat.css', ['replace:px']);
     gulp.watch('js/files/**/*.js', ['concat:js']);
     gulp.watch('js/script.js', ['compress:js']);
     gulp.watch('views/**/*.pug', ['compile:pug']);  
@@ -38,8 +39,14 @@ gulp.task('concat:js', function () {
 });
 
 gulp.task('concat:css', function () {
-    return gulp.src('stylesheets/css/prefixed/*.css')
+    return gulp.src('stylesheets/css/prefixed/concat.css')
         .pipe(concat('style.css'))
+        .pipe(gulp.dest('stylesheets'))
+        .pipe(livereload());
+});
+gulp.task('concat:css:mob', function () {
+    return gulp.src('stylesheets/css/prefixed/concat_mob.css')
+        .pipe(concat('style_mob.css'))
         .pipe(gulp.dest('stylesheets'))
         .pipe(livereload());
 });
@@ -87,7 +94,7 @@ gulp.task('autoprefix', function () {
 });
 
 gulp.task('replace:px', function(){
-  gulp.src(['stylesheets/css/prefixed/*.css'])
+  gulp.src(['stylesheets/css/prefixed/concat.css'])
     .pipe(replace('px', 'rem'))
     .pipe(gulp.dest('stylesheets'));
 });

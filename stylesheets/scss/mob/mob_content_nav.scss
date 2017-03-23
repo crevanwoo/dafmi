@@ -1,0 +1,9 @@
+.content_nav {
+    background-color: $bg_white;
+    .nav_top {
+       display: none;
+    }
+    .nav_main {
+        @extend %nav_auto;
+    }
+}

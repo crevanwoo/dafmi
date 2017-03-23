@@ -72,7 +72,7 @@ $header_top_height: 60px;
 $header_bottom_height: 90px;
 $header_height: $header_top_height+$header_bottom_height;
 $footer_top_height: 85px;
-$footer_bottom_height: 60px;
+$footer_bottom_height: 100px;//60px;
 $footer_height: $footer_top_height+$footer_bottom_height;
 $input_padding: 20px;
 %clear {
@@ -86,7 +86,7 @@ $input_padding: 20px;
 
 %shim {
     &:before {
-        content: '';
+        content: ''; 
         position: absolute;
         top: 0;
         left: 0;
@@ -120,7 +120,7 @@ $input_padding: 20px;
         @media screen and (max-width: 1300px) {
             @content;
         }
-    }
+    }   
 }
 
 @mixin btn($font-size, $font-color, $bg-color, $width, $height, $border-radius, $border-color, $border-width) {

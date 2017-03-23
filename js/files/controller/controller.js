@@ -8,8 +8,21 @@ addCustomSelect('.footer_top .lang select');
 addCarsTypeToList();
 
 $(document).ready(function () {
+   
 
-    $('.nano').mCustomScrollbar({
+    setCustomScroll()
+
+})
+
+$(window).on('resize', function () {
+    setCustomScroll()
+})
+
+function setCustomScroll() {
+
+    if (window.innerWidth >= 851) {
+        if ($('.mCustomScrollbar').length === 0) {
+         $('.nano').mCustomScrollbar({
         setHeight: $(window).height(),
         setWidth: '100%',
 
@@ -18,21 +31,24 @@ $(document).ready(function () {
         callbacks: {
             whileScrolling: function () {
                 changeHeaderView(this.mcs.top);
-                
+
                 small_garage.deactivateElement.call(small_garage.trigger, '.popup_small_garage');
-                
+
                 small_cart.deactivateElement.call(small_cart.trigger, '.popup_small_cart');
-                
+
                 small_partners.deactivateElement.call($('.cart.active'), '.popup_small_partners');
-                /* small_cart.deactivateElement(small_cart.trigger,'.popup_small_garage')*/
-                /*$('.popup_small_cart').removeClass('active');
-                $('.popup_small_cart').css('display', 'none');
-                $('.popup_small_garage').removeClass('active');
-                $('.popup_small_garage').css('display', 'none');*/
             }
         }
     });
-})
+}
+
+
+    } else {
+        $('.nano').mCustomScrollbar("destroy");
+
+    }
+
+}
 
 
 //create select 
@@ -834,7 +850,7 @@ $('body').on('click', '.profile_tab_content.garage .select_auto .select li', fun
 
 $('body').on('click', '.profile_tab_content.garage .search_result .single_product', function (event) {
     manageProductCell.call(this, event, '.profile_tab_content.garage .search_result .single_product', 'single_product');
-   
+
 });
 
 $('body').on('click', '.profile_tab_content.garage .search_param', function () {

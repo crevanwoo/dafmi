@@ -1,0 +1,33 @@
+.content_panel {
+    background-color: $bg_white;
+    .filters {
+        $border: 1px solid $border_l_gray;
+        padding: 20px;
+        .select {
+            width: 90%;
+            margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: $fs14;
+            .select-styled {
+                position: relative;
+                line-height: 38px;
+                height: 40px;
+                &:before {
+                    top: 15px;
+                }
+            }
+            .select-options {
+                position: relative;
+                height: auto;
+            }
+            .disabled {
+                cursor: default;
+                background-color: $active_gray;
+            }
+        }
+    }
+    .views {
+        display: none;
+    }
+}

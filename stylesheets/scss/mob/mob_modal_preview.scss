@@ -1,0 +1,17 @@
+footer .modal_preview {
+	.modal_content{
+		padding: 50px 20px;
+		max-width: 90%;
+		max-height: 90%;		
+		min-width: 520px;
+			width: auto;
+	}
+	.img {
+		text-align: center;
+	}
+	img {		
+		height: auto;
+		max-height: 100%;
+		max-width: 100%;
+	}
+}

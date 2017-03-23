@@ -1,15 +1,32 @@
 header {
+    @extend %clear;
     $h_top: $header_top_height;
     $h_bottom: $header_bottom_height;
     height: $header_height;
     @import "popup_small_cart.scss";
     @import "popup_small_garage.scss";
+    
     .header_top {
         @extend %clear;
         height: $h_top;
         line-height: $h_top;
         color: $gray;
         font-size: $fs12;
+       
+        .icon_menu {
+            display: none;
+            @include bp(mob) {
+                display: block;
+                width: 20%;
+                height: 100%;
+                background-image: url(../images/icon_menu.png);
+                background-size: contain;
+                background-position: center center;
+                &.active {
+                    background-image: url(../images/icon_menu_active.png);
+                }
+            }
+        }
         nav,
         .nav {
             display: inline-block;
@@ -26,6 +43,9 @@ header {
         }
         .profile {
             float: right;
+            @include bp(mob) {
+                float: none
+            }
             .icon {
                 position: relative;
                 top: 2px;
@@ -35,6 +55,9 @@ header {
                 height: 13px;
                 background-image: url(../images/icon_user.png);
                 background-size: contain;
+                @include bp(mob) {
+                    display: none
+                }
             }
             span {}
             .status {
@@ -43,6 +66,9 @@ header {
                 display: inline-block;
                 color: $l_gray;
                 text-decoration: underline;
+            }
+            .mob_ver {
+                display: none;
             }
         }
     }
@@ -55,6 +81,8 @@ header {
         background-color: $bg_black;
         height: $h_bottom;
         transition: 0.2s;
+        .icon_search {display: none;}
+        
         * {
             //transition: 0.2s;
         }

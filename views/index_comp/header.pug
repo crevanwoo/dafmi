@@ -1,17 +1,26 @@
 // header begins
 header
     div.header_top
+        div.icon_menu
         div.wrapper.pad
             nav
                 ul.top_nav
                     -for(var i =0; i < 7; i++)
-                        li
+                        li(class= header_nav_class[i])
                             a(href= header_links[i])= header_menu[i]
             div.profile
                 div.icon
                 span Здраствуйте -
                 div.status Войдите в личный кабинет
+                div.mob_ver 
+                    div.search Поиск по размеру
+                    div.enter Вход
+                    div.orders Мои заказы
+                    div.history История
+                    div.exit Выход
+                    a(href="tel:380567449744").tel +38 (056) 744-9-744
     div.header_bottom
+        div.icon_search
         div.wrapper.pad
             a(href="index.html").logo
             div.input

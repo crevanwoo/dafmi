@@ -72,20 +72,40 @@ footer {
     .footer_bottom {
         @extend %clear;
         height: $footer_bottom_height;
-        line-height: $footer_bottom_height;
+        //line-height: $footer_bottom_height;
         font-size: $fs12;
         color: $font_gray;
-        .copyright {
+        .left {
+            margin-top: 20px;
             float: left;
         }
+        .socials {
+            font-size: 0;
+            line-height: 0;
+            li {
+                display: inline-block;
+                margin-right: 10px;
+                img {
+                    cursor: pointer;
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+        .copyright {
+            line-height: 40px;
+        }
         .development {
+           // height: 60px;
             height: $footer_bottom_height;
             float: right;
             div {
+                padding-top: 73px;
                 display: inline-block;
                 vertical-align: top
             }
-            img {height: 100%;
+            img {
+                height: 100%;
                 width: auto;
                 margin-left: 8px;
             }

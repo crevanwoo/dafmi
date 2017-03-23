@@ -1,0 +1,195 @@
+.tab_2 {
+    display: none;
+    transition: 0.5s;
+    &.show {
+        display: block;
+    }
+    opacity:0;
+    .nav {
+        @extend %clear;
+        height: 75px;
+        margin-bottom: 15px;
+        background-color: $button_gray;
+        font-size: $fs13;
+        padding-left: 20px;
+        .info_1 {
+            float: left;
+            width: 300px;
+            padding-top: 20px;
+            .maker {
+                padding-left: 20px;
+                position: relative;
+                margin-bottom: 10px;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    transform: rotate(-90deg);
+                    background-image: url(../images/icon_select_small.png);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    width: 10px;
+                    height: 5px;
+                    left: 5px;
+                    top: 5px;
+                }
+            }
+            .model {
+                padding-left: 40px;
+                position: relative;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    background-image: url(../images/icon_select_small.png);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    width: 10px;
+                    height: 5px;
+                    left: 20px;
+                    top: 5px;
+                }
+            }
+        }
+        .info_2,
+        .info_3,
+        .info_4 {
+            float: left;
+            line-height: 75px;
+        }
+        .info_2 {
+            width: 230px;
+        }
+        .info_3 {
+            width: 70px;
+        }
+    }
+    .tab_2_content {
+        @extend %clear;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 10px;
+        .single_maker {
+            overflow: hidden;
+            margin-bottom: 15px;
+            .main_title {
+                cursor: pointer;
+                width: 180px;
+                max-width: 50%;
+                height: 40px;
+                position: relative;
+                padding-right: 45px;
+                line-height: 40px;
+                padding-left: 45px;
+                font-size: $fs13;
+                border: 1px solid $border_l_gray;
+                text-transform: uppercase;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    transform: rotate(-90deg);
+                    background-image: url(../images/icon_select_small.png);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    width: 10px;
+                    height: 5px;
+                    left: 15px;
+                    top: 45%;
+                }
+                &.active {
+                    font-family: Medium;
+                    &:before {
+                        transform: rotate(0deg);
+                        top: 50%;
+                    }
+                }
+            }
+            .single_model {
+                overflow: hidden;
+                height: 0;
+                .single_model_title {
+                    cursor: pointer;
+                    height: 50px;
+                    line-height: 50px;
+                    background-color: $button_gray;
+                    padding-left: 45px;
+                    position: relative;
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        transform: rotate(-90deg);
+                        background-image: url(../images/icon_select_small.png);
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        width: 10px;
+                        height: 5px;
+                        left: 15px;
+                        top: 45%;
+                    }
+                    &.active {
+                        font-family: Medium;
+                        background-color: white;
+                        &:before {
+                            transform: rotate(0deg);
+                            top: 50%;
+                        }
+                    }
+                }
+                .model_content {
+                    padding-top: 10px;
+                    padding-left: 20px;
+                    position: relative;
+                    min-height: 100px;
+                    .single_item {
+                        height: 40px;
+                        line-height: 40px;
+                        @extend %clear;
+                        width: 560px;
+                        font-family: Medium;
+                        font-size: $fs13;
+                        >* {
+                            float: left;
+                        }
+                        .param_model {
+                            width: 280px;
+                        }
+                        .param_year {
+                            width: 80px;
+                            text-align: center;
+                        }
+                        .param_cap {
+                            margin-left: 120px;
+                            width: 80px;
+                            text-align: center;
+                        }
+                        &:not(:last-of-type) {
+                            .param_model {
+                                border-bottom: 1px solid $border_l_gray;
+                            }
+                            .param_year {
+                                border-bottom: 1px solid $border_l_gray;
+                            }
+                        }
+                    }
+                    .info {
+                        background-color: $button_gray;
+                        position: absolute;
+                        top: 20px;
+                        right: 0;
+                        width: 580px;
+                        padding: 15px;
+                        font-size: $fs13;
+                        .title {
+                            &:not(:last-of-type) {
+                                margin-bottom: 15px;
+                            }
+                        }
+                        .value {
+                            float: right;
+                            width: 340px;
+                            font-family: Medium
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

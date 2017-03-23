@@ -7,12 +7,19 @@ footer
             div.lang
                 select
                     option(value='russian' data-image="images/lang_rus.png") Russian 
-                    option(value='russian' data-image="images/lang_rus.png") Russian
+                    option(value='russian' data-image="images/lang_rus.png") Russian 
     div.footer_bottom
         div.wrapper.pad
-            div.copyright Все права защищены и охраняются законом. 1991 - 2017 ООО "ДАФМИ".
+            div.left 
+                ul.socials
+                    -for(var i=0; i<6;i++)
+                        li(class="soc_" + i)
+                            a(href="")
+                                img(src= soc_icons[i])
+                div.copyright Все права защищены и охраняются законом. 1991 - 2017 ООО "ДАФМИ".
             div.development 
                 div Разработка сайта:
-                img(src="images/crepla_logo.png")
+                a(href="http://www.crepla.com")
+                    img(src="images/crepla_logo.png")
     include modals
 // footer ends

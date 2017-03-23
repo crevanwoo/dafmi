@@ -1,0 +1,24 @@
+.modal_authorization {  
+    .mid_h {
+        margin-bottom: 35px;        
+    }
+    .bottom {
+        text-align: center;
+    }
+    .submit {
+        margin-bottom: 15px;
+    }
+    .restore_pass,
+    .register {
+        cursor: pointer;
+        display: inline-block;
+        font-size: $fs14;
+        border-bottom: 1px dashed $black;
+    }
+    .restore_pass {
+        margin-bottom: 20px;
+    }
+    .register {
+        margin-bottom: 10px;
+    }
+}

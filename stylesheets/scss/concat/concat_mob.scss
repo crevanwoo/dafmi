@@ -1,0 +1,32 @@
+  @media screen and (max-width: 850px) {
+      @import "../mob/mob_abstract.scss";
+      @import "../mob/mob_common.scss";
+      @import "../mob/mob_header.scss";
+      @import "../mob/mob_content.scss";
+      @import "../mob/mob_footer.scss";
+      @import "../mob/mob_expand_search.scss";
+      @import "../mob/mob_index_result.scss";
+      @import "../mob/mob_index_full_result.scss";
+      @import "../mob/mob_page_single_item.scss";
+      @import "../mob/mob_page_downloads.scss";
+      @import "../mob/mob_page_cart.scss";
+      @import "../mob/mob_modals_entrance.scss";
+      @import "../mob/mob_page_print.scss";
+      @import "../mob/mob_page_news.scss";
+      @import "../mob/mob_page_contacts.scss";
+      @import "../mob/mob_page_partners.scss";
+      @import "../mob/mob_page_profile_main.scss";
+      @import "../mob/mob_page_profile_edit.scss";
+      @import "../mob/mob_page_profile_orders.scss";
+      @import "../mob/mob_page_profile_order.scss";
+      @import "../mob/mob_page_profile_history.scss";
+      @import "../mob/mob_page_profile_garage.scss";
+      @import "../mob/mob_modal_profile.scss";
+      @import "../mob/mob_page_profile_catalogue_1.scss";
+      @import "../mob/mob_page_profile_catalogue_2.scss";
+      @import "../mob/mob_page_profile_catalogue_3.scss";
+      @import "../mob/mob_page_compare.scss";
+      @import "../mob/mob_page_new_positions.scss";
+      @import "../mob/mob_modal_preview.scss";
+      @import "../mob/mob_popup_small_partners.scss";
+  }

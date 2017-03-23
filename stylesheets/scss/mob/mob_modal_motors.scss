@@ -1,0 +1,56 @@
+.modal_tab.motors {
+    .motors_wrapper {
+        display: table;
+        border-collapse: collapse;
+        width: 100%;
+        height: auto;
+    }
+    .result_list_headers {
+        height: 50px;
+        border-top: 1px solid $border_gray_table_title;
+        border-bottom: 1px solid $border_gray_table_title;
+    }
+    .result_list_row {
+        height: 70px;
+        transition: $trans;
+        border-bottom: 1px solid $border_gray_table_row;
+        cursor: pointer;
+        &:hover {
+            background-color: $active_gray
+        }
+    }
+    .result_list_headers, 
+    .result_list_row {
+        display: table-row;
+        >div:nth-of-type(1) {
+            width: 120px;
+        }
+        >div:nth-of-type(2) {
+            width: 120px;
+        }
+        >div:nth-of-type(3) {
+            width: 180px;
+        }
+        >div:nth-of-type(4) {
+            width: 120px;
+        }
+        >div:nth-of-type(5) {
+            width: 140px;
+        }
+        >div:nth-of-type(6) {
+            width: 160px;
+        }
+        >div:nth-of-type(7) {
+            width: 160px;
+        }
+    }
+    .table_header,
+    .table_value {
+        text-align: center;
+        vertical-align: middle;
+        display: table-cell;
+        font-size: $fs12;
+    }
+    .table_header {}
+    .table_value {}
+}

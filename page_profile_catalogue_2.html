@@ -5,8 +5,9 @@
     <meta charset="utf-8">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <!--link(rel="stylesheet", href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css")-->
-    <link rel="stylesheet" href="stylesheets/concat.css" media="all and (max-width:1300px)">
+    <link rel="stylesheet" href="stylesheets/concat.css" media="all and (max-width:1300px) and (min-width: 851px)">
     <link rel="stylesheet" href="stylesheets/style.css" media="all and (min-width:1301px)">
+    <link rel="stylesheet" href="stylesheets/style_mob.css" media="all and (max-width: 850px)">
     <link rel="stylesheet" href="stylesheets/jquery.mCustomScrollbar.min.css">
     <script src="/js/min/jquery-3.1.1.min.js" defer></script>
     <!--script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js", defer)-->
@@ -18,25 +19,34 @@
       <!-- header begins-->
       <header>
         <div class="header_top">
+          <div class="icon_menu"></div>
           <div class="wrapper pad">
             <nav>
               <ul class="top_nav">
-                <li><a href="">О нас</a></li>
-                <li><a href="page_new_positions.html">Новые позиции</a></li>
-                <li><a href="page_news.html">Новости</a></li>
-                <li><a href="page_partners.html">Партнеры </a></li>
-                <li><a href="page_print.html">Печать</a></li>
-                <li><a href="page_downloads.html">Загрузки</a></li>
-                <li><a href="page_contacts.html">Контакты</a></li>
+                <li class="nav_about"><a href="">О нас</a></li>
+                <li class="nav_new"><a href="page_new_positions.html">Новые позиции</a></li>
+                <li class="nav_news"><a href="page_news.html">Новости</a></li>
+                <li class="nav_part"><a href="page_partners.html">Партнеры </a></li>
+                <li class="nav_print"><a href="page_print.html">Печать</a></li>
+                <li class="nav_down"><a href="page_downloads.html">Загрузки</a></li>
+                <li class="nav_cont"><a href="page_contacts.html">Контакты</a></li>
               </ul>
             </nav>
             <div class="profile">
               <div class="icon"></div><span>Здраствуйте -</span>
               <div class="status">Войдите в личный кабинет</div>
+              <div class="mob_ver"> 
+                <div class="search">Поиск по размеру</div>
+                <div class="enter">Вход</div>
+                <div class="orders">Мои заказы</div>
+                <div class="history">История</div>
+                <div class="exit">Выход</div><a class="tel" href="tel:380567449744">+38 (056) 744-9-744</a>
+              </div>
             </div>
           </div>
         </div>
         <div class="header_bottom">
+          <div class="icon_search"></div>
           <div class="wrapper pad"><a class="logo" href="index.html"></a>
             <div class="input">
               <input placeholder="Поиск детали">
@@ -150,16 +160,26 @@
             <div class="lang">
               <select>
                 <option value="russian" data-image="images/lang_rus.png">Russian </option>
-                <option value="russian" data-image="images/lang_rus.png">Russian</option>
+                <option value="russian" data-image="images/lang_rus.png">Russian </option>
               </select>
             </div>
           </div>
         </div>
         <div class="footer_bottom">
           <div class="wrapper pad">
-            <div class="copyright">Все права защищены и охраняются законом. 1991 - 2017 ООО "ДАФМИ".</div>
+            <div class="left"> 
+              <ul class="socials">
+                <li class="soc_0"><a href=""><img src="images/soc_fb.png"></a></li>
+                <li class="soc_1"><a href=""><img src="images/soc_g.png"></a></li>
+                <li class="soc_2"><a href=""><img src="images/soc_lin.png"></a></li>
+                <li class="soc_3"><a href=""><img src="images/soc_sk.png"></a></li>
+                <li class="soc_4"><a href=""><img src="images/soc_tw.png"></a></li>
+                <li class="soc_5"><a href=""><img src="images/soc_yt.png"></a></li>
+              </ul>
+              <div class="copyright">Все права защищены и охраняются законом. 1991 - 2017 ООО "ДАФМИ".</div>
+            </div>
             <div class="development"> 
-              <div>Разработка сайта:</div><img src="images/crepla_logo.png">
+              <div>Разработка сайта:</div><a href="http://www.crepla.com"><img src="images/crepla_logo.png"></a>
             </div>
           </div>
         </div>

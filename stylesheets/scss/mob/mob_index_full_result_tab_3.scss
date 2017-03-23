@@ -1,0 +1,14 @@
+.tab_3 {
+    display: none;
+    transition: 0.5s;
+    &.show {
+        display: block;
+    }
+    opacity:0;
+    @extend %clear;
+    border-bottom: 1px solid $border_l_gray;
+    @extend %param_content;
+    .param {
+        text-transform: uppercase;
+    }
+}

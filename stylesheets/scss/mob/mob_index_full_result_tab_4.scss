@@ -1,0 +1,12 @@
+.tab_4 {
+    display: none;
+    transition: 0.5s;
+    &.show {
+        display: block;
+    }
+    opacity:0;
+    img {
+        width: 20%;
+        cursor: pointer;
+    }
+}

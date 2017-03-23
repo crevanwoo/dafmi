@@ -1,0 +1,138 @@
+footer .modal_window {
+	$input_height: 45px;
+	@extend %shim;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 100;
+	opacity: 0;
+	display: none;
+	&.active {
+		opacity: 1
+	}
+	.modal_content {
+		@extend %clear;
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: auto;
+		width: 520px;
+		padding: 25px 20px;
+		background-color: $bg_white;
+		top: 50vh;
+		transform: translateY(-50%);
+		.mid_h {
+			text-transform: none;
+			font-family: Medium;
+			font-size: $fs24;
+		}
+		.text {
+			line-height: 150%;
+			font-size: $fs14;
+		}
+		.label {
+			font-size: $fs14;
+			margin-bottom: 15px;
+		}
+		.input {
+			border: 1px solid $border_active_gray;
+			display: block;
+			margin-bottom: 20px;
+			height: $input_height;
+			input {
+				padding-left: 20px;
+				width: 100%;
+				height: 100%;
+				font-size: $fs14;
+				&:focus {
+					background-color: rgba(0, 0, 0, 0.01);
+				}
+			}
+		}
+		.select {
+			height: $input_height;
+			margin-bottom: 20px;
+			.select-styled {
+				border: 1px solid $border_active_gray;
+				display: block;
+				line-height: $input_height;
+				&:before {
+					content: '';
+					top: 50%;
+					margin-top: -5px;
+				}
+				&.disabled {
+					cursor: default;
+					background-color: $active_gray;
+				}
+			}
+			.select-options {
+				height: 200px;
+				border-left: 1px solid $border_active_gray;
+				border-right: 1px solid $border_active_gray;
+				border-bottom: 1px solid $border_active_gray;
+				li {
+					padding: 0 0;
+					height: $input_height;
+					line-height: $input_height;
+				}
+			}
+		}
+		button {
+			font-family: Medium;
+			font-size: $fs16;
+			text-transform: none;
+			color: $font_white;
+			background-color: $red;
+			width: 100%;
+			display: block;
+			height: 55px;
+		}
+		.next {
+			$height: 50px;
+			background-color: $red;
+			width: 200px;
+			height: $height;
+			cursor: pointer;
+			color: white;
+			line-height: $height;
+			float: right;
+			margin-top: 10px;
+			font-family: Medium;
+			text-align: center;
+			font-size: $fs16;
+		}
+	}
+	.close {
+		position: absolute;
+		cursor: pointer;
+		width: 20px;
+		height: 20px;
+		right: 20px;
+		top: 20px;
+		background-image: url(../images/icon_close_popup.png);
+		background-size: contain;
+	}
+	li {
+		padding: 0;
+		list-style-type: none;
+		height: 0;
+		span.invalid {
+			color: $red;
+			font-size: $fs12;
+		}
+	}
+}
+
+@import "mob_modal_authorization.scss";
+@import "mob_modal_registration_1.scss";
+@import "mob_modal_registration_2_1.scss";
+@import "mob_modal_registration_2_2.scss";
+@import "mob_modal_registration_3.scss";
+@import "mob_modal_registration_4.scss";
+@import "mob_modal_registration_success.scss";
+@import "mob_modal_restore_pass.scss";
+@import "mob_modal_restore_pass_success.scss";
+@import "mob_modal_consult.scss";

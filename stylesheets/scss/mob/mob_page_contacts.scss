@@ -1,0 +1,142 @@
+.feedback {
+    font-family: Regular;
+    padding-top: 30px;
+    padding-bottom: 0;
+    .wrapper {
+        padding-top: 30px;
+        padding-bottom: 75px;
+        background-color: $bg_white;
+        border: 1px solid $border_l_gray;
+    }
+    .contacts_content_wrapper {
+        @extend %clear;
+    }
+    .questions {
+        font-size: $fs14;
+    }
+    .big_h {
+        margin-bottom: 20px;
+        font-family: Medium;
+        font-size: $fs24;
+        text-transform: none;
+    }
+    .mid_h {
+        margin-bottom: 45px;
+        font-family: Medium;
+        font-size: $fs18;
+    }
+    .questions {
+        margin-bottom: 65px;
+        font-size: $fs14;
+    }
+    .left_block {
+        float: left;
+        width: 588px;
+        .contact_list {
+            font-size: $fs16;
+            margin-left: 5px;
+            .feedback_image {
+                background-size: auto 100%;
+                background-position: 0 center;
+                
+               
+                //background: url('../images/feedback-sprite.png') no-repeat;
+            }
+            .feedback_image_address {
+                line-height: 130%;
+                 background-image: url(../images/icon_contacts_1.png)
+            }
+            .feedback_image_phone {
+                 background-image: url(../images/icon_contacts_2.png);
+               // background-position: 0px -53px;
+            }
+            .feedback_image_skype {
+                 background-image: url(../images/icon_contacts_3.png);
+                //background-position: 0px -110px;
+            }
+            .feedback_image_time {
+                 background-image: url(../images/icon_contacts_4.png);
+                //background-position: 0px -168px;
+                span {
+                    font-size: $fs14;
+                }
+            }
+            .feedback_image_email {
+                 background-image: url(../images/icon_contacts_5.png);
+               // background-position: 0px -222px;
+            }
+            li {
+                padding-left: 50px;
+                min-height: 40px;
+                vertical-align: middle;
+                margin-bottom: 15px;
+                &:nth-of-type(2),
+                &:nth-of-type(3),
+                &:nth-of-type(5) {
+                    line-height: 40px;
+                }
+            }
+        }
+    }
+    .right_block {
+        float: right;
+        width: 588px;
+        form {
+            label {
+                font-size: $fs13;
+                text-transform: uppercase;
+                line-height: 28px;
+            }
+            input {
+                color: $black;
+                width: 100%;
+                height: 36px;
+                margin-bottom: 6px;
+                border: $selection_border;
+                padding-left: $input_padding;
+            }
+            textarea {
+                width: 100%;
+                height: 110px;
+                margin-bottom: 10px;
+                border: $selection_border;
+                padding-left: 10px;
+                font-family: Regular;
+                font-size: $fs16;
+                color: $black;
+            }
+            .button {
+                width: 200px;
+                height: 45px;
+                background-color: $red;
+                font-family: Medium;
+                color: $font_white;
+                line-height: 43px;
+                font-size: $fs15;
+            }
+        }
+    }
+}
+
+.map.page_contacts {
+    height: 680px;
+    position: relative;
+    .wrapper {
+        position: relative;
+        border-top: none;
+        background-color: $bg_white;
+    }
+    .mid_h {
+        font-size: $fs18;
+        text-align: center;
+        line-height: 75px;
+        border-bottom: 1px solid $border_l_gray;
+    }
+    .google_map {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}

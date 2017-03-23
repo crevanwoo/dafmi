@@ -1,0 +1,144 @@
+.profile_tab_content.garage {
+    .big_h {
+        font-size: $fs20;
+        text-transform: none;
+        height: 75px;
+        line-height: 75px;
+    }
+    .select_auto {
+        @extend %clear;
+        @extend .default_select;
+        height: 100px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        border-top: $selection_border;
+        select {
+            float: left;
+        }
+        .select {
+            float: left;
+            width: 200px;
+            height: 40px;
+            margin-top: 5px;
+            line-height: 38px;
+            font-size: $fs20;
+            .select-styled {
+                color: $black;
+                &.active {
+                    color: $black;
+                }
+                &:before {
+                    top: 50%;
+                    margin-top: -5px;
+                }
+            }
+            .select-options {
+                border-bottom: $selection_border;
+                border-left: $selection_border;
+                border-right: $selection_border;
+                max-height: 300px;
+                height: auto;
+                margin-left: -1px;
+                margin-right: -1px;
+                li {
+                    height: 40px;
+                    line-height: normal;
+                }
+            }
+        }
+        .button {
+            float: left;
+            cursor: pointer;
+            height: 40px;
+            line-height: 38px;
+            font-size: $fs14;
+            border: 1px solid $red;
+            transition: $trans;
+            text-align: center;
+            margin-top: 5px;
+            margin-left: 10px;
+            &:hover {
+                color: $font-white;
+                background-color: $red;
+            }
+        }
+        .add_auto {
+            width: 150px;
+        }
+        .edit_auto {
+            position: relative;
+            width: 40px;
+            &:before {
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                margin-top: -13px;
+                margin-left: -11px;
+                width: 25px;
+                height: 25px;
+                background-image: url(../images/icon_edit_2.png);
+                background-size: contain;
+                //background-position: -25px 0;
+            }
+            &:hover {
+                &:before {
+                     background-image: url(../images/icon_edit_1.png);
+                    //background-position: 0 0;
+                }
+            }
+        }
+        .images {
+            float: right;
+            font-size: 0px;
+            height: 50px;
+            img {
+                height: 100%;
+                width: auto;
+                margin: 0 10px;
+            }
+        }
+    }
+    .search_info {
+        position: relative;
+        background-color: $bg_l_gray;
+        height: 75px;
+        line-height: 75px;
+        padding-left: 55px;
+        font-size: $fs13;
+        &:before {
+            content: '';
+            position: absolute;
+            height: 35px;
+            width: 16px;
+            top: 50%;
+            margin-top: -18px;
+            left: 20px;
+            background-image: url(../images/icon_info.png);
+            background-size: contain;
+        }
+    }
+    .search_params {
+        @extend %clear;
+        padding: 20px 10px;
+        .search_param {
+            float: left;
+            height: 40px;
+            display: inline-block;
+            padding: 0 20px;
+            margin: 10px;
+            border: 1px solid $border_dark_gray;
+            cursor: pointer;
+            text-align: center;
+            line-height: 38px;
+            &:hover {
+                background-color: $active_gray
+            }
+        }
+    }
+    .search_result {
+        padding: 20px 10px;
+        @extend %clear;
+        @extend %single_product_cell_view;
+    }
+}
