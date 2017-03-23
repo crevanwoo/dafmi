@@ -39,7 +39,7 @@ function smoothShow(selector, display) {
 
 // измененение вида кнопок при нажатии
 function manageMenuButtons(selector) {
-    
+
     $(selector).removeClass('active');
     $(this).addClass('active');
 }
@@ -107,13 +107,13 @@ function addCustomSelect(selector) {
 function changeHeaderView(param) {
     param = (parseInt(param) > 0) ? parseInt(param) : -parseInt(param);
     //console.log(param);
-      
-    if ( param > 150 && !$('.header_bottom').hasClass('min')) {
+
+    if (param > 150 && !$('.header_bottom').hasClass('min')) {
         $('.header_bottom').delay(300).addClass('min');
-    } else if ( param <= 150) {
+    } else if (param <= 150) {
         $('.header_bottom').delay(300).removeClass('min');
     }
-    
+
 }
 
 // изменение показа элементов на главной странице - сетка - список
@@ -262,14 +262,14 @@ function showResultTab2Level2() {
 
 /* --- < Results --- */
 
-function respondCartSuccess() {    
-      $('.page_cart .products').empty();
+function respondCartSuccess() {
+    $('.page_cart .products').empty();
 
-            $('.page_cart .total span').html('0');
-            var cart_success = new ModalWindow('.page_cart_modal_success');
-            cart_success.activateElement();
-            cart_success.windowClose('.page_cart_modal_success .close');
-            checkCartIsEmpty();    
+    $('.page_cart .total span').html('0');
+    var cart_success = new ModalWindow('.page_cart_modal_success');
+    cart_success.activateElement();
+    cart_success.windowClose('.page_cart_modal_success .close');
+    checkCartIsEmpty();
 }
 
 
@@ -285,67 +285,63 @@ function checkCartIsEmpty() {
 
 
 function setErrorMessage(marker) {
-		
-		if (!marker && $('.modal_registration_2_1 .invalid').length < 1) {
-			$('<li><span class="invalid">Вы должны заполнить все поля</span></li>').insertBefore($('.modal_registration_2_1 .next'));
-		} else if (marker) {
-			$('.modal_registration_2_1 .invalid').parent().remove();
-		}
-		
-	}
+
+    if (!marker && $('.modal_registration_2_1 .invalid').length < 1) {
+        $('<li><span class="invalid">Вы должны заполнить все поля</span></li>').insertBefore($('.modal_registration_2_1 .next'));
+    } else if (marker) {
+        $('.modal_registration_2_1 .invalid').parent().remove();
+    }
+
+}
 
 
 function manageProductCell(event, selector, cell_class_name) {
-    
+
+
     var target = $(event.target);
-   
+
     if (!$(target).hasClass('cart') && !findParent($(this), cell_class_name).hasClass('active')) {
-        
+        small_partners.deactivateElement.call($('.single_product .cart'), '.popup_small_partners');
         $(selector + '.active').removeClass('active');
-        
-        findParent($(this), cell_class_name).addClass('active');   
-        
-    }
-      else if (!$(target).hasClass('cart') && findParent($(this), cell_class_name).hasClass('active')) {
-        
-        $(selector + '.active').removeClass('active');        
-       
-    }
-    
-    else if ($(target).hasClass('cart') && !findParent($(this), cell_class_name).hasClass('active')) {
-        
-        $(selector + '.active').removeClass('active');
-        
+
         findParent($(this), cell_class_name).addClass('active');
-         /*add fucntion add product to cart*/
-      
+
+    } else if (!$(target).hasClass('cart') && findParent($(this), cell_class_name).hasClass('active')) {
+        small_partners.deactivateElement.call($('.single_product .cart'), '.popup_small_partners');
+
+        $(selector + '.active').removeClass('active');
+
+    } else if ($(target).hasClass('cart') && !findParent($(this), cell_class_name).hasClass('active')) {
+
+        $(selector + '.active').removeClass('active');
+
+        findParent($(this), cell_class_name).addClass('active');
+        /*add fucntion add product to cart*/
+
+    } else if ($(target).hasClass('cart') && findParent($(this), cell_class_name).hasClass('active')) {
+
+        /*add fucntion add product to cart*/
+
     }
-    
-  
-     else if ($(target).hasClass('cart') && findParent($(this), cell_class_name).hasClass('active')) {
-        
-             /*add fucntion add product to cart*/
-      
-    }
-    
-    
-    
+
+
+
 }
 
 
 function createExpandSearchSelects() {
-    
- 
 
 
 
-ex_search_sel_1.imported_list = Select_1.imported_list;
-ex_search_sel_1.createSelection('.ex_search_select_1');
-ex_search_sel_1.state(true);
 
 
-ex_search_sel_2.createSelection('.ex_search_select_2');
+    ex_search_sel_1.imported_list = Select_1.imported_list;
+    ex_search_sel_1.createSelection('.ex_search_select_1');
+    ex_search_sel_1.state(true);
 
-ex_search_sel_3.createSelection('.ex_search_select_3');
-    
+
+    ex_search_sel_2.createSelection('.ex_search_select_2');
+
+    ex_search_sel_3.createSelection('.ex_search_select_3');
+
 }

@@ -6,16 +6,28 @@ function Navigation(selector) {
     /* события вводить без запятых, через пробелы*/
     this.addListeners = function (events, inner_selector) {
         $('body').on(events, selector, function (e) {
+           
             makeAction.call(e.target, inner_selector)
         })
     };
+    this.trigger = $(selector);
 
+    this.single = true; // if false - multiple
 
     var Current = this; //current oject
 
     var clicked_style;
 
     var style_array;
+
+
+    function singleSelect(inner_selector) {
+        if ($(selector).length > 1) {
+            $(selector).find(inner_selector + '.active').each(function () {
+                Current.deactivateElement.call(findParent($(this), $(selector).attr('class')), inner_selector)
+            })
+        }
+    };
 
 
     function activateElement(inner_selector) {
@@ -39,7 +51,7 @@ function Navigation(selector) {
         }, 100);
     };
 
-    function deactivateElement(inner_selector) {
+    this.deactivateElement = function (inner_selector) {
         var obj = $(this).find(inner_selector);
         obj.removeClass('active');
         obj.attr('style', '');
@@ -63,9 +75,13 @@ function Navigation(selector) {
 
     function makeAction(inner_selector) {
         if ($(this).find(inner_selector).hasClass('active')) {
-            return deactivateElement.call(this, inner_selector)
+            return Current.deactivateElement.call(this, inner_selector)
 
         } else {
+             if (Current.single) {
+                singleSelect(inner_selector)
+            }
+            
             return activateElement.call(this, inner_selector)
         }
     };

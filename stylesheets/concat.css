@@ -4636,6 +4636,8 @@ footer .modal_preview img {
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
   z-index: 1;
+  display: none;
+  opacity: 0;
   cursor: default; }
   .popup_small_partners.active {
     opacity: 1; }
@@ -4651,13 +4653,29 @@ footer .modal_preview img {
     right: -6rem; }
   .popup_small_partners .small_h {
     text-align: left;
-    margin-bottom: 25rem;
+    margin-bottom: 10rem;
     padding: 0 20rem;
-    line-height: 150%; }
+    line-height: 150%;
+    font-size: 18rem; }
   .popup_small_partners ul {
-    height: 77rem;
+    height: 100rem;
     overflow-x: hidden;
     overflow-y: auto; }
     .popup_small_partners ul li {
-      height: 100rem;
+      padding-left: 10rem;
+      height: 40rem;
       cursor: pointer; }
+
+.single_product .popup_small_partners {
+  right: -10rem;
+  margin-bottom: 14rem;
+  bottom: 100%;
+  top: auto;
+  width: 244rem;
+  margin-right: 0; }
+  .single_product .popup_small_partners:before {
+    bottom: -10rem;
+    right: 25rem;
+    top: auto; }
+  .single_product .popup_small_partners .small_h {
+    font-size: 16rem; }

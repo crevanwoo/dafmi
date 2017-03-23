@@ -18,10 +18,17 @@ $(document).ready(function () {
         callbacks: {
             whileScrolling: function () {
                 changeHeaderView(this.mcs.top);
-                $('.popup_small_cart').removeClass('active');
+                
+                small_garage.deactivateElement.call(small_garage.trigger, '.popup_small_garage');
+                
+                small_cart.deactivateElement.call(small_cart.trigger, '.popup_small_cart');
+                
+                small_partners.deactivateElement.call($('.cart.active'), '.popup_small_partners');
+                /* small_cart.deactivateElement(small_cart.trigger,'.popup_small_garage')*/
+                /*$('.popup_small_cart').removeClass('active');
                 $('.popup_small_cart').css('display', 'none');
                 $('.popup_small_garage').removeClass('active');
-                $('.popup_small_garage').css('display', 'none');
+                $('.popup_small_garage').css('display', 'none');*/
             }
         }
     });
@@ -82,8 +89,7 @@ small_cart.transition_time = 500;
 small_cart.addListeners('click', '.popup_small_cart');
 
 $('.header_bottom .cart').on('click', function () {
-    $('.popup_small_garage').removeClass('active');
-    $('.popup_small_garage').css('display', 'none');
+    small_garage.deactivateElement.call(small_garage.trigger, '.popup_small_garage');
 })
 
 // popup garage
@@ -116,8 +122,7 @@ $('body').on('click', '.popup_small_garage .select_auto .select-options li', fun
 
 
 $('.header_bottom .garage').on('click', function () {
-    $('.popup_small_cart').removeClass('active');
-    $('.popup_small_cart').css('display', 'none');
+    small_cart.deactivateElement.call(small_cart.trigger, '.popup_small_cart')
 })
 
 //change products revealing type
@@ -367,7 +372,20 @@ $('body').on('click', '.result_full .single_result .tab_2 .main_title', function
 
 $('body').on('click', '.result_full .single_result .tab_2 .single_model_title', function () {
     showResultTab2Level2.call(this);
-})
+});
+
+
+var small_partners = new Navigation('.single_result .cart, .single_product .cart');
+
+small_partners.changing_properties = {
+    'display': 'block'
+};
+small_partners.transition_time = 500;
+
+small_partners.addListeners('click', '.popup_small_partners');
+
+
+
 
 /* --- < Results --- */
 
@@ -815,7 +833,8 @@ $('body').on('click', '.profile_tab_content.garage .select_auto .select li', fun
 
 
 $('body').on('click', '.profile_tab_content.garage .search_result .single_product', function (event) {
-    manageProductCell.call(this, event, '.profile_tab_content.garage .search_result .single_product', 'single_product')
+    manageProductCell.call(this, event, '.profile_tab_content.garage .search_result .single_product', 'single_product');
+   
 });
 
 $('body').on('click', '.profile_tab_content.garage .search_param', function () {
