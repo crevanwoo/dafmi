@@ -1,12 +1,15 @@
-.profile_tab_content.history {@extend %single_product_cell_view;
+.profile_tab_content.history {
+    @extend %single_product_cell_view;
     .top_title {}
     .big_h {
-        font-size: $fs20;
-        text-transform: none;
-        height: 75px;
-        line-height: 75px;
+        display: block;
+        font-size: $fs20;        
+                
+        line-height: 150%;
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
-    .history_wrapper {
+    .history_wrapper { 
         @extend %clear;
         border-top: $selection_border;
         padding-top: 20px;
@@ -14,5 +17,4 @@
         padding-left: 10px;
         padding-right: 10px;
     }
-    
 }

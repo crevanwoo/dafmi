@@ -3,8 +3,10 @@
     border-bottom: 1px solid $border_l_gray;
 }
 
+
+
 .img {
-    float: left;
+    float:left;
     width: 180px;
     height: 180px;
     margin-left: 20px;
@@ -13,6 +15,10 @@
     background-size: cover;
     background-position: center center;
     cursor: pointer;
+}
+
+.single_product_link {
+    display: none;
 }
 
 .single_result_right {

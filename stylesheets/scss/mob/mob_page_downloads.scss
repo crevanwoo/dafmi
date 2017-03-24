@@ -1,5 +1,4 @@
-.content.page_downloads {
-    padding: 40px 0;
+.content.page_downloads {    
     .wrapper {
         padding-top: 30px;
         padding-bottom: 30px;
@@ -16,22 +15,21 @@
     .files_wrapper {
         @extend %clear;
         .single_file {
-            float: left;
+            
             position: relative;
             padding: 20px;
             border: $selection_border;
-            width: 379px;
-            height: 75px;
-            margin-right: 20px;
+            width: 100%;
+            height: auto;
+            min-height: 60px;
+      display: block;
             margin-bottom: 20px;
             cursor: pointer;
             transition: $trans;
-            &:hover {
+            &:active {
                 background-color: $button_gray;
             }
-            &:nth-of-type(3n) {
-                margin-right: 0;
-            }
+            
             .text {
                 margin-left: 35px;
                 font-size: $fs13

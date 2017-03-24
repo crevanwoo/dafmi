@@ -48,7 +48,7 @@ $border_active_gray: #b4b4b4;
 $border_dark_gray: #4a4a4d;
 $border_gray_table_title: #e5e5e5;
 $border_gray_table_row: #ededed;
-$selection_border: 1px solid $border_l_gray;
+$selection_border: 1px solid $border_l_gray; 
 $border: 1px solid $border_gray;
 
 /*Font Sizes*/
@@ -69,7 +69,7 @@ $triangle_h: 238px;
 /*Elem sizes */
 
 $h_header: 40px;
-$h_footer:70px;
+$h_footer: 220px;
 $pad: 20px;
 $header_top_height: 60px;
 $header_bottom_height: 90px;
@@ -78,6 +78,7 @@ $footer_top_height: 85px;
 $footer_bottom_height: 60px;
 $footer_height: $footer_top_height+$footer_bottom_height;
 $input_padding: 20px;
+$search_sel_width: 90%;
 %clear {
     position: relative;
     &:after {

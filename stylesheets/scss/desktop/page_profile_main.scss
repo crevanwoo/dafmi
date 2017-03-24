@@ -58,7 +58,7 @@
                     background-size: contain;
                     background-repeat: no-repeat;
                 }
-                @for $j from 1 through 5 {
+                @for $j from 1 through 6 {
                     &:nth-of-type(#{$j}) {
                         &:before {
                             background-image: url(../images/profile_icon_#{$j}.png)

@@ -15,13 +15,15 @@ div.result_full
     div.results_wrapper
         -for (var k = 0; k < 10; k++)
             div.single_result(data-product-link="page_single_product.html")
-                div.short
+                div.short                   
                     div.img
                         img(src="images/car_big.jpg")
+                        
                     div.single_result_right
                         div.top_row
                             div.title
-                                div.vendor 2090506
+                                div.vendor 2090506 
+                                    a.single_product_link(href="page_single_product.html") 
                                 h3.mid_h Комплект тормозных колодок, дисковый тормоз
                             div.right    
                                 div.price <span>16 000</span>грн

@@ -24,7 +24,7 @@ body {
 
 .content {
     padding-top: $h_header;
-    padding-bottom: $h_footer;
+    //padding-bottom: $h_footer;
     width: 100%;
     >.wrapper {
         padding-top: $pad;
@@ -337,12 +337,12 @@ textarea {
         &:before {
             content: '';
             position: absolute;
-            bottom: 50%;
+            top: 50%;
             left: 0;
             right: 0;
             margin-left: auto;
             margin-right: auto;
-            margin-bottom: -15%;
+            transform: translateY(-50%);
             background-position: center center;
             background-size: contain;
             background-repeat: no-repeat;
@@ -431,25 +431,18 @@ textarea {
 
 %param_content {
     .param {
+        @extend %clear;
         height: 60px;
         line-height: 60px;
-        float: left;
         border-bottom: 1px solid $border_l_gray;
-        width: 50%;
+        width: 100%;
         font-size: $fs13;
         position: relative;
         bottom: -1px;
-        &:nth-of-type(odd) {
-            padding-left: 20px;
-            padding-right: 10px;
-        }
-        &:nth-of-type(even) {
-            padding-left: 10px;
-            padding-right: 20px;
-        }
+        padding-left: 20px;
+        padding-right: 20px;
         .value {
             float: right;
-            width: 280px;
             font-size: $fs14;
             font-family: Medium;
         }
@@ -461,16 +454,14 @@ textarea {
         width: 246px;
         height: 460px;
         position: relative;
-        float: left;
-        margin-right: 10px;
-        margin-left: 10px;
+        margin: auto;
         margin-bottom: 20px;
         cursor: pointer;
         .single_product_wrapper {
             border: $selection_border;
             height: 460px;
             overflow: hidden;
-            padding-bottom: 70px;
+           
             position: absolute;
             top: 0;
             left: 0;
@@ -552,53 +543,7 @@ textarea {
             }
         }
         .bottom {
-            @extend %clear;
-            padding-left: 10px;
-            padding-right: 10px;
-            padding-bottom: 10px;
-            padding-top: 10px;
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: $bg_white;
-            box-shadow: 0 -5px 20px 20px $bg_white;
-            .price {
-                float: left;
-                width: 160px;
-                height: 50px;
-                line-height: 50px;
-                background-color: $button_gray;
-                font-family: Medium;
-                font-size: $fs13;
-                text-align: center;
-            }
-            .cart {
-                width: 50px;
-                height: 50px;
-                background-color: $red;
-                cursor: pointer;
-                float: right;
-                position: relative;
-                &.active {
-                    box-shadow: inset 0px 0px 15px 3px rgba(0, 0, 0, 0.5)
-                }
-                &:before {
-                    content: '';
-                    position: absolute;
-                    left: 0;
-                    right: 0;
-                    margin: auto;
-                    top: 50%;
-                    margin-top: -15px;
-                    width: 30px;
-                    height: 30px;
-                    background-image: url(../images/icon_result_3.png);
-                    background-size: contain;
-                    background-position: center center;
-                    //background-position: -30px 0;
-                }
-            }
+            display: none;
         }
     }
     .single_product.active {
@@ -606,37 +551,13 @@ textarea {
         .single_product_wrapper {
             height: auto;
             border: 1px solid $red;
-            .bottom {
-                box-shadow: none;
-            }
+            
         }
     }
 }
 
 .return_back {
-    display: block;
-    font-size: $fs14;
-    position: absolute;
-    text-decoration: underline;
-    color: $gray;
-    height: 75px;
-    line-height: 75px;
-    top: -75px;
-    left: 0;
-    padding-left: 25px;
-    cursor: pointer;
-    &:before {
-        content: '';
-        position: absolute;
-        width: 8px;
-        height: 15px;
-        background-image: url(../images/icon_arrow_left.png);
-        transform: rotate(180deg);
-        background-size: contain;
-        left: 0;
-        top: 50%;
-        margin-top: -8px;
-    }
+    display: none;
 }
 
 %list-marker {
@@ -655,6 +576,15 @@ textarea {
 
 .nano {
     min-height: 100%;
-    height: 1px;
     position: relative;
+    padding-bottom: $h_footer;
+}
+
+
+%search_select {width: $search_sel_width;
+            margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto; 
+            font-size: $fs14;
+    
 }

@@ -1,0 +1,19 @@
+// profile stickers begins
+div.content.profile
+    div.wrapper
+        h1.big_h.pad Личный кабинет
+        div.profile_content
+            +profile_menu(5)
+            div.profile_tab_content.stickers
+                div.top_title
+                    h3.mid_h Стикеры                    
+                div.stickers_search
+                    input(placeholder="Начинайте вводить что то..")
+                div.stickers_grid
+                    -for (var i =0; i< 10; i++)
+                        a.sticker(href="")
+                            div.img
+                                img(src="images/car_big.jpg")
+                            div.title 10100101
+                            
+// profile stickers ends

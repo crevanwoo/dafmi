@@ -3,35 +3,71 @@
     border-bottom: 1px solid $border_l_gray;
 }
 
-.img {
-    float: left;
-    width: 180px;
-    height: 180px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
+
+
+.img {   
+    height: 20vw;    
+    margin-bottom: 5vw;
+    margin-left: 5vw;
+    width: 20%;
+    float:left;
     background-size: cover;
     background-position: center center;
     cursor: pointer;
 }
 
+.single_product_link {
+    display: block;
+    width: 40px;
+    height: 40px;
+    float:right;
+    cursor: pointer;
+    position: relative;
+    border: $selection_border;
+    transition: $trans;
+      margin-bottom: 5vw;
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 50%;
+        margin-top: -11.5px;
+        width: 23px;
+        height: 23px;
+        background-image: url(../images/icon_link_2.png);
+        background-size: contain;
+        background-position: center center;
+        //background-image: url(../images/icon_go_to_sprite.png);
+        //background-position: -25px 0;
+    }
+    &:active{
+        background-color: $red;
+        border: 1px solid $red;
+        &:before {
+            background-image: url(../images/icon_link_1.png);
+            //background-position: 0 0;
+        }
+    }
+}
+
 .single_result_right {
-    width: 998px;
+    width: 65%;
     float: right;
     position: relative;
 }
 
 .top_row {
-    @extend %clear;
-    margin-right: 20px;
-    .title {
-        float: left;
+    margin-right: $pad;
+    .title {      
         font-family: Medium;
-        padding-top: 5px;
         line-height: 150%;
-        .vendor {
+        .vendor {@extend %clear;
             font-size: $fs16;
             cursor: pointer;
+            height: 40px;
+            line-height: 40px;
         }
         .mid_h {
             font-size: $fs14;
@@ -41,105 +77,18 @@
         }
     }
     .right {
-        float: right;
-        >* {
-            height: 50px;
-            float: left;
-        }
-        .price {
-            padding: 0 45px;
-            background-color: $button_gray;
-            font-size: $fs13;
-            font-family: Medium;
-            line-height: 50px;
-        }
-        .cart {
-            cursor: pointer;
-            width: 50px;
-            margin-left: 13px;
-            position: relative;
-            background-color: $red;
-            &.active {
-                box-shadow: inset 0px 0px 15px 3px rgba(0, 0, 0, 0.5)
-            }
-            &:before {
-                content: '';
-                position: absolute;
-                left: 0;
-                right: 0;
-                margin: auto;
-                top: 50%;
-                margin-top: -15px;
-                width: 30px;
-                height: 30px;
-                background-image: url(../images/icon_result_3.png);
-                background-size: contain;
-                background-repeat: no-repeat;
-            }
-        }
-        .compare {
-            cursor: pointer;
-            position: relative;
-            border: 1px solid $border_l_gray;
-            width: 50px;
-            margin-left: 13px;
-            &:before {
-                content: '';
-                position: absolute;
-                left: 0;
-                right: 0;
-                margin: auto;
-                top: 50%;
-                margin-top: -15px;
-                width: 30px;
-                height: 30px;
-                background-image: url(../images/icon_result_2.png);
-                background-size: contain;
-                background-repeat: no-repeat;
-            }
-            &.active {
-                background-color: $border_l_gray
-            }
-        }
+        display: none;
     }
 }
 
 .middle_row {
-    height: 50px;
-    background-color: $button_gray;
-    margin-right: 20px;
-    line-height: 50px;
-    padding-left: 20px;
-    font-size: $fs13;
-    margin-bottom: 20px;
+    display: none;
 }
 
 .bottom_row {
-    @extend %clear;
-    .text {
-        width: 680px;
-        float: left;
-        font-size: $fs13;
-        margin-bottom: 20px;
-    }
+    display: none;
 }
 
 .show_more {
-    cursor: pointer;
-    width: 300px;
-    background-color: $button_gray;
-    height: 55px;
-    line-height: 55px;
-    font-size: $fs13;
-    text-align: center;
-    margin-top: 20px;
-    position: absolute;
-    right: 0;
-    bottom: -1px;
-    &.active {
-        border-bottom: 1px solid white;
-        border-top: 1px solid $border_l_gray;
-        border-left: 1px solid $border_l_gray;
-        background-color: white;
-    }
+    display: none;
 }

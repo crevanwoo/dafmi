@@ -1,0 +1,67 @@
+.profile_tab_content.stickers {
+    padding-bottom: 40px;
+    .mid_h {
+        padding-left: 20px;
+        line-height: 75px;
+        text-transform: none;
+        font-family: Medium;
+        font-size: $fs20;
+        border-bottom: $selection_border;
+    }
+    .stickers_search {
+        height: 90px;
+        padding: 20px;
+        input {
+            width: 100%;
+            height: 100%;
+            border: $selection_border;
+            padding-left: 20px;
+        }
+    }
+    .stickers_grid {
+        @extend %clear;
+        padding-left: 15px;
+        padding-right: 15px;
+        .sticker {position: relative;
+            width: 187px;
+            float: left;
+            display: block;
+            border: $selection_border;
+            margin-left: 5px;
+            margin-right: 5px;
+            margin-bottom: 10px;
+            height: 220px;
+            cursor: pointer;
+            .img {
+                height: 180px;
+                line-height: 180px;
+                img {
+                    width: 100%;
+                    height: auto;
+                    vertical-align: middle;
+                }
+            }
+            .title {
+                text-align: center;
+                font-size: $fs14;
+            }
+            &:after {content:'';
+                position: absolute;
+                top:0;
+                left:0;
+                width:100%;
+                height:100%;
+                background-color: rgba(255,255,255,0.8);
+                background-image: url(../images/icon_download_3.png);
+                background-position: center center;
+                background-repeat: no-repeat;
+                transition: $trans;
+            opacity:0;}
+            &:hover {
+                &:after {
+                opacity:1}
+                
+            }
+        }
+    }
+}

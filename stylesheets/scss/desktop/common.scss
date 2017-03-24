@@ -190,25 +190,25 @@ input {
 	}
 	&::-webkit-input-placeholder {
 		font-family: Regular;
-		font-size: $fs13;
-		color: $gray
+		font-size: $fs14;
+		color: $l_gray
 	}
 	&::-moz-placeholder {
 		font-family: Regular;
-		font-size: $fs13;
-		color: $gray
+		font-size: $fs14;
+		color: $l_gray
 	}
 	/* Firefox 19+ */
 	&:-moz-placeholder {
 		font-family: Regular;
-		font-size: $fs13;
-		color: $gray
+		font-size: $fs14;
+		color: $l_gray
 	}
 	/* Firefox 18- */
 	&:-ms-input-placeholder {
 		font-family: Regular;
-		font-size: $fs13;
-		color: $gray
+		font-size: $fs14;
+		color: $l_gray
 	}
 }
 

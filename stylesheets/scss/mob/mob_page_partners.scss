@@ -1,50 +1,20 @@
 .map.page_partners {
-    height: 790px;
-    position: relative;
-    .wrapper {
-        position: relative;
-        border-top: none;
-        background-color: transparent;
-    }
-    .mid_h {
-        font-size: $fs24;
-        text-align: center;
-        line-height: 100px;
-        height: 100px;
-    }
-    .google_map {       
-        width: 100%;
-        position: absolute;
-        top: 110px;
-        left: 0;
-        bottom: -80px;
-    }
-    .mid_h {
-        text-transform: none;
-        line-height: 110px;
-        height: 110px;
-        font-size: $fs24;
-        font-family: Medium;
-        text-align: center;
-    }
+    display: none;
 }
 
 .content.geography {
-    z-index: 1;
     color: #333333;
-    margin-top: -1px;
-    padding-top: 0;
     .wrapper {
         @extend %clear;
         padding-bottom: 20px;
     }
     .big_h {
-        border-bottom: 1px solid $border_l_gray;
         font-family: Medium;
         font-size: $fs24;
-        line-height: 80px;
+        line-height: 120%;
         text-align: center;
         text-transform: none;
+        margin-bottom: 20px;
     }
     .mid_h {
         font-family: Medium;
@@ -53,9 +23,7 @@
         line-height: 24px;
     }
     .geography_element {
-        float: left;
-        width: 578px;
-        height: 125px;
+        min-height: 125px;
         padding-left: 20px;
         padding-right: 20px;
         padding-top: 15px;
@@ -65,14 +33,15 @@
         font-size: 13px;
         position: relative;
         cursor: pointer;
+        text-align: center;
         .element_contact {
-            margin-left: 80px;
-            padding-left: 20px;
+            display: inline-block;
+            text-align: left;
         }
         .img {
-            position: absolute;
-            top: 50%;
-            margin-top: -40px;
+            display: block;
+            margin: auto;
+            margin-bottom: 20px;
             width: 80px;
             height: 80px;
             border: 1px solid $border_l_gray;
@@ -81,14 +50,13 @@
             padding-top: 5px;
             line-height: 160%;
             margin-bottom: 7px;
-            height: 40px;
-            overflow: hidden;
             a {
                 padding-right: 5px;
                 letter-spacing: 0.5px;
             }
         }
         .visit {
+            margin-bottom: 20px;
             img {
                 vertical-align: middle;
             }

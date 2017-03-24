@@ -2,8 +2,8 @@
     $border: 1px solid $border_gray;
     .big_h {
         font-size: $fs20;
-        height: 80px;
-        line-height: 80px;
+       line-height: 150%;
+       
     }
     .nav_types {
         @extend %nav_auto;
@@ -17,24 +17,24 @@
         @extend %clear;
         padding-top: 30px;
         padding-bottom: 10px;
-        .selection_wrapper {
-            float: left;
+        .selection_wrapper {           
             @extend %clear;
             margin-bottom: 20px;
-            width: 50%; //379px;
+           
             height: 40px;
-            padding-left: 20px;
-            &:first-of-type {
-                padding-left: 0px;
-            }
-            @extend %clear;
+            
+            font-size: $fs14;
+            line-height: 40px;
+            .select {min-width: 50%;
+            width: 200px; }
+            
+           
             p {
                 float: left;
                 font-size: $fs13;
             }
-            font-size: $fs14;
-            line-height: 40px;
-            display: inline-block;
+            
+
         }
     }
     .fields {
@@ -46,14 +46,14 @@
         margin-bottom: 40px;
         margin-left: auto;
         margin-right: auto;
-        width: 380px;
-        height: 65px;
+        width: 100%;
+        height: 40px;
         background-color: $red;
         font-family: Medium;
         font-size: $fs13;
         text-transform: uppercase;
         text-align: center;
-        line-height: 65px;
+        line-height: 40px;
         color: white;
         cursor: pointer;
     }

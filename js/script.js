@@ -8,7 +8,7 @@ addCustomSelect('.footer_top .lang select');
 addCarsTypeToList();
 
 $(document).ready(function () {
-   
+
 
     setCustomScroll()
 
@@ -22,25 +22,25 @@ function setCustomScroll() {
 
     if (window.innerWidth >= 851) {
         if ($('.mCustomScrollbar').length === 0) {
-         $('.nano').mCustomScrollbar({
-        setHeight: $(window).height(),
-        setWidth: '100%',
+            $('.nano').mCustomScrollbar({
+                setHeight: $(window).height(),
+                setWidth: '100%',
 
-        autoDraggerLength: false,
-        theme: "scroll-logo",
-        callbacks: {
-            whileScrolling: function () {
-                changeHeaderView(this.mcs.top);
+                autoDraggerLength: false,
+                theme: "scroll-logo",
+                callbacks: {
+                    whileScrolling: function () {
+                        changeHeaderView(this.mcs.top);
 
-                small_garage.deactivateElement.call(small_garage.trigger, '.popup_small_garage');
+                        small_garage.deactivateElement.call(small_garage.trigger, '.popup_small_garage');
 
-                small_cart.deactivateElement.call(small_cart.trigger, '.popup_small_cart');
+                        small_cart.deactivateElement.call(small_cart.trigger, '.popup_small_cart');
 
-                small_partners.deactivateElement.call($('.cart.active'), '.popup_small_partners');
-            }
+                        small_partners.deactivateElement.call($('.cart.active'), '.popup_small_partners');
+                    }
+                }
+            });
         }
-    });
-}
 
 
     } else {
@@ -141,29 +141,46 @@ $('.header_bottom .garage').on('click', function () {
     small_cart.deactivateElement.call(small_cart.trigger, '.popup_small_cart')
 })
 
-//change products revealing type
 
-$('.grid_view .list').on('click', function () {
-    toggleGridClasses()
+/*MOB*/
+
+$('header .icon_search').on('click', function () {
+
+    $(this).toggleClass('active');
+    $('header .input').toggleClass('active');
+   
+   $('header .icon_menu, .header_top .wrapper').removeClass('active');
+
+
 });
 
-$('.grid_view .grid').on('click', function () {
-    toggleGridClasses()
+$('header .icon_menu').on('click', function () {
+
+    $(this).toggleClass('active');
+    $('.header_top .wrapper').toggleClass('active');
+
+    $('header .icon_search, header .input').removeClass('active');
+
+
 });
 
+$('header .mob_ver .search').on('click', function() { 
+    $('.content').attr('class', 'content');
+    $('.content').empty();
+     $('header .icon_menu, .header_top .wrapper').removeClass('active');
+    
+        loadContent('.content', '../index_variants.html .expand_search', createExpandSearchSelects); 
+   
+})
+    
+    
+    
 
-// manage alphabet filter
-
-$('.sort_az_letter').on('click', function (e) {
-    changeAlphabetSort.call(this, e);
-});
-
-
-$('.sort_az .az_trigger').on('click', function () {
-    showAlphabetSort.call(this);
-});
 
 /* --- < Header --- */
+
+
+
 /* --- Main panel's tabs > --- */
 
 // manage panel buttons
@@ -203,7 +220,55 @@ $('.content_nav .nav_main .type').on('click', function () {
 
 /* --- < Main panel's tabs --- */
 
+/* --- Index additional panel > --- */
+
+//change products revealing type
+
+$('.grid_view .list').on('click', function () {
+    toggleGridClasses()
+});
+
+$('.grid_view .grid').on('click', function () {
+    toggleGridClasses()
+});
+
+
+// manage alphabet filter
+
+$('.sort_az_letter').on('click', function (e) {
+    changeAlphabetSort.call(this, e);
+});
+
+
+$('.sort_az .az_trigger').on('click', function () {
+    showAlphabetSort.call(this);
+});
+/* --- < Index additional panel --- */
+
 /* --- Expand search > --- */
+
+
+
+$('.tab_2').on('click', function () {
+
+    if ($('.expand_search').length < 1) {
+        loadContent('.nav_expand', '../index_variants.html .expand_search', createExpandSearchSelects);
+    }
+
+
+    if ($(this).hasClass('active')) {
+        hideBlock('.expand_search');
+        showBlock('.main_list', '.nav_main');
+    } else {
+        hideBlock('.main_list', '.nav_main');
+        showBlock('.expand_search');    }
+
+    toggleClassOfFewElem.call(null, this);
+
+});
+
+
+
 
 var ex_search_sel_1 = new Selection();
 
@@ -250,31 +315,6 @@ $('body').on('click', '.expand_search .select:eq(1) .select-options li', functio
 
 
 
-
-
-$('.tab_2').on('click', function () {
-
-
-
-
-    if ($('.expand_search').length < 1) {
-        loadContent('.nav_expand', '../index_variants.html .expand_search', createExpandSearchSelects);
-    }
-
-
-    if ($(this).hasClass('active')) {
-        hideBlock('.expand_search');
-        showBlock('.main_list', '.nav_main');
-    } else {
-        hideBlock('.main_list', '.nav_main');
-        showBlock('.expand_search');
-    }
-
-
-    toggleClassOfFewElem.call(null, this);
-
-
-});
 
 
 //switch tabs in expand search
@@ -495,7 +535,7 @@ $('body').on('click', '.modal_consult .submit', function () {
 
 
 var modal_authorization = new ModalWindow('.modal_authorization');
-modal_authorization.windowOpen('.header_top .status, .page_print .author.button');
+modal_authorization.windowOpen('.header_top .status, .page_print .author.button, header .mob_ver .enter');
 modal_authorization.windowClose('.modal_authorization .close');
 
 

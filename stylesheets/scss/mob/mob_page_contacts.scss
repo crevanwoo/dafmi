@@ -1,6 +1,6 @@
 .feedback {
     font-family: Regular;
-    padding-top: 30px;
+   padding-top: $h_header;
     padding-bottom: 0;
     .wrapper {
         padding-top: 30px;
@@ -9,32 +9,26 @@
         border: 1px solid $border_l_gray;
     }
     .contacts_content_wrapper {
-        @extend %clear;
+    
     }
-    .questions {
-        font-size: $fs14;
-    }
+   
     .big_h {
-        margin-bottom: 20px;
-        font-family: Medium;
-        font-size: $fs24;
-        text-transform: none;
+       display: none;
     }
     .mid_h {
-        margin-bottom: 45px;
+        margin-bottom: 20px;
         font-family: Medium;
         font-size: $fs18;
     }
     .questions {
-        margin-bottom: 65px;
+        margin-bottom: 20px;
         font-size: $fs14;
     }
-    .left_block {
-        float: left;
-        width: 588px;
+    .left_block {margin-bottom: 20px;
+      
         .contact_list {
             font-size: $fs16;
-            margin-left: 5px;
+           
             .feedback_image {
                 background-size: auto 100%;
                 background-position: 0 center;
@@ -79,8 +73,7 @@
         }
     }
     .right_block {
-        float: right;
-        width: 588px;
+       
         form {
             label {
                 font-size: $fs13;
@@ -119,7 +112,7 @@
 }
 
 .map.page_contacts {
-    height: 680px;
+    height: 400px;
     position: relative;
     .wrapper {
         position: relative;

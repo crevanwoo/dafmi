@@ -23,6 +23,8 @@ header {
             background-image: url(../images/icon_menu.png);
             background-size: contain;
             background-position: center center;
+            z-index: 1;
+            position: relative;
             &.active {
                 background-image: url(../images/icon_menu_active.png);
             }
@@ -38,14 +40,18 @@ header {
             background-color: $bg_black;
             text-transform: uppercase;
             color: $font-white;
-            z-index: 1;
+            z-index: 15;
             text-align: right;
             box-shadow: 0px 100px 100px $font-white;
-            *:active {
-                color: $red;
+            &.active {
+                display: block;
             }
             a {
                 color: $font-white;
+                 &:active {
+                    color: $red;
+                }
+                
             }
         }
         .top_nav {
@@ -54,6 +60,9 @@ header {
                 &.nav_about,
                 &.nav_print {
                     display: none;
+                }
+                &:active {
+                    color: $red;
                 }
             }
         }
@@ -71,6 +80,12 @@ header {
                 >* {
                     display: block;
                     @extend %list-marker;
+                }
+                >div {  cursor: pointer;
+                    &:active {
+                    color: $red;
+                      
+                }
                 }
             }
         }
@@ -111,12 +126,14 @@ header {
         .input {
             height: 0;
             position: relative;
-            width: 100%;
-            transition: 0.2s;
+            width: 100%;         
             background-color: $bg_black;
             overflow: hidden;
+            z-index: 10;
+              
             input {
-                margin-top: 10px;
+                position: relative;
+             top: 10px;
                 margin-bottom: 10px;
                 display: block;
                 height: 40px;

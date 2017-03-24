@@ -1,8 +1,9 @@
 .content.page_news {
+    .wrapper {padding-top: 0;}
 	.big_h {
 		height: 80px;
 		line-height: 80px;
-		text-transform: none;
+		
 		padding: 0 20px;
 	}
 	.single_article {
@@ -47,40 +48,19 @@
 		}
 	}
 	.img {
-		float: left;
-		margin-right: 20px;
+				margin-right: 20px;
 		width: 280px;
 		height: 180px;
 		font-size: 0;
 		background-size: cover;
 		background-position: top center;
+        margin-bottom: 20px;
 	}
 	.buttons_panel {
 		padding: 10px 20px;
 		text-align: center;
 	}
 	.buttons {
-		display: inline-block;
-		.button {
-			float: left;
-			transition: $trans;
-			margin-left: 7px;
-			@include btn($fs13, $black, transparent, 40px, 40px, 0px, $border_l_gray, 1px);
-			&:hover,
-			&.active {
-				@include btn($fs13, $font_white, $red, 40px, 40px, 0px, $border_l_gray, 1px);
-			}
-			&:first-of-type {
-				margin-left: 0px
-			}
-		}
-		.back,
-		.next {
-			@include btn($fs13, $black, transparent, 80px, 40px, 0px, $border_l_gray, 1px);
-			&:hover {
-				width: 80px;
-			}
-		}
-		.page_num {}
+		display:none;
 	}
 }

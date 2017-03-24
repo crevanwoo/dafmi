@@ -4,11 +4,7 @@
         $border: 1px solid $border_l_gray;
         padding: 20px;
         .select {
-            width: 90%;
-            margin-bottom: 20px;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: $fs14;
+            @extend %search_select ;
             .select-styled {
                 position: relative;
                 line-height: 38px;

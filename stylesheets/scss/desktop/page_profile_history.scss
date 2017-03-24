@@ -1,4 +1,5 @@
-.profile_tab_content.history {@extend %single_product_cell_view;
+.profile_tab_content.history {
+    @extend %single_product_cell_view;
     .top_title {}
     .big_h {
         font-size: $fs20;
@@ -14,5 +15,4 @@
         padding-left: 10px;
         padding-right: 10px;
     }
-    
 }

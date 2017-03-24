@@ -16,6 +16,7 @@
     .files_wrapper {
         @extend %clear;
         .single_file {
+            display: block;
             float: left;
             position: relative;
             padding: 20px;
