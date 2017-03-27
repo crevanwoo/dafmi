@@ -16,9 +16,9 @@
     src: url(../fonts/BanderaPro-Bold.otf); }
   /*Font Sizes*/
   /*Elem sizes */
-  .content .content_nav .nav_main, .expand_search .nav_types, .profile_tab_content.catalog.choose_items .panel .nav, .new_positions .nav_types, .expand_search .tabs, .profile_tab_content.catalog.choose_items .panel .tabs, .new_positions .tabs, .expand_search .axis, .profile_tab_content.catalog.choose_items .panel .axis, .new_positions .axis, .single_result_page .param_info .single_result_page__content .param, .single_result_page .links_info .single_result_page__content .param, .profile_tab_content.history .single_product .info .top, .profile_tab_content.garage .search_result .single_product .info .top, header, footer, .expand_search .search_param, .expand_search .search_param .param_wrapper, .expand_search .search_param .param_wrapper .param_title, .expand_search .fields, .expand_search .default_select, .result_full .result_full_panel, .expand_search .search_result .result_full_panel, .new_positions .search_result .result_full_panel, .result_full .short, .expand_search .search_result .short, .new_positions .search_result .short, .result_full .top_row .title .vendor, .expand_search .search_result .top_row .title .vendor, .new_positions .search_result .top_row .title .vendor, .single_result_page .top_info, .single_result_page .param_info .single_result_page__content, .single_result_page .models_info .single_result_page__content, .single_result_page .models_info .single_result_page__content .single_maker .single_model .model_content .single_item, .single_result_page .links_info .single_result_page__content, .content.page_downloads .files_wrapper, .content.page_cart .single_product, .content.page_cart .bottom_panel .buttons, .page_cart_modal_confirm .modal_content .buttons, footer .modal_window .modal_content, .modal_registration_1 .choose_profile, .content.page_news .single_article, .content.geography .wrapper, .content.profile .profile_content, .profile_tab_content.orders .order_element, .profile_tab_content.order .top_title, .profile_tab_content.history .history_wrapper, .profile_tab_content.garage .select_auto, .profile_tab_content.garage .search_params, .profile_tab_content.garage .search_result, .profile_tab_content.garage .modal_window .modal_content, .modal_tab.years .years_row, .modal_tab.years .years_row .single_year, .modal_tab.mark .list, .modal_tab.model, .modal_tab.confirm_choosing .confirm_auto, .catalog .top_title, .profile_tab_content.catalog.choose_items .prod_search, .print_catalog .top_title, .page_compare .compare_wrapper, .page_compare .col_product .name, .new_positions .filters.default_select, .new_positions .filters.default_select .selection_wrapper, .new_positions .profile_tab_content.garage .filters.select_auto .selection_wrapper, .profile_tab_content.garage .new_positions .filters.select_auto .selection_wrapper, .new_positions .fields, .new_positions .default_select {
+  .content .content_nav .nav_main, .expand_search .nav_types, .profile_tab_content.catalog.choose_items .panel .nav, .new_positions .nav_types, .expand_search .tabs, .profile_tab_content.catalog.choose_items .panel .tabs, .new_positions .tabs, .expand_search .axis, .profile_tab_content.catalog.choose_items .panel .axis, .new_positions .axis, .single_result_page .param_info .single_result_page__content .param, .single_result_page .links_info .single_result_page__content .param, .profile_tab_content.history .single_product .info .top, .profile_tab_content.garage .search_result .single_product .info .top, header, footer, .expand_search .search_param, .expand_search .search_param .param_wrapper, .expand_search .search_param .param_wrapper .param_title, .expand_search .fields, .expand_search .default_select, .result_full .result_full_panel, .expand_search .search_result .result_full_panel, .new_positions .search_result .result_full_panel, .result_full .short, .expand_search .search_result .short, .new_positions .search_result .short, .result_full .top_row .title .vendor, .expand_search .search_result .top_row .title .vendor, .new_positions .search_result .top_row .title .vendor, .single_result_page .top_info, .single_result_page .param_info .single_result_page__content, .single_result_page .models_info .single_result_page__content, .single_result_page .models_info .single_result_page__content .single_maker .single_model .model_content .single_item, .single_result_page .links_info .single_result_page__content, .content.page_downloads .files_wrapper, .content.page_cart .single_product, .content.page_cart .bottom_panel .buttons, .page_cart_modal_confirm .modal_content .buttons, footer .modal_window .modal_content, .modal_registration_1 .choose_profile, .content.page_news .single_article, .content.geography .wrapper, .content.profile .profile_content, .profile_tab_content.orders .order_left, .profile_tab_content.orders .order_right, .profile_tab_content.orders .order_element, .profile_tab_content.order .top_title, .profile_tab_content.order .order_list .order_element, .profile_tab_content.history .history_wrapper, .profile_tab_content.garage .select_auto, .profile_tab_content.garage .search_params, .profile_tab_content.garage .search_result, .profile_tab_content.garage .modal_window .modal_content, .modal_tab.years .years_row, .modal_tab.years .years_row .single_year, .modal_tab.mark .list, .modal_tab.model, .modal_tab.confirm_choosing .confirm_auto, .catalog .top_title, .profile_tab_content.catalog.choose_items .prod_search, .print_catalog .top_title, .page_compare .compare_wrapper, .page_compare .col_product .name, .new_positions .filters.default_select, .new_positions .filters.default_select .selection_wrapper, .new_positions .profile_tab_content.garage .filters.select_auto .selection_wrapper, .profile_tab_content.garage .new_positions .filters.select_auto .selection_wrapper, .new_positions .fields, .new_positions .default_select {
     position: relative; }
-    .content .content_nav .nav_main:after, .expand_search .nav_types:after, .profile_tab_content.catalog.choose_items .panel .nav:after, .new_positions .nav_types:after, .expand_search .tabs:after, .profile_tab_content.catalog.choose_items .panel .tabs:after, .new_positions .tabs:after, .expand_search .axis:after, .profile_tab_content.catalog.choose_items .panel .axis:after, .new_positions .axis:after, .single_result_page .param_info .single_result_page__content .param:after, .single_result_page .links_info .single_result_page__content .param:after, .profile_tab_content.history .single_product .info .top:after, .profile_tab_content.garage .search_result .single_product .info .top:after, header:after, footer:after, .expand_search .search_param:after, .expand_search .search_param .param_wrapper:after, .expand_search .search_param .param_wrapper .param_title:after, .expand_search .fields:after, .expand_search .default_select:after, .result_full .result_full_panel:after, .expand_search .search_result .result_full_panel:after, .new_positions .search_result .result_full_panel:after, .result_full .short:after, .expand_search .search_result .short:after, .new_positions .search_result .short:after, .result_full .top_row .title .vendor:after, .expand_search .search_result .top_row .title .vendor:after, .new_positions .search_result .top_row .title .vendor:after, .single_result_page .top_info:after, .single_result_page .param_info .single_result_page__content:after, .single_result_page .models_info .single_result_page__content:after, .single_result_page .models_info .single_result_page__content .single_maker .single_model .model_content .single_item:after, .single_result_page .links_info .single_result_page__content:after, .content.page_downloads .files_wrapper:after, .content.page_cart .single_product:after, .content.page_cart .bottom_panel .buttons:after, .page_cart_modal_confirm .modal_content .buttons:after, footer .modal_window .modal_content:after, .modal_registration_1 .choose_profile:after, .content.page_news .single_article:after, .content.geography .wrapper:after, .content.profile .profile_content:after, .profile_tab_content.orders .order_element:after, .profile_tab_content.order .top_title:after, .profile_tab_content.history .history_wrapper:after, .profile_tab_content.garage .select_auto:after, .profile_tab_content.garage .search_params:after, .profile_tab_content.garage .search_result:after, .profile_tab_content.garage .modal_window .modal_content:after, .modal_tab.years .years_row:after, .modal_tab.years .years_row .single_year:after, .modal_tab.mark .list:after, .modal_tab.model:after, .modal_tab.confirm_choosing .confirm_auto:after, .catalog .top_title:after, .profile_tab_content.catalog.choose_items .prod_search:after, .print_catalog .top_title:after, .page_compare .compare_wrapper:after, .page_compare .col_product .name:after, .new_positions .filters.default_select:after, .new_positions .filters.default_select .selection_wrapper:after, .new_positions .profile_tab_content.garage .filters.select_auto .selection_wrapper:after, .profile_tab_content.garage .new_positions .filters.select_auto .selection_wrapper:after, .new_positions .fields:after, .new_positions .default_select:after {
+    .content .content_nav .nav_main:after, .expand_search .nav_types:after, .profile_tab_content.catalog.choose_items .panel .nav:after, .new_positions .nav_types:after, .expand_search .tabs:after, .profile_tab_content.catalog.choose_items .panel .tabs:after, .new_positions .tabs:after, .expand_search .axis:after, .profile_tab_content.catalog.choose_items .panel .axis:after, .new_positions .axis:after, .single_result_page .param_info .single_result_page__content .param:after, .single_result_page .links_info .single_result_page__content .param:after, .profile_tab_content.history .single_product .info .top:after, .profile_tab_content.garage .search_result .single_product .info .top:after, header:after, footer:after, .expand_search .search_param:after, .expand_search .search_param .param_wrapper:after, .expand_search .search_param .param_wrapper .param_title:after, .expand_search .fields:after, .expand_search .default_select:after, .result_full .result_full_panel:after, .expand_search .search_result .result_full_panel:after, .new_positions .search_result .result_full_panel:after, .result_full .short:after, .expand_search .search_result .short:after, .new_positions .search_result .short:after, .result_full .top_row .title .vendor:after, .expand_search .search_result .top_row .title .vendor:after, .new_positions .search_result .top_row .title .vendor:after, .single_result_page .top_info:after, .single_result_page .param_info .single_result_page__content:after, .single_result_page .models_info .single_result_page__content:after, .single_result_page .models_info .single_result_page__content .single_maker .single_model .model_content .single_item:after, .single_result_page .links_info .single_result_page__content:after, .content.page_downloads .files_wrapper:after, .content.page_cart .single_product:after, .content.page_cart .bottom_panel .buttons:after, .page_cart_modal_confirm .modal_content .buttons:after, footer .modal_window .modal_content:after, .modal_registration_1 .choose_profile:after, .content.page_news .single_article:after, .content.geography .wrapper:after, .content.profile .profile_content:after, .profile_tab_content.orders .order_left:after, .profile_tab_content.orders .order_right:after, .profile_tab_content.orders .order_element:after, .profile_tab_content.order .top_title:after, .profile_tab_content.order .order_list .order_element:after, .profile_tab_content.history .history_wrapper:after, .profile_tab_content.garage .select_auto:after, .profile_tab_content.garage .search_params:after, .profile_tab_content.garage .search_result:after, .profile_tab_content.garage .modal_window .modal_content:after, .modal_tab.years .years_row:after, .modal_tab.years .years_row .single_year:after, .modal_tab.mark .list:after, .modal_tab.model:after, .modal_tab.confirm_choosing .confirm_auto:after, .catalog .top_title:after, .profile_tab_content.catalog.choose_items .prod_search:after, .print_catalog .top_title:after, .page_compare .compare_wrapper:after, .page_compare .col_product .name:after, .new_positions .filters.default_select:after, .new_positions .filters.default_select .selection_wrapper:after, .new_positions .profile_tab_content.garage .filters.select_auto .selection_wrapper:after, .profile_tab_content.garage .new_positions .filters.select_auto .selection_wrapper:after, .new_positions .fields:after, .new_positions .default_select:after {
       content: '';
       display: block;
       clear: both; }
@@ -460,7 +460,7 @@
     left: 0;
     right: 0;
     top: 0;
-    z-index: 1; }
+    z-index: 10; }
     header .header_top {
       line-height: 40px;
       color: #666;
@@ -1044,6 +1044,7 @@
         border-bottom: 1px solid #efefef;
         margin-bottom: 20px; }
         .single_result_page .links_info .single_result_page__content .param {
+          display: block;
           text-transform: uppercase; }
   .content.page_downloads .wrapper {
     padding-top: 30px;
@@ -1835,27 +1836,28 @@
       border-bottom: 1px solid #efefef; }
     .profile_tab_content.orders .order_header {
       display: none; }
-    .profile_tab_content.orders .order_left {
-      padding-left: 20px; }
-    .profile_tab_content.orders .order_right {
-      text-align: center; }
-      .profile_tab_content.orders .order_right .table_value {
-        font-family: Medium; }
+    .profile_tab_content.orders .order_right .table_value {
+      font-family: Medium; }
     .profile_tab_content.orders .order_element {
+      padding: 0 20px;
       width: 100%;
       border-bottom: 1px solid #efefef;
       font-size: 13px;
       cursor: pointer;
       padding-top: 15px;
-      padding-bottom: 15px; }
+      padding-bottom: 15px;
+      display: block; }
       .profile_tab_content.orders .order_element:hover {
         background-color: #fdfdfd; }
       .profile_tab_content.orders .order_element .table_value {
-        width: 300px;
-        line-height: 76px; }
-      .profile_tab_content.orders .order_element .status {
+        float: left;
         width: 50%;
-        padding: 15px; }
+        line-height: 45px; }
+      .profile_tab_content.orders .order_element .status {
+        float: left;
+        width: 50%;
+        padding: 15px;
+        text-align: center; }
       .profile_tab_content.orders .order_element .arrived {
         border: 1px solid #69b980; }
       .profile_tab_content.orders .order_element .delivering {
@@ -1869,22 +1871,21 @@
   .profile_tab_content.order {
     font-size: 13px; }
     .profile_tab_content.order .top_title {
-      height: 75px;
+      height: auto;
       border-bottom: 1px solid #f6f6f6; }
     .profile_tab_content.order .big_h {
-      float: left;
+      display: block;
       padding-left: 20px;
       line-height: 75px;
-      height: 75px;
       font-size: 20px; }
       .profile_tab_content.order .big_h .num_symbol {
         font-family: Bold; }
     .profile_tab_content.order .button {
-      float: right;
       width: 180px;
+      margin: auto;
       min-height: 38px;
       padding: 15px;
-      margin: 15px;
+      margin-bottom: 15px;
       font-size: 13px;
       text-align: center;
       cursor: default; }
@@ -1899,25 +1900,19 @@
     .profile_tab_content.order .denied {
       border: 1px solid #dc5552; }
     .profile_tab_content.order .order_list .order_element {
-      display: table;
-      height: 70px;
+      display: block;
       width: 100%;
-      padding-left: 20px;
+      padding: 10px 20px;
       border-bottom: 1px solid #ededed;
       cursor: pointer; }
       .profile_tab_content.order .order_list .order_element .table_value {
+        float: left;
         vertical-align: middle;
-        display: table-cell; }
-        .profile_tab_content.order .order_list .order_element .table_value:nth-of-type(1) {
-          width: 100px; }
+        width: 50%;
+        text-align: center;
+        padding: 5px 0; }
         .profile_tab_content.order .order_list .order_element .table_value:nth-of-type(2) {
-          width: 400px; }
-        .profile_tab_content.order .order_list .order_element .table_value:nth-of-type(3) {
-          width: 120px; }
-        .profile_tab_content.order .order_list .order_element .table_value:nth-of-type(4) {
-          width: 70px; }
-        .profile_tab_content.order .order_list .order_element .table_value:nth-of-type(5) {
-          width: 100px; }
+          display: none; }
         .profile_tab_content.order .order_list .order_element .table_value span {
           font-family: Medium; }
     .profile_tab_content.order .total {

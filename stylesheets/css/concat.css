@@ -2238,6 +2238,7 @@ footer {
       .result_full .single_result_extend .tab_container .tab_3.show, .expand_search .search_result .single_result_extend .tab_container .tab_3.show, .new_positions .search_result .single_result_extend .tab_container .tab_3.show {
         display: block; }
       .result_full .single_result_extend .tab_container .tab_3 .param, .expand_search .search_result .single_result_extend .tab_container .tab_3 .param, .new_positions .search_result .single_result_extend .tab_container .tab_3 .param {
+        display: block;
         text-transform: uppercase; }
     .result_full .single_result_extend .tab_container .tab_4, .expand_search .search_result .single_result_extend .tab_container .tab_4, .new_positions .search_result .single_result_extend .tab_container .tab_4 {
       display: none;
@@ -2535,6 +2536,7 @@ footer {
       border-bottom: 1px solid #efefef;
       margin-bottom: 20px; }
       .single_result_page .links_info .single_result_page__content .param {
+        display: block;
         text-transform: uppercase; }
 
 .content.page_downloads {
@@ -4225,10 +4227,40 @@ footer .modal_window {
   overflow-x: hidden;
   padding: 10px; }
   .profile_tab_content.catalog.choose_items ul li {
-    height: 20px;
-    line-height: 20px;
+    height: 25px;
+    line-height: 25px;
     font-size: 13px;
-    font-family: Regular; }
+    font-family: Regular;
+    position: relative; }
+  .profile_tab_content.catalog.choose_items ul input[type="checkbox"] {
+    display: none; }
+  .profile_tab_content.catalog.choose_items ul input[type="checkbox"] + label {
+    cursor: pointer;
+    padding-left: 0; }
+  .profile_tab_content.catalog.choose_items ul input[type="checkbox"] + label::before {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    content: "";
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    margin: 0 5px 0 0;
+    margin-top: -11px;
+    border: 1px solid #d6d6d6; }
+  .profile_tab_content.catalog.choose_items ul input[type="checkbox"]:checked + label::after {
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    content: "";
+    display: inline-block;
+    height: 5px;
+    width: 12px;
+    margin: 0 5px 0 0;
+    margin-top: -5px;
+    border-bottom: 1px solid #ef444c;
+    border-left: 1px solid #ef444c;
+    transform: rotate(-45deg); }
 
 .profile_tab_content.catalog.choose_items .panel .nav {
   margin-bottom: 20px; }

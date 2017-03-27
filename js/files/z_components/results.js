@@ -214,9 +214,9 @@ function Results(results_wrapper) {
 
     });
 
-
-    /* setLinkFromDataAttr( //Current.single_result_selector + ' .img,' +
-         Current.single_result_selector + ' .top_row .vendor,' + Current.single_result_selector + ' .top_row .mid_h', 'single_result');*/
-
+    if (window.innerWidth > 850) {
+        setLinkFromDataAttr( //Current.single_result_selector + ' .img,' +
+            Current.single_result_selector + ' .top_row .vendor,' + Current.single_result_selector + ' .top_row .mid_h', 'single_result');
+    }
 
 }

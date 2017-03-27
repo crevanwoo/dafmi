@@ -344,6 +344,7 @@
             @extend %clear;
             @extend %param_content;
             .param {
+                display: block;
                 text-transform: uppercase;
             }
         }

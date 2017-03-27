@@ -17,7 +17,7 @@ div.content.profile
                     -var status = ['arrived', 'delivering', 'processing', 'waiting', 'denied'];
                     -var status_info = ['Отгружено', 'Идет доставка', 'Обработка заказа', 'Ожидание оплаты', 'Отказано'];
                     -for (var i = 0; i < 10; i++)
-                        div.order_element(data-single-order-link="page_profile_single_order.html")
+                        a(href='page_profile_single_order.html').order_element
                             div.order_left
                                 div.table_value(data-value="number") 222877766
                                 div.table_value(data-value="date") 09.02.17

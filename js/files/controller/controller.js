@@ -782,7 +782,7 @@ $(document).ready(function () {
 
 // Profile
 
-setLinkFromDataAttr('.profile_tab_content.orders .order_element', 'order_element', 'data-single-order-link');
+/*setLinkFromDataAttr('.profile_tab_content.orders .order_element', 'order_element', 'data-single-order-link');*/
 
 setImgAsBg('.profile_tab_content.history .single_product .img img');
 
