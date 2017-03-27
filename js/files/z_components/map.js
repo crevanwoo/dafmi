@@ -2,26 +2,36 @@ var map_contacts;
 var map_marker = "../images/icon_map_marker.png";
 var map_selector;
 
-if($('.map').hasClass('page_contacts')) {
-    
+if ($('.map').hasClass('page_contacts')) {
+
     map_selector = '.map.page_contacts .google_map';
-}
-else if ($('.map').hasClass('page_partners')) {
+} else if ($('.map').hasClass('page_partners')) {
     map_selector = '.map.page_partners .google_map';
-    
+
 }
 
 function initMap() {
-    var mapOptions = {
-        zoom: 7,
-        center: {
-            lat: 49.605766,
-            lng:  34.563408,
-        },
-        disableDefaultUI: true,
-        styles: styleArray
+    var mapOptions;
+    if (window.innerWidth <= 850) {
+        mapOptions = {
+            zoom: 17,
+            center: {
+                lat: 48.409968,
+                lng: 35.036143,
+            },
+            disableDefaultUI: true,            
+        }
+    } else {
+        mapOptions = {
+            zoom: 7,
+            center: {
+                lat: 49.605766,
+                lng: 34.563408,
+            },
+            disableDefaultUI: true,
+            styles: styleArray
+        }
     }
-
 
 
     map_contacts = new google.maps.Map(document.querySelector(map_selector), mapOptions);
@@ -35,8 +45,8 @@ function initMap() {
         title: 'Intelli',
         icon: map_marker
     });
-    
-   // $('header').on('click', map_contacts.getCenter);
+
+    // $('header').on('click', map_contacts.getCenter);
 }
 
 

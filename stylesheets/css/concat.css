@@ -3329,7 +3329,7 @@ footer .modal_window {
       height: 110px;
       margin-bottom: 10px;
       border: 1px solid #efefef;
-      padding-left: 10px;
+      padding-left: 20px;
       font-family: Regular;
       font-size: 16px;
       color: #333; }
@@ -3340,7 +3340,8 @@ footer .modal_window {
       font-family: Medium;
       color: #fff;
       line-height: 43px;
-      font-size: 15px; }
+      font-size: 15px;
+      padding-left: 0; }
 
 .map.page_contacts {
   height: 680px;

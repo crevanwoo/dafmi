@@ -56,7 +56,7 @@ header {
         }
         .top_nav {
             li {
-                @extend %list-marker;
+               // @extend %list-marker;
                 &.nav_about,
                 &.nav_print {
                     display: none;
@@ -79,7 +79,7 @@ header {
             .mob_ver {
                 >* {
                     display: block;
-                    @extend %list-marker;
+                    //@extend %list-marker;
                 }
                 >div {  cursor: pointer;
                     &:active {

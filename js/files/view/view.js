@@ -345,3 +345,14 @@ function createExpandSearchSelects() {
     ex_search_sel_3.createSelection('.ex_search_select_3');
 
 }
+
+
+function setSingleResultMobStyle() {
+    if (window.innerWidth <= 850) {
+        $('.single_result_page').find('.title,  .single_result_page__content').removeClass('active');
+    }
+    else {
+         $('.single_result_page').find('.title').addClass('active');
+        
+    }
+}

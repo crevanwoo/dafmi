@@ -43,6 +43,15 @@
             width: 100%;
         }
     }
+    .single_result_page__content {
+        height: 0;
+        overflow: hidden;
+        display: none;
+        &.active {
+            height: auto;
+            display: block;
+        }
+    }
     .single_result_page__info_block {
         >.title {
             height: 50px;
@@ -209,9 +218,8 @@
                             .param_cap {
                                 width: 33.3%;
                                 text-align: right;
-                                 padding-right: 10px;
+                                padding-right: 10px;
                             }
-                         
                         }
                         .info {
                             background-color: $button_gray;

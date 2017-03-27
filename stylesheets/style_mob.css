@@ -444,17 +444,6 @@
       border: 1px solid #dc5552; }
   .return_back {
     display: none; }
-  header .header_top .top_nav li, header .header_top .profile .mob_ver > * {
-    position: relative; }
-    header .header_top .top_nav li:before, header .header_top .profile .mob_ver > :before {
-      content: '-';
-      position: absolute;
-      font-size: 20px;
-      width: 15px;
-      height: 100%;
-      line-height: 40px;
-      right: -15px;
-      top: 0; }
   .nano {
     min-height: 100%;
     position: relative;
@@ -904,6 +893,13 @@
         font-size: 16px;
         padding: 15px 20px;
         width: 100%; }
+    .single_result_page .single_result_page__content {
+      height: 0;
+      overflow: hidden;
+      display: none; }
+      .single_result_page .single_result_page__content.active {
+        height: auto;
+        display: block; }
     .single_result_page .single_result_page__info_block > .title {
       height: 50px;
       background-color: #f4f4f4;
@@ -1587,11 +1583,13 @@
       display: inline;
       line-height: 180%;
       font-size: 14px; }
-      .content.page_news .single_article .article_text .show_more, .content.page_news .single_article .article_text .show_less {
+      .content.page_news .single_article .article_text .show_more,
+      .content.page_news .single_article .article_text .show_less {
         display: inline;
         color: #333;
         text-decoration: none; }
-        .content.page_news .single_article .article_text .show_more span, .content.page_news .single_article .article_text .show_less span {
+        .content.page_news .single_article .article_text .show_more span,
+        .content.page_news .single_article .article_text .show_less span {
           color: #284ca8;
           text-decoration: underline;
           cursor: pointer; }
@@ -1614,12 +1612,12 @@
       background-image: url(../images/icon_news.png);
       background-size: contain; }
   .content.page_news .img {
-    margin-right: 20px;
-    width: 280px;
+    margin: auto;
+    width: 100%;
     height: 180px;
     font-size: 0;
-    background-size: cover;
-    background-position: top center;
+    background-size: contain;
+    background-position: center center;
     margin-bottom: 20px; }
   .content.page_news .buttons_panel {
     padding: 10px 20px;
@@ -1649,8 +1647,8 @@
       .feedback .left_block .contact_list {
         font-size: 16px; }
         .feedback .left_block .contact_list .feedback_image {
-          background-size: auto 100%;
-          background-position: 0 center; }
+          background-size: 30px auto;
+          background-position: 0 5px; }
         .feedback .left_block .contact_list .feedback_image_address {
           line-height: 130%;
           background-image: url(../images/icon_contacts_1.png); }
@@ -1684,21 +1682,22 @@
       padding-left: 20px; }
     .feedback .right_block form textarea {
       width: 100%;
-      height: 110px;
+      height: 50px;
       margin-bottom: 10px;
       border: 1px solid #efefef;
-      padding-left: 10px;
+      padding-left: 20px;
       font-family: Regular;
       font-size: 16px;
       color: #333; }
     .feedback .right_block form .button {
-      width: 200px;
+      width: 100%;
       height: 45px;
       background-color: #dc5552;
       font-family: Medium;
       color: #fff;
       line-height: 43px;
-      font-size: 15px; }
+      font-size: 15px;
+      padding-left: 0; }
   .map.page_contacts {
     height: 400px;
     position: relative; }

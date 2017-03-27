@@ -38,32 +38,30 @@
             .feedback_image {
                 background-size: auto 100%;
                 background-position: 0 center;
-                
-               
                 //background: url('../images/feedback-sprite.png') no-repeat;
             }
             .feedback_image_address {
                 line-height: 130%;
-                 background-image: url(../images/icon_contacts_1.png)
+                background-image: url(../images/icon_contacts_1.png)
             }
             .feedback_image_phone {
-                 background-image: url(../images/icon_contacts_2.png);
-               // background-position: 0px -53px;
+                background-image: url(../images/icon_contacts_2.png);
+                // background-position: 0px -53px;
             }
             .feedback_image_skype {
-                 background-image: url(../images/icon_contacts_3.png);
+                background-image: url(../images/icon_contacts_3.png);
                 //background-position: 0px -110px;
             }
             .feedback_image_time {
-                 background-image: url(../images/icon_contacts_4.png);
+                background-image: url(../images/icon_contacts_4.png);
                 //background-position: 0px -168px;
                 span {
                     font-size: $fs14;
                 }
             }
             .feedback_image_email {
-                 background-image: url(../images/icon_contacts_5.png);
-               // background-position: 0px -222px;
+                background-image: url(../images/icon_contacts_5.png);
+                // background-position: 0px -222px;
             }
             li {
                 padding-left: 50px;
@@ -100,7 +98,7 @@
                 height: 110px;
                 margin-bottom: 10px;
                 border: $selection_border;
-                padding-left: 10px;
+                 padding-left: $input_padding;
                 font-family: Regular;
                 font-size: $fs16;
                 color: $black;
@@ -113,6 +111,7 @@
                 color: $font_white;
                 line-height: 43px;
                 font-size: $fs15;
+                padding-left: 0;
             }
         }
     }
