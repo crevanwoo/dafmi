@@ -464,7 +464,9 @@ textarea {
               transform: translateY(-50%);
       left: 0;
       right: 0;
-      margin: auto; }
+      margin: auto;
+      height: 23px;
+      width: auto; }
     .expand_search .axis > div:nth-of-type(3), .profile_tab_content.catalog.choose_items .panel .axis > div:nth-of-type(3), .new_positions .axis > div:nth-of-type(3) {
       border-right: none; }
     .expand_search .axis > div.active, .profile_tab_content.catalog.choose_items .panel .axis > div.active, .new_positions .axis > div.active {
