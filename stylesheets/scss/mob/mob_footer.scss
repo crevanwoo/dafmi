@@ -98,5 +98,11 @@ footer {
                 margin-left: 8px;
             }
         }
+        .link_full_ver {
+            display: block;
+            &:hover {
+                color: $font-white;
+            }
+        }
     }
 }

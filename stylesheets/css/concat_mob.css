@@ -663,6 +663,10 @@
           height: 100%;
           width: auto;
           margin-left: 8px; }
+      footer .footer_bottom .link_full_ver {
+        display: block; }
+        footer .footer_bottom .link_full_ver:hover {
+          color: #fff; }
   .expand_search {
     background-color: #fff;
     padding-top: 20px; }

@@ -1082,3 +1082,7 @@ $('body').on('click', '.single_result .cart, .single_product .cart, .single_resu
     $('.popup_small_cart .str_summ span').text(str_summ);
 
 });
+
+$('.link_full_ver').on('click', function(e) {
+    e.preventDefault();      
+});
