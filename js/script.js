@@ -1,3 +1,8 @@
+/* autor Kobenko Anastasia 
+email stasya.job@outlook.com
+git https://github.com/crevanwoo
+*/
+
 /* --- ---- --- --- --- --- On Page Load > --- ---- --- --- --- --- */
 
 addCustomSelect('.footer_top .lang select');
