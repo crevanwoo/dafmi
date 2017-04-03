@@ -2,7 +2,6 @@
 email stasya.job@outlook.com
 git https://github.com/crevanwoo
 */
-
 @font-face {
   font-family: Light;
   src: url(../fonts/GothamProLight.ttf); }
@@ -186,12 +185,6 @@ button {
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
     background-size: 100% 100%; }
-  .input:nth-of-type(1):before {
-    background-image: url(../images/icon_1.svg); }
-  .input:nth-of-type(2):before {
-    background-image: url(../images/icon_2.svg); }
-  .input:nth-of-type(3):before {
-    background-image: url(../images/icon_3.svg); }
 
 input {
   border: none;

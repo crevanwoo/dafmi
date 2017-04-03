@@ -15,7 +15,7 @@ div.content_panel
     div.views
         div.wrapper.pad 
             div.sort_az 
-                div.az_trigger  A
+                div.az_trigger(title="Фильтровать по алфавиту")  A
                 ul 
                     -  
                         var az_list = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
@@ -23,8 +23,8 @@ div.content_panel
                         li.sort_az_letter
                             a(href="")= az_item 
             div.grid_view
-                div.list
-                div.grid.active
+                div.list(title="Показать списком")
+                div.grid.active(title="Показать плиткой")
             
             
    
