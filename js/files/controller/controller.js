@@ -195,6 +195,8 @@ $('header .mob_ver .search').on('click', function () {
 // manage panel buttons
 
 $('.content_nav .nav_main .type').on('click', function () {
+ 
+    showBlock('.content_panel .views');
 
     manageMenuButtons.call(this, '.content_nav .nav_main .type');
     hideBlock($('.content_products .content_products_wrapper >div'));
@@ -234,11 +236,11 @@ $('.content_nav .nav_main .type').on('click', function () {
 //change products revealing type
 
 $('.grid_view .list').on('click', function () {
-    toggleGridClasses()
+    toggleGridClasses('list')
 });
 
 $('.grid_view .grid').on('click', function () {
-    toggleGridClasses()
+    toggleGridClasses('grid')
 });
 
 
@@ -1088,6 +1090,6 @@ $('body').on('click', '.single_result .cart, .single_product .cart, .single_resu
 
 });
 
-$('.link_full_ver').on('click', function(e) {
-    e.preventDefault();      
+$('.link_full_ver').on('click', function (e) {
+    e.preventDefault();
 });

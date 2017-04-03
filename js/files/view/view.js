@@ -120,7 +120,7 @@ function changeHeaderView(param) {
 var content_panel_h = $('.content_products').height();
 $('.content_products').css('min-height', content_panel_h + 'px')
 
-function toggleGridClasses() {
+function toggleGridClasses(classname) {
     $('.content_products').css('height', content_panel_h * 2 + 'px');
 
     var grid_trans_time = 500;
@@ -128,8 +128,9 @@ function toggleGridClasses() {
     $('.grid_view .list').toggleClass('active');
     $('.grid_view .grid').toggleClass('active');
     $('.content_products').removeClass('active');
-    $('.content_products').toggleClass('grid');
-    $('.content_products').toggleClass('list');
+    $('.content_products').removeClass('list grid');
+    $('.content_products').addClass(classname);
+    
     setTimeout(function () {
         $('.content_products').addClass('active');
         $('.content_products').css('height', 'auto');
