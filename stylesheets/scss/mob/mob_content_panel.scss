@@ -4,7 +4,7 @@
         $border: 1px solid $border_l_gray;
         padding: 20px;
         .select {
-            @extend %search_select ;
+            @extend %search_select;
             .select-styled {
                 position: relative;
                 line-height: 38px;
@@ -23,7 +23,8 @@
             }
         }
     }
-    .views {
-        display: none;
-    }
+}
+
+.views {
+    display: none !important;
 }

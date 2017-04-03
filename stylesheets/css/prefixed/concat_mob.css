@@ -1,3 +1,7 @@
+/* autor Kobenko Anastasia 
+email stasya.job@outlook.com
+git https://github.com/crevanwoo
+*/
 @media screen and (max-width: 850px) {
   @font-face {
     font-family: Light;
@@ -588,8 +592,8 @@
       .content .content_panel .filters .select .disabled {
         cursor: default;
         background-color: #fafafa; }
-    .content .content_panel .views {
-      display: none; }
+  .content .views {
+    display: none !important; }
   .content .content_products {
     background-color: #fff; }
     .content .content_products .cars_type_1,
